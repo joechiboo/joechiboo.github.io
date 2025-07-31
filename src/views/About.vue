@@ -45,42 +45,58 @@
             <div class="skill-category">
               <h3>前端開發</h3>
               <div class="skill-tags">
-                <span class="skill-tag">Vue.js</span>
-                <span class="skill-tag">React</span>
+                <span class="skill-tag">jQuery</span>
                 <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">TypeScript</span>
                 <span class="skill-tag">HTML5</span>
                 <span class="skill-tag">CSS3</span>
-                <span class="skill-tag">Sass</span>
-                <span class="skill-tag">Tailwind CSS</span>
+                <span class="skill-tag">Bootstrap</span>
+                <span class="skill-tag">Ajax</span>
+                <span class="skill-tag">響應式設計</span>
               </div>
             </div>
             
             <div class="skill-category">
               <h3>後端開發</h3>
               <div class="skill-tags">
-                <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">Express</span>
-                <span class="skill-tag">Python</span>
-                <span class="skill-tag">Django</span>
-                <span class="skill-tag">PostgreSQL</span>
-                <span class="skill-tag">MongoDB</span>
+                <span class="skill-tag">.NET MVC</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">ASP.NET</span>
+                <span class="skill-tag">Entity Framework</span>
+                <span class="skill-tag">SQL Server</span>
+                <span class="skill-tag">NoSQL</span>
                 <span class="skill-tag">Redis</span>
-                <span class="skill-tag">JWT</span>
+                <span class="skill-tag">WebAPI</span>
               </div>
             </div>
             
             <div class="skill-category">
-              <h3>開發工具</h3>
+              <h3>移動端開發</h3>
               <div class="skill-tags">
-                <span class="skill-tag">Git</span>
-                <span class="skill-tag">Docker</span>
-                <span class="skill-tag">AWS</span>
-                <span class="skill-tag">Linux</span>
-                <span class="skill-tag">VS Code</span>
-                <span class="skill-tag">Postman</span>
-                <span class="skill-tag">Figma</span>
-                <span class="skill-tag">Webpack</span>
+                <span class="skill-tag">Cordova</span>
+                <span class="skill-tag">Parse</span>
+                <span class="skill-tag">Hybrid App</span>
+                <span class="skill-tag">Mobile UI</span>
+              </div>
+            </div>
+            
+            <div class="skill-category">
+              <h3>專案管理</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Scrum</span>
+                <span class="skill-tag">BPM</span>
+                <span class="skill-tag">敏捷開發</span>
+                <span class="skill-tag">團隊協作</span>
+              </div>
+            </div>
+            
+            <div class="skill-category">
+              <h3>系統管理</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Windows Server</span>
+                <span class="skill-tag">IIS</span>
+                <span class="skill-tag">資安管理</span>
+                <span class="skill-tag">醫療資訊系統</span>
+                <span class="skill-tag">系統架構</span>
               </div>
             </div>
           </div>
@@ -255,8 +271,24 @@ blockquote {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* 大螢幕優化：限制最大3列 */
+@media (min-width: 1200px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 中等螢幕：2列佈局 */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .skill-category {

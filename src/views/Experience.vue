@@ -82,47 +82,78 @@ import { ref } from 'vue'
 const workExperience = ref([
   {
     id: 1,
-    position: '全端軟體工程師',
-    company: '科技公司 A',
-    period: '2023年 - 現在',
-    description: '負責 Web 應用程式的前後端開發，與跨部門團隊合作完成多個重要專案。',
+    position: '資訊室主任',
+    company: '大安聯合醫檢所',
+    period: '2019年7月 - 現在',
+    description: '負責醫檢所整體資訊系統規劃、管理與維護，確保醫療資訊系統穩定運行。',
     responsibilities: [
-      '開發和維護 Vue.js 前端應用程式',
-      '設計和實作 RESTful API',
-      '優化應用程式效能和使用者體驗',
-      '參與系統架構設計和技術選型',
-      '指導初級工程師並進行程式碼審查'
+      '規劃和管理醫檢所資訊系統架構',
+      '監督系統維護和資安管理',
+      '協調跨部門資訊需求與專案執行',
+      '評估和導入新技術解決方案',
+      '管理資訊團隊並制定技術標準'
     ],
-    technologies: ['Vue.js', 'Node.js', 'PostgreSQL', 'Docker', 'AWS']
+    technologies: ['.NET', 'SQL Server', '醫療資訊系統', '資安管理', 'Windows Server']
   },
   {
     id: 2,
-    position: '前端工程師',
-    company: '新創公司 B',
-    period: '2022年 - 2023年',
-    description: '專注於前端開發，負責建立響應式網頁應用程式和使用者介面設計。',
+    position: '研發工程師',
+    company: 'TutorABC (台灣)',
+    period: '2018年5月 - 2019年7月',
+    description: '負責線上教育平台的研發工作，專注於提升學習體驗和系統效能。',
     responsibilities: [
-      '使用 React 開發 SPA 應用程式',
-      '實作響應式設計和跨瀏覽器相容性',
-      '與 UI/UX 設計師協作優化使用者體驗',
-      '建立和維護組件庫',
-      '進行前端效能優化'
+      '開發和維護線上教學平台功能',
+      '優化即時視訊教學系統效能',
+      '實作學習管理系統新功能',
+      '與產品團隊協作改善使用者體驗',
+      '進行系統測試和品質保證'
     ],
-    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Redux', 'Webpack']
+    technologies: ['.NET MVC', 'jQuery', 'Entity Framework', 'SQL Server', 'Redis']
   },
   {
     id: 3,
-    position: '軟體開發實習生',
-    company: '軟體公司 C',
-    period: '2021年 - 2022年',
-    description: '參與軟體開發專案，學習軟體工程實務和團隊協作。',
+    position: '研發工程師',
+    company: 'TutorABC (上海)',
+    period: '2016年6月 - 2018年5月',
+    description: '參與國際線上教育平台開發，負責核心功能研發和系統優化。',
     responsibilities: [
-      '協助開發小型功能模組',
-      '進行軟體測試和 Bug 修復',
-      '學習敏捷開發流程',
-      '參與程式碼審查和技術討論'
+      '開發跨平台線上教學應用',
+      '實作即時通訊和視訊功能',
+      '優化資料庫查詢效能',
+      '參與微服務架構設計',
+      '協助團隊技術決策和代碼審查'
     ],
-    technologies: ['JavaScript', 'Python', 'MySQL', 'Git', 'Linux']
+    technologies: ['.NET', 'jQuery', 'NoSQL', 'Redis', 'WebRTC']
+  },
+  {
+    id: 4,
+    position: 'IT工程師',
+    company: '五甫科技 (上海)',
+    period: '2015年8月 - 2016年6月',
+    description: '負責企業資訊系統開發與維護，支援業務流程自動化需求。',
+    responsibilities: [
+      '開發企業內部管理系統',
+      '維護和優化現有業務系統',
+      '協助IT基礎設施建置',
+      '提供技術支援和系統培訓',
+      '參與業務流程分析和改善'
+    ],
+    technologies: ['.NET', 'C#', 'SQL Server', 'JavaScript', 'IIS']
+  },
+  {
+    id: 5,
+    position: '程式設計師',
+    company: 'TOEIC',
+    period: '2012年3月 - 2015年8月',
+    description: '參與教育測驗相關系統開發，累積軟體開發基礎經驗。',
+    responsibilities: [
+      '開發測驗管理系統功能',
+      '實作資料處理和報表功能',
+      '進行系統測試和除錯',
+      '協助系統文件撰寫',
+      '學習軟體開發最佳實務'
+    ],
+    technologies: ['C#', '.NET Framework', 'SQL Server', 'ASP.NET', 'JavaScript']
   }
 ])
 

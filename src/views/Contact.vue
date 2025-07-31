@@ -12,35 +12,36 @@
             <div class="contact-card">
               <div class="contact-icon">📧</div>
               <h3>電子郵件</h3>
-              <p>joe.chiboo@example.com</p>
-              <a href="mailto:joe.chiboo@example.com" class="btn btn-primary">
+              <p>stst1239joe@hotmail.com</p>
+              <a href="mailto:stst1239joe@hotmail.com" class="btn btn-primary">
                 發送郵件
               </a>
             </div>
 
             <div class="contact-card">
-              <div class="contact-icon">💼</div>
-              <h3>LinkedIn</h3>
-              <p>專業社交網路</p>
-              <a href="#" class="btn btn-primary" target="_blank">
+              <div class="contact-icon">📘</div>
+              <h3>Facebook</h3>
+              <p>社交媒體聯繫</p>
+              <a href="https://facebook.com/joe.chiboo" class="btn btn-primary" target="_blank">
                 查看檔案
               </a>
             </div>
 
             <div class="contact-card">
-              <div class="contact-icon">💻</div>
-              <h3>GitHub</h3>
-              <p>程式碼作品集</p>
-              <a href="#" class="btn btn-primary" target="_blank">
-                瀏覽專案
-              </a>
+              <div class="contact-icon">💬</div>
+              <h3>WeChat</h3>
+              <p>即時通訊聯繫</p>
+              <p style="color: #007bff; font-weight: 600; margin-bottom: 1rem;">ID: joechiboo</p>
+              <span class="btn btn-primary" style="cursor: default; opacity: 0.7;">
+                微信聯繫
+              </span>
             </div>
 
             <div class="contact-card">
               <div class="contact-icon">📱</div>
               <h3>電話</h3>
-              <p>+886 912 345 678</p>
-              <a href="tel:+886912345678" class="btn btn-primary">
+              <p>+886 986 642 519</p>
+              <a href="tel:+886986642519" class="btn btn-primary">
                 撥打電話
               </a>
             </div>
@@ -167,6 +168,7 @@
 
 <script setup>
 import { ref, reactive } from 'vue'
+import emailjs from '@emailjs/browser'
 
 const form = reactive({
   name: '',
@@ -221,6 +223,13 @@ const validateForm = () => {
   return isValid
 }
 
+// EmailJS 配置 - 需要在 EmailJS 後台設定後替換
+const EMAILJS_CONFIG = {
+  serviceID: 'YOUR_SERVICE_ID', // 需要設定：Gmail 或 Outlook 服務 ID
+  templateID: 'YOUR_TEMPLATE_ID', // 需要設定：郵件模板 ID  
+  publicKey: 'YOUR_PUBLIC_KEY' // 需要設定：EmailJS 公鑰
+}
+
 const submitForm = async () => {
   if (!validateForm()) {
     return
@@ -229,17 +238,43 @@ const submitForm = async () => {
   isSubmitting.value = true
 
   try {
-    // 模擬發送請求
-    await new Promise(resolve => setTimeout(resolve, 2000))
+    // 檢查 EmailJS 是否已配置
+    const isConfigured = EMAILJS_CONFIG.serviceID !== 'YOUR_SERVICE_ID' &&
+                         EMAILJS_CONFIG.templateID !== 'YOUR_TEMPLATE_ID' &&
+                         EMAILJS_CONFIG.publicKey !== 'YOUR_PUBLIC_KEY'
     
-    alert('訊息發送成功！我會盡快回覆您。')
+    if (!isConfigured) {
+      // 如果未配置 EmailJS，顯示提示並模擬發送
+      console.warn('EmailJS 尚未配置，請設定 EMAILJS_CONFIG 中的參數')
+      await new Promise(resolve => setTimeout(resolve, 1500))
+      alert('訊息發送成功！我會盡快回覆您。\n\n(開發提示：請配置 EmailJS 以啟用真實郵件發送功能)')
+    } else {
+      // 使用 EmailJS 發送郵件
+      const templateParams = {
+        from_name: form.name,
+        from_email: form.email,
+        subject: form.subject,
+        message: form.message,
+        to_email: 'stst1239joe@hotmail.com' // Joe 的真實郵箱
+      }
+
+      await emailjs.send(
+        EMAILJS_CONFIG.serviceID,
+        EMAILJS_CONFIG.templateID,
+        templateParams,
+        EMAILJS_CONFIG.publicKey
+      )
+      
+      alert('訊息發送成功！我會在24小時內回覆您。')
+    }
     
     // 清空表單
     Object.keys(form).forEach(key => {
       form[key] = ''
     })
-  } catch {
-    alert('發送失敗，請稍後再試或直接發送郵件給我。')
+  } catch (error) {
+    console.error('郵件發送失敗:', error)
+    alert('發送失敗，請稍後再試或直接發送郵件至 stst1239joe@hotmail.com')
   } finally {
     isSubmitting.value = false
   }

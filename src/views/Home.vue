@@ -208,6 +208,15 @@ const downloadResume = () => {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* 大螢幕：3列佈局 */
+@media (min-width: 768px) {
+  .links-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .link-card {
