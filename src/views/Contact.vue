@@ -221,9 +221,9 @@ const validateForm = () => {
 
 // EmailJS 配置 - 需要在 EmailJS 後台設定後替換
 const EMAILJS_CONFIG = {
-  serviceID: 'YOUR_SERVICE_ID', // 需要設定：Gmail 或 Outlook 服務 ID
-  templateID: 'YOUR_TEMPLATE_ID', // 需要設定：郵件模板 ID  
-  publicKey: 'YOUR_PUBLIC_KEY' // 需要設定：EmailJS 公鑰
+  serviceID: 'service_jvybjau', // EmailJS Gmail 服務 ID
+  templateID: 'template_whyacks', // 郵件模板 ID  
+  publicKey: 'Mn7iuNxRHRYEqr9A2' // EmailJS 公鑰
 }
 
 const submitForm = async () => {
