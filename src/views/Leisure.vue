@@ -1,0 +1,493 @@
+<template>
+  <div class="leisure">
+    <div class="container">
+      <header class="page-header">
+        <h1>休閒生活</h1>
+        <p>繪畫、創作、運動、音樂 - 平衡工作與生活的藝術</p>
+      </header>
+
+      <div class="leisure-content">
+        <section class="hobbies-grid">
+          <div class="hobby-card" v-for="hobby in hobbies" :key="hobby.id">
+            <div class="hobby-icon">{{ hobby.icon }}</div>
+            <h2>{{ hobby.title }}</h2>
+            <p class="hobby-description">{{ hobby.description }}</p>
+            
+            <div class="hobby-details">
+              <h4>為什麼喜歡：</h4>
+              <p>{{ hobby.reason }}</p>
+              
+              <h4>相關經驗：</h4>
+              <ul>
+                <li v-for="experience in hobby.experiences" :key="experience">
+                  {{ experience }}
+                </li>
+              </ul>
+              
+              <div class="hobby-skills" v-if="hobby.skills">
+                <h4>相關技能：</h4>
+                <div class="skill-tags">
+                  <span v-for="skill in hobby.skills" :key="skill" class="skill-tag">
+                    {{ skill }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="gallery-section">
+          <h2>創作作品集</h2>
+          <p class="gallery-intro">以下是一些個人創作和興趣活動的記錄</p>
+          
+          <div class="gallery-grid">
+            <div class="gallery-item" v-for="item in galleryItems" :key="item.id">
+              <div class="gallery-image">
+                <div class="image-placeholder">
+                  <span>{{ item.type }}</span>
+                </div>
+              </div>
+              <div class="gallery-info">
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+                <span class="gallery-date">{{ item.date }}</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="balance-section">
+          <h2>工作與生活的平衡</h2>
+          <div class="balance-content">
+            <div class="balance-text">
+              <p>
+                我相信優秀的軟體工程師不只是技術專家，更是一個全面發展的人。
+                透過多元化的興趣愛好，我能夠：
+              </p>
+              <ul class="balance-benefits">
+                <li>培養創意思維，在程式設計中找到新的靈感</li>
+                <li>透過藝術創作訓練細緻觀察力和美感</li>
+                <li>運動讓我保持健康的身體和清晰的思維</li>
+                <li>音樂提升我的專注力和對節奏的敏感度</li>
+                <li>多元化的經驗讓我更能理解不同使用者的需求</li>
+              </ul>
+            </div>
+            
+            <div class="balance-quotes">
+              <blockquote>
+                "創意來自於不同領域的碰撞，技術與藝術的結合往往能產生最驚艷的作品。"
+              </blockquote>
+              <blockquote>
+                "健康的身心是持續創造的基礎，工作效率與生活品質同等重要。"
+              </blockquote>
+            </div>
+          </div>
+        </section>
+
+        <section class="future-goals">
+          <h2>未來目標</h2>
+          <div class="goals-grid">
+            <div class="goal-card">
+              <div class="goal-icon">🎨</div>
+              <h3>藝術創作</h3>
+              <p>計劃舉辦個人畫展，將技術與藝術結合創作數位藝術作品</p>
+            </div>
+            
+            <div class="goal-card">
+              <div class="goal-icon">🏃‍♂️</div>
+              <h3>運動挑戰</h3>
+              <p>參加馬拉松比賽，挑戰自己的耐力極限</p>
+            </div>
+            
+            <div class="goal-card">
+              <div class="goal-icon">🎵</div>
+              <h3>音樂製作</h3>
+              <p>學習音樂製作軟體，創作屬於自己的音樂作品</p>
+            </div>
+            
+            <div class="goal-card">
+              <div class="goal-icon">✍️</div>
+              <h3>知識分享</h3>
+              <p>透過部落格分享技術學習心得與生活感悟</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+const hobbies = ref([
+  {
+    id: 1,
+    icon: '🎨',
+    title: '繪畫',
+    description: '透過畫筆記錄生活，用色彩表達情感',
+    reason: '繪畫讓我能夠靜下心來觀察世界的細節，同時也是一種很好的情緒表達方式。在繁忙的程式開發工作中，繪畫為我提供了完全不同的思維模式。',
+    experiences: [
+      '參加過多次本地藝術社團活動',
+      '完成超過50幅素描和水彩作品',
+      '曾參與社區藝術展覽',
+      '定期參加戶外寫生活動'
+    ],
+    skills: ['素描', '水彩', '數位繪圖', '色彩理論', '構圖設計']
+  },
+  {
+    id: 2,
+    icon: '✨',
+    title: '創作',
+    description: '發揮想像力，創造有意思的作品和想法',
+    reason: '創作讓我能夠將技術知識與創意思維結合，經常會有「原來還可以這樣做」的驚喜發現。這種跨領域的思考方式對我的程式設計工作也很有幫助。',
+    experiences: [
+      '設計並製作過多個手工藝品',
+      '創作過短篇小說和詩歌',
+      '參與創客空間的 DIY 專案',
+      '組織過創意工作坊'
+    ],
+    skills: ['手工藝', '創意寫作', 'DIY製作', '設計思維', '專案規劃']
+  },
+  {
+    id: 3,
+    icon: '🏃‍♂️',
+    title: '運動',
+    description: '保持健康體魄，挑戰自我極限',
+    reason: '運動不只是鍛鍊身體，更是訓練意志力和持續力。長跑讓我學會堅持，團體運動教會我合作，這些都是程式設計師需要的重要品質。',
+    experiences: [
+      '定期參加半程馬拉松比賽',
+      '籃球校隊成員經驗',
+      '登山社活動參與者',
+      '游泳課程認證教練'
+    ],
+    skills: ['長跑', '籃球', '游泳', '登山', '體能訓練']
+  },
+  {
+    id: 4,
+    icon: '🎵',
+    title: '音樂',
+    description: '用旋律豐富生活，用節奏調節心情',
+    reason: '音樂是另一種程式語言，有自己的邏輯和結構。學習音樂讓我對節奏和模式有更敏銳的感覺，這在寫程式碼時也會體現出來。',
+    experiences: [
+      '學習鋼琴超過8年',
+      '參加過校園音樂會演出',
+      '組過業餘樂團擔任鍵盤手',
+      '嘗試音樂創作和編曲'
+    ],
+    skills: ['鋼琴演奏', '音樂理論', '編曲', '音樂軟體操作']
+  }
+])
+
+const galleryItems = ref([
+  {
+    id: 1,
+    type: '繪畫作品',
+    title: '城市夜景',
+    description: '用水彩描繪的城市夜晚風景，表現光影的變化',
+    date: '2023年11月'
+  },
+  {
+    id: 2,
+    type: '手工創作',
+    title: '程式碼藝術品',
+    description: '將程式碼以視覺化方式呈現的創意作品',
+    date: '2023年9月'
+  },
+  {
+    id: 3,
+    type: '運動記錄',
+    title: '馬拉松完賽',
+    description: '首次完成半程馬拉松比賽的珍貴記錄',
+    date: '2023年10月'
+  },
+  {
+    id: 4,
+    type: '音樂作品',
+    title: '原創鋼琴曲',
+    description: '自己創作的第一首完整鋼琴曲目',
+    date: '2023年8月'
+  }
+])
+</script>
+
+<style scoped>
+.leisure {
+  padding-top: 80px;
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.page-header h1 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.page-header p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.leisure-content section {
+  background: white;
+  border-radius: 10px;
+  padding: 3rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+}
+
+.hobby-card {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.hobby-card:hover {
+  transform: translateY(-5px);
+}
+
+.hobby-icon {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.hobby-card h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.hobby-description {
+  color: #666;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.hobby-details h4 {
+  color: #333;
+  margin: 1.5rem 0 0.8rem 0;
+  font-size: 1rem;
+}
+
+.hobby-details p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.hobby-details ul {
+  color: #555;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.hobby-details li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.skill-tag {
+  background: #e7f3ff;
+  color: #0066cc;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+}
+
+.gallery-section h2,
+.balance-section h2,
+.future-goals h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.gallery-intro {
+  text-align: center;
+  color: #666;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.gallery-item {
+  background: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-3px);
+}
+
+.gallery-image {
+  height: 150px;
+  background: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-placeholder {
+  color: #666;
+  font-size: 1rem;
+}
+
+.gallery-info {
+  padding: 1.5rem;
+}
+
+.gallery-info h3 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-info p {
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.gallery-date {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.balance-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.balance-text p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.balance-benefits {
+  list-style: none;
+  padding: 0;
+}
+
+.balance-benefits li {
+  color: #555;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.balance-benefits li::before {
+  content: '✓';
+  color: #28a745;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.balance-quotes blockquote {
+  border-left: 4px solid #007bff;
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: #555;
+  line-height: 1.6;
+}
+
+.goals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.goal-card {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.goal-card:hover {
+  transform: translateY(-3px);
+}
+
+.goal-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.goal-card h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.goal-card p {
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .leisure-content section {
+    padding: 2rem;
+  }
+  
+  .hobbies-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .balance-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .goals-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
