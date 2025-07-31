@@ -150,10 +150,6 @@
                   <span class="time">09:00 - 18:00</span>
                 </div>
                 <div class="time-slot">
-                  <span class="day">週六</span>
-                  <span class="time">10:00 - 16:00</span>
-                </div>
-                <div class="time-slot">
                   <span class="day">緊急聯繫</span>
                   <span class="time">隨時歡迎</span>
                 </div>
