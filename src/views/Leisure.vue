@@ -2,16 +2,8 @@
   <div class="leisure">
     <div class="container">
       <header class="page-header">
-        <div class="profile-photo-section">
-          <div class="profile-image">
-            <img src="/img/joechiboo.png" alt="Joe Chi-Boo 個人照片" class="profile-photo" />
-          </div>
-          <div class="profile-intro">
-            <h1>休閒生活</h1>
-            <p>平衡工作與生活的藝術</p>
-            <p class="photo-caption">享受創作時光，在藝術中找到靈感</p>
-          </div>
-        </div>
+        <h1>休閒生活</h1>
+        <p>繪畫、創作、運動、音樂 - 平衡工作與生活的藝術</p>
       </header>
 
       <div class="leisure-content">
@@ -24,22 +16,6 @@
             <div class="hobby-details">
               <h4>為什麼喜歡：</h4>
               <p>{{ hobby.reason }}</p>
-
-              <h4>相關經驗：</h4>
-              <ul>
-                <li v-for="experience in hobby.experiences" :key="experience">
-                  {{ experience }}
-                </li>
-              </ul>
-
-              <div class="hobby-skills" v-if="hobby.skills">
-                <h4>相關技能：</h4>
-                <div class="skill-tags">
-                  <span v-for="skill in hobby.skills" :key="skill" class="skill-tag">
-                    {{ skill }}
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -48,51 +24,100 @@
           <h2>創作作品集</h2>
           <p class="gallery-intro">以下是一些個人創作和興趣活動的記錄</p>
 
-          <div class="gallery-grid">
-            <div
-              class="gallery-item"
-              v-for="item in galleryItems"
-              :key="item.id"
-              @click="openLightbox(item)"
+          <!-- 分類選擇按鈕 -->
+          <div class="category-tabs">
+            <button 
+              v-for="group in galleryGroups" 
+              :key="group.id"
+              class="category-tab"
+              :class="{ active: activeCategory === group.id }"
+              @click="setActiveCategory(group.id)"
             >
-              <div class="gallery-image">
-                <img
-                  v-if="item.image"
-                  :src="item.image"
-                  :alt="item.title"
-                  class="gallery-photo"
-                  loading="lazy"
-                />
-                <div v-else class="image-placeholder">
-                  <span>{{ item.type }}</span>
+              <span class="tab-icon">{{ group.icon }}</span>
+              <span class="tab-title">{{ group.title }}</span>
+              <span class="tab-count">({{ group.items.length }})</span>
+            </button>
+          </div>
+
+          <!-- 當前選中的分類內容 -->
+          <div class="active-gallery">
+            <div v-if="currentGroupData && currentGroupData.items.length > 0" class="gallery-grid">
+              <div
+                class="gallery-item"
+                v-for="(item, index) in currentGroupData.items"
+                :key="item.id"
+                @click="openLightbox(item, currentGroupData, index)"
+              >
+                <div class="gallery-image">
+                  <img
+                    v-if="item.image"
+                    :src="item.image"
+                    :alt="item.title"
+                    class="gallery-photo"
+                    loading="lazy"
+                  />
+                  <div v-else class="image-placeholder">
+                    <span>即將更新</span>
+                  </div>
+                  <div class="gallery-overlay">
+                    <span class="view-icon">🔍</span>
+                    <span class="view-text">點擊查看</span>
+                  </div>
                 </div>
-                <div class="gallery-overlay">
-                  <span class="view-icon">🔍</span>
-                  <span class="view-text">點擊查看</span>
+                <div class="gallery-info">
+                  <h4>{{ item.title }}</h4>
+                  <p>{{ item.description }}</p>
+                  <span class="gallery-date">{{ item.date }}</span>
                 </div>
               </div>
-              <div class="gallery-info">
-                <h3>{{ item.title }}</h3>
-                <p>{{ item.description }}</p>
-                <span class="gallery-date">{{ item.date }}</span>
-              </div>
+            </div>
+            
+            <div v-else class="empty-category">
+              <div class="empty-icon">📂</div>
+              <h3>{{ currentGroupData?.title }}</h3>
+              <p>{{ currentGroupData?.description }}</p>
+              <p class="empty-text">🚧 此類別的作品即將更新，敬請期待！</p>
             </div>
           </div>
 
-          <!-- 燈箱模態框 -->
+          <!-- 增強版燈箱模態框 -->
           <div v-if="lightboxItem" class="lightbox-overlay" @click="closeLightbox">
             <div class="lightbox-content" @click.stop>
               <button class="lightbox-close" @click="closeLightbox">&times;</button>
+
+              <!-- 左右導航按鈕 -->
+              <button
+                v-if="currentGroup && currentIndex > 0"
+                class="lightbox-nav lightbox-prev"
+                @click="previousImage"
+              >
+                ‹
+              </button>
+              <button
+                v-if="currentGroup && currentIndex < currentGroup.items.length - 1"
+                class="lightbox-nav lightbox-next"
+                @click="nextImage"
+              >
+                ›
+              </button>
+
               <img
                 v-if="lightboxItem.image"
                 :src="lightboxItem.image"
                 :alt="lightboxItem.title"
                 class="lightbox-image"
               />
+
               <div class="lightbox-info">
+                <div class="lightbox-counter" v-if="currentGroup">
+                  {{ currentIndex + 1 }} / {{ currentGroup.items.length }}
+                </div>
                 <h3>{{ lightboxItem.title }}</h3>
                 <p>{{ lightboxItem.description }}</p>
                 <span class="lightbox-date">{{ lightboxItem.date }}</span>
+                <div class="lightbox-hint">
+                  <span>← → 切換圖片 | ESC 關閉</span>
+                </div>
               </div>
             </div>
           </div>
@@ -128,27 +153,20 @@
           <h2>未來目標</h2>
           <div class="goals-grid">
             <div class="goal-card">
-              <div class="goal-icon">🎨</div>
-              <h3>藝術創作</h3>
-              <p>計劃舉辦個人畫展，將技術與藝術結合創作數位藝術作品</p>
-            </div>
-
-            <div class="goal-card">
               <div class="goal-icon">🏃‍♂️</div>
               <h3>運動挑戰</h3>
-              <p>參加馬拉松比賽，挑戰自己的耐力極限</p>
+              <div class="challenge-list">
+                <p class="challenge-item">考潛水執照</p>
+                <p class="challenge-item">❌ 日月潭泳渡</p>
+                <p class="challenge-item">❌ 基隆外木山長泳</p>
+                <p class="challenge-item">✅ 寶礦力路跑 4k</p>
+              </div>
             </div>
 
             <div class="goal-card">
               <div class="goal-icon">🎵</div>
               <h3>音樂製作</h3>
-              <p>學習音樂製作軟體，創作屬於自己的音樂作品</p>
-            </div>
-
-            <div class="goal-card">
-              <div class="goal-icon">✍️</div>
-              <h3>知識分享</h3>
-              <p>透過部落格分享技術學習心得與生活感悟</p>
+              <p>與大兒子一同四手聯彈，上台表演</p>
             </div>
           </div>
         </section>
@@ -158,20 +176,81 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+
+// 分類選擇功能
+const activeCategory = ref('drawing') // 默認選中繪畫
+const currentGroupData = ref(null)
 
 // 燈箱功能
 const lightboxItem = ref(null)
+const currentGroup = ref(null)
+const currentIndex = ref(0)
 
-const openLightbox = (item) => {
+const openLightbox = (item, group, index) => {
   lightboxItem.value = item
+  currentGroup.value = group
+  currentIndex.value = index
   document.body.style.overflow = 'hidden'
 }
 
 const closeLightbox = () => {
   lightboxItem.value = null
+  currentGroup.value = null
+  currentIndex.value = 0
   document.body.style.overflow = 'auto'
 }
+
+const previousImage = () => {
+  if (currentGroup.value && currentIndex.value > 0) {
+    currentIndex.value--
+    lightboxItem.value = currentGroup.value.items[currentIndex.value]
+  }
+}
+
+const nextImage = () => {
+  if (currentGroup.value && currentIndex.value < currentGroup.value.items.length - 1) {
+    currentIndex.value++
+    lightboxItem.value = currentGroup.value.items[currentIndex.value]
+  }
+}
+
+// 鍵盤導航
+const handleKeydown = (event) => {
+  if (!lightboxItem.value) return
+
+  switch (event.key) {
+    case 'Escape':
+      closeLightbox()
+      break
+    case 'ArrowLeft':
+      previousImage()
+      break
+    case 'ArrowRight':
+      nextImage()
+      break
+  }
+}
+
+// 分類切換功能
+const setActiveCategory = (categoryId) => {
+  activeCategory.value = categoryId
+  updateCurrentGroupData()
+}
+
+const updateCurrentGroupData = () => {
+  currentGroupData.value = galleryGroups.value.find(group => group.id === activeCategory.value)
+}
+
+// 綁定鍵盤事件
+onMounted(() => {
+  document.addEventListener('keydown', handleKeydown)
+  updateCurrentGroupData() // 初始化當前分組數據
+})
+
+onUnmounted(() => {
+  document.removeEventListener('keydown', handleKeydown)
+})
 
 const hobbies = ref([
   {
@@ -180,7 +259,7 @@ const hobbies = ref([
     title: '繪畫',
     description: '透過畫筆記錄生活，用色彩表達情感',
     reason:
-      '繪畫讓我能夠靜下心來觀察世界的細節，同時也是一種很好的情緒表達方式。在繁忙的程式開發工作中，繪畫為我提供了完全不同的思維模式。',
+      '繪畫讓我能夠靜下心來觀察世界的美好，每一筆都是對生活的記錄和情感的釋放。在繪畫的過程中，時間似乎靜止，只有我和畫布之間的對話。',
     experiences: [
       '參加過多次本地藝術社團活動',
       '完成超過50幅素描和水彩作品',
@@ -193,9 +272,9 @@ const hobbies = ref([
     id: 2,
     icon: '✨',
     title: '創作',
-    description: '發揮想像力，創造有意思的作品和想法',
+    description: '發揮想像力，創造有意思的想法',
     reason:
-      '創作讓我能夠將技術知識與創意思維結合，經常會有「原來還可以這樣做」的驚喜發現。這種跨領域的思考方式對我的程式設計工作也很有幫助。',
+      '創作是一種純粹的快樂，在發想與實作之間找到平衡。每當完成一件作品時，那種「原來我也可以」的成就感是無法取代的。',
     experiences: [
       '設計並製作過多個手工藝品',
       '創作過短篇小說和詩歌',
@@ -210,7 +289,7 @@ const hobbies = ref([
     title: '運動',
     description: '保持健康體魄，挑戰自我極限',
     reason:
-      '運動不只是鍛鍊身體，更是訓練意志力和持續力。長跑讓我學會堅持，團體運動教會我合作，這些都是程式設計師需要的重要品質。',
+      '運動讓我感受到身心的平衡與活力。每次流汗都是對自己的挑戰，每次超越都是對極限的探索。在運動中找到的不只是健康，更是內心的平靜與自信。',
     experiences: [
       '定期參加半程馬拉松比賽',
       '籃球校隊成員經驗',
@@ -225,7 +304,7 @@ const hobbies = ref([
     title: '音樂',
     description: '用旋律豐富生活，用節奏調節心情',
     reason:
-      '音樂是另一種程式語言，有自己的邏輯和結構。學習音樂讓我對節奏和模式有更敏銳的感覺，這在寫程式碼時也會體現出來。',
+      '音樂是心靈的語言，能夠觸及文字無法表達的情感深處。彈奏時的專注與投入，讓我在旋律中找到寧靜，在和聲中感受生命的美好。音樂不僅豐富了我的生活，更是情感的出口。',
     experiences: [
       '學習鋼琴超過8年',
       '參加過校園音樂會演出',
@@ -236,46 +315,99 @@ const hobbies = ref([
   },
 ])
 
-const galleryItems = ref([
+const galleryGroups = ref([
   {
-    id: 1,
-    type: '繪畫作品',
-    title: 'Practice Drawing #5',
-    description: '繪畫練習作品，展現對線條和陰影的探索',
-    date: '2023年11月',
-    image: 'http://joechiboo.azurewebsites.net/img/drawsomething/partice-5.png'
+    id: 'drawing',
+    title: '繪畫作品',
+    icon: '🎨',
+    description: '記錄繪畫練習與創作的成長歷程',
+    items: [
+      {
+        id: 1,
+        title: '青蛙素描',
+        description: '寫實風格的青蛙素描，展現對細節的觀察力',
+        date: '2023年12月',
+        image: '/img/drawsomething/frog.jpg',
+      },
+      {
+        id: 2,
+        title: 'Practice Drawing #6',
+        description: '繪畫練習作品，持續探索不同的繪畫技法',
+        date: '2023年11月',
+        image: '/img/drawsomething/partice-6.png',
+      },
+      {
+        id: 3,
+        title: 'Practice Drawing #5',
+        description: '展現對線條和陰影處理的進步',
+        date: '2023年11月',
+        image: '/img/drawsomething/partice-5.png',
+      },
+      {
+        id: 4,
+        title: '母親肖像',
+        description: '溫馨的母親肖像畫，表達對家人的愛',
+        date: '2023年10月',
+        image: '/img/drawsomething/mother.jpg',
+      },
+      {
+        id: 5,
+        title: 'Practice Drawing #10',
+        description: '技法更加成熟的練習作品，展現繪畫水平的提升',
+        date: '2023年10月',
+        image: '/img/drawsomething/partice-10.png',
+      },
+      {
+        id: 6,
+        title: 'Practice Drawing #3',
+        description: '早期練習作品，展現對藝術的熱愛與投入',
+        date: '2023年9月',
+        image: '/img/drawsomething/partice-3.png',
+      },
+      {
+        id: 7,
+        title: '母雞帶小雞',
+        description: '可愛的動物主題創作，充滿生活情趣',
+        date: '2023年9月',
+        image: '/img/drawsomething/chicken-family.jpg',
+      },
+      {
+        id: 8,
+        title: '小豬素描',
+        description: '活潑可愛的豬豬繪畫，展現對動物形態的掌握',
+        date: '2023年8月',
+        image: '/img/drawsomething/pig.jpg',
+      },
+    ],
   },
   {
-    id: 2,
-    type: '繪畫作品',
-    title: 'Practice Drawing #4',
-    description: '持續練習中的繪畫作品，記錄成長歷程',
-    date: '2023年10月',
-    image: 'http://joechiboo.azurewebsites.net/img/drawsomething/partice-4.png'
-  },
-  {
-    id: 3,
-    type: '繪畫作品',
-    title: 'Practice Drawing #3',
-    description: '早期練習作品，展現對藝術的熱愛與投入',
-    date: '2023年9月',
-    image: 'http://joechiboo.azurewebsites.net/img/drawsomething/partice-3.png'
-  },
-  {
-    id: 4,
-    type: '繪畫作品',
-    title: 'Practice Drawing #1',
-    description: '繪畫旅程的起點，記錄初次嘗試的珍貴時光',
-    date: '2023年8月',
-    image: 'http://joechiboo.azurewebsites.net/img/drawsomething/partice-1.png'
-  },
-  {
-    id: 5,
-    type: '繪畫作品',
-    title: 'Practice Drawing #2',
-    description: '持續探索不同技法與風格的創作實驗',
-    date: '2023年8月',
-    image: 'http://joechiboo.azurewebsites.net/img/drawsomething/partice-2.png'
+    id: 'music',
+    title: '音樂作品',
+    icon: '🎵',
+    description: '音樂演奏與表演的珍貴記錄',
+    items: [
+      {
+        id: 1,
+        title: '公司尾牙表演',
+        description: '在公司年終聚會上的鋼琴演奏，與同事分享音樂的美好',
+        date: '2023年12月',
+        image: '/img/music/annual-party.jpg',
+      },
+      {
+        id: 2,
+        title: '香港演出',
+        description: '香港音樂會演出記錄，難忘的跨地演奏經驗',
+        date: '2023年9月',
+        image: '/img/music/hongkong.jpg',
+      },
+      {
+        id: 3,
+        title: '小提琴練習',
+        description: '小提琴學習歷程，探索不同樂器的表達方式',
+        date: '2023年7月',
+        image: '/img/music/violin.jpg',
+      },
+    ],
   },
 ])
 </script>
@@ -294,55 +426,19 @@ const galleryItems = ref([
 }
 
 .page-header {
+  text-align: center;
   margin-bottom: 4rem;
 }
 
-.profile-photo-section {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.profile-image {
-  flex-shrink: 0;
-}
-
-.profile-photo {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  object-fit: cover;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
-}
-
-.profile-photo:hover {
-  transform: scale(1.05);
-}
-
-.profile-intro {
-  flex: 1;
-  text-align: left;
-}
-
-.profile-intro h1 {
+.page-header h1 {
   font-size: 3rem;
   color: #333;
   margin-bottom: 1rem;
 }
 
-.profile-intro p {
+.page-header p {
   font-size: 1.2rem;
   color: #666;
-  margin-bottom: 1rem;
-}
-
-.photo-caption {
-  font-style: italic;
-  color: #888 !important;
-  font-size: 1rem !important;
 }
 
 .leisure-content section {
@@ -438,6 +534,92 @@ const galleryItems = ref([
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2rem;
+}
+
+/* 分類選擇按鈕 */
+.category-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.category-tab {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #666;
+}
+
+.category-tab:hover {
+  border-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.category-tab.active {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-color: #667eea;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.tab-icon {
+  font-size: 1.2rem;
+}
+
+.tab-title {
+  font-weight: 600;
+}
+
+.tab-count {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* 當前分類展示區域 */
+.active-gallery {
+  min-height: 400px;
+}
+
+.empty-category {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.empty-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.empty-category h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.empty-category p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.empty-text {
+  color: #999 !important;
+  font-style: italic;
 }
 
 .gallery-intro {
@@ -623,6 +805,19 @@ const galleryItems = ref([
   line-height: 1.6;
 }
 
+.challenge-list {
+  text-align: left;
+}
+
+.challenge-item {
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 /* 燈箱樣式 */
 .lightbox-overlay {
   position: fixed;
@@ -701,24 +896,68 @@ const galleryItems = ref([
   font-size: 0.9rem;
 }
 
+/* 燈箱導航按鈕 */
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.lightbox-nav:hover {
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-prev {
+  left: 2rem;
+}
+
+.lightbox-next {
+  right: 2rem;
+}
+
+/* 燈箱計數器和提示 */
+.lightbox-counter {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.lightbox-hint {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e9ecef;
+  text-align: center;
+}
+
+.lightbox-hint span {
+  color: #999;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
 @media (max-width: 768px) {
-  .profile-photo-section {
-    flex-direction: column;
-    text-align: center;
-    gap: 2rem;
-  }
-
-  .profile-intro {
-    text-align: center;
-  }
-
-  .profile-intro h1 {
+  .page-header h1 {
     font-size: 2rem;
-  }
-
-  .profile-photo {
-    width: 150px;
-    height: 150px;
   }
 
   .leisure-content section {
@@ -749,6 +988,53 @@ const galleryItems = ref([
 
   .lightbox-image {
     max-height: 60vh;
+  }
+
+  .lightbox-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .lightbox-prev {
+    left: 1rem;
+  }
+
+  .lightbox-next {
+    right: 1rem;
+  }
+
+  .group-header {
+    padding: 1.5rem;
+  }
+
+  .group-icon {
+    font-size: 2.5rem;
+  }
+
+  .group-title {
+    font-size: 1.5rem;
+  }
+  
+  .category-tabs {
+    gap: 0.5rem;
+  }
+  
+  .category-tab {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .tab-icon {
+    font-size: 1rem;
+  }
+  
+  .empty-category {
+    padding: 3rem 1.5rem;
+  }
+  
+  .empty-icon {
+    font-size: 3rem;
   }
 }
 </style>
