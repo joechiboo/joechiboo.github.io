@@ -40,26 +40,6 @@
         </div>
       </div>
     </section>
-
-    <section class="quick-links">
-      <div class="container">
-        <h2>快速導覽</h2>
-        <div class="links-grid">
-          <router-link to="/portfolio" class="link-card">
-            <h3>作品集</h3>
-            <p>查看我的技術專案與創作</p>
-          </router-link>
-          <router-link to="/experience" class="link-card">
-            <h3>工作經歷</h3>
-            <p>了解我的專業背景與經驗</p>
-          </router-link>
-          <router-link to="/leisure" class="link-card">
-            <h3>興趣嗜好</h3>
-            <p>繪畫、創作、運動、音樂</p>
-          </router-link>
-        </div>
-      </div>
-    </section>
   </div>
 </template>
 

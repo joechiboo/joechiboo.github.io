@@ -8,9 +8,9 @@
       <div class="nav-menu" :class="{ active: isMenuOpen }">
         <router-link to="/" class="nav-link" @click="closeMenu">首頁</router-link>
         <router-link to="/about" class="nav-link" @click="closeMenu">關於我</router-link>
-        <router-link to="/portfolio" class="nav-link" @click="closeMenu">作品集</router-link>
         <router-link to="/experience" class="nav-link" @click="closeMenu">經歷</router-link>
         <router-link to="/leisure" class="nav-link" @click="closeMenu">休閒</router-link>
+        <router-link to="/portfolio" class="nav-link" @click="closeMenu">作品集</router-link>
         <router-link to="/contact" class="nav-link" @click="closeMenu">聯絡</router-link>
       </div>
 
