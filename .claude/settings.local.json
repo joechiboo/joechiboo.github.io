@@ -12,7 +12,11 @@
       "Bash(git push:*)",
       "Bash(git pull:*)",
       "Bash(mkdir:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "WebFetch(domain:mango-rock-08c98c600.5.azurestaticapps.net)",
+      "WebFetch(domain:www.examservice.com.tw)",
+      "WebFetch(domain:www.taipeigolf.org.tw)",
+      "WebFetch(domain:docs.google.com)"
     ],
     "deny": []
   }
