@@ -40,12 +40,30 @@
         </div>
       </div>
     </section>
+
+    <!-- Toast 通知 -->
+    <div v-if="showToast" class="toast-notification">
+      <div class="toast-content">
+        <span class="toast-icon">📄</span>
+        <div class="toast-message">
+          <strong>履歷下載功能開發中</strong>
+          <p>感謝您的關注，敬請期待！</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
+import { ref } from 'vue'
+
+const showToast = ref(false)
+
 const downloadResume = () => {
-  alert('履歷下載功能待實作')
+  showToast.value = true
+  setTimeout(() => {
+    showToast.value = false
+  }, 3000)
 }
 </script>
 
@@ -255,6 +273,69 @@ const downloadResume = () => {
   margin-bottom: 1rem;
 }
 
+/* Toast 通知樣式 */
+.toast-notification {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  animation: toastSlideIn 0.4s ease-out;
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.toast-content {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  border-left: 4px solid #007bff;
+  display: flex;
+  align-items: center;
+  min-width: 320px;
+  backdrop-filter: blur(10px);
+}
+
+.toast-icon {
+  font-size: 2rem;
+  margin-right: 1rem;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+.toast-message strong {
+  color: #333;
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.toast-message p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
 @media (max-width: 768px) {
   .hero-content {
     grid-template-columns: 1fr;
@@ -268,6 +349,17 @@ const downloadResume = () => {
 
   .hero-actions {
     justify-content: center;
+  }
+
+  .toast-notification {
+    top: 1rem;
+    right: 1rem;
+    left: 1rem;
+  }
+
+  .toast-content {
+    min-width: auto;
+    width: 100%;
   }
 }
 </style>
