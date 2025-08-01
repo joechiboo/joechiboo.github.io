@@ -26,8 +26,8 @@
 
           <!-- 分類選擇按鈕 -->
           <div class="category-tabs">
-            <button 
-              v-for="group in galleryGroups" 
+            <button
+              v-for="group in galleryGroups"
               :key="group.id"
               class="category-tab"
               :class="{ active: activeCategory === group.id }"
@@ -68,10 +68,30 @@
                   <h4>{{ item.title }}</h4>
                   <p>{{ item.description }}</p>
                   <span class="gallery-date">{{ item.date }}</span>
+
+                  <!-- 音樂播放器 -->
+                  <div v-if="item.audio && activeCategory === 'music'" class="audio-player">
+                    <audio
+                      :ref="'audio_' + item.id"
+                      controls
+                      preload="metadata"
+                      class="audio-controls"
+                      @play="handleAudioPlay($event, item.id)"
+                      @pause="handleAudioPause"
+                      @ended="handleAudioPause"
+                    >
+                      <source :src="item.audio" type="audio/mpeg" />
+                      您的瀏覽器不支援音頻播放。
+                    </audio>
+                    <div class="audio-info">
+                      <span class="audio-icon">🎵</span>
+                      <span class="audio-label">點擊播放音樂</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            
+
             <div v-else class="empty-category">
               <div class="empty-icon">📂</div>
               <h3>{{ currentGroupData?.title }}</h3>
@@ -182,6 +202,9 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const activeCategory = ref('drawing') // 默認選中繪畫
 const currentGroupData = ref(null)
 
+// 音樂播放功能
+const currentlyPlaying = ref(null)
+
 // 燈箱功能
 const lightboxItem = ref(null)
 const currentGroup = ref(null)
@@ -239,7 +262,27 @@ const setActiveCategory = (categoryId) => {
 }
 
 const updateCurrentGroupData = () => {
-  currentGroupData.value = galleryGroups.value.find(group => group.id === activeCategory.value)
+  currentGroupData.value = galleryGroups.value.find((group) => group.id === activeCategory.value)
+
+  // 切換分類時暫停所有音樂
+  if (currentlyPlaying.value) {
+    currentlyPlaying.value.pause()
+    currentlyPlaying.value = null
+  }
+}
+
+// 音樂播放控制
+const handleAudioPlay = (event, itemId) => {
+  // 如果有其他音樂正在播放，先暫停
+  if (currentlyPlaying.value && currentlyPlaying.value !== event.target) {
+    currentlyPlaying.value.pause()
+    currentlyPlaying.value.currentTime = 0
+  }
+  currentlyPlaying.value = event.target
+}
+
+const handleAudioPause = () => {
+  currentlyPlaying.value = null
 }
 
 // 綁定鍵盤事件
@@ -326,56 +369,48 @@ const galleryGroups = ref([
         id: 1,
         title: '青蛙素描',
         description: '寫實風格的青蛙素描，展現對細節的觀察力',
-        date: '2023年12月',
         image: '/img/drawsomething/frog.jpg',
       },
       {
         id: 2,
         title: 'Practice Drawing #6',
         description: '繪畫練習作品，持續探索不同的繪畫技法',
-        date: '2023年11月',
         image: '/img/drawsomething/partice-6.png',
       },
       {
         id: 3,
         title: 'Practice Drawing #5',
         description: '展現對線條和陰影處理的進步',
-        date: '2023年11月',
         image: '/img/drawsomething/partice-5.png',
       },
       {
         id: 4,
         title: '母親肖像',
         description: '溫馨的母親肖像畫，表達對家人的愛',
-        date: '2023年10月',
         image: '/img/drawsomething/mother.jpg',
       },
       {
         id: 5,
         title: 'Practice Drawing #10',
         description: '技法更加成熟的練習作品，展現繪畫水平的提升',
-        date: '2023年10月',
         image: '/img/drawsomething/partice-10.png',
       },
       {
         id: 6,
         title: 'Practice Drawing #3',
         description: '早期練習作品，展現對藝術的熱愛與投入',
-        date: '2023年9月',
         image: '/img/drawsomething/partice-3.png',
       },
       {
         id: 7,
         title: '母雞帶小雞',
         description: '可愛的動物主題創作，充滿生活情趣',
-        date: '2023年9月',
         image: '/img/drawsomething/chicken-family.jpg',
       },
       {
         id: 8,
         title: '小豬素描',
         description: '活潑可愛的豬豬繪畫，展現對動物形態的掌握',
-        date: '2023年8月',
         image: '/img/drawsomething/pig.jpg',
       },
     ],
@@ -390,22 +425,25 @@ const galleryGroups = ref([
         id: 1,
         title: '公司尾牙表演',
         description: '在公司年終聚會上的鋼琴演奏，與同事分享音樂的美好',
-        date: '2023年12月',
         image: '/img/music/annual-party.jpg',
       },
       {
         id: 2,
-        title: '香港演出',
-        description: '香港音樂會演出記錄，難忘的跨地演奏經驗',
-        date: '2023年9月',
+        title: '飯店有架鋼琴',
+        description: '詢問了之後可以彈，即興演奏的美好時光',
         image: '/img/music/hongkong.jpg',
       },
       {
         id: 3,
         title: '小提琴練習',
-        description: '小提琴學習歷程，探索不同樂器的表達方式',
-        date: '2023年7月',
+        description: '探索不同樂器的表達方式，挑戰新的音樂領域',
         image: '/img/music/violin.jpg',
+      },
+      {
+        id: 4,
+        title: '4手聯彈-曲目1-好棒',
+        description: '待處理',
+        audio: '/audio/violin-practice.mp3', // 示例音頻路徑
       },
     ],
   },
@@ -729,6 +767,62 @@ const galleryGroups = ref([
   font-size: 0.9rem;
 }
 
+/* 音樂播放器樣式 */
+.audio-player {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 10px;
+  border: 1px solid #dee2e6;
+}
+
+.audio-controls {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  outline: none;
+}
+
+.audio-controls::-webkit-media-controls-panel {
+  background-color: #667eea;
+  border-radius: 8px;
+}
+
+.audio-controls::-webkit-media-controls-play-button,
+.audio-controls::-webkit-media-controls-pause-button {
+  background-color: white;
+  border-radius: 50%;
+}
+
+.audio-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.audio-icon {
+  font-size: 1.1rem;
+  animation: musical-note 2s ease-in-out infinite;
+}
+
+.audio-label {
+  font-weight: 500;
+}
+
+@keyframes musical-note {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
 .balance-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -1015,26 +1109,38 @@ const galleryGroups = ref([
   .group-title {
     font-size: 1.5rem;
   }
-  
+
   .category-tabs {
     gap: 0.5rem;
   }
-  
+
   .category-tab {
     padding: 0.8rem 1rem;
     font-size: 0.9rem;
   }
-  
+
   .tab-icon {
     font-size: 1rem;
   }
-  
+
   .empty-category {
     padding: 3rem 1.5rem;
   }
-  
+
   .empty-icon {
     font-size: 3rem;
+  }
+
+  .audio-player {
+    padding: 0.8rem;
+  }
+
+  .audio-controls {
+    height: 35px;
+  }
+
+  .audio-info {
+    font-size: 0.85rem;
   }
 }
 </style>
