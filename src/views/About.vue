@@ -11,9 +11,7 @@
           <div class="intro-grid">
             <div class="profile-section">
               <div class="profile-image">
-                <div class="image-placeholder">
-                  <span>個人照片</span>
-                </div>
+                <img src="/img/joechiboo.png" alt="Joe Chi-Boo 個人照片" class="profile-photo" />
               </div>
               <div class="basic-info">
                 <h2>Joe, Chi-Boo</h2>
@@ -217,6 +215,16 @@
 
 .profile-image {
   margin-bottom: 2rem;
+}
+
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin: 0 auto;
 }
 
 .image-placeholder {

@@ -11,11 +11,16 @@
           <div class="contact-grid">
             <div class="contact-card">
               <div class="contact-icon">📧</div>
-              <h3>電子郵件</h3>
+              <h3>主要郵箱</h3>
+              <p>joechiboo@gmail.com</p>
+              <a href="mailto:joechiboo@gmail.com" class="btn btn-primary"> 發送郵件 </a>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon">📨</div>
+              <h3>備用郵箱</h3>
               <p>stst1239joe@hotmail.com</p>
-              <a href="mailto:stst1239joe@hotmail.com" class="btn btn-primary">
-                發送郵件
-              </a>
+              <a href="mailto:stst1239joe@hotmail.com" class="btn btn-primary"> 發送郵件 </a>
             </div>
 
             <div class="contact-card">
@@ -31,19 +36,15 @@
               <div class="contact-icon">💬</div>
               <h3>WeChat</h3>
               <p>即時通訊聯繫</p>
-              <p style="color: #007bff; font-weight: 600; margin-bottom: 1rem;">ID: joechiboo</p>
-              <span class="btn btn-primary" style="cursor: default; opacity: 0.7;">
-                微信聯繫
-              </span>
+              <p style="color: #007bff; font-weight: 600; margin-bottom: 1rem">ID: joechiboo</p>
+              <span class="btn btn-primary" style="cursor: default; opacity: 0.7"> 微信聯繫 </span>
             </div>
 
             <div class="contact-card">
               <div class="contact-icon">📱</div>
               <h3>電話</h3>
               <p>+886 986 642 519</p>
-              <a href="tel:+886986642519" class="btn btn-primary">
-                撥打電話
-              </a>
+              <a href="tel:+886986642519" class="btn btn-primary"> 撥打電話 </a>
             </div>
           </div>
         </section>
@@ -54,47 +55,47 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="name">姓名 *</label>
-                <input 
-                  type="text" 
-                  id="name" 
-                  v-model="form.name" 
+                <input
+                  type="text"
+                  id="name"
+                  v-model="form.name"
                   required
                   :class="{ error: errors.name }"
-                >
+                />
                 <span v-if="errors.name" class="error-message">{{ errors.name }}</span>
               </div>
-              
+
               <div class="form-group">
                 <label for="email">電子郵件 *</label>
-                <input 
-                  type="email" 
-                  id="email" 
-                  v-model="form.email" 
+                <input
+                  type="email"
+                  id="email"
+                  v-model="form.email"
                   required
                   :class="{ error: errors.email }"
-                >
+                />
                 <span v-if="errors.email" class="error-message">{{ errors.email }}</span>
               </div>
             </div>
 
             <div class="form-group">
               <label for="subject">主旨 *</label>
-              <input 
-                type="text" 
-                id="subject" 
-                v-model="form.subject" 
+              <input
+                type="text"
+                id="subject"
+                v-model="form.subject"
                 required
                 :class="{ error: errors.subject }"
-              >
+              />
               <span v-if="errors.subject" class="error-message">{{ errors.subject }}</span>
             </div>
 
             <div class="form-group">
               <label for="message">訊息內容 *</label>
-              <textarea 
-                id="message" 
-                v-model="form.message" 
-                rows="6" 
+              <textarea
+                id="message"
+                v-model="form.message"
+                rows="6"
                 required
                 :class="{ error: errors.message }"
               ></textarea>
@@ -113,18 +114,16 @@
           <div class="availability-card">
             <div class="status-indicator available"></div>
             <div class="availability-info">
-              <h3>目前狀態：開放機會</h3>
+              <h3>目前狀態：免費或收費兼職專案</h3>
               <p>我正在尋找新的挑戰和機會，特別對以下類型的專案感興趣：</p>
               <ul class="interests-list">
-                <li>前端開發專案（Vue.js, React）</li>
+                <li>前端開發專案（Vue.js）</li>
                 <li>全端 Web 應用程式開發</li>
+                <li>.NET MVC / .NET Core</li>
                 <li>創新科技專案</li>
-                <li>開源專案貢獻</li>
                 <li>技術諮詢與指導</li>
               </ul>
-              <p class="response-time">
-                <strong>回覆時間：</strong>通常在24小時內回覆郵件
-              </p>
+              <p class="response-time"><strong>回覆時間：</strong>通常在24小時內回覆郵件</p>
             </div>
           </div>
         </section>
@@ -141,7 +140,7 @@
                 <p><strong>遠端工作：</strong>支援遠端協作</p>
               </div>
             </div>
-            
+
             <div class="availability-calendar">
               <h4>最佳聯絡時間</h4>
               <div class="time-slots">
@@ -170,21 +169,21 @@ const form = reactive({
   name: '',
   email: '',
   subject: '',
-  message: ''
+  message: '',
 })
 
 const errors = reactive({
   name: '',
   email: '',
   subject: '',
-  message: ''
+  message: '',
 })
 
 const isSubmitting = ref(false)
 
 const validateForm = () => {
   // 清除之前的錯誤
-  Object.keys(errors).forEach(key => {
+  Object.keys(errors).forEach((key) => {
     errors[key] = ''
   })
 
@@ -222,8 +221,8 @@ const validateForm = () => {
 // EmailJS 配置 - 需要在 EmailJS 後台設定後替換
 const EMAILJS_CONFIG = {
   serviceID: 'service_jvybjau', // EmailJS Gmail 服務 ID
-  templateID: 'template_whyacks', // 郵件模板 ID  
-  publicKey: 'Mn7iuNxRHRYEqr9A2' // EmailJS 公鑰
+  templateID: 'template_whyacks', // 郵件模板 ID
+  publicKey: 'Mn7iuNxRHRYEqr9A2', // EmailJS 公鑰
 }
 
 const submitForm = async () => {
@@ -235,14 +234,15 @@ const submitForm = async () => {
 
   try {
     // 檢查 EmailJS 是否已配置
-    const isConfigured = EMAILJS_CONFIG.serviceID !== 'YOUR_SERVICE_ID' &&
-                         EMAILJS_CONFIG.templateID !== 'YOUR_TEMPLATE_ID' &&
-                         EMAILJS_CONFIG.publicKey !== 'YOUR_PUBLIC_KEY'
-    
+    const isConfigured =
+      EMAILJS_CONFIG.serviceID !== 'YOUR_SERVICE_ID' &&
+      EMAILJS_CONFIG.templateID !== 'YOUR_TEMPLATE_ID' &&
+      EMAILJS_CONFIG.publicKey !== 'YOUR_PUBLIC_KEY'
+
     if (!isConfigured) {
       // 如果未配置 EmailJS，顯示提示並模擬發送
       console.warn('EmailJS 尚未配置，請設定 EMAILJS_CONFIG 中的參數')
-      await new Promise(resolve => setTimeout(resolve, 1500))
+      await new Promise((resolve) => setTimeout(resolve, 1500))
       alert('訊息發送成功！我會盡快回覆您。\n\n(開發提示：請配置 EmailJS 以啟用真實郵件發送功能)')
     } else {
       // 使用 EmailJS 發送郵件
@@ -251,21 +251,21 @@ const submitForm = async () => {
         from_email: form.email,
         subject: form.subject,
         message: form.message,
-        to_email: 'stst1239joe@hotmail.com' // Joe 的真實郵箱
+        to_email: 'stst1239joe@hotmail.com', // Joe 的真實郵箱
       }
 
       await emailjs.send(
         EMAILJS_CONFIG.serviceID,
         EMAILJS_CONFIG.templateID,
         templateParams,
-        EMAILJS_CONFIG.publicKey
+        EMAILJS_CONFIG.publicKey,
       )
-      
+
       alert('訊息發送成功！我會在24小時內回覆您。')
     }
-    
+
     // 清空表單
-    Object.keys(form).forEach(key => {
+    Object.keys(form).forEach((key) => {
       form[key] = ''
     })
   } catch (error) {
@@ -311,7 +311,7 @@ const submitForm = async () => {
   border-radius: 10px;
   padding: 3rem;
   margin-bottom: 3rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .contact-grid {
@@ -463,9 +463,15 @@ const submitForm = async () => {
 }
 
 @keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.5; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .availability-info h3 {
@@ -551,25 +557,25 @@ const submitForm = async () => {
   .page-header h1 {
     font-size: 2rem;
   }
-  
+
   .contact-content section {
     padding: 2rem;
   }
-  
+
   .contact-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .form-row {
     grid-template-columns: 1fr;
   }
-  
+
   .availability-card {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-  
+
   .location-info {
     grid-template-columns: 1fr;
     gap: 2rem;

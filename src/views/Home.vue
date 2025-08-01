@@ -3,9 +3,7 @@
     <section class="hero">
       <div class="hero-content">
         <div class="profile-image">
-          <div class="image-placeholder">
-            <span>個人照片</span>
-          </div>
+          <img src="/img/joechiboo.png" alt="Joe Chi-Boo 個人照片" class="profile-photo" />
         </div>
         <div class="intro">
           <h1>Joe, Chi-Boo</h1>
@@ -77,7 +75,7 @@ const downloadResume = () => {
   min-height: 80vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
 .hero-content {
@@ -93,6 +91,15 @@ const downloadResume = () => {
 .profile-image {
   display: flex;
   justify-content: center;
+}
+
+.profile-photo {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
 .image-placeholder {
