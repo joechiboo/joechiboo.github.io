@@ -15,7 +15,7 @@
               </div>
               <div class="basic-info">
                 <h2>Joe, Chi-Boo</h2>
-                <p class="role">軟體工程師 & 學生</p>
+                <p class="role">資訊室主任</p>
                 <div class="contact-info">
                   <p><strong>位置:</strong> 台灣</p>
                   <p><strong>專長:</strong> 全端開發</p>
@@ -23,16 +23,90 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="philosophy-section">
-              <h3>我的理念</h3>
-              <blockquote>
-                工程師的核心任務是「解決問題」。第一步是「面對」，人們大多不喜好直視問題、避重就輕。
-              </blockquote>
-              <p>
-                我相信軟體開發不僅僅是寫程式碼，更是理解問題本質、設計解決方案的過程。
-                每個技術挑戰都是一次學習機會，每次團隊協作都是提升溝通能力的練習。
-              </p>
+              <h3>我的工程哲學</h3>
+              
+              <div class="philosophy-detail">
+                <!-- 解決問題的三步驟 -->
+                <div class="philosophy-card main-philosophy">
+                  <div class="card-icon">🎯</div>
+                  <h4>工程師的核心：解決問題</h4>
+                  <div class="steps">
+                    <div class="step">
+                      <span class="step-number">01</span>
+                      <div class="step-content">
+                        <h5>面對</h5>
+                        <p>人們大多不喜好直視問題、避重就輕，因而造就決策失準。勇於面對問題是解決的第一步。</p>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <span class="step-number">02</span>
+                      <div class="step-content">
+                        <h5>發現/了解</h5>
+                        <p>減少「未知的未知」就可以讓能力越來越精煉。深入理解問題本質比急於解決更重要。</p>
+                      </div>
+                    </div>
+                    <div class="step">
+                      <span class="step-number">03</span>
+                      <div class="step-content">
+                        <h5>PDCA</h5>
+                        <p>制度化的概念可以確立目標、減少浪費。持續改進是工程師的核心素養。</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 學習態度 -->
+                <div class="philosophy-card">
+                  <div class="card-icon">🔥</div>
+                  <h4>學習的藝術</h4>
+                  <p class="card-description">
+                    學生的本質是「<strong>熱忱、快速、持續學習</strong>」
+                  </p>
+                  <blockquote class="philosophy-quote">
+                    "發現自己有著「三分鐘熱度」的特性，最近想到一個方法可以保持熱度——就是在三分鐘內完成任務！"
+                  </blockquote>
+                  <p class="scrum-note">
+                    我很喜歡 <strong>Scrum 的精神</strong>，設立階段性目標，努力衝刺。把大西瓜去皮切片，更利於獲得成就感。
+                  </p>
+                </div>
+
+                <!-- 團隊協作 -->
+                <div class="philosophy-card">
+                  <div class="card-icon">🤝</div>
+                  <h4>人是群居的生物</h4>
+                  <p class="card-subtitle">每個小螺絲都至關重要</p>
+                  <div class="collaboration-points">
+                    <div class="collab-point">
+                      <h5>內外協作</h5>
+                      <p>團隊合作不僅僅是內部，也必須和客戶合作。在缺乏溝通的狀況下，很難體會對方的感受。</p>
+                    </div>
+                    <div class="collab-point">
+                      <h5>雙向溝通</h5>
+                      <p>溝通是雙向的，單面的你說我做容易產生許多問題。</p>
+                    </div>
+                    <div class="collab-point highlight">
+                      <h5>信任建立</h5>
+                      <p>初期的信任感建立相當重要，這是一切合作的基礎。</p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 技術理念 -->
+                <div class="philosophy-card">
+                  <div class="card-icon">💡</div>
+                  <h4>技術與人文</h4>
+                  <p class="card-description">
+                    我相信軟體開發不僅僅是寫程式碼，更是理解問題本質、設計解決方案的過程。
+                  </p>
+                  <ul class="beliefs">
+                    <li>每個技術挑戰都是一次學習機會</li>
+                    <li>每次團隊協作都是提升溝通能力的練習</li>
+                    <li>技術服務於人，而非人服務於技術</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -52,7 +126,7 @@
                 <span class="skill-tag">響應式設計</span>
               </div>
             </div>
-            
+
             <div class="skill-category">
               <h3>後端開發</h3>
               <div class="skill-tags">
@@ -66,7 +140,7 @@
                 <span class="skill-tag">WebAPI</span>
               </div>
             </div>
-            
+
             <div class="skill-category">
               <h3>移動端開發</h3>
               <div class="skill-tags">
@@ -76,7 +150,7 @@
                 <span class="skill-tag">Mobile UI</span>
               </div>
             </div>
-            
+
             <div class="skill-category">
               <h3>專案管理</h3>
               <div class="skill-tags">
@@ -86,7 +160,7 @@
                 <span class="skill-tag">團隊協作</span>
               </div>
             </div>
-            
+
             <div class="skill-category">
               <h3>系統管理</h3>
               <div class="skill-tags">
@@ -95,6 +169,20 @@
                 <span class="skill-tag">資安管理</span>
                 <span class="skill-tag">醫療資訊系統</span>
                 <span class="skill-tag">系統架構</span>
+              </div>
+            </div>
+            
+            <div class="skill-category">
+              <h3>數據處理 & 工具</h3>
+              <div class="skill-tags">
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Azure DevOps</span>
+                <span class="skill-tag">Docker</span>
+                <span class="skill-tag">Postman</span>
+                <span class="skill-tag">Visual Studio</span>
+                <span class="skill-tag">VS Code</span>
+                <span class="skill-tag">SSMS</span>
+                <span class="skill-tag">Slack</span>
               </div>
             </div>
           </div>
@@ -108,51 +196,75 @@
               <h3>解決問題</h3>
               <p>專注於理解問題本質，提供有效且可維護的解決方案</p>
             </div>
-            
+
             <div class="value-card">
               <div class="value-icon">🤝</div>
               <h3>團隊合作</h3>
               <p>重視溝通與協作，相信團隊的力量能創造更大的價值</p>
             </div>
-            
+
             <div class="value-card">
               <div class="value-icon">📚</div>
               <h3>持續學習</h3>
               <p>保持對新技術的好奇心，持續提升專業技能和知識深度</p>
             </div>
-            
+
             <div class="value-card">
               <div class="value-icon">💡</div>
               <h3>創新思維</h3>
               <p>勇於嘗試新方法，在既有框架中尋找創新的可能性</p>
             </div>
+            
+            <div class="value-card">
+              <div class="value-icon">⚙️</div>
+              <h3>品質至上</h3>
+              <p>坚持繭寫高品質程式碼，重視測試覆蓋和程式碼審查</p>
+            </div>
+            
+            <div class="value-card">
+              <div class="value-icon">🌱</div>
+              <h3>成長心態</h3>
+              <p>擁抱挑戰和變化，將困難視為成長的機會而非障礙</p>
+            </div>
           </div>
         </section>
 
-        <section class="journey-section">
-          <h2>成長歷程</h2>
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <h3>學習階段</h3>
-                <p>開始接觸程式設計，對軟體開發產生濃厚興趣</p>
+        <section class="highlights-section">
+          <h2>技能亮點</h2>
+          <div class="highlights-grid">
+            <div class="highlight-item">
+              <div class="highlight-icon">💻</div>
+              <div class="highlight-content">
+                <h3>.NET 生態系統專家</h3>
+                <p class="highlight-years">15年經驗</p>
+                <p class="highlight-desc">從 .NET Framework 到 .NET Core，擁有完整的微軟技術栈開發經驗</p>
               </div>
             </div>
             
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <h3>實務練習</h3>
-                <p>透過各種專案練習，累積實際開發經驗</p>
+            <div class="highlight-item">
+              <div class="highlight-icon">🌐</div>
+              <div class="highlight-content">
+                <h3>跨平台開發經驗</h3>
+                <p class="highlight-years">Web · App · 系統整合</p>
+                <p class="highlight-desc">具備全端開發能力，擅長不同平台間的技術整合與架構設計</p>
               </div>
             </div>
             
-            <div class="timeline-item">
-              <div class="timeline-dot"></div>
-              <div class="timeline-content">
-                <h3>專業發展</h3>
-                <p>持續精進技術能力，關注業界最新趨勢</p>
+            <div class="highlight-item">
+              <div class="highlight-icon">👥</div>
+              <div class="highlight-content">
+                <h3>團隊領導能力</h3>
+                <p class="highlight-years">帶領 10 人團隊</p>
+                <p class="highlight-desc">擁有實際管理經驗，擅長團隊協作、技術指導和專案管理</p>
+              </div>
+            </div>
+            
+            <div class="highlight-item">
+              <div class="highlight-icon">🌏</div>
+              <div class="highlight-content">
+                <h3>跨國工作經驗</h3>
+                <p class="highlight-years">台灣 · 上海 · 多地協作</p>
+                <p class="highlight-desc">具備跨文化溝通能力，熟悉不同地區的工作文化與商業習慣</p>
               </div>
             </div>
           </div>
@@ -162,8 +274,7 @@
   </div>
 </template>
 
-<script setup>
-</script>
+<script setup></script>
 
 <style scoped>
 .about {
@@ -199,7 +310,7 @@
   border-radius: 10px;
   padding: 3rem;
   margin-bottom: 3rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .intro-grid {
@@ -223,7 +334,7 @@
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid white;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
 }
 
@@ -250,6 +361,10 @@
   margin-bottom: 1.5rem;
 }
 
+.contact-info {
+  text-align: left;
+}
+
 .contact-info p {
   color: #666;
   margin-bottom: 0.5rem;
@@ -258,6 +373,160 @@
 .philosophy-section h3 {
   color: #333;
   margin-bottom: 1.5rem;
+}
+
+.philosophy-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.philosophy-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.main-philosophy {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid #dee2e6;
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.philosophy-card h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.step-number {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.step-content h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.step-content p {
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.card-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.philosophy-quote {
+  background: #e7f3ff;
+  border-left: 4px solid #007bff;
+  padding: 1rem 1.5rem;
+  margin: 1rem 0;
+  font-style: italic;
+  color: #333;
+  border-radius: 0 8px 8px 0;
+}
+
+.scrum-note {
+  margin-top: 1rem;
+  color: #555;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  color: #6c757d;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.collaboration-points {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.collab-point {
+  padding: 1rem;
+  border-radius: 8px;
+  background: #f8f9fa;
+  border-left: 3px solid #dee2e6;
+}
+
+.collab-point.highlight {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  border-left-color: #2196f3;
+}
+
+.collab-point h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.collab-point p {
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.beliefs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.beliefs li {
+  padding: 0.5rem 0;
+  color: #555;
+  position: relative;
+  padding-left: 1.5rem;
+  line-height: 1.6;
+}
+
+.beliefs li::before {
+  content: "▶";
+  color: #007bff;
+  position: absolute;
+  left: 0;
+  font-size: 0.8rem;
 }
 
 blockquote {
@@ -271,7 +540,7 @@ blockquote {
 
 .skills-section h2,
 .values-section h2,
-.journey-section h2 {
+.highlights-section h2 {
   color: #333;
   margin-bottom: 2rem;
   text-align: center;
@@ -352,66 +621,146 @@ blockquote {
   line-height: 1.6;
 }
 
-.timeline {
-  position: relative;
-  padding-left: 2rem;
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0.75rem;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: #007bff;
+.highlight-item {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.timeline-item {
-  position: relative;
-  margin-bottom: 2rem;
+.highlight-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
 }
 
-.timeline-dot {
-  position: absolute;
-  left: -2rem;
-  top: 0.5rem;
-  width: 1rem;
-  height: 1rem;
-  background: #007bff;
-  border-radius: 50%;
+.highlight-icon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+  margin-top: 0.2rem;
 }
 
-.timeline-content h3 {
+.highlight-content h3 {
   color: #333;
+  font-size: 1.2rem;
+  font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
-.timeline-content p {
-  color: #666;
+.highlight-years {
+  color: #007bff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.8rem;
+  background: rgba(0, 123, 255, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  display: inline-block;
+}
+
+.highlight-desc {
+  color: #555;
   line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
   .page-header h1 {
     font-size: 2rem;
   }
-  
+
   .intro-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .skills-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .values-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .about-content section {
     padding: 2rem;
+  }
+  
+  .philosophy-detail {
+    gap: 1rem;
+  }
+  
+  .philosophy-card {
+    padding: 1rem;
+  }
+  
+  .step {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .step-number {
+    width: 30px;
+    height: 30px;
+    font-size: 0.8rem;
+  }
+  
+  .card-icon {
+    font-size: 1.5rem;
+  }
+  
+  .philosophy-card h4 {
+    font-size: 1.2rem;
+  }
+  
+  .collaboration-points {
+    gap: 0.5rem;
+  }
+  
+  .collab-point {
+    padding: 0.8rem;
+  }
+  
+  .collab-point h5 {
+    font-size: 0.95rem;
+  }
+  
+  .beliefs li {
+    font-size: 0.9rem;
+    padding: 0.3rem 0;
+  }
+  
+  .highlights-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .highlight-item {
+    padding: 1rem;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .highlight-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .highlight-content h3 {
+    font-size: 1.1rem;
   }
 }
 </style>

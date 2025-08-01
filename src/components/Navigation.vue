@@ -4,16 +4,16 @@
       <div class="nav-logo">
         <router-link to="/" class="nav-logo-link">Joe Chi-Boo</router-link>
       </div>
-      
+
       <div class="nav-menu" :class="{ active: isMenuOpen }">
         <router-link to="/" class="nav-link" @click="closeMenu">首頁</router-link>
-        <router-link to="/portfolio" class="nav-link" @click="closeMenu">作品集</router-link>
         <router-link to="/about" class="nav-link" @click="closeMenu">關於我</router-link>
+        <router-link to="/portfolio" class="nav-link" @click="closeMenu">作品集</router-link>
         <router-link to="/experience" class="nav-link" @click="closeMenu">經歷</router-link>
         <router-link to="/leisure" class="nav-link" @click="closeMenu">休閒</router-link>
         <router-link to="/contact" class="nav-link" @click="closeMenu">聯絡</router-link>
       </div>
-      
+
       <div class="nav-toggle" @click="toggleMenu">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -40,7 +40,7 @@ const closeMenu = () => {
 <style scoped>
 .navbar {
   background: #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: fixed;
   top: 0;
   width: 100%;
@@ -105,7 +105,7 @@ const closeMenu = () => {
     width: 100%;
     text-align: center;
     transition: 0.3s;
-    box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
     padding: 2rem 0;
   }
 

@@ -7,10 +7,13 @@
         </div>
         <div class="intro">
           <h1>Joe, Chi-Boo</h1>
-          <h2>軟體工程師 & 學生</h2>
-          <p class="philosophy">
-            工程師的核心任務是「解決問題」。第一步是「面對」，人們大多不喜好直視問題、避重就輕
-          </p>
+          <h2>軟體工程師 & 在職專班就讀中 & 執行者</h2>
+          <div class="philosophy">
+            <p class="daily-equation">工程腦 × 商業魂 × 生活流</p>
+            <p class="life-quote">
+              「人生像寫程式 — 複雜的事，讓自己簡單做；重要的事，寫進 daily commit。」
+            </p>
+          </div>
           <div class="hero-actions">
             <button class="btn btn-primary" @click="downloadResume">下載履歷</button>
             <router-link to="/contact" class="btn btn-outline">聯絡我</router-link>
@@ -24,7 +27,7 @@
         <div class="highlight-grid">
           <div class="highlight-card">
             <h3>專業技能</h3>
-            <p>具備全端開發能力，專精於現代Web技術棧</p>
+            <p>具備全端開發能力，專精於現代Web技術</p>
           </div>
           <div class="highlight-card">
             <h3>團隊合作</h3>
@@ -99,7 +102,7 @@ const downloadResume = () => {
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid white;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
 .image-placeholder {
@@ -128,11 +131,37 @@ const downloadResume = () => {
 }
 
 .philosophy {
+  margin-bottom: 2rem;
+}
+
+.daily-equation {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #007bff;
+  margin-bottom: 1rem;
+  text-align: left;
+  padding: 1rem;
+  background: rgba(0, 123, 255, 0.1);
+  border-radius: 8px;
+  border-left: 4px solid #007bff;
+}
+
+.life-quote {
   font-size: 1.1rem;
   line-height: 1.6;
   color: #555;
-  margin-bottom: 2rem;
   font-style: italic;
+  text-align: center;
+  padding: 0.5rem;
+  position: relative;
+}
+
+.life-quote::before {
+  content: '💻';
+  position: absolute;
+  left: -1.5rem;
+  top: 0;
+  font-size: 1.2rem;
 }
 
 .hero-actions {
@@ -192,7 +221,7 @@ const downloadResume = () => {
   text-align: center;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .highlight-card h3 {
@@ -232,7 +261,7 @@ const downloadResume = () => {
   border-radius: 10px;
   text-decoration: none;
   color: #333;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
@@ -252,11 +281,11 @@ const downloadResume = () => {
     text-align: center;
     gap: 2rem;
   }
-  
+
   .intro h1 {
     font-size: 2rem;
   }
-  
+
   .hero-actions {
     justify-content: center;
   }
