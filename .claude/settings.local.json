@@ -16,7 +16,12 @@
       "WebFetch(domain:mango-rock-08c98c600.5.azurestaticapps.net)",
       "WebFetch(domain:www.examservice.com.tw)",
       "WebFetch(domain:www.taipeigolf.org.tw)",
-      "WebFetch(domain:docs.google.com)"
+      "WebFetch(domain:docs.google.com)",
+      "Bash(npm run dev:*)",
+      "Bash(git remote set-url:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(rm:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": []
   }
