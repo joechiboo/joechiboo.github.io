@@ -15,4 +15,5 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  base: '/', // GitHub Pages 配置：如果倉庫名稱是 joechiboo.github.io 則使用 '/'
 })
