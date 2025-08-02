@@ -3,7 +3,7 @@
     <div class="container">
       <header class="page-header">
         <h1>休閒生活</h1>
-        <p>繪畫、創作、運動、音樂 - 平衡工作與生活的藝術</p>
+        <p>平衡工作與生活的藝術</p>
       </header>
 
       <div class="leisure-content">
