@@ -8,7 +8,6 @@
 
       <div class="experience-content">
         <section class="work-experience">
-          <h2>工作經驗</h2>
           <div class="experience-timeline">
             <div class="experience-item" v-for="job in workExperience" :key="job.id">
               <div class="timeline-dot"></div>
