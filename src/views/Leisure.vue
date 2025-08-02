@@ -21,7 +21,7 @@
         </section>
 
         <section class="gallery-section">
-          <h2>創作作品集</h2>
+          <h2>創作展示</h2>
           <p class="gallery-intro">以下是一些個人創作和興趣活動的記錄</p>
 
           <!-- 分類選擇按鈕 -->
@@ -489,7 +489,7 @@ const galleryGroups = ref([
 
 .hobbies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   padding: 0;
   background: none;
@@ -669,7 +669,7 @@ const galleryGroups = ref([
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
@@ -1049,6 +1049,19 @@ const galleryGroups = ref([
   font-style: italic;
 }
 
+/* 平板尺寸 */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .hobbies-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .page-header h1 {
     font-size: 2rem;
@@ -1060,6 +1073,12 @@ const galleryGroups = ref([
 
   .hobbies-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
 
   .balance-content {

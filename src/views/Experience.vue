@@ -39,7 +39,10 @@
           <h2>教育背景</h2>
           <div class="education-grid">
             <div class="education-card" v-for="edu in education" :key="edu.id">
-              <h3>{{ edu.degree }}</h3>
+              <h3 class="degree-title">
+                <span class="degree-desktop">{{ edu.degree }}</span>
+                <span class="degree-mobile" v-html="edu.degreeWithBreak"></span>
+              </h3>
               <p class="school">{{ edu.school }}</p>
               <p class="period">{{ edu.period }}</p>
               <p class="description">{{ edu.description }}</p>
@@ -137,6 +140,7 @@ const education = ref([
   {
     id: 1,
     degree: '資訊科學碩士(在職專班)',
+    degreeWithBreak: '資訊科學碩士<br>(在職專班)',
     school: '國立臺北教育大學',
     period: '2024 - 就讀中',
     description:
@@ -151,7 +155,7 @@ const education = ref([
   },
   {
     id: 3,
-    degree: '高中學歷',
+    degree: '電子科',
     school: '臺北市立木柵高工',
     period: '2002年 - 2005年',
     description: '理組背景，數學和物理基礎紮實，開始對程式設計產生興趣。',
@@ -348,6 +352,15 @@ const certifications = ref([
 .education-card h3 {
   color: #333;
   margin-bottom: 0.5rem;
+}
+
+/* 響應式教育背景標題 */
+.degree-mobile {
+  display: none;
+}
+
+.degree-desktop {
+  display: inline;
 }
 
 .school {
@@ -549,6 +562,16 @@ const certifications = ref([
   .cert-grid,
   .achievements-grid {
     grid-template-columns: 1fr;
+  }
+
+  /* 手機版面教育背景標題處理 */
+  .degree-desktop {
+    display: none;
+  }
+  
+  .degree-mobile {
+    display: inline;
+    line-height: 1.4;
   }
 }
 </style>

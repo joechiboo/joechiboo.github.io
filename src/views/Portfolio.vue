@@ -2,8 +2,8 @@
   <div class="portfolio">
     <div class="container">
       <header class="page-header">
-        <h1>作品集</h1>
-        <p>我的技術專案與創作展示</p>
+        <h1>技術作品集</h1>
+        <p>我的技術專案與開發經驗展示</p>
       </header>
 
       <div class="portfolio-grid">
@@ -152,19 +152,19 @@ const projects = ref([
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
 }
 
-/* 大螢幕：3列佈局 */
-@media (min-width: 1200px) {
+/* 平板尺寸：3列佈局 */
+@media (max-width: 1024px) and (min-width: 769px) {
   .portfolio-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 /* 中等螢幕：2列佈局 */
-@media (min-width: 768px) and (max-width: 1199px) {
+@media (min-width: 481px) and (max-width: 768px) {
   .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -176,6 +176,8 @@ const projects = ref([
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
@@ -206,6 +208,9 @@ const projects = ref([
 
 .project-content {
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .project-header {
@@ -250,6 +255,7 @@ const projects = ref([
   color: #666;
   line-height: 1.6;
   margin-bottom: 1.5rem;
+  flex: 1;
 }
 
 .tech-stack {
@@ -270,6 +276,7 @@ const projects = ref([
 .project-links {
   display: flex;
   gap: 1rem;
+  margin-top: auto;
 }
 
 .btn {
@@ -303,7 +310,7 @@ const projects = ref([
   color: white;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .page-header h1 {
     font-size: 2rem;
   }
