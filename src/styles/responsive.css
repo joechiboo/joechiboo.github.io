@@ -1,0 +1,143 @@
+/* Mobile First Responsive Design */
+
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 767px) {
+  .container {
+    padding: 0 var(--space-sm);
+  }
+  
+  .page-header h1 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .page-header p {
+    font-size: var(--font-size-lg);
+  }
+  
+  .grid-auto-fit,
+  .grid-auto-fit-sm {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+  
+  .section {
+    padding: var(--space-lg);
+    margin-bottom: var(--space-lg);
+  }
+  
+  .project-card img {
+    height: 150px;
+  }
+  
+  .project-card-content {
+    padding: var(--space-md);
+  }
+  
+  .experience-card {
+    padding: var(--space-lg);
+  }
+  
+  .image-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-sm);
+  }
+  
+  .image-gallery img {
+    height: 120px;
+  }
+  
+  /* Stack timeline on mobile */
+  .timeline {
+    padding-left: var(--space-md);
+  }
+  
+  .timeline-dot {
+    left: -1.5rem;
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+  
+  /* Mobile navigation adjustments */
+  .lightbox-close {
+    top: var(--space-sm);
+    right: var(--space-sm);
+    font-size: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .lightbox-overlay {
+    padding: var(--space-sm);
+  }
+}
+
+/* Medium devices (tablets, 768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .grid-auto-fit {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-auto-fit-sm {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .image-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Large devices (desktops, 1024px to 1199px) */
+@media (min-width: 1024px) and (max-width: 1199px) {
+  .grid-auto-fit {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-auto-fit-sm {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .grid-auto-fit {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .grid-auto-fit-sm {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* High resolution displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .project-card img,
+  .image-gallery img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark mode support (preparation for future) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text-primary: #f7fafc;
+    --color-text-secondary: #e2e8f0;
+    --color-text-muted: #a0aec0;
+    --bg-white: #1a202c;
+    --bg-light: #2d3748;
+    --bg-lighter: #4a5568;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.4);
+  }
+}

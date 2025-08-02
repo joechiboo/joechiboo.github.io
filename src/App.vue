@@ -44,8 +44,8 @@ html {
 body {
   font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   line-height: 1.6;
-  color: #2d3748;
-  background-color: #ffffff;
+  color: var(--color-text-primary);
+  background-color: var(--bg-white);
 }
 
 #app {
@@ -60,47 +60,69 @@ h1, h2, h3, h4, h5, h6 {
 
 /* 連結樣式 */
 a {
-  color: #667eea;
+  color: var(--color-primary);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color var(--transition-base);
 }
 
 a:hover {
-  color: #5a67d8;
+  color: var(--color-primary-hover);
 }
 
-/* 按鈕基本樣式 */
+/* Enhanced Button System */
 .btn {
-  display: inline-block;
-  padding: 12px 24px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-align: center;
-  transition: all 0.3s ease;
-  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-sm) var(--space-lg);
   border: none;
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  white-space: nowrap;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
+  background: var(--color-primary-gradient);
+  color: var(--bg-white);
 }
 
-.btn-primary:hover {
+.btn-primary:hover:not(:disabled) {
+  background: var(--color-primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  box-shadow: var(--shadow-primary);
 }
 
-/* 容器樣式 */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
 }
+
+.btn-outline:hover {
+  background: var(--color-primary);
+  color: var(--bg-white);
+}
+
+.btn-large {
+  padding: var(--space-md) var(--space-xl);
+  font-size: var(--font-size-lg);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* 容器樣式已移至 utilities.css */
 
 /* 載入動畫 */
 .fade-enter-active, .fade-leave-active {
-  transition: opacity 0.5s;
+  transition: opacity var(--transition-slow);
 }
 
 .fade-enter, .fade-leave-to {
@@ -113,24 +135,19 @@ a:hover {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--bg-light);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: var(--color-primary-gradient);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #5a67d8, #6b46c1);
+  background: var(--color-primary-hover);
 }
 
-/* 響應式工具類 */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 16px;
-  }
-}
+/* 響應式工具類已移至 responsive.css */
 
 /* Claude 貢獻標識 */
 .claude-badge {
