@@ -227,6 +227,11 @@ const downloadResume = () => {
   margin-bottom: 1rem;
 }
 
+.highlight-card p {
+  color: #555;
+  line-height: 1.6;
+}
+
 .quick-links {
   padding: 4rem 0;
   background: #f8f9fa;
