@@ -9,7 +9,7 @@ on:
 
 # 設定 GITHUB_TOKEN 的權限
 permissions:
-  contents: read
+  contents: write  # 需要 write 權限來推送到 gh-pages 分支
   pages: write
   id-token: write
 
