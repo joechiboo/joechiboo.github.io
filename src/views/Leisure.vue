@@ -76,7 +76,7 @@
                       controls
                       preload="metadata"
                       class="audio-controls"
-                      @play="handleAudioPlay($event, item.id)"
+                      @play="handleAudioPlay($event)"
                       @pause="handleAudioPause"
                       @ended="handleAudioPause"
                     >
@@ -272,7 +272,7 @@ const updateCurrentGroupData = () => {
 }
 
 // 音樂播放控制
-const handleAudioPlay = (event, itemId) => {
+const handleAudioPlay = (event) => {
   // 如果有其他音樂正在播放，先暫停
   if (currentlyPlaying.value && currentlyPlaying.value !== event.target) {
     currentlyPlaying.value.pause()
