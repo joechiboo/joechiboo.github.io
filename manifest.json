@@ -1,0 +1,31 @@
+{
+  "name": "Joe Chi-Boo - 軟體工程師履歷",
+  "short_name": "Joe Chi-Boo",
+  "description": "Joe Chi-Boo 個人履歷網站 - 軟體工程師 & 資訊室主任",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#667eea",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/joechiboo.png",
+      "sizes": "800x600",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["portfolio", "professional", "business"],
+  "lang": "zh-TW"
+}

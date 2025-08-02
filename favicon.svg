@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <!-- 背景圓角矩形 -->
+  <rect width="32" height="32" rx="8" fill="url(#gradient)"/>
+  
+  <!-- 主要字母 J -->
+  <text x="16" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif" 
+        font-size="20" font-weight="700" text-anchor="middle" fill="white" 
+        style="text-shadow: 0 1px 2px rgba(0,0,0,0.3);">J</text>
+  
+  <!-- 小裝飾點 -->
+  <circle cx="24" cy="8" r="2" fill="rgba(255,255,255,0.3)"/>
+</svg>

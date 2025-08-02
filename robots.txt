@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap 位置
+Sitemap: https://joechiboo.github.io/sitemap.xml
+
+# 禁止爬取的路徑（如有需要）
+# Disallow: /private/
+# Disallow: /admin/
+
+# 爬取延遲（避免過度請求）
+Crawl-delay: 1
