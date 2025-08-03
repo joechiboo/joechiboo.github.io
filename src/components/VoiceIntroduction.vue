@@ -77,6 +77,25 @@
           <div class="text-indicator">正在播放：</div>
           <div class="current-sentence">{{ currentSentence }}</div>
         </div>
+
+        <!-- 導覽指示器 -->
+        <div class="navigation-indicator" v-if="isPlaying">
+          <div class="nav-title">🧭 網站導覽：</div>
+          <div class="nav-timeline">
+            <div 
+              v-for="(item, index) in navigationTimeline" 
+              :key="index"
+              class="nav-item"
+              :class="{ 
+                'active': currentTime >= item.time && (!navigationTimeline[index + 1] || currentTime < navigationTimeline[index + 1].time),
+                'completed': item.executed 
+              }"
+            >
+              <div class="nav-time">{{ item.time }}s</div>
+              <div class="nav-description">{{ item.description }}</div>
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -91,9 +110,23 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { useRouter } from 'vue-router'
+
+// Router 實例
+const router = useRouter()
 
 // 自我介紹內容
 const introText = `我是紀伯喬，一位擁有十五年dot NET開發經驗的軟體工程師。目前任職於大安聯合醫事檢驗所，擔任資訊室主任，並於臺北教育大學資訊科學系在職專班進修中。我曾在上海工作多年，累積超過兩萬小時的專業開發實戰經驗，擅長網頁技術整合與應用。這個網站整理了我的專業背景與創作內容，如果有任何問題，歡迎隨時聯繫我！`
+
+// 語音導覽時間軸配置
+const navigationTimeline = [
+  { time: 0, action: 'route', target: '/', description: '開始介紹' },
+  { time: 10, action: 'route', target: '/experience', description: '工作經驗介紹' },
+  { time: 25, action: 'route', target: '/experience', description: '教育背景' },
+  { time: 35, action: 'route', target: '/portfolio', description: '專業技能展示' },
+  { time: 50, action: 'route', target: '/contact', description: '聯繫方式' },
+  { time: 58, action: 'route', target: '/', description: '回到首頁' }
+]
 
 // 將文字分段，便於顯示當前播放內容
 const sentences = introText.split(/[。！？]/).filter(s => s.trim())
@@ -156,6 +189,9 @@ const startPlayback = () => {
   utterance.volume = volume.value
   utterance.lang = 'zh-TW' // 繁體中文
 
+  // 重置導覽時間軸
+  resetNavigationTimeline()
+  
   // 設置事件監聽
   utterance.onstart = () => {
     isPlaying.value = true
@@ -209,6 +245,7 @@ const stopPlayback = () => {
   currentSentence.value = ''
   currentSentenceIndex.value = 0
   clearProgressTimer()
+  resetNavigationTimeline()
 }
 
 // 進度計時器
@@ -225,8 +262,41 @@ const startProgressTimer = () => {
         currentSentenceIndex.value = sentenceIndex
         currentSentence.value = sentences[sentenceIndex].trim()
       }
+      
+      // 檢查是否需要執行導覽動作
+      checkNavigationTimeline()
     }
   }, 100)
+}
+
+// 檢查導覽時間軸
+const checkNavigationTimeline = () => {
+  const currentTimeSeconds = Math.floor(currentTime.value)
+  
+  navigationTimeline.forEach(item => {
+    // 在指定時間點執行動作（允許 1 秒誤差）
+    if (Math.abs(currentTimeSeconds - item.time) <= 1 && !item.executed) {
+      item.executed = true
+      executeNavigationAction(item)
+    }
+  })
+}
+
+// 執行導覽動作
+const executeNavigationAction = (item) => {
+  if (item.action === 'route') {
+    // 切換到指定路由
+    if (router.currentRoute.value.path !== item.target) {
+      router.push(item.target)
+    }
+  }
+}
+
+// 重置導覽時間軸
+const resetNavigationTimeline = () => {
+  navigationTimeline.forEach(item => {
+    item.executed = false
+  })
 }
 
 const clearProgressTimer = () => {
@@ -487,6 +557,68 @@ onUnmounted(() => {
   color: #333;
   line-height: 1.5;
   font-size: 0.95rem;
+}
+
+/* 導覽指示器 */
+.navigation-indicator {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #dee2e6;
+}
+
+.nav-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.nav-item.active {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  border-left: 3px solid #667eea;
+  transform: translateX(3px);
+}
+
+.nav-item.completed {
+  opacity: 0.7;
+}
+
+.nav-time {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  min-width: 35px;
+  text-align: center;
+}
+
+.nav-description {
+  font-size: 0.85rem;
+  color: #555;
+  flex: 1;
 }
 
 
