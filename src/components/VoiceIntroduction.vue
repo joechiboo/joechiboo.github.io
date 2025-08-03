@@ -790,6 +790,7 @@ onUnmounted(() => {
   .voice-control-panel {
     min-width: 280px;
     max-width: calc(100vw - 2rem);
+    padding: 1rem;
   }
 
   .voice-intro-btn {
@@ -804,5 +805,70 @@ onUnmounted(() => {
     font-size: 11px;
   }
 
+  /* 手機版隱藏複雜控制元素，只保留字幕和導覽 */
+  .speaker-info {
+    display: none;
+  }
+
+  .progress-container {
+    display: none;
+  }
+
+  .playback-controls {
+    display: none;
+  }
+
+  /* 調整面板標題 */
+  .panel-header {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  /* 當前文字區塊優化 */
+  .current-text {
+    margin-bottom: 0.8rem;
+    padding: 0.8rem;
+  }
+
+  .text-indicator {
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .current-sentence {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  /* 導覽指示器優化 */
+  .navigation-indicator {
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .nav-title {
+    font-size: 0.85rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .nav-item,
+  .nav-group {
+    padding: 0.4rem 0.6rem;
+    gap: 0.6rem;
+  }
+
+  .nav-time {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.4rem;
+    min-width: 30px;
+  }
+
+  .nav-description {
+    font-size: 0.8rem;
+  }
+
+  .nav-sub-item .nav-description {
+    font-size: 0.75rem;
+  }
 }
 </style>
