@@ -24,7 +24,9 @@
       "Bash(npm run build:*)",
       "Bash(git rm:*)",
       "WebFetch(domain:joechiboo.github.io)",
-      "Bash(npm run lint)"
+      "Bash(npm run lint)",
+      "Bash(timeout 10s npm run dev)",
+      "Bash(true)"
     ],
     "deny": []
   }
