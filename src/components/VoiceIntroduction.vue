@@ -840,35 +840,9 @@ onUnmounted(() => {
     line-height: 1.4;
   }
 
-  /* 導覽指示器優化 */
+  /* 手機版隱藏導覽指示器 */
   .navigation-indicator {
-    padding: 0.8rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .nav-title {
-    font-size: 0.85rem;
-    margin-bottom: 0.6rem;
-  }
-
-  .nav-item,
-  .nav-group {
-    padding: 0.4rem 0.6rem;
-    gap: 0.6rem;
-  }
-
-  .nav-time {
-    font-size: 0.7rem;
-    padding: 0.15rem 0.4rem;
-    min-width: 30px;
-  }
-
-  .nav-description {
-    font-size: 0.8rem;
-  }
-
-  .nav-sub-item .nav-description {
-    font-size: 0.75rem;
+    display: none;
   }
 }
 </style>
