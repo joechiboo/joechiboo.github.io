@@ -26,7 +26,8 @@
       "WebFetch(domain:joechiboo.github.io)",
       "Bash(npm run lint)",
       "Bash(timeout 10s npm run dev)",
-      "Bash(true)"
+      "Bash(true)",
+      "mcp__ide__getDiagnostics"
     ],
     "deny": []
   }
