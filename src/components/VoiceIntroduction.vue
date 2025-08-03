@@ -84,7 +84,7 @@
           <div class="nav-timeline">
             <template v-for="(item, index) in navigationTimeline" :key="index">
               <!-- 多動作顯示 -->
-              <div v-if="item.actions" 
+              <div v-if="item.actions"
                 class="nav-group"
                 :class="{
                   'active': currentTime >= item.time && (!navigationTimeline[index + 1] || currentTime < navigationTimeline[index + 1].time),
@@ -101,9 +101,9 @@
               <!-- 單一動作顯示 -->
               <div v-else
                 class="nav-item"
-                :class="{ 
+                :class="{
                   'active': currentTime >= item.time && (!navigationTimeline[index + 1] || currentTime < navigationTimeline[index + 1].time),
-                  'completed': item.executed 
+                  'completed': item.executed
                 }"
               >
                 <div class="nav-time">{{ item.time }}s</div>
@@ -143,7 +143,7 @@ const navigationTimeline = [
       { action: 'delayed_scroll', target: '/experience#work-experience', delay: 500, description: '目前職務介紹' }
     ]
   },
-  { time: 15, action: 'scroll', target: '/experience#education', description: '在職專班進修中' },
+  { time: 13, action: 'scroll', target: '/experience#education', description: '在職專班進修中' },
   { time: 20, action: 'scroll', target: '/experience#tutorABC', description: '上海TutorABC經歷' },
   {
     time: 30,
@@ -303,7 +303,7 @@ const checkNavigationTimeline = () => {
     // 在指定時間點執行動作（允許 1 秒誤差）
     if (Math.abs(currentTimeSeconds - item.time) <= 1 && !item.executed) {
       item.executed = true
-      
+
       if (item.actions) {
         // 多個動作
         item.actions.forEach(action => executeNavigationAction(action))
@@ -359,7 +359,7 @@ const scrollToAnchor = (anchorId) => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
     return
   }
-  
+
   const element = document.getElementById(anchorId)
   if (element) {
     element.scrollIntoView({
