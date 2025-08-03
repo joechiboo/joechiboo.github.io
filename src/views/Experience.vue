@@ -9,7 +9,12 @@
       <div class="experience-content">
         <section id="work-experience" class="work-experience">
           <div class="experience-timeline">
-            <div class="experience-item" v-for="job in workExperience" :key="job.id">
+            <div 
+              class="experience-item" 
+              v-for="job in workExperience" 
+              :key="job.id"
+              :id="job.id === 2 ? 'tutorABC' : null"
+            >
               <div class="timeline-dot"></div>
               <div class="experience-card">
                 <div class="experience-header">

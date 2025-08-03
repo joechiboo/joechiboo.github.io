@@ -82,18 +82,34 @@
         <div class="navigation-indicator" v-if="isPlaying">
           <div class="nav-title">🧭 網站導覽：</div>
           <div class="nav-timeline">
-            <div
-              v-for="(item, index) in navigationTimeline"
-              :key="index"
-              class="nav-item"
-              :class="{
-                'active': currentTime >= item.time && (!navigationTimeline[index + 1] || currentTime < navigationTimeline[index + 1].time),
-                'completed': item.executed
-              }"
-            >
-              <div class="nav-time">{{ item.time }}s</div>
-              <div class="nav-description">{{ item.description }}</div>
-            </div>
+            <template v-for="(item, index) in navigationTimeline" :key="index">
+              <!-- 多動作顯示 -->
+              <div v-if="item.actions" 
+                class="nav-group"
+                :class="{
+                  'active': currentTime >= item.time && (!navigationTimeline[index + 1] || currentTime < navigationTimeline[index + 1].time),
+                  'completed': item.executed
+                }"
+              >
+                <div class="nav-time">{{ item.time }}s</div>
+                <div class="nav-actions">
+                  <div v-for="(action, actionIndex) in item.actions" :key="actionIndex" class="nav-sub-item">
+                    <div class="nav-description">{{ action.description }}</div>
+                  </div>
+                </div>
+              </div>
+              <!-- 單一動作顯示 -->
+              <div v-else
+                class="nav-item"
+                :class="{ 
+                  'active': currentTime >= item.time && (!navigationTimeline[index + 1] || currentTime < navigationTimeline[index + 1].time),
+                  'completed': item.executed 
+                }"
+              >
+                <div class="nav-time">{{ item.time }}s</div>
+                <div class="nav-description">{{ item.description }}</div>
+              </div>
+            </template>
           </div>
         </div>
       </div>
@@ -120,13 +136,22 @@ const introText = `我是紀伯喬，一位擁有十五年dot NET開發經驗的
 
 // 語音導覽時間軸配置
 const navigationTimeline = [
-  { time: 0, action: 'route', target: '/', description: '開始介紹' },
-  { time: 8, action: 'route', target: '/experience', description: '工作經驗' },
-  { time: 15, action: 'scroll', target: '/experience#work-experience', description: '目前職務介紹' },
-  { time: 25, action: 'scroll', target: '/experience#education', description: '教育背景' },
-  { time: 35, action: 'route', target: '/portfolio', description: '專業技能展示' },
-  { time: 50, action: 'route', target: '/contact', description: '聯繫方式' },
-  { time: 58, action: 'route', target: '/', description: '回到首頁' }
+  {
+    time: 0,
+    actions: [
+      { action: 'route', target: '/experience', description: '跳轉工作經歷' },
+      { action: 'delayed_scroll', target: '/experience#work-experience', delay: 500, description: '目前職務介紹' }
+    ]
+  },
+  { time: 15, action: 'scroll', target: '/experience#education', description: '在職專班進修中' },
+  { time: 20, action: 'scroll', target: '/experience#tutorABC', description: '上海TutorABC經歷' },
+  {
+    time: 30,
+    actions: [
+      { action: 'route', target: '/contact', description: '跳轉聯絡頁面' },
+      { action: 'delayed_scroll', target: '/contact#top', delay: 300, description: '滑動到頂部' }
+    ]
+  }
 ]
 
 // 將文字分段，便於顯示當前播放內容
@@ -138,7 +163,7 @@ const isPlaying = ref(false)
 const speechSupported = ref(false)
 const volume = ref(0.8)
 const currentTime = ref(0)
-const totalDuration = ref(60) // 預估總時長（秒）
+const totalDuration = ref(35) // 預估總時長（秒）
 const progressPercentage = ref(0)
 const currentSentence = ref('')
 const currentSentenceIndex = ref(0)
@@ -278,7 +303,14 @@ const checkNavigationTimeline = () => {
     // 在指定時間點執行動作（允許 1 秒誤差）
     if (Math.abs(currentTimeSeconds - item.time) <= 1 && !item.executed) {
       item.executed = true
-      executeNavigationAction(item)
+      
+      if (item.actions) {
+        // 多個動作
+        item.actions.forEach(action => executeNavigationAction(action))
+      } else {
+        // 單一動作
+        executeNavigationAction(item)
+      }
     }
   })
 }
@@ -294,7 +326,7 @@ const executeNavigationAction = (item) => {
   } else if (item.action === 'scroll') {
     // 頁面內錨點滑動
     const [path, anchor] = item.target.split('#')
-    
+
     // 先確保在正確的頁面
     if (router.currentRoute.value.path !== path) {
       router.push(path).then(() => {
@@ -305,11 +337,29 @@ const executeNavigationAction = (item) => {
       // 已在目標頁面，直接滑動
       scrollToAnchor(anchor)
     }
+  } else if (item.action === 'delayed_scroll') {
+    // 延遲滑動（用於在頁面切換後滑動）
+    const delay = item.delay || 300
+    setTimeout(() => {
+      const anchor = item.target.split('#')[1]
+      if (anchor === 'top') {
+        // 滑動到頁面頂部
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      } else {
+        scrollToAnchor(anchor)
+      }
+    }, delay)
   }
 }
 
 // 滑動到指定錨點
 const scrollToAnchor = (anchorId) => {
+  if (anchorId === 'top') {
+    // 滑動到頁面頂部
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    return
+  }
+  
   const element = document.getElementById(anchorId)
   if (element) {
     element.scrollIntoView({
@@ -647,6 +697,49 @@ onUnmounted(() => {
   font-size: 0.85rem;
   color: #555;
   flex: 1;
+}
+
+/* 多動作組樣式 */
+.nav-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.nav-group.active {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+  border-left: 3px solid #667eea;
+  transform: translateX(3px);
+}
+
+.nav-group.completed {
+  opacity: 0.7;
+}
+
+.nav-actions {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.nav-sub-item {
+  display: flex;
+  align-items: center;
+  padding: 0.2rem 0.5rem;
+  background: rgba(102, 126, 234, 0.05);
+  border-radius: 4px;
+  border-left: 2px solid rgba(102, 126, 234, 0.3);
+}
+
+.nav-sub-item .nav-description {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0;
 }
 
 
