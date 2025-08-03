@@ -46,20 +46,42 @@
                 class="gallery-item"
                 v-for="(item, index) in currentGroupData.items"
                 :key="item.id"
-                @click="openLightbox(item, currentGroupData, index)"
+                @click="!item.youtube && !item.isComingSoon && openLightbox(item, currentGroupData, index)"
+                :class="{ 'clickable': item.image && !item.youtube }"
               >
                 <div class="gallery-image">
+                  <!-- YouTube 嵌入式播放器 -->
+                  <iframe
+                    v-if="item.youtube"
+                    :src="`https://www.youtube.com/embed/${item.youtube}`"
+                    class="youtube-player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+
+                  <!-- 一般圖片 -->
                   <img
-                    v-if="item.image"
+                    v-else-if="item.image"
                     :src="item.image"
                     :alt="item.title"
                     class="gallery-photo"
                     loading="lazy"
                   />
+
+                  <!-- 待續項目 -->
+                  <div v-else-if="item.isComingSoon" class="coming-soon-placeholder">
+                    <div class="coming-soon-icon">🎵</div>
+                    <span>待續...</span>
+                  </div>
+
+                  <!-- 默認佔位符 -->
                   <div v-else class="image-placeholder">
                     <span>即將更新</span>
                   </div>
-                  <div class="gallery-overlay">
+
+                  <!-- 覆蓋層（僅對圖片顯示） -->
+                  <div v-if="item.image && !item.youtube" class="gallery-overlay">
                     <span class="view-icon">🔍</span>
                     <span class="view-text">點擊查看</span>
                   </div>
@@ -69,24 +91,10 @@
                   <p>{{ item.description }}</p>
                   <span class="gallery-date">{{ item.date }}</span>
 
-                  <!-- 音樂播放器 -->
-                  <div v-if="item.audio && activeCategory === 'music'" class="audio-player">
-                    <audio
-                      :ref="'audio_' + item.id"
-                      controls
-                      preload="metadata"
-                      class="audio-controls"
-                      @play="handleAudioPlay($event)"
-                      @pause="handleAudioPause"
-                      @ended="handleAudioPause"
-                    >
-                      <source :src="item.audio" type="audio/mpeg" />
-                      您的瀏覽器不支援音頻播放。
-                    </audio>
-                    <div class="audio-info">
-                      <span class="audio-icon">🎵</span>
-                      <span class="audio-label">點擊播放音樂</span>
-                    </div>
+                  <!-- YouTube 連結 -->
+                  <div v-if="item.youtube" class="youtube-info">
+                    <span class="youtube-icon">📺</span>
+                    <span class="youtube-label">YouTube 播放</span>
                   </div>
                 </div>
               </div>
@@ -202,8 +210,6 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const activeCategory = ref('drawing') // 默認選中繪畫
 const currentGroupData = ref(null)
 
-// 音樂播放功能
-const currentlyPlaying = ref(null)
 
 // 燈箱功能
 const lightboxItem = ref(null)
@@ -263,26 +269,6 @@ const setActiveCategory = (categoryId) => {
 
 const updateCurrentGroupData = () => {
   currentGroupData.value = galleryGroups.value.find((group) => group.id === activeCategory.value)
-
-  // 切換分類時暫停所有音樂
-  if (currentlyPlaying.value) {
-    currentlyPlaying.value.pause()
-    currentlyPlaying.value = null
-  }
-}
-
-// 音樂播放控制
-const handleAudioPlay = (event) => {
-  // 如果有其他音樂正在播放，先暫停
-  if (currentlyPlaying.value && currentlyPlaying.value !== event.target) {
-    currentlyPlaying.value.pause()
-    currentlyPlaying.value.currentTime = 0
-  }
-  currentlyPlaying.value = event.target
-}
-
-const handleAudioPause = () => {
-  currentlyPlaying.value = null
 }
 
 // 綁定鍵盤事件
@@ -442,8 +428,30 @@ const galleryGroups = ref([
       {
         id: 4,
         title: '4手聯彈-曲目1-好棒',
-        description: '待處理',
-        audio: '/audio/violin-practice.mp3', // 示例音頻路徑
+        description: '與大兒子的鋼琴四手聯彈，美好的親子音樂時光',
+        youtube: 'KkspuugpnmM',
+        date: '2025',
+      },
+      {
+        id: 5,
+        title: '4手聯彈-曲目2-噢！蘇珊娜',
+        description: '繼續與大兒子的音樂練習，培養默契與技巧',
+        youtube: 'AhQZlFa4R24',
+        date: '2025',
+      },
+      {
+        id: 6,
+        title: '4手聯彈-曲目3-321嘿嘿',
+        description: '宮崎駿動畫配樂，充滿想像力的音樂演奏',
+        youtube: 'jG6SPH0E6rI',
+        date: '2025',
+      },
+      {
+        id: 7,
+        title: '搖滾的蘿蔔',
+        description: '搖滾的蘿蔔🚧 彈得不好，敬請期待更好的版本',
+        date: '待續...',
+        isComingSoon: true,
       },
     ],
   },
@@ -678,19 +686,18 @@ const galleryGroups = ref([
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease;
+  position: relative;
 }
 
-.gallery-item {
+.gallery-item.clickable {
   cursor: pointer;
-  position: relative;
-  overflow: hidden;
 }
 
 .gallery-item:hover {
   transform: translateY(-3px);
 }
 
-.gallery-item:hover .gallery-overlay {
+.gallery-item.clickable:hover .gallery-overlay {
   opacity: 1;
 }
 
@@ -747,6 +754,44 @@ const galleryGroups = ref([
   font-size: 1rem;
 }
 
+/* YouTube 播放器樣式 */
+.youtube-player {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* 待續項目樣式 */
+.coming-soon-placeholder {
+  color: #999;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 2px dashed #dee2e6;
+}
+
+.coming-soon-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.7;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
 .gallery-info {
   padding: 1.5rem;
 }
@@ -767,59 +812,35 @@ const galleryGroups = ref([
   font-size: 0.9rem;
 }
 
-/* 音樂播放器樣式 */
-.audio-player {
+/* YouTube 資訊樣式 */
+.youtube-info {
   margin-top: 1rem;
-  padding: 1rem;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 0.8rem;
+  background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
+  color: white;
   border-radius: 10px;
-  border: 1px solid #dee2e6;
-}
-
-.audio-controls {
-  width: 100%;
-  height: 40px;
-  margin-bottom: 0.5rem;
-  border-radius: 8px;
-  outline: none;
-}
-
-.audio-controls::-webkit-media-controls-panel {
-  background-color: #667eea;
-  border-radius: 8px;
-}
-
-.audio-controls::-webkit-media-controls-play-button,
-.audio-controls::-webkit-media-controls-pause-button {
-  background-color: white;
-  border-radius: 50%;
-}
-
-.audio-info {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   justify-content: center;
-  color: #666;
   font-size: 0.9rem;
 }
 
-.audio-icon {
+.youtube-icon {
   font-size: 1.1rem;
-  animation: musical-note 2s ease-in-out infinite;
+  animation: video-play 2s ease-in-out infinite;
 }
 
-.audio-label {
+.youtube-label {
   font-weight: 500;
 }
 
-@keyframes musical-note {
-  0%,
-  100% {
-    transform: translateY(0);
+@keyframes video-play {
+  0%, 100% {
+    transform: scale(1);
   }
   50% {
-    transform: translateY(-2px);
+    transform: scale(1.1);
   }
 }
 
@@ -1055,7 +1076,7 @@ const galleryGroups = ref([
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
-  
+
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
@@ -1075,7 +1096,7 @@ const galleryGroups = ref([
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .gallery-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
@@ -1150,15 +1171,8 @@ const galleryGroups = ref([
     font-size: 3rem;
   }
 
-  .audio-player {
-    padding: 0.8rem;
-  }
-
-  .audio-controls {
-    height: 35px;
-  }
-
-  .audio-info {
+  .youtube-info {
+    padding: 0.6rem;
     font-size: 0.85rem;
   }
 }
