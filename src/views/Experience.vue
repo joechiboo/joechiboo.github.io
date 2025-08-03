@@ -7,7 +7,7 @@
       </header>
 
       <div class="experience-content">
-        <section class="work-experience">
+        <section id="work-experience" class="work-experience">
           <div class="experience-timeline">
             <div class="experience-item" v-for="job in workExperience" :key="job.id">
               <div class="timeline-dot"></div>
@@ -35,7 +35,7 @@
           </div>
         </section>
 
-        <section class="education">
+        <section id="education" class="education">
           <h2>教育背景</h2>
           <div class="education-grid">
             <div class="education-card" v-for="edu in education" :key="edu.id">
@@ -50,7 +50,7 @@
           </div>
         </section>
 
-        <section class="certifications">
+        <section id="certifications" class="certifications">
           <h2>專業訓練與認證</h2>
           <div class="cert-grid">
             <div class="cert-card" v-for="cert in certifications" :key="cert.id">

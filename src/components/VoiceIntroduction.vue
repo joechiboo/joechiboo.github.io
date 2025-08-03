@@ -82,13 +82,13 @@
         <div class="navigation-indicator" v-if="isPlaying">
           <div class="nav-title">🧭 網站導覽：</div>
           <div class="nav-timeline">
-            <div 
-              v-for="(item, index) in navigationTimeline" 
+            <div
+              v-for="(item, index) in navigationTimeline"
               :key="index"
               class="nav-item"
-              :class="{ 
+              :class="{
                 'active': currentTime >= item.time && (!navigationTimeline[index + 1] || currentTime < navigationTimeline[index + 1].time),
-                'completed': item.executed 
+                'completed': item.executed
               }"
             >
               <div class="nav-time">{{ item.time }}s</div>
@@ -121,8 +121,9 @@ const introText = `我是紀伯喬，一位擁有十五年dot NET開發經驗的
 // 語音導覽時間軸配置
 const navigationTimeline = [
   { time: 0, action: 'route', target: '/', description: '開始介紹' },
-  { time: 10, action: 'route', target: '/experience', description: '工作經驗介紹' },
-  { time: 25, action: 'route', target: '/experience', description: '教育背景' },
+  { time: 8, action: 'route', target: '/experience', description: '工作經驗' },
+  { time: 15, action: 'scroll', target: '/experience#work-experience', description: '目前職務介紹' },
+  { time: 25, action: 'scroll', target: '/experience#education', description: '教育背景' },
   { time: 35, action: 'route', target: '/portfolio', description: '專業技能展示' },
   { time: 50, action: 'route', target: '/contact', description: '聯繫方式' },
   { time: 58, action: 'route', target: '/', description: '回到首頁' }
@@ -191,7 +192,7 @@ const startPlayback = () => {
 
   // 重置導覽時間軸
   resetNavigationTimeline()
-  
+
   // 設置事件監聽
   utterance.onstart = () => {
     isPlaying.value = true
@@ -262,7 +263,7 @@ const startProgressTimer = () => {
         currentSentenceIndex.value = sentenceIndex
         currentSentence.value = sentences[sentenceIndex].trim()
       }
-      
+
       // 檢查是否需要執行導覽動作
       checkNavigationTimeline()
     }
@@ -272,7 +273,7 @@ const startProgressTimer = () => {
 // 檢查導覽時間軸
 const checkNavigationTimeline = () => {
   const currentTimeSeconds = Math.floor(currentTime.value)
-  
+
   navigationTimeline.forEach(item => {
     // 在指定時間點執行動作（允許 1 秒誤差）
     if (Math.abs(currentTimeSeconds - item.time) <= 1 && !item.executed) {
@@ -286,9 +287,36 @@ const checkNavigationTimeline = () => {
 const executeNavigationAction = (item) => {
   if (item.action === 'route') {
     // 切換到指定路由
-    if (router.currentRoute.value.path !== item.target) {
+    const targetPath = item.target.split('#')[0]
+    if (router.currentRoute.value.path !== targetPath) {
       router.push(item.target)
     }
+  } else if (item.action === 'scroll') {
+    // 頁面內錨點滑動
+    const [path, anchor] = item.target.split('#')
+    
+    // 先確保在正確的頁面
+    if (router.currentRoute.value.path !== path) {
+      router.push(path).then(() => {
+        // 頁面切換後再滑動到錨點
+        setTimeout(() => scrollToAnchor(anchor), 300)
+      })
+    } else {
+      // 已在目標頁面，直接滑動
+      scrollToAnchor(anchor)
+    }
+  }
+}
+
+// 滑動到指定錨點
+const scrollToAnchor = (anchorId) => {
+  const element = document.getElementById(anchorId)
+  if (element) {
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest'
+    })
   }
 }
 
@@ -674,11 +702,11 @@ onUnmounted(() => {
   .voice-intro-btn {
     padding: 6px 12px;
   }
-  
+
   .voice-icon {
     font-size: 14px;
   }
-  
+
   .btn-text {
     font-size: 11px;
   }
