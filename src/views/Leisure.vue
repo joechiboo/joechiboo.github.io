@@ -8,10 +8,25 @@
 
       <div class="leisure-content">
         <section class="hobbies-grid">
-          <div class="hobby-card" v-for="hobby in hobbies" :key="hobby.id">
+          <div 
+            class="hobby-card" 
+            v-for="hobby in hobbies" 
+            :key="hobby.id"
+            :class="{ 
+              'clickable-hobby': hobby.id === 1 || hobby.id === 4,
+              'clickable': hobby.id === 1 || hobby.id === 4 
+            }"
+            @click="hobby.id === 1 || hobby.id === 4 ? scrollToGallery(hobby.id === 1 ? 'drawing' : 'music') : null"
+          >
             <div class="hobby-icon">{{ hobby.icon }}</div>
             <h2>{{ hobby.title }}</h2>
             <p class="hobby-description">{{ hobby.description }}</p>
+            
+            <!-- 點擊提示（僅對繪畫和音樂顯示） -->
+            <div v-if="hobby.id === 1 || hobby.id === 4" class="click-hint">
+              <span class="hint-icon">👆</span>
+              <span class="hint-text">點擊查看作品</span>
+            </div>
 
             <div class="hobby-details">
               <h4>為什麼喜歡：</h4>
@@ -20,7 +35,7 @@
           </div>
         </section>
 
-        <section class="gallery-section">
+        <section class="gallery-section" ref="gallerySection">
           <h2>創作展示</h2>
           <p class="gallery-intro">以下是一些個人創作和興趣活動的記錄</p>
 
@@ -271,6 +286,24 @@ const updateCurrentGroupData = () => {
   currentGroupData.value = galleryGroups.value.find((group) => group.id === activeCategory.value)
 }
 
+// 滑動到作品展示區域並切換分類
+const gallerySection = ref(null)
+
+const scrollToGallery = (categoryId) => {
+  // 設置分類
+  setActiveCategory(categoryId)
+  
+  // 等待 DOM 更新後滑動
+  setTimeout(() => {
+    if (gallerySection.value) {
+      gallerySection.value.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+  }, 100)
+}
+
 // 綁定鍵盤事件
 onMounted(() => {
   document.addEventListener('keydown', handleKeydown)
@@ -514,6 +547,84 @@ const galleryGroups = ref([
 
 .hobby-card:hover {
   transform: translateY(-5px);
+}
+
+/* 可點擊的興趣卡片樣式 */
+.hobby-card.clickable-hobby {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.hobby-card.clickable-hobby::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.hobby-card.clickable-hobby:hover::before {
+  left: 100%;
+}
+
+.hobby-card.clickable-hobby:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+  border: 2px solid rgba(102, 126, 234, 0.2);
+}
+
+.hobby-card.clickable-hobby:active {
+  transform: translateY(-3px);
+  transition: transform 0.1s ease;
+}
+
+/* 點擊提示樣式 */
+.click-hint {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.hobby-card.clickable-hobby:hover .click-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hint-icon {
+  font-size: 1rem;
+  animation: point 1.5s ease-in-out infinite;
+}
+
+.hint-text {
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+@keyframes point {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
 }
 
 .hobby-icon {

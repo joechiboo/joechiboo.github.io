@@ -22,7 +22,9 @@
       "WebFetch(domain:github.com)",
       "Bash(rm:*)",
       "Bash(npm run build:*)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "WebFetch(domain:joechiboo.github.io)",
+      "Bash(npm run lint)"
     ],
     "deny": []
   }
