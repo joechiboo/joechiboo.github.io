@@ -166,6 +166,8 @@ a:hover {
   transition: all 0.3s ease;
   cursor: pointer;
   opacity: 0.9;
+  min-width: 120px;
+  text-align: center;
 }
 
 .claude-badge:hover {

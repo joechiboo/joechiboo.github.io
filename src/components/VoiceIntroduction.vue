@@ -1,7 +1,7 @@
 <template>
   <div class="voice-intro-container">
     <!-- 主播放按鈕 -->
-    <button 
+    <button
       v-if="!isExpanded"
       class="voice-intro-btn"
       @click="toggleIntro"
@@ -33,8 +33,8 @@
         <!-- 進度條 -->
         <div class="progress-container">
           <div class="progress-bar">
-            <div 
-              class="progress-fill" 
+            <div
+              class="progress-fill"
               :style="{ width: progressPercentage + '%' }"
             ></div>
           </div>
@@ -46,7 +46,7 @@
 
         <!-- 播放控制 -->
         <div class="playback-controls">
-          <button 
+          <button
             class="control-btn"
             @click="togglePlayback"
             :disabled="!speechSupported"
@@ -54,18 +54,18 @@
             <span v-if="isPlaying">⏸️</span>
             <span v-else>▶️</span>
           </button>
-          
+
           <button class="control-btn" @click="stopPlayback">
             ⏹️
           </button>
 
           <div class="volume-control">
             <span class="volume-icon">🔊</span>
-            <input 
-              type="range" 
-              min="0" 
-              max="1" 
-              step="0.1" 
+            <input
+              type="range"
+              min="0"
+              max="1"
+              step="0.1"
               v-model="volume"
               class="volume-slider"
             >
@@ -93,7 +93,7 @@
 import { ref, onMounted, onUnmounted, watch } from 'vue'
 
 // 自我介紹內容
-const introText = `我是紀伯喬，一位擁有十五年.NET開發經驗的軟體工程師。目前任職於大安聯合醫事檢驗所，擔任資訊室主任，並於臺北教育大學資訊科學系在職專班進修中。我曾在上海工作多年，累積超過兩萬小時的專業開發實戰經驗，擅長網頁技術整合與應用。這個網站整理了我的專業背景與創作內容，如果有任何問題，歡迎隨時聯繫我！`
+const introText = `我是紀伯喬，一位擁有十五年dot NET開發經驗的軟體工程師。目前任職於大安聯合醫事檢驗所，擔任資訊室主任，並於臺北教育大學資訊科學系在職專班進修中。我曾在上海工作多年，累積超過兩萬小時的專業開發實戰經驗，擅長網頁技術整合與應用。這個網站整理了我的專業背景與創作內容，如果有任何問題，歡迎隨時聯繫我！`
 
 // 將文字分段，便於顯示當前播放內容
 const sentences = introText.split(/[。！？]/).filter(s => s.trim())
@@ -149,7 +149,7 @@ const startPlayback = () => {
 
   // 創建語音合成實例
   utterance = new SpeechSynthesisUtterance(introText)
-  
+
   // 設置語音參數
   utterance.rate = 0.9 // 稍微慢一點
   utterance.pitch = 1.0
@@ -218,7 +218,7 @@ const startProgressTimer = () => {
     if (isPlaying.value) {
       currentTime.value += 0.1
       progressPercentage.value = (currentTime.value / totalDuration.value) * 100
-      
+
       // 更新當前播放的句子
       const sentenceIndex = Math.floor((currentTime.value / totalDuration.value) * sentences.length)
       if (sentenceIndex < sentences.length && sentenceIndex !== currentSentenceIndex.value) {
@@ -253,8 +253,8 @@ onUnmounted(() => {
 /* 容器 */
 .voice-intro-container {
   position: fixed;
-  bottom: 2rem;
-  right: 12rem;
+  bottom: 80px;
+  right: 20px;
   z-index: 1000;
 }
 
@@ -263,18 +263,21 @@ onUnmounted(() => {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border: none;
-  border-radius: 25px;
-  padding: 1rem 1.5rem;
+  border-radius: 50px;
+  padding: 8px 16px;
   cursor: pointer;
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
   transition: all 0.3s ease;
   font-family: inherit;
-  min-width: 160px;
+  opacity: 0.9;
+  min-width: 120px;
+  text-align: center;
 }
 
 .voice-intro-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(102, 126, 234, 0.4);
+  opacity: 1;
 }
 
 .voice-intro-btn:disabled {
@@ -285,14 +288,20 @@ onUnmounted(() => {
 .btn-content {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
+  justify-content: center;
+  gap: 8px;
+  color: white;
 }
 
 .voice-icon {
-  font-size: 1.2rem;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.btn-text {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 .btn-subtitle {
@@ -521,8 +530,8 @@ onUnmounted(() => {
 /* 響應式設計 */
 @media (max-width: 768px) {
   .voice-intro-container {
-    bottom: 5rem;
-    right: 1rem;
+    bottom: 80px;
+    right: 15px;
   }
 
   .voice-control-panel {
@@ -531,12 +540,15 @@ onUnmounted(() => {
   }
 
   .voice-intro-btn {
-    min-width: 140px;
-    padding: 0.8rem 1.2rem;
+    padding: 6px 12px;
   }
-
-  .btn-content {
-    font-size: 0.9rem;
+  
+  .voice-icon {
+    font-size: 14px;
+  }
+  
+  .btn-text {
+    font-size: 11px;
   }
 
 }
