@@ -12,7 +12,6 @@
         <span class="voice-icon">🎙️</span>
         <span class="btn-text">自我介紹</span>
       </div>
-      <div class="btn-subtitle">Enhance by Claude</div>
     </button>
 
     <!-- 展開的播放控制面板 -->
@@ -80,9 +79,6 @@
         </div>
       </div>
 
-      <div class="panel-footer">
-        <span class="footer-text">Enhance by Claude</span>
-      </div>
     </div>
 
     <!-- 播放狀態指示器 -->
@@ -258,7 +254,7 @@ onUnmounted(() => {
 .voice-intro-container {
   position: fixed;
   bottom: 2rem;
-  right: 2rem;
+  right: 12rem;
   z-index: 1000;
 }
 
@@ -484,18 +480,6 @@ onUnmounted(() => {
   font-size: 0.95rem;
 }
 
-/* 面板底部 */
-.panel-footer {
-  text-align: center;
-  padding-top: 1rem;
-  border-top: 1px solid #e9ecef;
-}
-
-.footer-text {
-  font-size: 0.75rem;
-  color: #999;
-  font-style: italic;
-}
 
 /* 播放指示器 */
 .playing-indicator {
@@ -537,7 +521,7 @@ onUnmounted(() => {
 /* 響應式設計 */
 @media (max-width: 768px) {
   .voice-intro-container {
-    bottom: 1rem;
+    bottom: 5rem;
     right: 1rem;
   }
 
@@ -555,8 +539,5 @@ onUnmounted(() => {
     font-size: 0.9rem;
   }
 
-  .btn-subtitle {
-    font-size: 0.7rem;
-  }
 }
 </style>
