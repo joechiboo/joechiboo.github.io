@@ -163,9 +163,27 @@ const closeMenu = () => {
     background-color: #ffffff !important;
   }
   
+  /* 手機版日間模式文字顏色 */
+  .nav-container .nav-logo-link {
+    color: #2d3748 !important;
+  }
+  
+  .nav-container .control-btn {
+    color: #2d3748 !important;
+  }
+  
   /* 手機版深色模式nav-container */
   [data-theme="dark"] .nav-container {
     background-color: #1a1a1a !important;
+  }
+  
+  /* 手機版深色模式文字顏色 */
+  [data-theme="dark"] .nav-container .nav-logo-link {
+    color: #ffffff !important;
+  }
+  
+  [data-theme="dark"] .nav-container .control-btn {
+    color: #ffffff !important;
   }
 
   body .nav-menu {
