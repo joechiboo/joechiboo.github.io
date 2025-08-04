@@ -162,10 +162,10 @@ const translations = {
 
     // 技能亮點
     skillHighlightsTitle: '技能亮點',
-    dotnetExpert: '.NET 生態系統專家',
+    dotnetExpert: '.NET 生態<br>系統專家',
     dotnetExpertYears: '15年經驗',
     dotnetExpertDesc: '從 .NET Framework 到 .NET Core，擁有完整的微軟技術栈開發經驗',
-    crossPlatformDev: '跨平台開發經驗',
+    crossPlatformDev: '跨平台<br>開發經驗',
     crossPlatformDevYears: 'Web · App · 系統整合',
     crossPlatformDevDesc: '具備全端開發能力，擅長不同平台間的技術整合與架構設計',
     teamLeadership: '團隊領導能力',
@@ -652,11 +652,11 @@ const translations = {
 
     // 技能亮點
     skillHighlightsTitle: 'Skill Highlights',
-    dotnetExpert: '.NET Ecosystem Expert',
+    dotnetExpert: '.NET Ecosystem<br>Expert',
     dotnetExpertYears: '15 Years Experience',
     dotnetExpertDesc:
       'From .NET Framework to .NET Core, complete Microsoft technology stack development experience',
-    crossPlatformDev: 'Cross-Platform Development Experience',
+    crossPlatformDev: 'Cross-Platform<br>Development Experience',
     crossPlatformDevYears: 'Web · App · System Integration',
     crossPlatformDevDesc:
       'Full-stack development capabilities with expertise in technical integration and architecture design across platforms',

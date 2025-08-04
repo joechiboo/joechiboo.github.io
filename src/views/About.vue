@@ -239,7 +239,7 @@
             <div class="highlight-item">
               <div class="highlight-icon">💻</div>
               <div class="highlight-content">
-                <h3>{{ t('dotnetExpert') }}</h3>
+                <h3 v-html="t('dotnetExpert')"></h3>
                 <p class="highlight-years">{{ t('dotnetExpertYears') }}</p>
                 <p class="highlight-desc">
                   {{ t('dotnetExpertDesc') }}
@@ -250,7 +250,7 @@
             <div class="highlight-item">
               <div class="highlight-icon">🌐</div>
               <div class="highlight-content">
-                <h3>{{ t('crossPlatformDev') }}</h3>
+                <h3 v-html="t('crossPlatformDev')"></h3>
                 <p class="highlight-years">{{ t('crossPlatformDevYears') }}</p>
                 <p class="highlight-desc">{{ t('crossPlatformDevDesc') }}</p>
               </div>
@@ -646,9 +646,9 @@ blockquote {
 
 .highlights-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -768,6 +768,14 @@ blockquote {
     padding: 0.3rem 0;
   }
 
+  .highlights-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+}
+
+/* 手機版 */
+@media (max-width: 480px) {
   .highlights-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
