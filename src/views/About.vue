@@ -667,13 +667,13 @@ blockquote {
 }
 
 /* 深色模式下的highlight-item */
-[data-theme="dark"] .highlight-item {
-  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+[data-theme="dark"] .highlights-section .highlight-item {
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
 }
 
-[data-theme="dark"] .highlight-item:hover {
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+[data-theme="dark"] .highlights-section .highlight-item:hover {
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4) !important;
 }
 
 .highlight-item:hover {
@@ -702,12 +702,12 @@ blockquote {
 }
 
 /* 深色模式下的文字顏色 */
-[data-theme="dark"] .highlight-content h3 {
-  color: #e2e8f0;
+[data-theme="dark"] .highlights-section .highlight-content h3 {
+  color: #e2e8f0 !important;
 }
 
-[data-theme="dark"] .highlight-desc {
-  color: #a0aec0;
+[data-theme="dark"] .highlights-section .highlight-desc {
+  color: #a0aec0 !important;
 }
 
 .highlight-years {
