@@ -2,8 +2,8 @@
   <div class="about">
     <div class="container">
       <header class="page-header">
-        <h1>關於我</h1>
-        <p>軟體工程師的成長歷程與人生哲學</p>
+        <h1>{{ t('aboutPageTitle') }}</h1>
+        <p>{{ t('aboutPageSubtitle') }}</p>
       </header>
 
       <div class="about-content">
@@ -11,51 +11,51 @@
           <div class="intro-grid">
             <div class="profile-section">
               <div class="profile-image">
-                <img src="/img/joechiboo.png" alt="Joe Chi-Boo 個人照片" class="profile-photo" />
+                <img src="/img/joechiboo.png" :alt="t('profileAlt')" class="profile-photo" />
               </div>
               <div class="basic-info">
-                <h2>Joe, Chi-Boo</h2>
-                <p class="role">資訊室主任</p>
+                <h2>{{ t('profileName') }}</h2>
+                <p class="role">{{ t('profileRole') }}</p>
                 <div class="contact-info">
-                  <p><strong>位置:</strong> 台灣、台北</p>
-                  <p><strong>專長:</strong> 全端開發</p>
-                  <p><strong>語言:</strong> 中文、英文</p>
+                  <p><strong>{{ t('profileLocation') }}</strong> {{ t('profileLocationValue') }}</p>
+                  <p><strong>{{ t('profileSpecialty') }}</strong> {{ t('profileSpecialtyValue') }}</p>
+                  <p><strong>{{ t('profileLanguage') }}</strong> {{ t('profileLanguageValue') }}</p>
                 </div>
               </div>
             </div>
 
             <div class="philosophy-section">
-              <h3>我的工程哲學</h3>
+              <h3>{{ t('myPhilosophy') }}</h3>
 
               <div class="philosophy-detail">
                 <!-- 解決問題的三步驟 -->
                 <div class="philosophy-card main-philosophy">
                   <div class="card-icon">🎯</div>
-                  <h4>工程師的核心：解決問題</h4>
+                  <h4>{{ t('engineeringCore') }}</h4>
                   <div class="steps">
                     <div class="step">
                       <span class="step-number">01</span>
                       <div class="step-content">
-                        <h5>面對</h5>
+                        <h5>{{ t('stepFace') }}</h5>
                         <p>
-                          人們大多不喜好直視問題、避重就輕，因而造就決策失準。勇於面對問題是解決的第一步。
+                          {{ t('stepFaceDesc') }}
                         </p>
                       </div>
                     </div>
                     <div class="step">
                       <span class="step-number">02</span>
                       <div class="step-content">
-                        <h5>發現/了解</h5>
+                        <h5>{{ t('stepDiscover') }}</h5>
                         <p>
-                          減少「未知的未知」就可以讓能力越來越精煉。深入理解問題本質比急於解決更重要。
+                          {{ t('stepDiscoverDesc') }}
                         </p>
                       </div>
                     </div>
                     <div class="step">
                       <span class="step-number">03</span>
                       <div class="step-content">
-                        <h5>PDCA</h5>
-                        <p>制度化的概念可以確立目標、減少浪費。持續改進是工程師的核心素養。</p>
+                        <h5>{{ t('stepPDCA') }}</h5>
+                        <p>{{ t('stepPDCADesc') }}</p>
                       </div>
                     </div>
                   </div>
@@ -64,39 +64,35 @@
                 <!-- 學習態度 -->
                 <div class="philosophy-card">
                   <div class="card-icon">🔥</div>
-                  <h4>學習的藝術</h4>
-                  <p class="card-description">
-                    學生的本質是「<strong>熱忱、快速、持續學習</strong>」
+                  <h4>{{ t('learningArt') }}</h4>
+                  <p class="card-description" v-html="t('learningEssence')">
                   </p>
                   <blockquote class="philosophy-quote">
-                    "發現自己有著「三分鐘熱度」的特性，最近想到一個方法可以保持熱度——就是在三分鐘內完成任務！"
+                    "{{ t('learningQuote') }}"
                   </blockquote>
-                  <p class="scrum-note">
-                    我很喜歡
-                    <strong>Scrum 的精神</strong
-                    >，設立階段性目標，努力衝刺。把大西瓜去皮切片，更利於獲得成就感。
+                  <p class="scrum-note" v-html="t('scrumNote')">
                   </p>
                 </div>
 
                 <!-- 團隊協作 -->
                 <div class="philosophy-card">
                   <div class="card-icon">🤝</div>
-                  <h4>人是群居的生物</h4>
-                  <p class="card-subtitle">每個小螺絲都至關重要</p>
+                  <h4>{{ t('socialBeing') }}</h4>
+                  <p class="card-subtitle">{{ t('smallScrewImportant') }}</p>
                   <div class="collaboration-points">
                     <div class="collab-point">
-                      <h5>內外協作</h5>
+                      <h5>{{ t('internalExternalCollab') }}</h5>
                       <p>
-                        團隊合作不僅僅是內部，也必須和客戶合作。在缺乏溝通的狀況下，很難體會對方的感受。
+                        {{ t('internalExternalCollabDesc') }}
                       </p>
                     </div>
                     <div class="collab-point">
-                      <h5>雙向溝通</h5>
-                      <p>溝通是雙向的，單面的你說我做容易產生許多問題。</p>
+                      <h5>{{ t('bidirectionalComm') }}</h5>
+                      <p>{{ t('bidirectionalCommDesc') }}</p>
                     </div>
                     <div class="collab-point highlight">
-                      <h5>信任建立</h5>
-                      <p>初期的信任感建立相當重要，這是一切合作的基礎。</p>
+                      <h5>{{ t('trustBuilding') }}</h5>
+                      <p>{{ t('trustBuildingDesc') }}</p>
                     </div>
                   </div>
                 </div>
@@ -104,14 +100,14 @@
                 <!-- 技術理念 -->
                 <div class="philosophy-card">
                   <div class="card-icon">💡</div>
-                  <h4>技術與人文</h4>
+                  <h4>{{ t('techAndHumanities') }}</h4>
                   <p class="card-description">
-                    我相信軟體開發不僅僅是寫程式碼，更是理解問題本質、設計解決方案的過程。
+                    {{ t('techHumanitiesDesc') }}
                   </p>
                   <ul class="beliefs">
-                    <li>每個技術挑戰都是一次學習機會</li>
-                    <li>每次團隊協作都是提升溝通能力的練習</li>
-                    <li>技術服務於人，而非人服務於技術</li>
+                    <li>{{ t('beliefTechChallenge') }}</li>
+                    <li>{{ t('beliefTeamCollab') }}</li>
+                    <li>{{ t('beliefTechServesPeople') }}</li>
                   </ul>
                 </div>
               </div>
@@ -120,10 +116,10 @@
         </section>
 
         <section class="skills-section">
-          <h2>技能專長</h2>
+          <h2>{{ t('skillsTitle') }}</h2>
           <div class="skills-grid">
             <div class="skill-category">
-              <h3>前端開發</h3>
+              <h3>{{ t('frontendDev') }}</h3>
               <div class="skill-tags">
                 <span class="skill-tag">jQuery</span>
                 <span class="skill-tag">JavaScript</span>
@@ -131,12 +127,12 @@
                 <span class="skill-tag">CSS3</span>
                 <span class="skill-tag">Bootstrap</span>
                 <span class="skill-tag">Ajax</span>
-                <span class="skill-tag">響應式設計</span>
+                <span class="skill-tag">{{ t('responsiveDesign') }}</span>
               </div>
             </div>
 
             <div class="skill-category">
-              <h3>後端開發</h3>
+              <h3>{{ t('backendDev') }}</h3>
               <div class="skill-tags">
                 <span class="skill-tag">.NET MVC</span>
                 <span class="skill-tag">C#</span>
@@ -150,7 +146,7 @@
             </div>
 
             <div class="skill-category">
-              <h3>移動端開發</h3>
+              <h3>{{ t('mobileDev') }}</h3>
               <div class="skill-tags">
                 <span class="skill-tag">Cordova</span>
                 <span class="skill-tag">Parse</span>
@@ -160,28 +156,28 @@
             </div>
 
             <div class="skill-category">
-              <h3>專案管理</h3>
+              <h3>{{ t('projectManagement') }}</h3>
               <div class="skill-tags">
                 <span class="skill-tag">Scrum</span>
                 <span class="skill-tag">BPM</span>
-                <span class="skill-tag">敏捷開發</span>
-                <span class="skill-tag">團隊協作</span>
+                <span class="skill-tag">{{ t('agileDev') }}</span>
+                <span class="skill-tag">{{ t('teamCollaboration') }}</span>
               </div>
             </div>
 
             <div class="skill-category">
-              <h3>系統管理</h3>
+              <h3>{{ t('systemAdmin') }}</h3>
               <div class="skill-tags">
                 <span class="skill-tag">Windows Server</span>
                 <span class="skill-tag">IIS</span>
-                <span class="skill-tag">資安管理</span>
-                <span class="skill-tag">醫療資訊系統</span>
-                <span class="skill-tag">系統架構</span>
+                <span class="skill-tag">{{ t('securityManagement') }}</span>
+                <span class="skill-tag">{{ t('medicalInfoSystem') }}</span>
+                <span class="skill-tag">{{ t('systemArchitecture') }}</span>
               </div>
             </div>
 
             <div class="skill-category">
-              <h3>數據處理 & 工具</h3>
+              <h3>{{ t('dataToolsTitle') }}</h3>
               <div class="skill-tags">
                 <span class="skill-tag">Git</span>
                 <span class="skill-tag">Azure DevOps</span>
@@ -197,56 +193,56 @@
         </section>
 
         <section class="values-section">
-          <h2>工作價值觀</h2>
+          <h2>{{ t('workValuesTitle') }}</h2>
           <div class="values-grid">
             <div class="value-card">
               <div class="value-icon">🎯</div>
-              <h3>解決問題</h3>
-              <p>專注於理解問題本質，提供有效且可維護的解決方案</p>
+              <h3>{{ t('problemSolving') }}</h3>
+              <p>{{ t('problemSolvingDesc') }}</p>
             </div>
 
             <div class="value-card">
               <div class="value-icon">🤝</div>
-              <h3>團隊合作</h3>
-              <p>重視溝通與協作，相信團隊的力量能創造更大的價值</p>
+              <h3>{{ t('teamworkValue') }}</h3>
+              <p>{{ t('teamworkValueDesc') }}</p>
             </div>
 
             <div class="value-card">
               <div class="value-icon">📚</div>
-              <h3>持續學習</h3>
-              <p>保持對新技術的好奇心，持續提升專業技能和知識深度</p>
+              <h3>{{ t('continuousLearningValue') }}</h3>
+              <p>{{ t('continuousLearningValueDesc') }}</p>
             </div>
 
             <div class="value-card">
               <div class="value-icon">💡</div>
-              <h3>創新思維</h3>
-              <p>勇於嘗試新方法，在既有框架中尋找創新的可能性</p>
+              <h3>{{ t('innovativeThinking') }}</h3>
+              <p>{{ t('innovativeThinkingDesc') }}</p>
             </div>
 
             <div class="value-card">
               <div class="value-icon">⚙️</div>
-              <h3>品質至上</h3>
-              <p>坚持繭寫高品質程式碼，重視測試覆蓋和程式碼審查</p>
+              <h3>{{ t('qualityFirst') }}</h3>
+              <p>{{ t('qualityFirstDesc') }}</p>
             </div>
 
             <div class="value-card">
               <div class="value-icon">🌱</div>
-              <h3>成長心態</h3>
-              <p>擁抱挑戰和變化，將困難視為成長的機會而非障礙</p>
+              <h3>{{ t('growthMindset') }}</h3>
+              <p>{{ t('growthMindsetDesc') }}</p>
             </div>
           </div>
         </section>
 
         <section class="highlights-section">
-          <h2>技能亮點</h2>
+          <h2>{{ t('skillHighlightsTitle') }}</h2>
           <div class="highlights-grid">
             <div class="highlight-item">
               <div class="highlight-icon">💻</div>
               <div class="highlight-content">
-                <h3>.NET 生態系統專家</h3>
-                <p class="highlight-years">15年經驗</p>
+                <h3>{{ t('dotnetExpert') }}</h3>
+                <p class="highlight-years">{{ t('dotnetExpertYears') }}</p>
                 <p class="highlight-desc">
-                  從 .NET Framework 到 .NET Core，擁有完整的微軟技術栈開發經驗
+                  {{ t('dotnetExpertDesc') }}
                 </p>
               </div>
             </div>
@@ -254,27 +250,27 @@
             <div class="highlight-item">
               <div class="highlight-icon">🌐</div>
               <div class="highlight-content">
-                <h3>跨平台開發經驗</h3>
-                <p class="highlight-years">Web · App · 系統整合</p>
-                <p class="highlight-desc">具備全端開發能力，擅長不同平台間的技術整合與架構設計</p>
+                <h3>{{ t('crossPlatformDev') }}</h3>
+                <p class="highlight-years">{{ t('crossPlatformDevYears') }}</p>
+                <p class="highlight-desc">{{ t('crossPlatformDevDesc') }}</p>
               </div>
             </div>
 
             <div class="highlight-item">
               <div class="highlight-icon">👥</div>
               <div class="highlight-content">
-                <h3>團隊領導能力</h3>
-                <p class="highlight-years">帶領 10 人團隊</p>
-                <p class="highlight-desc">擁有實際管理經驗，擅長團隊協作、技術指導和專案管理</p>
+                <h3>{{ t('teamLeadership') }}</h3>
+                <p class="highlight-years">{{ t('teamLeadershipYears') }}</p>
+                <p class="highlight-desc">{{ t('teamLeadershipDesc') }}</p>
               </div>
             </div>
 
             <div class="highlight-item">
               <div class="highlight-icon">🌏</div>
               <div class="highlight-content">
-                <h3>跨國工作經驗</h3>
-                <p class="highlight-years">台灣 · 上海 · 多地協作</p>
-                <p class="highlight-desc">具備跨文化溝通能力，熟悉不同地區的工作文化與商業習慣</p>
+                <h3>{{ t('internationalExp') }}</h3>
+                <p class="highlight-years">{{ t('internationalExpYears') }}</p>
+                <p class="highlight-desc">{{ t('internationalExpDesc') }}</p>
               </div>
             </div>
           </div>
@@ -284,7 +280,11 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useLanguage } from '../composables/useLanguage.js'
+
+const { t } = useLanguage()
+</script>
 
 <style scoped>
 .about {

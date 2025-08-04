@@ -6,17 +6,15 @@
           <img src="/img/joechiboo.png" alt="Joe Chi-Boo 個人照片" class="profile-photo" />
         </div>
         <div class="intro">
-          <h1>Joe, Chi-Boo</h1>
-          <h2>軟體工程師 & 在職專班就讀中 & 執行者</h2>
+          <h1>{{ t('name') }}</h1>
+          <h2>{{ t('jobTitle') }}</h2>
           <div class="philosophy">
-            <p class="daily-equation">工程腦 × 商業魂 × 生活流</p>
-            <p class="life-quote">
-              「人生像寫程式 — 複雜的事，讓自己簡單做；重要的事，寫進 daily commit。」
-            </p>
+            <p class="daily-equation">{{ t('dailyEquation') }}</p>
+            <p class="life-quote">{{ t('lifeQuote') }}</p>
           </div>
           <div class="hero-actions">
-            <button class="btn btn-primary" @click="downloadResume">下載履歷</button>
-            <router-link to="/contact" class="btn btn-outline">聯絡我</router-link>
+            <button class="btn btn-primary" @click="downloadResume">{{ t('downloadResume') }}</button>
+            <router-link to="/contact" class="btn btn-outline">{{ t('contactMe') }}</router-link>
           </div>
         </div>
       </div>
@@ -26,16 +24,16 @@
       <div class="container">
         <div class="highlight-grid">
           <div class="highlight-card">
-            <h3>專業技能</h3>
-            <p>具備全端開發能力，專精於現代Web技術</p>
+            <h3>{{ t('professionalSkills') }}</h3>
+            <p>{{ t('professionalSkillsDesc') }}</p>
           </div>
           <div class="highlight-card">
-            <h3>團隊合作</h3>
-            <p>重視溝通與協作，擅長跨部門協調</p>
+            <h3>{{ t('teamwork') }}</h3>
+            <p>{{ t('teamworkDesc') }}</p>
           </div>
           <div class="highlight-card">
-            <h3>持續學習</h3>
-            <p>保持對新技術的好奇心，不斷提升自我</p>
+            <h3>{{ t('continuousLearning') }}</h3>
+            <p>{{ t('continuousLearningDesc') }}</p>
           </div>
         </div>
       </div>
@@ -46,8 +44,8 @@
       <div class="toast-content">
         <span class="toast-icon">📄</span>
         <div class="toast-message">
-          <strong>履歷下載功能開發中</strong>
-          <p>感謝您的關注，敬請期待！</p>
+          <strong>{{ t('resumeInDevelopment') }}</strong>
+          <p>{{ t('thankYouForAttention') }}</p>
         </div>
       </div>
     </div>
@@ -56,7 +54,9 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useLanguage } from '../composables/useLanguage.js'
 
+const { t } = useLanguage()
 const showToast = ref(false)
 
 const downloadResume = () => {

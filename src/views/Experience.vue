@@ -2,8 +2,8 @@
   <div class="experience">
     <div class="container">
       <header class="page-header">
-        <h1>工作經歷</h1>
-        <p>專業背景與技術成長歷程</p>
+        <h1>{{ t('experiencePageTitle') }}</h1>
+        <p>{{ t('experiencePageSubtitle') }}</p>
       </header>
 
       <div class="experience-content">
@@ -41,7 +41,7 @@
         </section>
 
         <section id="education" class="education">
-          <h2>教育背景</h2>
+          <h2>{{ t('educationTitle') }}</h2>
           <div class="education-grid">
             <div class="education-card" v-for="edu in education" :key="edu.id">
               <h3 class="degree-title">
@@ -56,7 +56,7 @@
         </section>
 
         <section id="certifications" class="certifications">
-          <h2>專業訓練與認證</h2>
+          <h2>{{ t('certificationsTitle') }}</h2>
           <div class="cert-grid">
             <div class="cert-card" v-for="cert in certifications" :key="cert.id">
               <div class="cert-main-header">
@@ -76,122 +76,126 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { computed } from 'vue'
+import { useLanguage } from '@/composables/useLanguage'
 
-const workExperience = ref([
+const { t } = useLanguage()
+
+const workExperience = computed(() => [
   {
     id: 1,
-    position: '資訊室主任',
-    company: '大安聯合醫事檢驗所',
-    period: '2019年7月 - 現在',
-    description: '負責醫檢所整體資訊系統規劃、管理與維護，確保醫療資訊系統穩定運行。',
+    position: t('workExp1Position'),
+    company: t('workExp1Company'),
+    period: t('workExp1Period'),
+    description: t('workExp1Description'),
     responsibilities: [
-      '規劃和管理醫檢所資訊系統架構',
-      '監督系統維護和資安管理',
-      '協調跨部門資訊需求與專案執行',
-      '評估和導入新技術解決方案',
-      '管理資訊團隊並制定技術標準',
+      t('workExp1Resp1'),
+      t('workExp1Resp2'),
+      t('workExp1Resp3'),
+      t('workExp1Resp4'),
+      t('workExp1Resp5'),
     ],
-    technologies: ['.NET MVC', 'SQL Server', '醫療資訊系統', '資安管理', 'Windows Server'],
+    technologies: [t('techDotNetMVC'), t('techSQLServer'), t('techMedicalInfoSys'), t('techSecurityMgmt'), t('techWindowsServer')],
   },
   {
     id: 2,
-    position: '研發工程師',
-    company: 'TutorABC (上海/台灣)',
-    period: '2016年6月 - 2019年7月',
-    description: '負責電銷/客服CTI平台的研發工作，專注於提升系統效能。',
+    position: t('workExp2Position'),
+    company: t('workExp2Company'),
+    period: t('workExp2Period'),
+    description: t('workExp2Description'),
     responsibilities: [
-      '開發和維護CTI電話平台功能',
-      '優化即時監控戰情中心系統效能',
-      '與產品團隊協作改善使用者體驗',
-      '進行系統測試和品質保證',
+      t('workExp2Resp1'),
+      t('workExp2Resp2'),
+      t('workExp2Resp3'),
+      t('workExp2Resp4'),
     ],
-    technologies: ['.NET MVC', 'jQuery', 'Entity Framework', 'MS SQL', 'Redis'],
+    technologies: [t('techDotNetMVC'), t('techJQuery'), t('techEntityFramework'), t('techMSSQL'), t('techRedis')],
   },
   {
     id: 3,
-    position: 'IT工程師',
-    company: '五甫科技 (上海)',
-    period: '2015年8月 - 2016年6月',
-    description: '負責企業資訊系統開發與維護，支援業務流程自動化需求。',
+    position: t('workExp3Position'),
+    company: t('workExp3Company'),
+    period: t('workExp3Period'),
+    description: t('workExp3Description'),
     responsibilities: [
-      '開發企業內部管理系統',
-      '維護和優化現有業務系統',
-      '協助IT基礎設施建置',
-      '提供技術支援和系統培訓',
-      '參與業務流程分析和改善',
+      t('workExp3Resp1'),
+      t('workExp3Resp2'),
+      t('workExp3Resp3'),
+      t('workExp3Resp4'),
+      t('workExp3Resp5'),
     ],
-    technologies: ['.NET MVC', 'C#', 'MS SQL', 'JavaScript', 'IIS'],
+    technologies: [t('techDotNetMVC'), t('techCSharp'), t('techMSSQL'), t('techJavaScript'), t('techIIS')],
   },
   {
     id: 4,
-    position: '程式設計師',
-    company: 'TOEIC - 忠欣/掌方科技',
-    period: '2012年3月 - 2015年8月',
-    description: '參與電商平台與相關行政流程開發，累積軟體開發基礎經驗。',
+    position: t('workExp4Position'),
+    company: t('workExp4Company'),
+    period: t('workExp4Period'),
+    description: t('workExp4Description'),
     responsibilities: [
-      '開發維護測驗報名網站含商店街功能',
-      '開發國際志工系統和報名平台',
-      '實作資料處理和報表功能',
-      '進行系統測試和除錯',
-      '協助系統部署和維護',
-      '開發獎學金申請系統',
+      t('workExp4Resp1'),
+      t('workExp4Resp2'),
+      t('workExp4Resp3'),
+      t('workExp4Resp4'),
+      t('workExp4Resp5'),
+      t('workExp4Resp6'),
     ],
-    technologies: ['C#', '.NET MVC', 'MS SQL', 'JavaScript'],
+    technologies: [t('techCSharp'), t('techDotNetMVC'), t('techMSSQL'), t('techJavaScript')],
   },
 ])
 
-const education = ref([
+const education = computed(() => [
   {
     id: 1,
-    degree: '資訊科學碩士(在職專班)',
-    degreeWithBreak: '資訊科學碩士<br>(在職專班)',
-    school: '國立臺北教育大學',
-    period: '2024 - 就讀中',
-    description:
-      '主修軟體工程、人工智慧等核心課程，論文方向：用少量的檢驗項目預測其他項目的檢驗值',
+    degree: t('edu1Degree'),
+    degreeWithBreak: t('edu1DegreeWithBreak'),
+    school: t('edu1School'),
+    period: t('edu1Period'),
+    description: t('edu1Description'),
   },
   {
     id: 2,
-    degree: '資訊工程學士',
-    school: '國立臺北科技大學',
-    period: '2005年 - 2009年',
-    description: '主修軟體工程、資料結構、演算法等核心課程。',
+    degree: t('edu2Degree'),
+    school: t('edu2School'),
+    period: t('edu2Period'),
+    description: t('edu2Description'),
   },
   {
     id: 3,
-    degree: '電子科',
-    school: '臺北市立木柵高工',
-    period: '2002年 - 2005年',
-    description: '理組背景，數學和物理基礎紮實，開始對程式設計產生興趣。',
+    degree: t('edu3Degree'),
+    school: t('edu3School'),
+    period: t('edu3Period'),
+    description: t('edu3Description'),
   },
 ])
 
-const certifications = ref([
+const certifications = computed(() => [
   {
     id: 1,
-    name: 'ISO/IEC 27001 Lead Auditor',
-    fullName: 'Information Security Management Systems Lead Auditor Training Course',
-    issuer: 'BSI 英國標準協會',
-    category: '資訊安全',
-    description: '資訊安全管理系統主導稽核員訓練課程，具備 ISO 27001 標準的深入了解與稽核能力',
+    name: t('cert1Name'),
+    fullName: t('cert1FullName'),
+    issuer: t('cert1Issuer'),
+    category: t('cert1Category'),
+    description: t('cert1Description'),
+    date: t('cert1Date'),
   },
   {
     id: 2,
-    name: 'ISO 14971:2019',
-    fullName: '醫療器材風險管理訓練課程',
-    issuer: '專業訓練機構',
-    category: '醫療器材',
-    description: '醫療器材風險管理國際標準訓練，專精於醫療器材全生命週期風險識別與管理',
+    name: t('cert2Name'),
+    fullName: t('cert2FullName'),
+    issuer: t('cert2Issuer'),
+    category: t('cert2Category'),
+    description: t('cert2Description'),
+    date: t('cert2Date'),
   },
   {
     id: 3,
-    name: 'ISO 13485:2016',
-    fullName:
-      'Medical Devices Quality Management System Internal Auditor Training Course (ISO 13485:2016)',
-    issuer: 'BSI 英國標準協會',
-    category: '品質管理',
-    description: '醫療器材品質管理系統內部稽核員訓練，熱悉 ISO 13485 標準要求與稽核技巧',
+    name: t('cert3Name'),
+    fullName: t('cert3FullName'),
+    issuer: t('cert3Issuer'),
+    category: t('cert3Category'),
+    description: t('cert3Description'),
+    date: t('cert3Date'),
   },
 ])
 </script>

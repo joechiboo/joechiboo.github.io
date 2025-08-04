@@ -10,6 +10,33 @@
         <section class="contact-info">
           <div class="contact-grid">
             <div class="contact-card">
+              <div class="contact-icon">💬</div>
+              <h3>Line</h3>
+              <p>即時通訊聯繫</p>
+              <p style="color: var(--color-primary); font-weight: 600; margin-bottom: 1rem">
+                ID: joechiboo
+              </p>
+              <span class="btn btn-primary" style="cursor: default; opacity: 0.7"> 微信聯繫 </span>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon">📱</div>
+              <h3>電話</h3>
+              <p>+886 986 642 519</p>
+              <a href="tel:+886986642519" class="btn btn-primary"> 撥打電話 </a>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-icon">📘</div>
+              <h3>Facebook</h3>
+              <p>社交媒體聯繫</p>
+              <a href="https://facebook.com/joe.chiboo" class="btn btn-primary" target="_blank">
+                查看檔案
+              </a>
+            </div>
+          </div>
+          <div class="contact-grid">
+            <div class="contact-card">
               <div class="contact-icon">📧</div>
               <h3>主要郵箱</h3>
               <p>joechiboo@gmail.com</p>
@@ -24,27 +51,13 @@
             </div>
 
             <div class="contact-card">
-              <div class="contact-icon">📘</div>
-              <h3>Facebook</h3>
-              <p>社交媒體聯繫</p>
-              <a href="https://facebook.com/joe.chiboo" class="btn btn-primary" target="_blank">
-                查看檔案
-              </a>
-            </div>
-
-            <div class="contact-card">
               <div class="contact-icon">💬</div>
               <h3>WeChat</h3>
               <p>即時通訊聯繫</p>
-              <p style="color: var(--color-primary); font-weight: 600; margin-bottom: 1rem">ID: joechiboo</p>
+              <p style="color: var(--color-primary); font-weight: 600; margin-bottom: 1rem">
+                ID: joechiboo
+              </p>
               <span class="btn btn-primary" style="cursor: default; opacity: 0.7"> 微信聯繫 </span>
-            </div>
-
-            <div class="contact-card">
-              <div class="contact-icon">📱</div>
-              <h3>電話</h3>
-              <p>+886 986 642 519</p>
-              <a href="tel:+886986642519" class="btn btn-primary"> 撥打電話 </a>
             </div>
           </div>
         </section>

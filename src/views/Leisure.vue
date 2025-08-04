@@ -2,8 +2,8 @@
   <div class="leisure">
     <div class="container">
       <header class="page-header">
-        <h1>休閒生活</h1>
-        <p>平衡工作與生活的藝術</p>
+        <h1>{{ t('leisurePageTitle') }}</h1>
+        <p>{{ t('leisurePageSubtitle') }}</p>
       </header>
 
       <div class="leisure-content">
@@ -25,19 +25,19 @@
             <!-- 點擊提示（僅對繪畫和音樂顯示） -->
             <div v-if="hobby.id === 1 || hobby.id === 4" class="click-hint">
               <span class="hint-icon">👆</span>
-              <span class="hint-text">點擊查看作品</span>
+              <span class="hint-text">{{ t('clickToView') }}</span>
             </div>
 
             <div class="hobby-details">
-              <h4>為什麼喜歡：</h4>
+              <h4>{{ t('whyLike') }}</h4>
               <p>{{ hobby.reason }}</p>
             </div>
           </div>
         </section>
 
         <section class="gallery-section" ref="gallerySection">
-          <h2>創作展示</h2>
-          <p class="gallery-intro">以下是一些個人創作和興趣活動的記錄</p>
+          <h2>{{ t('galleryTitle') }}</h2>
+          <p class="gallery-intro">{{ t('galleryIntro') }}</p>
 
           <!-- 分類選擇按鈕 -->
           <div class="category-tabs">
@@ -87,18 +87,18 @@
                   <!-- 待續項目 -->
                   <div v-else-if="item.isComingSoon" class="coming-soon-placeholder">
                     <div class="coming-soon-icon">🎵</div>
-                    <span>待續...</span>
+                    <span>{{ t('comingSoon') }}</span>
                   </div>
 
                   <!-- 默認佔位符 -->
                   <div v-else class="image-placeholder">
-                    <span>即將更新</span>
+                    <span>{{ t('toBeUpdated') }}</span>
                   </div>
 
                   <!-- 覆蓋層（僅對圖片顯示） -->
                   <div v-if="item.image && !item.youtube" class="gallery-overlay">
                     <span class="view-icon">🔍</span>
-                    <span class="view-text">點擊查看</span>
+                    <span class="view-text">{{ t('viewImage') }}</span>
                   </div>
                 </div>
                 <div class="gallery-info">
@@ -109,7 +109,7 @@
                   <!-- YouTube 連結 -->
                   <div v-if="item.youtube" class="youtube-info">
                     <span class="youtube-icon">📺</span>
-                    <span class="youtube-label">YouTube 播放</span>
+                    <span class="youtube-label">{{ t('youtubePlay') }}</span>
                   </div>
                 </div>
               </div>
@@ -119,7 +119,7 @@
               <div class="empty-icon">📂</div>
               <h3>{{ currentGroupData?.title }}</h3>
               <p>{{ currentGroupData?.description }}</p>
-              <p class="empty-text">🚧 此類別的作品即將更新，敬請期待！</p>
+              <p class="empty-text">{{ t('emptyCategory') }}</p>
             </div>
           </div>
 
@@ -159,7 +159,7 @@
                 <p>{{ lightboxItem.description }}</p>
                 <span class="lightbox-date">{{ lightboxItem.date }}</span>
                 <div class="lightbox-hint">
-                  <span>← → 切換圖片 | ESC 關閉</span>
+                  <span>{{ t('switchImages') }}</span>
                 </div>
               </div>
             </div>
@@ -167,49 +167,48 @@
         </section>
 
         <section class="balance-section">
-          <h2>工作與生活的平衡</h2>
+          <h2>{{ t('workLifeBalance') }}</h2>
           <div class="balance-content">
             <div class="balance-text">
               <p>
-                我相信優秀的軟體工程師不只是技術專家，更是一個全面發展的人。
-                透過多元化的興趣愛好，我能夠：
+                {{ t('workLifeBalanceIntro') }}
               </p>
               <ul class="balance-benefits">
-                <li>培養創意思維，在程式設計中找到新的靈感</li>
-                <li>透過藝術創作訓練細緻觀察力和美感</li>
-                <li>運動讓我保持健康的身體和清晰的思維</li>
-                <li>音樂提升我的專注力和對節奏的敏感度</li>
-                <li>多元化的經驗讓我更能理解不同使用者的需求</li>
+                <li>{{ t('balanceBenefit1') }}</li>
+                <li>{{ t('balanceBenefit2') }}</li>
+                <li>{{ t('balanceBenefit3') }}</li>
+                <li>{{ t('balanceBenefit4') }}</li>
+                <li>{{ t('balanceBenefit5') }}</li>
               </ul>
             </div>
 
             <div class="balance-quotes">
               <blockquote>
-                "創意來自於不同領域的碰撞，技術與藝術的結合往往能產生最驚艷的作品。"
+                "{{ t('balanceQuote1') }}"
               </blockquote>
-              <blockquote>"健康的身心是持續創造的基礎，工作效率與生活品質同等重要。"</blockquote>
+              <blockquote>"{{ t('balanceQuote2') }}"</blockquote>
             </div>
           </div>
         </section>
 
         <section class="future-goals">
-          <h2>未來目標</h2>
+          <h2>{{ t('futureGoals') }}</h2>
           <div class="goals-grid">
             <div class="goal-card">
               <div class="goal-icon">🏃‍♂️</div>
-              <h3>運動挑戰</h3>
+              <h3>{{ t('sportsChallenge') }}</h3>
               <div class="challenge-list">
-                <p class="challenge-item">考潛水執照</p>
-                <p class="challenge-item">❌ 日月潭泳渡</p>
-                <p class="challenge-item">❌ 基隆外木山長泳</p>
-                <p class="challenge-item">✅ 寶礦力路跑 4k</p>
+                <p class="challenge-item">{{ t('divingLicense') }}</p>
+                <p class="challenge-item">{{ t('sunMoonLakeSwim') }}</p>
+                <p class="challenge-item">{{ t('keeluneSwim') }}</p>
+                <p class="challenge-item">{{ t('marathonRun') }}</p>
               </div>
             </div>
 
             <div class="goal-card">
               <div class="goal-icon">🎵</div>
-              <h3>音樂製作</h3>
-              <p>與大兒子一同四手聯彈，上台表演</p>
+              <h3>{{ t('musicProduction') }}</h3>
+              <p>{{ t('musicPerformance') }}</p>
             </div>
           </div>
         </section>
@@ -220,6 +219,9 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useLanguage } from '@/composables/useLanguage'
+
+const { t } = useLanguage()
 
 // 分類選擇功能
 const activeCategory = ref('drawing') // 默認選中繪畫
@@ -318,10 +320,9 @@ const hobbies = ref([
   {
     id: 1,
     icon: '🎨',
-    title: '繪畫',
-    description: '透過畫筆記錄生活，用色彩表達情感',
-    reason:
-      '繪畫讓我能夠靜下心來觀察世界的美好，每一筆都是對生活的記錄和情感的釋放。在繪畫的過程中，時間似乎靜止，只有我和畫布之間的對話。',
+    get title() { return t('drawing') },
+    get description() { return t('drawingDesc') },
+    get reason() { return t('drawingReason') },
     experiences: [
       '參加過多次本地藝術社團活動',
       '完成超過50幅素描和水彩作品',
@@ -333,10 +334,9 @@ const hobbies = ref([
   {
     id: 2,
     icon: '✨',
-    title: '創作',
-    description: '發揮想像力，創造有意思的想法',
-    reason:
-      '創作是一種純粹的快樂，在發想與實作之間找到平衡。每當完成一件作品時，那種「原來我也可以」的成就感是無法取代的。',
+    get title() { return t('creation') },
+    get description() { return t('creationDesc') },
+    get reason() { return t('creationReason') },
     experiences: [
       '設計並製作過多個手工藝品',
       '創作過短篇小說和詩歌',
@@ -348,10 +348,9 @@ const hobbies = ref([
   {
     id: 3,
     icon: '🏃‍♂️',
-    title: '運動',
-    description: '保持健康體魄，挑戰自我極限',
-    reason:
-      '運動讓我感受到身心的平衡與活力。每次流汗都是對自己的挑戰，每次超越都是對極限的探索。在運動中找到的不只是健康，更是內心的平靜與自信。',
+    get title() { return t('sports') },
+    get description() { return t('sportsDesc') },
+    get reason() { return t('sportsReason') },
     experiences: [
       '定期參加半程馬拉松比賽',
       '籃球校隊成員經驗',
@@ -363,10 +362,9 @@ const hobbies = ref([
   {
     id: 4,
     icon: '🎵',
-    title: '音樂',
-    description: '用旋律豐富生活，用節奏調節心情',
-    reason:
-      '音樂是心靈的語言，能夠觸及文字無法表達的情感深處。彈奏時的專注與投入，讓我在旋律中找到寧靜，在和聲中感受生命的美好。音樂不僅豐富了我的生活，更是情感的出口。',
+    get title() { return t('music') },
+    get description() { return t('musicDesc') },
+    get reason() { return t('musicReason') },
     experiences: [
       '學習鋼琴超過8年',
       '參加過校園音樂會演出',
@@ -380,110 +378,110 @@ const hobbies = ref([
 const galleryGroups = ref([
   {
     id: 'drawing',
-    title: '繪畫作品',
+    get title() { return t('drawingWorks') },
     icon: '🎨',
-    description: '記錄繪畫練習與創作的成長歷程',
+    get description() { return t('drawingWorksDesc') },
     items: [
       {
         id: 1,
-        title: '青蛙素描',
-        description: '寫實風格的青蛙素描，展現對細節的觀察力',
+        get title() { return t('frogSketch') },
+        get description() { return t('frogSketchDesc') },
         image: '/img/drawsomething/frog.jpg',
       },
       {
         id: 2,
-        title: 'Practice Drawing #6',
-        description: '繪畫練習作品，持續探索不同的繪畫技法',
+        get title() { return t('practiceDrawing6') },
+        get description() { return t('practiceDrawing6Desc') },
         image: '/img/drawsomething/partice-6.png',
       },
       {
         id: 3,
-        title: 'Practice Drawing #5',
-        description: '展現對線條和陰影處理的進步',
+        get title() { return t('practiceDrawing5') },
+        get description() { return t('practiceDrawing5Desc') },
         image: '/img/drawsomething/partice-5.png',
       },
       {
         id: 4,
-        title: '母親肖像',
-        description: '溫馨的母親肖像畫，表達對家人的愛',
+        get title() { return t('motherPortrait') },
+        get description() { return t('motherPortraitDesc') },
         image: '/img/drawsomething/mother.jpg',
       },
       {
         id: 5,
-        title: 'Practice Drawing #10',
-        description: '技法更加成熟的練習作品，展現繪畫水平的提升',
+        get title() { return t('practiceDrawing10') },
+        get description() { return t('practiceDrawing10Desc') },
         image: '/img/drawsomething/partice-10.png',
       },
       {
         id: 6,
-        title: 'Practice Drawing #3',
-        description: '早期練習作品，展現對藝術的熱愛與投入',
+        get title() { return t('practiceDrawing3') },
+        get description() { return t('practiceDrawing3Desc') },
         image: '/img/drawsomething/partice-3.png',
       },
       {
         id: 7,
-        title: '母雞帶小雞',
-        description: '可愛的動物主題創作，充滿生活情趣',
+        get title() { return t('chickenFamily') },
+        get description() { return t('chickenFamilyDesc') },
         image: '/img/drawsomething/chicken-family.jpg',
       },
       {
         id: 8,
-        title: '小豬素描',
-        description: '活潑可愛的豬豬繪畫，展現對動物形態的掌握',
+        get title() { return t('pigSketch') },
+        get description() { return t('pigSketchDesc') },
         image: '/img/drawsomething/pig.jpg',
       },
     ],
   },
   {
     id: 'music',
-    title: '音樂作品',
+    get title() { return t('musicWorks') },
     icon: '🎵',
-    description: '音樂演奏與表演的珍貴記錄',
+    get description() { return t('musicWorksDesc') },
     items: [
       {
         id: 1,
-        title: '公司尾牙表演',
-        description: '在公司年終聚會上的鋼琴演奏，與同事分享音樂的美好',
+        get title() { return t('companyPerformance') },
+        get description() { return t('companyPerformanceDesc') },
         image: '/img/music/annual-party.jpg',
       },
       {
         id: 2,
-        title: '飯店有架鋼琴',
-        description: '詢問了之後可以彈，即興演奏的美好時光',
+        get title() { return t('hotelPiano') },
+        get description() { return t('hotelPianoDesc') },
         image: '/img/music/hongkong.jpg',
       },
       {
         id: 3,
-        title: '小提琴練習',
-        description: '探索不同樂器的表達方式，挑戰新的音樂領域',
+        get title() { return t('violinPractice') },
+        get description() { return t('violinPracticeDesc') },
         image: '/img/music/violin.jpg',
       },
       {
         id: 4,
-        title: '4手聯彈-曲目1-好棒',
-        description: '與大兒子的鋼琴四手聯彈，美好的親子音樂時光',
+        get title() { return t('duetPiece1') },
+        get description() { return t('duetPiece1Desc') },
         youtube: 'KkspuugpnmM',
         date: '2025',
       },
       {
         id: 5,
-        title: '4手聯彈-曲目2-噢！蘇珊娜',
-        description: '繼續與大兒子的音樂練習，培養默契與技巧',
+        get title() { return t('duetPiece2') },
+        get description() { return t('duetPiece2Desc') },
         youtube: 'AhQZlFa4R24',
         date: '2025',
       },
       {
         id: 6,
-        title: '4手聯彈-曲目3-321嘿嘿',
-        description: '宮崎駿動畫配樂，充滿想像力的音樂演奏',
+        get title() { return t('duetPiece3') },
+        get description() { return t('duetPiece3Desc') },
         youtube: 'jG6SPH0E6rI',
         date: '2025',
       },
       {
         id: 7,
-        title: '搖滾的蘿蔔',
-        description: '搖滾的蘿蔔🚧 彈得不好，敬請期待更好的版本',
-        date: '待續...',
+        get title() { return t('rockRadish') },
+        get description() { return t('rockRadishDesc') },
+        get date() { return t('comingSoon') },
         isComingSoon: true,
       },
     ],

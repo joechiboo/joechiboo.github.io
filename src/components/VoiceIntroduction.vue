@@ -6,11 +6,11 @@
       class="voice-intro-btn"
       @click="toggleIntro"
       :disabled="!speechSupported"
-      :title="speechSupported ? '點擊收聽一分鐘自我介紹' : '您的瀏覽器不支援語音功能'"
+      :title="speechSupported ? t('voiceIntroTooltip') : t('voiceNotSupported')"
     >
       <div class="btn-content">
         <span class="voice-icon">🎙️</span>
-        <span class="btn-text">自我介紹</span>
+        <span class="btn-text">{{ t('voiceIntro') }}</span>
       </div>
     </button>
 
@@ -19,7 +19,7 @@
       <div class="panel-header">
         <div class="intro-title">
           <span class="title-icon">🎙️</span>
-          <span>語音自我介紹</span>
+          <span>{{ t('voiceIntroTitle') }}</span>
         </div>
         <button class="close-btn" @click="closePanel">×</button>
       </div>
@@ -27,7 +27,7 @@
       <div class="intro-content">
         <div class="speaker-info">
           <div class="avatar">👨‍💻</div>
-          <div class="speaker-name">紀伯喬 Joe Chi-Boo</div>
+          <div class="speaker-name">{{ t('speakerName') }}</div>
         </div>
 
         <!-- 進度條 -->
@@ -74,13 +74,13 @@
 
         <!-- 當前播放文字 -->
         <div class="current-text" v-if="isPlaying">
-          <div class="text-indicator">正在播放：</div>
+          <div class="text-indicator">{{ t('currentlyPlaying') }}</div>
           <div class="current-sentence">{{ currentSentence }}</div>
         </div>
 
         <!-- 導覽指示器 -->
         <div class="navigation-indicator" v-if="isPlaying">
-          <div class="nav-title">🧭 網站導覽：</div>
+          <div class="nav-title">{{ t('websiteGuide') }}</div>
           <div class="nav-timeline">
             <template v-for="(item, index) in navigationTimeline" :key="index">
               <!-- 多動作顯示 -->
@@ -125,37 +125,46 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { ref, onMounted, onUnmounted, watch, computed } from 'vue'
 import { useRouter } from 'vue-router'
+import { useLanguage } from '../composables/useLanguage.js'
 
 // Router 實例
 const router = useRouter()
 
-// 自我介紹內容
-const introText = `我是紀伯喬，一位擁有十五年dot NET開發經驗的軟體工程師。目前任職於大安聯合醫事檢驗所，擔任資訊室主任，並於臺北教育大學資訊科學系在職專班進修中。我曾在上海工作多年，累積超過兩萬小時的專業開發實戰經驗，擅長網頁技術整合與應用。這個網站整理了我的專業背景與創作內容，如果有任何問題，歡迎隨時聯繫我！`
+// 語言支援
+const { t, currentLanguage } = useLanguage()
 
-// 語音導覽時間軸配置
-const navigationTimeline = [
+// 自我介紹內容（根據語言動態切換）
+const introText = computed(() => t('introText'))
+
+// 語音導覽時間軸配置（根據語言動態切換）
+const navigationTimeline = computed(() => [
   {
     time: 0,
     actions: [
-      { action: 'route', target: '/experience', description: '跳轉工作經歷' },
-      { action: 'delayed_scroll', target: '/experience#work-experience', delay: 500, description: '目前職務介紹' }
+      { action: 'route', target: '/experience', description: t('jumpToExperience') },
+      { action: 'delayed_scroll', target: '/experience#work-experience', delay: 500, description: t('currentPosition') }
     ]
   },
-  { time: 13, action: 'scroll', target: '/experience#education', description: '在職專班進修中' },
-  { time: 20, action: 'scroll', target: '/experience#tutorABC', description: '上海TutorABC經歷' },
+  { time: 13, action: 'scroll', target: '/experience#education', description: t('continuingEducation') },
+  { time: 20, action: 'scroll', target: '/experience#tutorABC', description: t('shanghaExperience') },
   {
     time: 30,
     actions: [
-      { action: 'route', target: '/contact', description: '跳轉聯絡頁面' },
-      { action: 'delayed_scroll', target: '/contact#top', delay: 300, description: '滑動到頂部' }
+      { action: 'route', target: '/contact', description: t('jumpToContact') },
+      { action: 'delayed_scroll', target: '/contact#top', delay: 300, description: t('scrollToTop') }
     ]
   }
-]
+])
 
 // 將文字分段，便於顯示當前播放內容
-const sentences = introText.split(/[。！？]/).filter(s => s.trim())
+const sentences = computed(() => {
+  const text = introText.value
+  // 根據語言使用不同的分隔符
+  const separator = currentLanguage.value === 'zh' ? /[。！？]/ : /[.!?]/
+  return text.split(separator).filter(s => s.trim())
+})
 
 // 響應式數據
 const isExpanded = ref(false)
@@ -207,13 +216,14 @@ const startPlayback = () => {
   if (!speechSupported.value) return
 
   // 創建語音合成實例
-  utterance = new SpeechSynthesisUtterance(introText)
+  utterance = new SpeechSynthesisUtterance(introText.value)
 
   // 設置語音參數
   utterance.rate = 0.9 // 稍微慢一點
   utterance.pitch = 1.0
   utterance.volume = volume.value
-  utterance.lang = 'zh-TW' // 繁體中文
+  // 根據當前語言設定語音語言
+  utterance.lang = currentLanguage.value === 'zh' ? 'zh-TW' : 'en-US'
 
   // 重置導覽時間軸
   resetNavigationTimeline()
@@ -283,10 +293,10 @@ const startProgressTimer = () => {
       progressPercentage.value = (currentTime.value / totalDuration.value) * 100
 
       // 更新當前播放的句子
-      const sentenceIndex = Math.floor((currentTime.value / totalDuration.value) * sentences.length)
-      if (sentenceIndex < sentences.length && sentenceIndex !== currentSentenceIndex.value) {
+      const sentenceIndex = Math.floor((currentTime.value / totalDuration.value) * sentences.value.length)
+      if (sentenceIndex < sentences.value.length && sentenceIndex !== currentSentenceIndex.value) {
         currentSentenceIndex.value = sentenceIndex
-        currentSentence.value = sentences[sentenceIndex].trim()
+        currentSentence.value = sentences.value[sentenceIndex].trim()
       }
 
       // 檢查是否需要執行導覽動作
@@ -299,7 +309,7 @@ const startProgressTimer = () => {
 const checkNavigationTimeline = () => {
   const currentTimeSeconds = Math.floor(currentTime.value)
 
-  navigationTimeline.forEach(item => {
+  navigationTimeline.value.forEach(item => {
     // 在指定時間點執行動作（允許 1 秒誤差）
     if (Math.abs(currentTimeSeconds - item.time) <= 1 && !item.executed) {
       item.executed = true
@@ -372,7 +382,7 @@ const scrollToAnchor = (anchorId) => {
 
 // 重置導覽時間軸
 const resetNavigationTimeline = () => {
-  navigationTimeline.forEach(item => {
+  navigationTimeline.value.forEach(item => {
     item.executed = false
   })
 }
@@ -392,6 +402,14 @@ const formatTime = (seconds) => {
 }
 
 // 清理
+// 監聽語言切換
+watch(currentLanguage, () => {
+  // 如果正在播放，停止播放
+  if (isPlaying.value) {
+    stopPlayback()
+  }
+})
+
 onUnmounted(() => {
   stopPlayback()
 })
