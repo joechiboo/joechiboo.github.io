@@ -537,8 +537,8 @@ const translations = {
     dailyEquation: 'Engineering Mind × Business Soul × Life Flow',
     lifeQuote:
       '"Life is like programming — Keep complex things simple; Write important things in daily commits."',
-    downloadResume: 'Download Resume',
-    contactMe: 'Contact Me',
+    downloadResume: 'Resume',
+    contactMe: 'Contact',
     professionalSkills: 'Professional Skills',
     professionalSkillsDesc:
       'Full-stack development capabilities with expertise in modern web technologies',
