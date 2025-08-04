@@ -26,14 +26,15 @@
           </div>
           <div class="project-content">
             <div class="project-header">
-              <h3>{{ project.title }}</h3>
+              <h3>{{ t(project.titleKey) }}</h3>
               <div class="project-meta">
                 <span v-if="project.year" class="project-year">{{ project.year }}</span>
-                <span v-if="project.company" class="project-company">{{ project.company }}</span>
-                <span v-if="project.client" class="project-client">{{ project.client }}</span>
+                <span v-if="project.yearKey" class="project-year">{{ t(project.yearKey) }}</span>
+                <span v-if="project.companyKey" class="project-company">{{ t(project.companyKey) }}</span>
+                <span v-if="project.clientKey" class="project-client">{{ t(project.clientKey) }}</span>
               </div>
             </div>
-            <p>{{ project.description }}</p>
+            <p>{{ t(project.descriptionKey) }}</p>
             <div class="tech-stack">
               <span v-for="tech in project.technologies" :key="tech" class="tech-tag">
                 {{ tech }}
@@ -68,9 +69,8 @@ const { t } = useLanguage()
 const projects = ref([
   {
     id: 5,
-    title: '個人履歷',
-    description:
-      '使用 Vue.js 開發的個人作品集網站，展示技術專案、工作經驗和個人資訊。採用響應式設計和現代化UI，並整合語音導覽功能，提供互動式用戶體驗。',
+    titleKey: 'project5Title',
+    descriptionKey: 'project5Description',
     technologies: ['Vue.js', 'JavaScript', 'CSS3', 'GitHub Pages', 'Responsive Design'],
     demo: window.location.origin,
     github: 'https://github.com/joechiboo/joechiboo.github.io',
@@ -79,20 +79,18 @@ const projects = ref([
   },
   {
     id: 4,
-    title: '波爾多社區網站',
-    description:
-      '使用 Vue.js 開發的現代化社區門戶網站，提供社區資訊展示、互動功能和用戶參與平台。專案採用響應式設計，確保在各種設備上的最佳體驗。',
+    titleKey: 'project4Title',
+    descriptionKey: 'project4Description',
     technologies: ['Vue.js', 'JavaScript', 'CSS3', 'Azure Static Web Apps'],
     demo: 'https://mango-rock-08c98c600.5.azurestaticapps.net/',
-    github: null,
+    github: 'https://github.com/joechiboo/bordeaux-ii',
     category: 'web',
     year: '2024',
   },
   {
     id: 3,
-    title: '測驗服務專區',
-    description:
-      '專業的英語檢定考試報名平台，支援TOEIC、TOEFL等多種測驗註冊。整合考試行事曆、線上報名、用戶管理和多語言介面，提供完整的考試服務生態系統。',
+    titleKey: 'project3Title',
+    descriptionKey: 'project3Description',
     technologies: [
       'Web Development',
       'Database Management',
@@ -102,14 +100,13 @@ const projects = ref([
     demo: 'https://www.examservice.com.tw/',
     github: null,
     category: 'enterprise',
-    year: '前公司專案',
-    company: 'Chun Shin Limited',
+    yearKey: 'project3Year',
+    companyKey: 'project3Company',
   },
   {
     id: 2,
-    title: '搶救杰倫大作戰',
-    description:
-      '創意專案企劃與簡報設計，展現專案規劃、創意發想和視覺呈現能力。透過Google Slides製作互動式簡報，結合創意內容和專業設計。',
+    titleKey: 'project2Title',
+    descriptionKey: 'project2Description',
     technologies: ['Project Planning', 'Creative Design', 'Google Slides', 'Presentation'],
     demo: 'https://docs.google.com/presentation/d/1o8wMB3w1GFzAHgo4Aj92EPqpsxqORiLyoJ8CbuIWWW0/edit?slide=id.p4#slide=id.p4',
     github: null,
@@ -117,9 +114,8 @@ const projects = ref([
   },
   {
     id: 1,
-    title: '台北高爾夫協會官網',
-    description:
-      '台北市高爾夫協會官方網站開發與維護。負責賽事資訊發布系統、新聞內容管理、競賽章程下載和報名選手資訊展示功能。提供清晰的資訊架構和用戶友善的瀏覽體驗。',
+    titleKey: 'project1Title',
+    descriptionKey: 'project1Description',
     technologies: [
       'Web Development',
       'Content Management',
@@ -129,8 +125,8 @@ const projects = ref([
     demo: 'https://www.taipeigolf.org.tw/',
     github: null,
     category: 'freelance',
-    year: '外包專案',
-    client: '台北市高爾夫協會',
+    yearKey: 'project1Year',
+    clientKey: 'project1Client',
   },
 ])
 </script>

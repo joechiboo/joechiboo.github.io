@@ -392,6 +392,93 @@ const translations = {
     keeluneSwim: '❌ 基隆外木山長泳',
     marathonRun: '✅ 寶礦力路跑 4k',
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
+
+    // 作品集專案內容
+    project5Title: '個人履歷',
+    project5Description: '使用 Vue.js 開發的個人作品集網站，展示技術專案、工作經驗和個人資訊。採用響應式設計和現代化UI，並整合語音導覽功能，提供互動式用戶體驗。',
+    
+    project4Title: '波爾多社區網站',
+    project4Description: '使用 Vue.js 開發的現代化社區門戶網站，提供社區資訊展示、互動功能和用戶參與平台。專案採用響應式設計，確保在各種設備上的最佳體驗。',
+    
+    project3Title: '測驗服務專區',
+    project3Description: '專業的英語檢定考試報名平台，支援TOEIC、TOEFL等多種測驗註冊。整合考試行事曆、線上報名、用戶管理和多語言介面，提供完整的考試服務生態系統。',
+    project3Company: 'Chun Shin Limited',
+    project3Year: '前公司專案',
+    
+    project2Title: '搶救杰倫大作戰',
+    project2Description: '創意專案企劃與簡報設計，展現專案規劃、創意發想和視覺呈現能力。透過Google Slides製作互動式簡報，結合創意內容和專業設計。',
+    
+    project1Title: '台北高爾夫協會官網',
+    project1Description: '台北市高爾夫協會官方網站開發與維護。負責賽事資訊發布系統、新聞內容管理、競賽章程下載和報名選手資訊展示功能。提供清晰的資訊架構和用戶友善的瀏覽體驗。',
+    project1Client: '台北市高爾夫協會',
+    project1Year: '外包專案',
+
+    // 聯絡頁面
+    contactPageTitle: '聯絡我',
+    contactPageSubtitle: '歡迎與我交流技術、工作機會或任何有趣的想法',
+    
+    // 聯絡方式
+    lineContact: 'Line',
+    lineContactDesc: '即時通訊聯繫',
+    lineContactButton: '微信聯繫',
+    
+    phoneContact: '電話',
+    phoneNumber: '+886 986 642 519',
+    phoneCallButton: '撥打電話',
+    
+    facebookContact: 'Facebook',
+    facebookContactDesc: '社交媒體聯繫',
+    facebookViewButton: '查看檔案',
+    
+    primaryEmail: '主要郵箱',
+    primaryEmailAddress: 'joechiboo@gmail.com',
+    sendEmailButton: '發送郵件',
+    
+    backupEmail: '備用郵箱',
+    backupEmailAddress: 'stst1239joe@hotmail.com',
+    
+    wechatContact: 'WeChat',
+    wechatContactDesc: '即時通訊聯繫',
+    wechatContactButton: '微信聯繫',
+    
+    // 聯絡表單
+    sendMessage: '發送訊息',
+    formName: '姓名',
+    formEmail: '電子郵件',
+    formSubject: '主旨',
+    formMessage: '訊息內容',
+    formNameRequired: '請輸入姓名',
+    formEmailRequired: '請輸入電子郵件',
+    formEmailInvalid: '請輸入有效的電子郵件格式',
+    formSubjectRequired: '請輸入主旨',
+    formMessageRequired: '請輸入訊息內容',
+    formMessageTooShort: '訊息內容至少需要10個字元',
+    sendingMessage: '發送中...',
+    sendMessageButton: '發送訊息',
+    
+    // 工作狀態
+    workStatus: '工作狀態',
+    currentStatus: '目前狀態：免費或收費兼職專案',
+    projectInterests: '我正在尋找新的挑戰和機會，特別對以下類型的專案感興趣：',
+    interestFrontend: '前端開發專案（Vue.js）',
+    interestFullstack: '全端 Web 應用程式開發',
+    interestDotNet: '.NET MVC / .NET Core',
+    interestInnovation: '創新科技專案',
+    interestConsulting: '技術諮詢與指導',
+    responseTime: '回覆時間：通常在24小時內回覆郵件',
+    
+    // 位置資訊
+    locationInfo: '位置資訊',
+    locationTaiwan: '台灣',
+    locationDesc: '基於台灣，可配合不同時區的工作安排',
+    timezone: '時區：UTC+8 (台北時間)',
+    workingHours: '工作時間：彈性安排，可配合團隊需求',
+    remoteWork: '遠端工作：支援遠端協作',
+    bestContactTime: '最佳聯絡時間',
+    weekdays: '週一至週五',
+    weekdaysTime: '09:00 - 18:00',
+    emergencyContact: '緊急聯繫',
+    emergencyTime: '隨時歡迎',
   },
   en: {
     // 導航
@@ -799,6 +886,93 @@ const translations = {
     keeluneSwim: '❌ Keelung Waimushan Long Distance Swimming',
     marathonRun: '✅ Pocari Run 4k',
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
+
+    // Portfolio Project Content
+    project5Title: 'Personal Portfolio',
+    project5Description: 'Personal portfolio website developed using Vue.js, showcasing technical projects, work experience, and personal information. Features responsive design and modern UI, integrated with voice navigation for interactive user experience.',
+    
+    project4Title: 'Bordeaux Community Website',
+    project4Description: 'Modern community portal website developed using Vue.js, providing community information display, interactive features, and user engagement platform. The project adopts responsive design to ensure optimal experience on various devices.',
+    
+    project3Title: 'Exam Service Center',
+    project3Description: 'Professional English proficiency test registration platform supporting various tests including TOEIC, TOEFL registration. Integrates exam calendar, online registration, user management, and multilingual interface, providing complete exam service ecosystem.',
+    project3Company: 'Chun Shin Limited',
+    project3Year: 'Previous Company Project',
+    
+    project2Title: 'Save Jay Operation',
+    project2Description: 'Creative project planning and presentation design, showcasing project planning, creative ideation, and visual presentation capabilities. Created interactive presentations using Google Slides, combining creative content with professional design.',
+    
+    project1Title: 'Taipei Golf Association Website',
+    project1Description: 'Development and maintenance of the official website for Taipei Golf Association. Responsible for tournament information publishing system, news content management, competition regulation downloads, and registered player information display. Provides clear information architecture and user-friendly browsing experience.',
+    project1Client: 'Taipei Golf Association',
+    project1Year: 'Freelance Project',
+
+    // Contact Page
+    contactPageTitle: 'Contact Me',
+    contactPageSubtitle: 'Welcome to discuss technology, job opportunities, or any interesting ideas',
+    
+    // Contact Methods
+    lineContact: 'Line',
+    lineContactDesc: 'Instant messaging',
+    lineContactButton: 'WeChat Contact',
+    
+    phoneContact: 'Phone',
+    phoneNumber: '+886 986 642 519',
+    phoneCallButton: 'Call',
+    
+    facebookContact: 'Facebook',
+    facebookContactDesc: 'Social media contact',
+    facebookViewButton: 'View Profile',
+    
+    primaryEmail: 'Primary Email',
+    primaryEmailAddress: 'joechiboo@gmail.com',
+    sendEmailButton: 'Send Email',
+    
+    backupEmail: 'Backup Email',
+    backupEmailAddress: 'stst1239joe@hotmail.com',
+    
+    wechatContact: 'WeChat',
+    wechatContactDesc: 'Instant messaging',
+    wechatContactButton: 'WeChat Contact',
+    
+    // Contact Form
+    sendMessage: 'Send Message',
+    formName: 'Name',
+    formEmail: 'Email',
+    formSubject: 'Subject',
+    formMessage: 'Message',
+    formNameRequired: 'Please enter your name',
+    formEmailRequired: 'Please enter your email',
+    formEmailInvalid: 'Please enter a valid email format',
+    formSubjectRequired: 'Please enter a subject',
+    formMessageRequired: 'Please enter a message',
+    formMessageTooShort: 'Message must have at least 10 characters',
+    sendingMessage: 'Sending...',
+    sendMessageButton: 'Send Message',
+    
+    // Work Status
+    workStatus: 'Work Status',
+    currentStatus: 'Current Status: Available for freelance projects (free or paid)',
+    projectInterests: 'I am looking for new challenges and opportunities, especially interested in the following types of projects:',
+    interestFrontend: 'Frontend development projects (Vue.js)',
+    interestFullstack: 'Full-stack web application development',
+    interestDotNet: '.NET MVC / .NET Core',
+    interestInnovation: 'Innovative technology projects',
+    interestConsulting: 'Technical consulting and guidance',
+    responseTime: 'Response Time: Usually reply within 24 hours',
+    
+    // Location Information
+    locationInfo: 'Location Information',
+    locationTaiwan: 'Taiwan',
+    locationDesc: 'Based in Taiwan, can accommodate different time zone work arrangements',
+    timezone: 'Time Zone: UTC+8 (Taipei Time)',
+    workingHours: 'Working Hours: Flexible arrangement, can accommodate team needs',
+    remoteWork: 'Remote Work: Supports remote collaboration',
+    bestContactTime: 'Best Contact Time',
+    weekdays: 'Monday to Friday',
+    weekdaysTime: '09:00 - 18:00',
+    emergencyContact: 'Emergency Contact',
+    emergencyTime: 'Anytime welcome',
   },
 }
 

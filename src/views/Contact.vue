@@ -2,8 +2,8 @@
   <div class="contact">
     <div class="container">
       <header class="page-header">
-        <h1>聯絡我</h1>
-        <p>歡迎與我交流技術、工作機會或任何有趣的想法</p>
+        <h1>{{ t('contactPageTitle') }}</h1>
+        <p>{{ t('contactPageSubtitle') }}</p>
       </header>
 
       <div class="contact-content">
@@ -11,63 +11,79 @@
           <div class="contact-grid">
             <div class="contact-card">
               <div class="contact-icon">💬</div>
-              <h3>Line</h3>
-              <p>即時通訊聯繫</p>
+              <h3>{{ t('lineContact') }}</h3>
+              <p>{{ t('lineContactDesc') }}</p>
               <p style="color: var(--color-primary); font-weight: 600; margin-bottom: 1rem">
                 ID: joechiboo
               </p>
-              <span class="btn btn-primary" style="cursor: default; opacity: 0.7"> 微信聯繫 </span>
+              <div class="contact-qr-container">
+                <img 
+                  src="/img/line.jpg" 
+                  alt="Line QR Code" 
+                  class="contact-qr-image clickable" 
+                  @click="openQRLightbox('/img/line.jpg', 'Line QR Code')"
+                />
+                <p class="qr-hint">掃描加入好友</p>
+              </div>
             </div>
 
             <div class="contact-card">
               <div class="contact-icon">📱</div>
-              <h3>電話</h3>
-              <p>+886 986 642 519</p>
-              <a href="tel:+886986642519" class="btn btn-primary"> 撥打電話 </a>
+              <h3>{{ t('phoneContact') }}</h3>
+              <p>{{ t('phoneNumber') }}</p>
+              <a href="tel:+886986642519" class="btn btn-primary"> {{ t('phoneCallButton') }} </a>
             </div>
 
             <div class="contact-card">
               <div class="contact-icon">📘</div>
-              <h3>Facebook</h3>
-              <p>社交媒體聯繫</p>
+              <h3>{{ t('facebookContact') }}</h3>
+              <p>{{ t('facebookContactDesc') }}</p>
               <a href="https://facebook.com/joe.chiboo" class="btn btn-primary" target="_blank">
-                查看檔案
+                {{ t('facebookViewButton') }}
               </a>
             </div>
           </div>
           <div class="contact-grid">
             <div class="contact-card">
               <div class="contact-icon">📧</div>
-              <h3>主要郵箱</h3>
-              <p>joechiboo@gmail.com</p>
-              <a href="mailto:joechiboo@gmail.com" class="btn btn-primary"> 發送郵件 </a>
+              <h3>{{ t('primaryEmail') }}</h3>
+              <p>{{ t('primaryEmailAddress') }}</p>
+              <a href="mailto:joechiboo@gmail.com" class="btn btn-primary"> {{ t('sendEmailButton') }} </a>
             </div>
 
             <div class="contact-card">
               <div class="contact-icon">📨</div>
-              <h3>備用郵箱</h3>
-              <p>stst1239joe@hotmail.com</p>
-              <a href="mailto:stst1239joe@hotmail.com" class="btn btn-primary"> 發送郵件 </a>
+              <h3>{{ t('backupEmail') }}</h3>
+              <p>{{ t('backupEmailAddress') }}</p>
+              <a href="mailto:stst1239joe@hotmail.com" class="btn btn-primary"> {{ t('sendEmailButton') }} </a>
             </div>
 
             <div class="contact-card">
               <div class="contact-icon">💬</div>
-              <h3>WeChat</h3>
-              <p>即時通訊聯繫</p>
+              <h3>{{ t('wechatContact') }}</h3>
+              <p>{{ t('wechatContactDesc') }}</p>
               <p style="color: var(--color-primary); font-weight: 600; margin-bottom: 1rem">
                 ID: joechiboo
               </p>
-              <span class="btn btn-primary" style="cursor: default; opacity: 0.7"> 微信聯繫 </span>
+              <div class="contact-qr-container">
+                <img 
+                  src="/img/wechat.png" 
+                  alt="WeChat QR Code" 
+                  class="contact-qr-image clickable" 
+                  @click="openQRLightbox('/img/wechat.png', 'WeChat QR Code')"
+                />
+                <p class="qr-hint">掃描加入好友</p>
+              </div>
             </div>
           </div>
         </section>
 
         <section class="contact-form-section">
-          <h2>發送訊息</h2>
+          <h2>{{ t('sendMessage') }}</h2>
           <form @submit.prevent="submitForm" class="contact-form">
             <div class="form-row">
               <div class="form-group">
-                <label for="name">姓名 *</label>
+                <label for="name">{{ t('formName') }} *</label>
                 <input
                   type="text"
                   id="name"
@@ -79,7 +95,7 @@
               </div>
 
               <div class="form-group">
-                <label for="email">電子郵件 *</label>
+                <label for="email">{{ t('formEmail') }} *</label>
                 <input
                   type="email"
                   id="email"
@@ -92,7 +108,7 @@
             </div>
 
             <div class="form-group">
-              <label for="subject">主旨 *</label>
+              <label for="subject">{{ t('formSubject') }} *</label>
               <input
                 type="text"
                 id="subject"
@@ -104,7 +120,7 @@
             </div>
 
             <div class="form-group">
-              <label for="message">訊息內容 *</label>
+              <label for="message">{{ t('formMessage') }} *</label>
               <textarea
                 id="message"
                 v-model="form.message"
@@ -116,54 +132,54 @@
             </div>
 
             <button type="submit" class="btn btn-primary btn-large" :disabled="isSubmitting">
-              <span v-if="isSubmitting">發送中...</span>
-              <span v-else>發送訊息</span>
+              <span v-if="isSubmitting">{{ t('sendingMessage') }}</span>
+              <span v-else>{{ t('sendMessageButton') }}</span>
             </button>
           </form>
         </section>
 
         <section class="availability-section">
-          <h2>工作狀態</h2>
+          <h2>{{ t('workStatus') }}</h2>
           <div class="availability-card">
             <div class="status-indicator available"></div>
             <div class="availability-info">
-              <h3>目前狀態：免費或收費兼職專案</h3>
-              <p>我正在尋找新的挑戰和機會，特別對以下類型的專案感興趣：</p>
+              <h3>{{ t('currentStatus') }}</h3>
+              <p>{{ t('projectInterests') }}</p>
               <ul class="interests-list">
-                <li>前端開發專案（Vue.js）</li>
-                <li>全端 Web 應用程式開發</li>
-                <li>.NET MVC / .NET Core</li>
-                <li>創新科技專案</li>
-                <li>技術諮詢與指導</li>
+                <li>{{ t('interestFrontend') }}</li>
+                <li>{{ t('interestFullstack') }}</li>
+                <li>{{ t('interestDotNet') }}</li>
+                <li>{{ t('interestInnovation') }}</li>
+                <li>{{ t('interestConsulting') }}</li>
               </ul>
-              <p class="response-time"><strong>回覆時間：</strong>通常在24小時內回覆郵件</p>
+              <p class="response-time"><strong>{{ t('responseTime') }}</strong></p>
             </div>
           </div>
         </section>
 
         <section class="location-section">
-          <h2>位置資訊</h2>
+          <h2>{{ t('locationInfo') }}</h2>
           <div class="location-info">
             <div class="location-details">
-              <h3>📍 台灣</h3>
-              <p>基於台灣，可配合不同時區的工作安排</p>
+              <h3>📍 {{ t('locationTaiwan') }}</h3>
+              <p>{{ t('locationDesc') }}</p>
               <div class="timezone-info">
-                <p><strong>時區：</strong>UTC+8 (台北時間)</p>
-                <p><strong>工作時間：</strong>彈性安排，可配合團隊需求</p>
-                <p><strong>遠端工作：</strong>支援遠端協作</p>
+                <p><strong>{{ t('timezone') }}</strong></p>
+                <p><strong>{{ t('workingHours') }}</strong></p>
+                <p><strong>{{ t('remoteWork') }}</strong></p>
               </div>
             </div>
 
             <div class="availability-calendar">
-              <h4>最佳聯絡時間</h4>
+              <h4>{{ t('bestContactTime') }}</h4>
               <div class="time-slots">
                 <div class="time-slot">
-                  <span class="day">週一至週五</span>
-                  <span class="time">09:00 - 18:00</span>
+                  <span class="day">{{ t('weekdays') }}</span>
+                  <span class="time">{{ t('weekdaysTime') }}</span>
                 </div>
                 <div class="time-slot">
-                  <span class="day">緊急聯繫</span>
-                  <span class="time">隨時歡迎</span>
+                  <span class="day">{{ t('emergencyContact') }}</span>
+                  <span class="time">{{ t('emergencyTime') }}</span>
                 </div>
               </div>
             </div>
@@ -171,12 +187,31 @@
         </section>
       </div>
     </div>
+
+    <!-- QR碼燈箱 -->
+    <div v-if="qrLightboxData" class="lightbox-overlay" @click="closeQRLightbox">
+      <div class="lightbox-content" @click.stop>
+        <button class="lightbox-close" @click="closeQRLightbox">&times;</button>
+        <img 
+          :src="qrLightboxData.src" 
+          :alt="qrLightboxData.alt" 
+          class="lightbox-qr-image"
+        />
+        <div class="lightbox-info">
+          <h3>{{ qrLightboxData.alt }}</h3>
+          <p class="qr-scan-hint">掃描二維碼加入好友</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref, reactive, onMounted, onUnmounted } from 'vue'
 import emailjs from '@emailjs/browser'
+import { useLanguage } from '../composables/useLanguage.js'
+
+const { t } = useLanguage()
 
 const form = reactive({
   name: '',
@@ -194,6 +229,33 @@ const errors = reactive({
 
 const isSubmitting = ref(false)
 
+// QR碼燈箱相關
+const qrLightboxData = ref(null)
+
+const openQRLightbox = (src, alt) => {
+  qrLightboxData.value = { src, alt }
+}
+
+const closeQRLightbox = () => {
+  qrLightboxData.value = null
+}
+
+// 鍵盤事件處理
+const handleKeyDown = (event) => {
+  if (event.key === 'Escape' && qrLightboxData.value) {
+    closeQRLightbox()
+  }
+}
+
+// 生命周期鉤子
+onMounted(() => {
+  document.addEventListener('keydown', handleKeyDown)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('keydown', handleKeyDown)
+})
+
 const validateForm = () => {
   // 清除之前的錯誤
   Object.keys(errors).forEach((key) => {
@@ -203,28 +265,28 @@ const validateForm = () => {
   let isValid = true
 
   if (!form.name.trim()) {
-    errors.name = '請輸入姓名'
+    errors.name = t('formNameRequired')
     isValid = false
   }
 
   if (!form.email.trim()) {
-    errors.email = '請輸入電子郵件'
+    errors.email = t('formEmailRequired')
     isValid = false
   } else if (!/\S+@\S+\.\S+/.test(form.email)) {
-    errors.email = '請輸入有效的電子郵件格式'
+    errors.email = t('formEmailInvalid')
     isValid = false
   }
 
   if (!form.subject.trim()) {
-    errors.subject = '請輸入主旨'
+    errors.subject = t('formSubjectRequired')
     isValid = false
   }
 
   if (!form.message.trim()) {
-    errors.message = '請輸入訊息內容'
+    errors.message = t('formMessageRequired')
     isValid = false
   } else if (form.message.trim().length < 10) {
-    errors.message = '訊息內容至少需要10個字元'
+    errors.message = t('formMessageTooShort')
     isValid = false
   }
 
@@ -393,11 +455,19 @@ const submitForm = async () => {
 .form-group textarea {
   width: 100%;
   padding: 0.8rem;
-  border: 2px solid var(--border-color);
+  border: 2px solid var(--color-text-muted, #ccc);
   border-radius: 5px;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
   background: var(--bg-white);
+  color: var(--color-text-primary);
+}
+
+/* 深色模式下的表單邊框 */
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group textarea {
+  border: 2px solid #555;
+  background: var(--bg-darker, #2a2a2a);
   color: var(--color-text-primary);
 }
 
@@ -473,19 +543,32 @@ const submitForm = async () => {
 }
 
 .status-indicator.available {
-  background: var(--color-success);
-  animation: pulse 2s infinite;
+  background: #10b981 !important;
+  animation: breathe 2s ease-in-out infinite !important;
+  -webkit-animation: breathe 2s ease-in-out infinite !important;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.6) !important;
+  border: 2px solid rgba(16, 185, 129, 0.3) !important;
+  will-change: transform, opacity, background-color, box-shadow !important;
 }
 
-@keyframes pulse {
+@keyframes breathe {
   0% {
-    opacity: 1;
+    transform: scale(0.85);
+    box-shadow: 0 0 5px rgba(16, 185, 129, 0.4);
+    opacity: 0.8;
+    background: #10b981;
   }
   50% {
-    opacity: 0.5;
+    transform: scale(1.25);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.8);
+    opacity: 1;
+    background: #22c55e;
   }
   100% {
-    opacity: 1;
+    transform: scale(0.85);
+    box-shadow: 0 0 5px rgba(16, 185, 129, 0.4);
+    opacity: 0.8;
+    background: #10b981;
   }
 }
 
@@ -594,6 +677,166 @@ const submitForm = async () => {
   .location-info {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+}
+
+/* QR 碼圖片樣式 */
+.contact-qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-qr-image {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.contact-qr-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.contact-qr-image.clickable:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.qr-hint {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+  text-align: center;
+}
+
+/* 深色模式下的QR碼圖片 */
+[data-theme="dark"] .contact-qr-image {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .contact-qr-image:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* QR碼燈箱樣式 */
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease;
+}
+
+.lightbox-content {
+  position: relative;
+  background: var(--bg-white);
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.lightbox-close:hover {
+  background: var(--color-error);
+  color: white;
+  transform: rotate(90deg);
+}
+
+.lightbox-qr-image {
+  max-width: 400px;
+  max-height: 400px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.lightbox-info {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.lightbox-info h3 {
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.qr-scan-hint {
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* 深色模式下的燈箱 */
+[data-theme="dark"] .lightbox-content {
+  background: var(--bg-darker, #2a2a2a);
+}
+
+[data-theme="dark"] .lightbox-qr-image {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 動畫 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .lightbox-content {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .lightbox-qr-image {
+    max-width: 300px;
+    max-height: 300px;
+  }
+  
+  .lightbox-close {
+    top: 0.5rem;
+    right: 0.5rem;
   }
 }
 </style>
