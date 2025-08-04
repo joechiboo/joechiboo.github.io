@@ -652,34 +652,38 @@ blockquote {
   margin: 0 auto;
 }
 
-.highlight-item {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+/* 日間模式（預設） - 使用更高的特異性 */
+.about .highlights-section .highlight-item {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
   border-radius: 12px;
   padding: 1.5rem;
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
   min-width: 0; /* 防止內容撐開容器 */
+  max-width: 100%; /* 限制最大寬度 */
+  overflow: hidden; /* 隱藏溢出內容 */
 }
 
-/* 深色模式下的highlight-item */
-[data-theme="dark"] .highlights-section .highlight-item {
+.about .highlights-section .highlight-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* 深色模式下的highlight-item - 使用更高的特異性 */
+[data-theme="dark"] .about .highlights-section .highlight-item {
   background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%) !important;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
 }
 
-[data-theme="dark"] .highlights-section .highlight-item:hover {
+[data-theme="dark"] .about .highlights-section .highlight-item:hover {
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4) !important;
 }
 
-.highlight-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
-}
 
 .highlight-icon {
   font-size: 2.5rem;
@@ -690,6 +694,7 @@ blockquote {
 .highlight-content {
   flex: 1;
   min-width: 0; /* 確保可以縮小 */
+  overflow: hidden; /* 防止內容溢出 */
 }
 
 .highlight-content h3 {
@@ -699,15 +704,22 @@ blockquote {
   margin-bottom: 0.5rem;
   word-wrap: break-word; /* 長文字自動換行 */
   hyphens: auto; /* 自動斷字 */
+  overflow-wrap: break-word; /* 強制換行 */
+  line-height: 1.3; /* 調整行高 */
 }
 
-/* 深色模式下的文字顏色 */
-[data-theme="dark"] .highlights-section .highlight-content h3 {
+/* 深色模式下的文字顏色 - 使用更高的特異性 */
+[data-theme="dark"] .about .highlights-section .highlight-content h3 {
   color: #e2e8f0 !important;
 }
 
-[data-theme="dark"] .highlights-section .highlight-desc {
+[data-theme="dark"] .about .highlights-section .highlight-desc {
   color: #a0aec0 !important;
+}
+
+[data-theme="dark"] .about .highlights-section .highlight-years {
+  background: rgba(255, 107, 53, 0.2) !important;
+  color: #ff6b35 !important;
 }
 
 .highlight-years {
