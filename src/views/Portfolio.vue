@@ -40,8 +40,8 @@
               </span>
             </div>
             <div class="project-links">
-              <a v-if="project.demo" :href="project.demo" class="btn btn-primary" target="_blank">
-                線上展示
+              <a v-if="project.demo" :href="project.demo" :class="project.id === 5 ? 'btn btn-green' : 'btn btn-primary'" target="_blank">
+                {{ project.id === 5 ? '本網站' : '線上展示' }}
               </a>
               <a
                 v-if="project.github"
@@ -64,7 +64,18 @@ import { ref } from 'vue'
 
 const projects = ref([
   {
-    id: 1,
+    id: 5,
+    title: '個人履歷',
+    description:
+      '使用 Vue.js 開發的個人作品集網站，展示技術專案、工作經驗和個人資訊。採用響應式設計和現代化UI，並整合語音導覽功能，提供互動式用戶體驗。',
+    technologies: ['Vue.js', 'JavaScript', 'CSS3', 'GitHub Pages', 'Responsive Design'],
+    demo: window.location.origin,
+    github: 'https://github.com/joechiboo/joechiboo.github.io',
+    category: 'web',
+    year: '2025',
+  },
+  {
+    id: 4,
     title: '波爾多社區網站',
     description:
       '使用 Vue.js 開發的現代化社區門戶網站，提供社區資訊展示、互動功能和用戶參與平台。專案採用響應式設計，確保在各種設備上的最佳體驗。',
@@ -75,7 +86,7 @@ const projects = ref([
     year: '2024',
   },
   {
-    id: 2,
+    id: 3,
     title: '測驗服務專區',
     description:
       '專業的英語檢定考試報名平台，支援TOEIC、TOEFL等多種測驗註冊。整合考試行事曆、線上報名、用戶管理和多語言介面，提供完整的考試服務生態系統。',
@@ -92,7 +103,7 @@ const projects = ref([
     company: 'Chun Shin Limited',
   },
   {
-    id: 3,
+    id: 2,
     title: '搶救杰倫大作戰',
     description:
       '創意專案企劃與簡報設計，展現專案規劃、創意發想和視覺呈現能力。透過Google Slides製作互動式簡報，結合創意內容和專業設計。',
@@ -102,7 +113,7 @@ const projects = ref([
     category: 'creative',
   },
   {
-    id: 4,
+    id: 1,
     title: '台北高爾夫協會官網',
     description:
       '台北市高爾夫協會官方網站開發與維護。負責賽事資訊發布系統、新聞內容管理、競賽章程下載和報名選手資訊展示功能。提供清晰的資訊架構和用戶友善的瀏覽體驗。',
@@ -152,7 +163,7 @@ const projects = ref([
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
@@ -288,6 +299,8 @@ const projects = ref([
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-block;
+  width: 100px;
+  text-align: center;
 }
 
 .btn-primary {
@@ -308,6 +321,15 @@ const projects = ref([
 .btn-outline:hover {
   background: #007bff;
   color: white;
+}
+
+.btn-green {
+  background: #28a745;
+  color: white;
+}
+
+.btn-green:hover {
+  background: #218838;
 }
 
 @media (max-width: 480px) {
