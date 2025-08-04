@@ -820,11 +820,17 @@ blockquote {
     gap: 1rem;
   }
 
-  .highlight-item {
+  .about .highlights-section .highlight-item {
     padding: 1.5rem 1rem;
     flex-direction: column;
     text-align: center;
     align-items: center;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+  }
+  
+  /* 手機版深色模式 */
+  [data-theme="dark"] .about .highlights-section .highlight-item {
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%) !important;
   }
 
   .highlight-icon {

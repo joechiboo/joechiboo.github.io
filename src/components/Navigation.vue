@@ -163,12 +163,17 @@ const closeMenu = () => {
     left: -100%;
     top: 70px;
     flex-direction: column;
-    background-color: var(--bg-white);
+    background-color: #ffffff;
     width: 100%;
     text-align: center;
     transition: var(--transition-base);
     box-shadow: var(--shadow-lg);
     padding: 2rem 0;
+  }
+  
+  /* 手機版深色模式 */
+  [data-theme="dark"] .nav-menu {
+    background-color: #1a1a1a;
   }
 
   .nav-menu.active {
