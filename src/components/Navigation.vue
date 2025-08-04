@@ -15,8 +15,8 @@
       </div>
 
       <div class="nav-controls">
-        <!-- 主題切換按鈕 -->
-        <button @click="toggleTheme" class="control-btn theme-btn" :title="isDark ? t('lightMode') : t('darkMode')">
+        <!-- 主題切換按鈕 (手機版隱藏) -->
+        <button v-if="!isMobile()" @click="toggleTheme" class="control-btn theme-btn" :title="isDark ? t('lightMode') : t('darkMode')">
           <svg v-if="isDark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="5"/>
             <line x1="12" y1="1" x2="12" y2="3"/>
@@ -55,7 +55,7 @@ import { useLanguage } from '../composables/useLanguage.js'
 
 const isMenuOpen = ref(false)
 
-const { isDark, toggleTheme } = useTheme()
+const { isDark, toggleTheme, isMobile } = useTheme()
 const { currentLanguage, toggleLanguage, t } = useLanguage()
 
 const toggleMenu = () => {
@@ -158,73 +158,21 @@ const closeMenu = () => {
 }
 
 @media screen and (max-width: 768px) {
-  /* 手機版nav-container背景修復 */
-  .nav-container {
-    background-color: #ffffff !important;
-  }
-  
-  /* 手機版日間模式文字顏色 */
-  .nav-container .nav-logo-link {
-    color: #2d3748 !important;
-  }
-  
-  .nav-container .control-btn {
-    color: #2d3748 !important;
-  }
-  
-  /* 手機版深色模式nav-container */
-  [data-theme="dark"] .nav-container {
-    background-color: #1a1a1a !important;
-  }
-  
-  /* 手機版深色模式文字顏色 */
-  [data-theme="dark"] .nav-container .nav-logo-link {
-    color: #ffffff !important;
-  }
-  
-  [data-theme="dark"] .nav-container .control-btn {
-    color: #ffffff !important;
-  }
-
-  body .nav-menu {
+  .nav-menu {
     position: fixed;
     left: -100%;
     top: 70px;
     flex-direction: column;
-    background-color: #ffffff !important;
+    background-color: var(--bg-white);
     width: 100%;
     text-align: center;
     transition: var(--transition-base);
     box-shadow: var(--shadow-lg);
     padding: 2rem 0;
   }
-  
-  /* 手機版日間模式文字顏色 */
-  body .nav-menu .nav-link {
-    color: #2d3748 !important;
-  }
-  
-  body .nav-menu .nav-link:hover,
-  body .nav-menu .nav-link.router-link-active {
-    color: #667eea !important;
-  }
-  
-  /* 手機版深色模式 */
-  body[data-theme="dark"] .nav-menu {
-    background-color: #1a1a1a !important;
-  }
-  
-  body[data-theme="dark"] .nav-menu .nav-link {
-    color: #ffffff !important;
-  }
-  
-  body[data-theme="dark"] .nav-menu .nav-link:hover,
-  body[data-theme="dark"] .nav-menu .nav-link.router-link-active {
-    color: #f97316 !important;
-  }
 
-  body .nav-menu.active {
-    left: 0 !important;
+  .nav-menu.active {
+    left: 0;
   }
 
   .nav-controls {

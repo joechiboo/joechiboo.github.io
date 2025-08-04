@@ -820,19 +820,11 @@ blockquote {
     gap: 1rem;
   }
 
-  .about .highlights-section .highlight-item {
+  .highlight-item {
     padding: 1.5rem 1rem;
     flex-direction: column;
     text-align: center;
     align-items: center;
-    background: #ffffff !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
-  }
-  
-  /* 手機版深色模式 */
-  [data-theme="dark"] .about .highlights-section .highlight-item {
-    background: #1a1a1a !important;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
   }
 
   .highlight-icon {
