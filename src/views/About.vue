@@ -820,17 +820,19 @@ blockquote {
     gap: 1rem;
   }
 
-  .about .highlights-section .highlight-item {
-    padding: 1.5rem 1rem;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
+  body .about .highlights-section .highlight-item {
+    padding: 1.5rem 1rem !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    align-items: center !important;
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
   }
   
   /* 手機版深色模式 */
-  [data-theme="dark"] .about .highlights-section .highlight-item {
+  body[data-theme="dark"] .about .highlights-section .highlight-item {
     background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
   }
 
   .highlight-icon {

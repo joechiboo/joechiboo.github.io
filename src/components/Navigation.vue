@@ -158,12 +158,12 @@ const closeMenu = () => {
 }
 
 @media screen and (max-width: 768px) {
-  .nav-menu {
+  body .nav-menu {
     position: fixed;
     left: -100%;
     top: 70px;
     flex-direction: column;
-    background-color: #ffffff;
+    background-color: #ffffff !important;
     width: 100%;
     text-align: center;
     transition: var(--transition-base);
@@ -172,8 +172,8 @@ const closeMenu = () => {
   }
   
   /* 手機版深色模式 */
-  [data-theme="dark"] .nav-menu {
-    background-color: #1a1a1a;
+  body[data-theme="dark"] .nav-menu {
+    background-color: #1a1a1a !important;
   }
 
   .nav-menu.active {
