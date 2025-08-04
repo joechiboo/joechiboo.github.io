@@ -158,6 +158,16 @@ const closeMenu = () => {
 }
 
 @media screen and (max-width: 768px) {
+  /* 手機版nav-container背景修復 */
+  .nav-container {
+    background-color: #ffffff !important;
+  }
+  
+  /* 手機版深色模式nav-container */
+  [data-theme="dark"] .nav-container {
+    background-color: #1a1a1a !important;
+  }
+
   body .nav-menu {
     position: fixed;
     left: -100%;
