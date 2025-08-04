@@ -26,7 +26,7 @@
 
       <div class="intro-content">
         <div class="speaker-info">
-          <div class="avatar">👨‍💻</div>
+          <div class="avatar">{{ isDark ? '🧑🏿‍💻' : '👨‍💻' }}</div>
           <div class="speaker-name">{{ t('speakerName') }}</div>
         </div>
 
@@ -128,12 +128,16 @@
 import { ref, onMounted, onUnmounted, watch, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useLanguage } from '../composables/useLanguage.js'
+import { useTheme } from '../composables/useTheme.js'
 
 // Router 實例
 const router = useRouter()
 
 // 語言支援
 const { t, currentLanguage } = useLanguage()
+
+// 主題支援
+const { isDark } = useTheme()
 
 // 自我介紹內容（根據語言動態切換）
 const introText = computed(() => t('introText'))
@@ -187,6 +191,31 @@ onMounted(() => {
   speechSupported.value = 'speechSynthesis' in window
   if (speechSupported.value) {
     speechSynthesis = window.speechSynthesis
+    
+    // 確保語音列表加載完成
+    const loadVoices = () => {
+      const voices = speechSynthesis.getVoices()
+      if (voices.length > 0) {
+        console.log('=== 可用語音列表 ===')
+        voices.forEach((voice, index) => {
+          console.log(`${index + 1}. ${voice.name} (${voice.lang}) - ${voice.gender || 'unknown gender'}`)
+        })
+        console.log('==================')
+        
+        // 顯示中文和英文語音
+        const zhVoices = voices.filter(v => v.lang.includes('zh'))
+        const enVoices = voices.filter(v => v.lang.includes('en'))
+        
+        console.log('中文語音:', zhVoices.map(v => v.name))
+        console.log('英文語音:', enVoices.map(v => v.name))
+      }
+    }
+    
+    if (speechSynthesis.getVoices().length === 0) {
+      speechSynthesis.addEventListener('voiceschanged', loadVoices)
+    } else {
+      loadVoices()
+    }
   }
 })
 
@@ -220,10 +249,83 @@ const startPlayback = () => {
 
   // 設置語音參數
   utterance.rate = 0.9 // 稍微慢一點
-  utterance.pitch = 1.0
   utterance.volume = volume.value
-  // 根據當前語言設定語音語言
-  utterance.lang = currentLanguage.value === 'zh' ? 'zh-TW' : 'en-US'
+  
+  // 根據主題和語言設定語音參數
+  if (isDark.value) {
+    // 深色模式：使用更低沉的音調，模擬黑人語音特色
+    utterance.pitch = 0.8
+    utterance.rate = 0.85
+    utterance.lang = currentLanguage.value === 'zh' ? 'zh-TW' : 'en-US'
+    
+    // 嘗試選擇特定的語音（如果可用）
+    const selectVoice = () => {
+      if (!speechSynthesis || !speechSynthesis.getVoices) return
+      
+      const voices = speechSynthesis.getVoices()
+      if (voices.length === 0) {
+        // 如果語音列表還沒載入，等待一下再試
+        setTimeout(selectVoice, 100)
+        return
+      }
+      
+      let selectedVoice = null
+      
+      if (currentLanguage.value === 'zh') {
+        // 中文：尋找男性或低音調語音
+        const preferredNames = ['Xiaoyun', '小雲', 'Male', '男', 'Kangkang', '康康', 'Yaoyao', '瑤瑤']
+        selectedVoice = voices.find(voice => 
+          voice.lang.includes('zh') && 
+          preferredNames.some(name => voice.name.includes(name))
+        )
+        
+        // 如果沒找到，就選第一個中文男性語音
+        if (!selectedVoice) {
+          selectedVoice = voices.find(voice => 
+            voice.lang.includes('zh') && voice.name.toLowerCase().includes('male')
+          )
+        }
+      } else {
+        // 英文：尋找低音調或黑人特色語音
+        const preferredNames = [
+          'Aaron', 'David', 'Daniel', 'Michael', 'James', 'Ravi', 'Alex',
+          'Microsoft David', 'Google US English', 'Chrome OS US English',
+          'Microsoft Mark', 'Microsoft Zira'
+        ]
+        
+        selectedVoice = voices.find(voice => 
+          voice.lang.includes('en') && 
+          preferredNames.some(name => voice.name.includes(name))
+        )
+        
+        // 如果沒找到，嘗試找任何男性英文語音
+        if (!selectedVoice) {
+          selectedVoice = voices.find(voice => 
+            voice.lang.includes('en') && 
+            (voice.name.toLowerCase().includes('male') || 
+             voice.name.toLowerCase().includes('man') ||
+             voice.name.toLowerCase().includes('david') ||
+             voice.name.toLowerCase().includes('alex'))
+          )
+        }
+      }
+      
+      if (selectedVoice) {
+        utterance.voice = selectedVoice
+        console.log(`深色模式選擇語音: ${selectedVoice.name} (${selectedVoice.lang})`)
+      } else {
+        console.log('未找到合適的深色模式語音，使用預設語音')
+      }
+    }
+    
+    // 執行語音選擇
+    selectVoice()
+  } else {
+    // 淺色模式：使用正常音調
+    utterance.pitch = 1.0
+    utterance.lang = currentLanguage.value === 'zh' ? 'zh-TW' : 'en-US'
+    console.log('淺色模式使用預設語音設定')
+  }
 
   // 重置導覽時間軸
   resetNavigationTimeline()
