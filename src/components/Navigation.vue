@@ -176,8 +176,8 @@ const closeMenu = () => {
     background-color: #1a1a1a !important;
   }
 
-  .nav-menu.active {
-    left: 0;
+  body .nav-menu.active {
+    left: 0 !important;
   }
 
   .nav-controls {
