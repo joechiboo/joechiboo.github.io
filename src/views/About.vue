@@ -663,6 +663,17 @@ blockquote {
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
+  min-width: 0; /* 防止內容撐開容器 */
+}
+
+/* 深色模式下的highlight-item */
+[data-theme="dark"] .highlight-item {
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .highlight-item:hover {
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
 }
 
 .highlight-item:hover {
@@ -676,11 +687,27 @@ blockquote {
   margin-top: 0.2rem;
 }
 
+.highlight-content {
+  flex: 1;
+  min-width: 0; /* 確保可以縮小 */
+}
+
 .highlight-content h3 {
   color: #333;
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
+  word-wrap: break-word; /* 長文字自動換行 */
+  hyphens: auto; /* 自動斷字 */
+}
+
+/* 深色模式下的文字顏色 */
+[data-theme="dark"] .highlight-content h3 {
+  color: #e2e8f0;
+}
+
+[data-theme="dark"] .highlight-desc {
+  color: #a0aec0;
 }
 
 .highlight-years {
@@ -782,18 +809,38 @@ blockquote {
   }
 
   .highlight-item {
-    padding: 1rem;
+    padding: 1.5rem 1rem;
     flex-direction: column;
     text-align: center;
+    align-items: center;
   }
 
   .highlight-icon {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+    margin-top: 0;
+  }
+
+  .highlight-content {
+    width: 100%;
   }
 
   .highlight-content h3 {
     font-size: 1.1rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+  }
+
+  .highlight-years {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.6rem;
+    margin-bottom: 0.6rem;
+    display: inline-block;
+  }
+
+  .highlight-desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 }
 </style>
