@@ -1,5 +1,5 @@
 :root {
-  /* Colors */
+  /* Light theme colors */
   --color-text-primary: #2d3748;
   --color-text-secondary: #666;
   --color-text-muted: #999;
@@ -7,7 +7,7 @@
   --color-primary-hover: #5a67d8;
   --color-primary-gradient: linear-gradient(135deg, #667eea, #764ba2);
   
-  /* Backgrounds */
+  /* Light theme backgrounds */
   --bg-white: #ffffff;
   --bg-light: #f8f9fa;
   --bg-lighter: #e9ecef;
@@ -51,4 +51,26 @@
   --breakpoint-sm: 768px;
   --breakpoint-md: 1024px;
   --breakpoint-lg: 1200px;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  /* Dark theme colors */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #e2e8f0;
+  --color-text-muted: #a0aec0;
+  --color-primary: #f97316;
+  --color-primary-hover: #ea580c;
+  --color-primary-gradient: linear-gradient(135deg, #f97316, #dc2626);
+  
+  /* Dark theme backgrounds */
+  --bg-white: #1a1a1a;
+  --bg-light: #2d2d2d;
+  --bg-lighter: #404040;
+  
+  /* Dark theme shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.6);
+  --shadow-primary: 0 4px 12px rgba(249, 115, 22, 0.4);
 }

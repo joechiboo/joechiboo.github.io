@@ -2,8 +2,8 @@
   <div class="portfolio">
     <div class="container">
       <header class="page-header">
-        <h1>技術作品集</h1>
-        <p>我的技術專案與開發經驗展示</p>
+        <h1>{{ t('portfolioTitle') }}</h1>
+        <p>{{ t('portfolioSubtitle') }}</p>
       </header>
 
       <div class="portfolio-grid">
@@ -17,11 +17,11 @@
               <span v-else>💻</span>
             </div>
             <div class="project-category">
-              <span v-if="project.category === 'web'">網站開發</span>
-              <span v-else-if="project.category === 'enterprise'">企業專案</span>
-              <span v-else-if="project.category === 'creative'">創意專案</span>
-              <span v-else-if="project.category === 'freelance'">外包專案</span>
-              <span v-else>技術專案</span>
+              <span v-if="project.category === 'web'">{{ t('webDev') }}</span>
+              <span v-else-if="project.category === 'enterprise'">{{ t('enterprise') }}</span>
+              <span v-else-if="project.category === 'creative'">{{ t('creative') }}</span>
+              <span v-else-if="project.category === 'freelance'">{{ t('freelance') }}</span>
+              <span v-else>{{ t('tech') }}</span>
             </div>
           </div>
           <div class="project-content">
@@ -40,8 +40,8 @@
               </span>
             </div>
             <div class="project-links">
-              <a v-if="project.demo" :href="project.demo" :class="project.id === 5 ? 'btn btn-green' : 'btn btn-primary'" target="_blank">
-                {{ project.id === 5 ? '本網站' : '線上展示' }}
+              <a v-if="project.demo" :href="project.demo" :class="project.id === 5 ? 'btn btn-special' : 'btn btn-primary'" target="_blank">
+                {{ project.id === 5 ? t('thisWebsite') : t('demo') }}
               </a>
               <a
                 v-if="project.github"
@@ -49,7 +49,7 @@
                 class="btn btn-outline"
                 target="_blank"
               >
-                GitHub
+                {{ t('github') }}
               </a>
             </div>
           </div>
@@ -61,6 +61,9 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useLanguage } from '../composables/useLanguage.js'
+
+const { t } = useLanguage()
 
 const projects = ref([
   {
@@ -136,7 +139,7 @@ const projects = ref([
 .portfolio {
   padding-top: 80px;
   min-height: 100vh;
-  background: #f8f9fa;
+  background: var(--bg-light);
 }
 
 .container {
@@ -152,13 +155,13 @@ const projects = ref([
 
 .page-header h1 {
   font-size: 3rem;
-  color: #333;
+  color: var(--color-text-primary);
   margin-bottom: 1rem;
 }
 
 .page-header p {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--color-text-secondary);
 }
 
 .portfolio-grid {
@@ -182,11 +185,11 @@ const projects = ref([
 }
 
 .project-card {
-  background: white;
+  background: var(--bg-white);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base);
   display: flex;
   flex-direction: column;
 }
@@ -229,7 +232,7 @@ const projects = ref([
 }
 
 .project-content h3 {
-  color: #333;
+  color: var(--color-text-primary);
   margin-bottom: 0.5rem;
   font-size: 1.3rem;
 }
@@ -244,8 +247,8 @@ const projects = ref([
 .project-year,
 .project-company,
 .project-client {
-  background: #f8f9fa;
-  color: #495057;
+  background: var(--bg-lighter);
+  color: var(--color-text-secondary);
   padding: 0.2rem 0.6rem;
   border-radius: 12px;
   font-size: 0.8rem;
@@ -253,17 +256,17 @@ const projects = ref([
 }
 
 .project-company {
-  background: #e8f5e8;
-  color: #2d5a2d;
+  background: #10b981;
+  color: white;
 }
 
 .project-client {
-  background: #fff3cd;
-  color: #856404;
+  background: #f59e0b;
+  color: white;
 }
 
 .project-content p {
-  color: #666;
+  color: var(--color-text-secondary);
   line-height: 1.6;
   margin-bottom: 1.5rem;
   flex: 1;
@@ -282,6 +285,12 @@ const projects = ref([
   font-size: 0.9rem;
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+/* 深色模式下的tech-tag顏色 */
+[data-theme="dark"] .tech-tag {
+  background: #1e3a8a;
+  color: #bfdbfe;
 }
 
 .project-links {
@@ -312,6 +321,16 @@ const projects = ref([
   background: #0056b3;
 }
 
+/* 深色模式下的按鈕顏色 */
+[data-theme="dark"] .btn-primary {
+  background: #1d4ed8;
+  color: white;
+}
+
+[data-theme="dark"] .btn-primary:hover {
+  background: #1e40af;
+}
+
 .btn-outline {
   background: transparent;
   color: #007bff;
@@ -323,13 +342,42 @@ const projects = ref([
   color: white;
 }
 
-.btn-green {
-  background: #28a745;
-  color: white;
+/* 深色模式下的outline按鈕 */
+[data-theme="dark"] .btn-outline {
+  color: #60a5fa;
+  border: 2px solid #60a5fa;
 }
 
-.btn-green:hover {
-  background: #218838;
+[data-theme="dark"] .btn-outline:hover {
+  background: #60a5fa;
+  color: #1a202c;
+}
+
+.btn-special {
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-special:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(6, 182, 212, 0.4);
+}
+
+.btn-special::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-special:hover::before {
+  left: 100%;
 }
 
 @media (max-width: 480px) {

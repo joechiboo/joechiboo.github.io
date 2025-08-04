@@ -36,7 +36,7 @@
               <div class="contact-icon">💬</div>
               <h3>WeChat</h3>
               <p>即時通訊聯繫</p>
-              <p style="color: #007bff; font-weight: 600; margin-bottom: 1rem">ID: joechiboo</p>
+              <p style="color: var(--color-primary); font-weight: 600; margin-bottom: 1rem">ID: joechiboo</p>
               <span class="btn btn-primary" style="cursor: default; opacity: 0.7"> 微信聯繫 </span>
             </div>
 
@@ -281,7 +281,7 @@ const submitForm = async () => {
 .contact {
   padding-top: 80px;
   min-height: 100vh;
-  background: #f8f9fa;
+  background: var(--bg-light);
 }
 
 .container {
@@ -297,21 +297,21 @@ const submitForm = async () => {
 
 .page-header h1 {
   font-size: 3rem;
-  color: #333;
+  color: var(--color-text-primary);
   margin-bottom: 1rem;
 }
 
 .page-header p {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--color-text-secondary);
 }
 
 .contact-content section {
-  background: white;
+  background: var(--bg-white);
   border-radius: 10px;
   padding: 3rem;
   margin-bottom: 3rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
 .contact-grid {
@@ -321,7 +321,7 @@ const submitForm = async () => {
 }
 
 .contact-card {
-  background: #f8f9fa;
+  background: var(--bg-light);
   padding: 2rem;
   border-radius: 10px;
   text-align: center;
@@ -338,17 +338,17 @@ const submitForm = async () => {
 }
 
 .contact-card h3 {
-  color: #333;
+  color: var(--color-text-primary);
   margin-bottom: 0.5rem;
 }
 
 .contact-card p {
-  color: #666;
+  color: var(--color-text-secondary);
   margin-bottom: 1.5rem;
 }
 
 .contact-form-section h2 {
-  color: #333;
+  color: var(--color-text-primary);
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2rem;
@@ -371,7 +371,7 @@ const submitForm = async () => {
 
 .form-group label {
   display: block;
-  color: #333;
+  color: var(--color-text-primary);
   margin-bottom: 0.5rem;
   font-weight: 500;
 }
@@ -380,25 +380,27 @@ const submitForm = async () => {
 .form-group textarea {
   width: 100%;
   padding: 0.8rem;
-  border: 2px solid #e9ecef;
+  border: 2px solid var(--border-color);
   border-radius: 5px;
   font-size: 1rem;
   transition: border-color 0.3s ease;
+  background: var(--bg-white);
+  color: var(--color-text-primary);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #007bff;
+  border-color: var(--color-primary);
 }
 
 .form-group input.error,
 .form-group textarea.error {
-  border-color: #dc3545;
+  border-color: var(--color-error);
 }
 
 .error-message {
-  color: #dc3545;
+  color: var(--color-error);
   font-size: 0.9rem;
   margin-top: 0.3rem;
   display: block;
@@ -416,16 +418,16 @@ const submitForm = async () => {
 }
 
 .btn-primary {
-  background: #007bff;
+  background: var(--color-primary);
   color: white;
 }
 
 .btn-primary:hover:not(:disabled) {
-  background: #0056b3;
+  background: var(--color-primary-hover);
 }
 
 .btn-primary:disabled {
-  background: #6c757d;
+  background: var(--color-disabled);
   cursor: not-allowed;
 }
 
@@ -437,7 +439,7 @@ const submitForm = async () => {
 
 .availability-section h2,
 .location-section h2 {
-  color: #333;
+  color: var(--color-text-primary);
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2rem;
@@ -458,7 +460,7 @@ const submitForm = async () => {
 }
 
 .status-indicator.available {
-  background: #28a745;
+  background: var(--color-success);
   animation: pulse 2s infinite;
 }
 
@@ -475,18 +477,18 @@ const submitForm = async () => {
 }
 
 .availability-info h3 {
-  color: #333;
+  color: var(--color-text-primary);
   margin-bottom: 1rem;
 }
 
 .availability-info p {
-  color: #555;
+  color: var(--color-text-secondary);
   line-height: 1.6;
   margin-bottom: 1rem;
 }
 
 .interests-list {
-  color: #555;
+  color: var(--color-text-secondary);
   margin: 1rem 0;
   padding-left: 1.5rem;
 }
@@ -496,7 +498,7 @@ const submitForm = async () => {
 }
 
 .response-time {
-  color: #666;
+  color: var(--color-text-muted);
   font-style: italic;
 }
 
@@ -507,12 +509,12 @@ const submitForm = async () => {
 }
 
 .location-details h3 {
-  color: #333;
+  color: var(--color-text-primary);
   margin-bottom: 1rem;
 }
 
 .location-details p {
-  color: #555;
+  color: var(--color-text-secondary);
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
@@ -522,12 +524,12 @@ const submitForm = async () => {
 }
 
 .availability-calendar h4 {
-  color: #333;
+  color: var(--color-text-primary);
   margin-bottom: 1rem;
 }
 
 .time-slots {
-  background: #f8f9fa;
+  background: var(--bg-light);
   border-radius: 8px;
   padding: 1.5rem;
 }
@@ -537,7 +539,7 @@ const submitForm = async () => {
   justify-content: space-between;
   align-items: center;
   padding: 0.8rem 0;
-  border-bottom: 1px solid #e9ecef;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .time-slot:last-child {
@@ -545,12 +547,12 @@ const submitForm = async () => {
 }
 
 .day {
-  color: #333;
+  color: var(--color-text-primary);
   font-weight: 500;
 }
 
 .time {
-  color: #666;
+  color: var(--color-text-secondary);
 }
 
 @media (max-width: 768px) {

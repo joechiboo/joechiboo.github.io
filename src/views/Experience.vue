@@ -200,7 +200,7 @@ const certifications = ref([
 .experience {
   padding-top: 80px;
   min-height: 100vh;
-  background: #f8f9fa;
+  background: var(--bg-light);
 }
 
 .container {
@@ -216,25 +216,25 @@ const certifications = ref([
 
 .page-header h1 {
   font-size: 3rem;
-  color: #333;
+  color: var(--color-text-primary);
   margin-bottom: 1rem;
 }
 
 .page-header p {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--color-text-secondary);
 }
 
 .experience-content section {
-  background: white;
+  background: var(--bg-white);
   border-radius: 10px;
   padding: 3rem;
   margin-bottom: 3rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
 .experience-content h2 {
-  color: #333;
+  color: var(--color-text-primary);
   margin-bottom: 2rem;
   text-align: center;
   font-size: 2rem;
@@ -252,7 +252,7 @@ const certifications = ref([
   top: 0;
   bottom: 0;
   width: 2px;
-  background: #007bff;
+  background: var(--color-primary);
 }
 
 .experience-item {
@@ -266,14 +266,14 @@ const certifications = ref([
   top: 1rem;
   width: 1rem;
   height: 1rem;
-  background: #007bff;
+  background: var(--color-primary);
   border-radius: 50%;
-  border: 3px solid white;
-  box-shadow: 0 0 0 3px #007bff;
+  border: 3px solid var(--bg-white);
+  box-shadow: 0 0 0 3px var(--color-primary);
 }
 
 .experience-card {
-  background: #f8f9fa;
+  background: var(--bg-light);
   border-radius: 8px;
   padding: 2rem;
   margin-left: 1rem;
@@ -284,25 +284,25 @@ const certifications = ref([
 }
 
 .experience-header h3 {
-  color: #333;
+  color: var(--color-text-primary);
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
 }
 
 .company {
-  color: #007bff;
+  color: var(--color-primary);
   font-weight: 600;
   display: block;
   margin-bottom: 0.3rem;
 }
 
 .period {
-  color: #666;
+  color: var(--color-text-secondary);
   font-size: 0.9rem;
 }
 
 .experience-description p {
-  color: #555;
+  color: var(--color-text-secondary);
   line-height: 1.6;
   margin-bottom: 1rem;
 }
@@ -314,7 +314,7 @@ const certifications = ref([
 }
 
 .responsibilities li {
-  color: #555;
+  color: var(--color-text-secondary);
   margin-bottom: 0.5rem;
   padding-left: 1.5rem;
   position: relative;
@@ -322,7 +322,7 @@ const certifications = ref([
 
 .responsibilities li::before {
   content: '▸';
-  color: #007bff;
+  color: var(--color-primary);
   position: absolute;
   left: 0;
 }
@@ -333,8 +333,8 @@ const certifications = ref([
 
 .tech-tag {
   display: inline-block;
-  background: #e7f3ff;
-  color: #0066cc;
+  background: var(--bg-primary-light);
+  color: var(--color-primary-dark);
   padding: 0.3rem 0.8rem;
   border-radius: 15px;
   font-size: 0.9rem;
@@ -349,13 +349,13 @@ const certifications = ref([
 }
 
 .education-card {
-  background: #f8f9fa;
+  background: var(--bg-light);
   padding: 2rem;
   border-radius: 8px;
 }
 
 .education-card h3 {
-  color: #333;
+  color: var(--color-text-primary);
   margin-bottom: 0.5rem;
 }
 
@@ -369,19 +369,19 @@ const certifications = ref([
 }
 
 .school {
-  color: #007bff;
+  color: var(--color-primary);
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
 .period {
-  color: #666;
+  color: var(--color-text-secondary);
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
 
 .description {
-  color: #555;
+  color: var(--color-text-secondary);
   line-height: 1.6;
 }
 
@@ -392,19 +392,19 @@ const certifications = ref([
 }
 
 .cert-card {
-  background: #f8f9fa;
+  background: var(--bg-light);
   padding: 2rem;
   border-radius: 12px;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
-  border: 1px solid #dee2e6;
+  border: 1px solid var(--border-color);
   position: relative;
 }
 
 .cert-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-lg);
 }
 
 .cert-main-header {
@@ -421,7 +421,7 @@ const certifications = ref([
 }
 
 .cert-title {
-  color: #333;
+  color: var(--color-text-primary);
   font-size: 1.1rem;
   font-weight: 600;
   margin: 0;
@@ -430,8 +430,8 @@ const certifications = ref([
 }
 
 .cert-category {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
+  background: var(--gradient-primary);
+  color: var(--color-white);
   padding: 0.3rem 0.8rem;
   border-radius: 15px;
   font-size: 0.8rem;
@@ -440,7 +440,7 @@ const certifications = ref([
 }
 
 .issuer {
-  color: #007bff;
+  color: var(--color-primary);
   font-weight: 600;
   margin-bottom: 1rem;
   font-size: 1rem;
@@ -448,19 +448,19 @@ const certifications = ref([
 }
 
 .cert-description {
-  color: #555;
+  color: var(--color-text-secondary);
   font-size: 0.95rem;
   line-height: 1.5;
   margin-bottom: 1rem;
   padding: 1rem;
-  background: rgba(102, 126, 234, 0.05);
+  background: var(--bg-accent-light);
   border-radius: 8px;
-  border-left: 3px solid #667eea;
+  border-left: 3px solid var(--color-accent);
   text-align: left;
 }
 
 .date {
-  color: #666;
+  color: var(--color-text-secondary);
   font-size: 0.9rem;
   font-weight: 500;
   text-align: left;
@@ -473,10 +473,10 @@ const certifications = ref([
 }
 
 .achievement-category {
-  background: #f8f9fa;
+  background: var(--bg-light);
   padding: 2rem;
   border-radius: 12px;
-  border: 1px solid #dee2e6;
+  border: 1px solid var(--border-color);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -496,7 +496,7 @@ const certifications = ref([
 
 .achievement-category:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
 .category-header {
@@ -508,7 +508,7 @@ const certifications = ref([
 
 .category-icon {
   font-size: 2.5rem;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(var(--shadow-sm));
 }
 
 .category-title {
@@ -526,11 +526,11 @@ const certifications = ref([
 
 .achievement-item {
   padding: 0.8rem 0;
-  color: #555;
+  color: var(--color-text-secondary);
   line-height: 1.6;
   position: relative;
   padding-left: 1.5rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .achievement-item:last-child {

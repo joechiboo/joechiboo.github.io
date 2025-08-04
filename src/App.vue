@@ -29,8 +29,19 @@
 </template>
 
 <script setup>
+import { onMounted } from 'vue'
 import Navigation from './components/Navigation.vue'
 import VoiceIntroduction from './components/VoiceIntroduction.vue'
+import { useTheme } from './composables/useTheme.js'
+import { useLanguage } from './composables/useLanguage.js'
+
+const { initTheme } = useTheme()
+const { initLanguage } = useLanguage()
+
+onMounted(() => {
+  initTheme()
+  initLanguage()
+})
 </script>
 
 <style>

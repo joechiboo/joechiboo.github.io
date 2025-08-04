@@ -17,7 +17,7 @@
                 <h2>Joe, Chi-Boo</h2>
                 <p class="role">資訊室主任</p>
                 <div class="contact-info">
-                  <p><strong>位置:</strong> 台灣</p>
+                  <p><strong>位置:</strong> 台灣、台北</p>
                   <p><strong>專長:</strong> 全端開發</p>
                   <p><strong>語言:</strong> 中文、英文</p>
                 </div>
@@ -26,7 +26,7 @@
 
             <div class="philosophy-section">
               <h3>我的工程哲學</h3>
-              
+
               <div class="philosophy-detail">
                 <!-- 解決問題的三步驟 -->
                 <div class="philosophy-card main-philosophy">
@@ -37,14 +37,18 @@
                       <span class="step-number">01</span>
                       <div class="step-content">
                         <h5>面對</h5>
-                        <p>人們大多不喜好直視問題、避重就輕，因而造就決策失準。勇於面對問題是解決的第一步。</p>
+                        <p>
+                          人們大多不喜好直視問題、避重就輕，因而造就決策失準。勇於面對問題是解決的第一步。
+                        </p>
                       </div>
                     </div>
                     <div class="step">
                       <span class="step-number">02</span>
                       <div class="step-content">
                         <h5>發現/了解</h5>
-                        <p>減少「未知的未知」就可以讓能力越來越精煉。深入理解問題本質比急於解決更重要。</p>
+                        <p>
+                          減少「未知的未知」就可以讓能力越來越精煉。深入理解問題本質比急於解決更重要。
+                        </p>
                       </div>
                     </div>
                     <div class="step">
@@ -68,7 +72,9 @@
                     "發現自己有著「三分鐘熱度」的特性，最近想到一個方法可以保持熱度——就是在三分鐘內完成任務！"
                   </blockquote>
                   <p class="scrum-note">
-                    我很喜歡 <strong>Scrum 的精神</strong>，設立階段性目標，努力衝刺。把大西瓜去皮切片，更利於獲得成就感。
+                    我很喜歡
+                    <strong>Scrum 的精神</strong
+                    >，設立階段性目標，努力衝刺。把大西瓜去皮切片，更利於獲得成就感。
                   </p>
                 </div>
 
@@ -80,7 +86,9 @@
                   <div class="collaboration-points">
                     <div class="collab-point">
                       <h5>內外協作</h5>
-                      <p>團隊合作不僅僅是內部，也必須和客戶合作。在缺乏溝通的狀況下，很難體會對方的感受。</p>
+                      <p>
+                        團隊合作不僅僅是內部，也必須和客戶合作。在缺乏溝通的狀況下，很難體會對方的感受。
+                      </p>
                     </div>
                     <div class="collab-point">
                       <h5>雙向溝通</h5>
@@ -171,7 +179,7 @@
                 <span class="skill-tag">系統架構</span>
               </div>
             </div>
-            
+
             <div class="skill-category">
               <h3>數據處理 & 工具</h3>
               <div class="skill-tags">
@@ -214,13 +222,13 @@
               <h3>創新思維</h3>
               <p>勇於嘗試新方法，在既有框架中尋找創新的可能性</p>
             </div>
-            
+
             <div class="value-card">
               <div class="value-icon">⚙️</div>
               <h3>品質至上</h3>
               <p>坚持繭寫高品質程式碼，重視測試覆蓋和程式碼審查</p>
             </div>
-            
+
             <div class="value-card">
               <div class="value-icon">🌱</div>
               <h3>成長心態</h3>
@@ -237,10 +245,12 @@
               <div class="highlight-content">
                 <h3>.NET 生態系統專家</h3>
                 <p class="highlight-years">15年經驗</p>
-                <p class="highlight-desc">從 .NET Framework 到 .NET Core，擁有完整的微軟技術栈開發經驗</p>
+                <p class="highlight-desc">
+                  從 .NET Framework 到 .NET Core，擁有完整的微軟技術栈開發經驗
+                </p>
               </div>
             </div>
-            
+
             <div class="highlight-item">
               <div class="highlight-icon">🌐</div>
               <div class="highlight-content">
@@ -249,7 +259,7 @@
                 <p class="highlight-desc">具備全端開發能力，擅長不同平台間的技術整合與架構設計</p>
               </div>
             </div>
-            
+
             <div class="highlight-item">
               <div class="highlight-icon">👥</div>
               <div class="highlight-content">
@@ -258,7 +268,7 @@
                 <p class="highlight-desc">擁有實際管理經驗，擅長團隊協作、技術指導和專案管理</p>
               </div>
             </div>
-            
+
             <div class="highlight-item">
               <div class="highlight-icon">🌏</div>
               <div class="highlight-content">
@@ -280,7 +290,7 @@
 .about {
   padding-top: 80px;
   min-height: 100vh;
-  background: #f8f9fa;
+  background: var(--bg-light);
 }
 
 .container {
@@ -296,21 +306,21 @@
 
 .page-header h1 {
   font-size: 3rem;
-  color: #333;
+  color: var(--color-text-primary);
   margin-bottom: 1rem;
 }
 
 .page-header p {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--color-text-secondary);
 }
 
 .about-content section {
-  background: white;
+  background: var(--bg-white);
   border-radius: 10px;
   padding: 3rem;
   margin-bottom: 3rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
 .intro-grid {
@@ -333,8 +343,8 @@
   height: 200px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid white;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 3px solid var(--color-primary);
+  box-shadow: var(--shadow-lg);
   margin: 0 auto;
 }
 
@@ -342,16 +352,16 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background: #e9ecef;
+  background: var(--bg-lighter);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #666;
+  color: var(--color-text-secondary);
   margin: 0 auto;
 }
 
 .basic-info h2 {
-  color: #333;
+  color: var(--color-text-primary);
   margin-bottom: 0.5rem;
 }
 
@@ -366,12 +376,12 @@
 }
 
 .contact-info p {
-  color: #666;
+  color: var(--color-text-secondary);
   margin-bottom: 0.5rem;
 }
 
 .philosophy-section h3 {
-  color: #333;
+  color: var(--color-text-primary);
   margin-bottom: 1.5rem;
 }
 
@@ -522,7 +532,7 @@
 }
 
 .beliefs li::before {
-  content: "▶";
+  content: '▶';
   color: #007bff;
   position: absolute;
   left: 0;
@@ -541,9 +551,22 @@ blockquote {
 .skills-section h2,
 .values-section h2,
 .highlights-section h2 {
-  color: #333;
+  color: var(--color-text-primary);
   margin-bottom: 2rem;
   text-align: center;
+}
+
+/* 深色模式下這些標題更亮 */
+[data-theme="dark"] .skills-section h2,
+[data-theme="dark"] .values-section h2,
+[data-theme="dark"] .highlights-section h2 {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* 深色模式下資訊室主任使用橘紅色 */
+[data-theme="dark"] .role {
+  color: #ff6b35;
 }
 
 .skills-grid {
@@ -637,7 +660,9 @@ blockquote {
   align-items: flex-start;
   gap: 1rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .highlight-item:hover {
@@ -697,68 +722,68 @@ blockquote {
   .about-content section {
     padding: 2rem;
   }
-  
+
   .philosophy-detail {
     gap: 1rem;
   }
-  
+
   .philosophy-card {
     padding: 1rem;
   }
-  
+
   .step {
     flex-direction: column;
     text-align: center;
     gap: 0.5rem;
   }
-  
+
   .step-number {
     width: 30px;
     height: 30px;
     font-size: 0.8rem;
   }
-  
+
   .card-icon {
     font-size: 1.5rem;
   }
-  
+
   .philosophy-card h4 {
     font-size: 1.2rem;
   }
-  
+
   .collaboration-points {
     gap: 0.5rem;
   }
-  
+
   .collab-point {
     padding: 0.8rem;
   }
-  
+
   .collab-point h5 {
     font-size: 0.95rem;
   }
-  
+
   .beliefs li {
     font-size: 0.9rem;
     padding: 0.3rem 0;
   }
-  
+
   .highlights-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
-  
+
   .highlight-item {
     padding: 1rem;
     flex-direction: column;
     text-align: center;
   }
-  
+
   .highlight-icon {
     font-size: 2rem;
     margin-bottom: 0.5rem;
   }
-  
+
   .highlight-content h3 {
     font-size: 1.1rem;
   }

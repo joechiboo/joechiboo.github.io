@@ -495,7 +495,7 @@ const galleryGroups = ref([
 .leisure {
   padding-top: 80px;
   min-height: 100vh;
-  background: #f8f9fa;
+  background: var(--bg-light);
 }
 
 .container {
@@ -511,21 +511,21 @@ const galleryGroups = ref([
 
 .page-header h1 {
   font-size: 3rem;
-  color: #333;
+  color: var(--color-text-primary);
   margin-bottom: 1rem;
 }
 
 .page-header p {
   font-size: 1.2rem;
-  color: #666;
+  color: var(--color-text-secondary);
 }
 
 .leisure-content section {
-  background: white;
+  background: var(--bg-white);
   border-radius: 10px;
   padding: 3rem;
   margin-bottom: 3rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
 .hobbies-grid {
@@ -538,10 +538,10 @@ const galleryGroups = ref([
 }
 
 .hobby-card {
-  background: white;
+  background: var(--bg-white);
   border-radius: 10px;
   padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
   transition: transform 0.3s ease;
 }
 
@@ -573,8 +573,8 @@ const galleryGroups = ref([
 
 .hobby-card.clickable-hobby:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
-  border: 2px solid rgba(102, 126, 234, 0.2);
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--color-primary-light);
 }
 
 .hobby-card.clickable-hobby:active {
@@ -587,8 +587,8 @@ const galleryGroups = ref([
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
+  background: var(--gradient-primary);
+  color: var(--color-white);
   padding: 0.5rem 1rem;
   border-radius: 20px;
   display: flex;
@@ -634,32 +634,32 @@ const galleryGroups = ref([
 }
 
 .hobby-card h2 {
-  color: #333;
+  color: var(--color-text-primary);
   text-align: center;
   margin-bottom: 1rem;
 }
 
 .hobby-description {
-  color: #666;
+  color: var(--color-text-secondary);
   text-align: center;
   margin-bottom: 2rem;
   font-style: italic;
 }
 
 .hobby-details h4 {
-  color: #333;
+  color: var(--color-text-primary);
   margin: 1.5rem 0 0.8rem 0;
   font-size: 1rem;
 }
 
 .hobby-details p {
-  color: #555;
+  color: var(--color-text-secondary);
   line-height: 1.6;
   margin-bottom: 1rem;
 }
 
 .hobby-details ul {
-  color: #555;
+  color: var(--color-text-secondary);
   margin-bottom: 1rem;
   padding-left: 1.5rem;
 }
@@ -677,8 +677,8 @@ const galleryGroups = ref([
 }
 
 .skill-tag {
-  background: #e7f3ff;
-  color: #0066cc;
+  background: var(--bg-primary-light);
+  color: var(--color-primary-dark);
   padding: 0.3rem 0.8rem;
   border-radius: 15px;
   font-size: 0.9rem;
@@ -687,7 +687,7 @@ const galleryGroups = ref([
 .gallery-section h2,
 .balance-section h2,
 .future-goals h2 {
-  color: #333;
+  color: var(--color-text-primary);
   text-align: center;
   margin-bottom: 2rem;
   font-size: 2rem;
@@ -707,28 +707,28 @@ const galleryGroups = ref([
   align-items: center;
   gap: 0.5rem;
   padding: 1rem 1.5rem;
-  background: white;
-  border: 2px solid #e9ecef;
+  background: var(--bg-white);
+  border: 2px solid var(--border-color);
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 1rem;
   font-weight: 500;
-  color: #666;
+  color: var(--color-text-secondary);
 }
 
 .category-tab:hover {
-  border-color: #667eea;
+  border-color: var(--color-primary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+  box-shadow: var(--shadow-md);
 }
 
 .category-tab.active {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  border-color: #667eea;
-  color: white;
+  background: var(--gradient-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  box-shadow: var(--shadow-lg);
 }
 
 .tab-icon {
@@ -752,9 +752,9 @@ const galleryGroups = ref([
 .empty-category {
   text-align: center;
   padding: 4rem 2rem;
-  background: white;
+  background: var(--bg-white);
   border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
 .empty-icon {
@@ -764,24 +764,24 @@ const galleryGroups = ref([
 }
 
 .empty-category h3 {
-  color: #333;
+  color: var(--color-text-primary);
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
 .empty-category p {
-  color: #666;
+  color: var(--color-text-secondary);
   margin-bottom: 1rem;
 }
 
 .empty-text {
-  color: #999 !important;
+  color: var(--color-text-muted) !important;
   font-style: italic;
 }
 
 .gallery-intro {
   text-align: center;
-  color: #666;
+  color: var(--color-text-secondary);
   margin-bottom: 3rem;
   font-size: 1.1rem;
 }
@@ -793,7 +793,7 @@ const galleryGroups = ref([
 }
 
 .gallery-item {
-  background: #f8f9fa;
+  background: var(--bg-light);
   border-radius: 8px;
   overflow: hidden;
   transition: transform 0.3s ease;
@@ -814,7 +814,7 @@ const galleryGroups = ref([
 
 .gallery-image {
   height: 150px;
-  background: #e9ecef;
+  background: var(--bg-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -861,7 +861,7 @@ const galleryGroups = ref([
 }
 
 .image-placeholder {
-  color: #666;
+  color: var(--color-text-secondary);
   font-size: 1rem;
 }
 
@@ -874,15 +874,15 @@ const galleryGroups = ref([
 
 /* 待續項目樣式 */
 .coming-soon-placeholder {
-  color: #999;
+  color: var(--color-text-muted);
   font-size: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  border: 2px dashed #dee2e6;
+  background: var(--bg-gradient-light);
+  border: 2px dashed var(--border-light);
 }
 
 .coming-soon-icon {
@@ -908,18 +908,18 @@ const galleryGroups = ref([
 }
 
 .gallery-info h3 {
-  color: #333;
+  color: var(--color-text-primary);
   margin-bottom: 0.5rem;
 }
 
 .gallery-info p {
-  color: #666;
+  color: var(--color-text-secondary);
   line-height: 1.5;
   margin-bottom: 1rem;
 }
 
 .gallery-date {
-  color: #999;
+  color: var(--color-text-muted);
   font-size: 0.9rem;
 }
 
@@ -927,8 +927,8 @@ const galleryGroups = ref([
 .youtube-info {
   margin-top: 1rem;
   padding: 0.8rem;
-  background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
-  color: white;
+  background: var(--gradient-youtube);
+  color: var(--color-white);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -963,7 +963,7 @@ const galleryGroups = ref([
 }
 
 .balance-text p {
-  color: #555;
+  color: var(--color-text-secondary);
   line-height: 1.6;
   margin-bottom: 1.5rem;
 }
@@ -974,7 +974,7 @@ const galleryGroups = ref([
 }
 
 .balance-benefits li {
-  color: #555;
+  color: var(--color-text-secondary);
   margin-bottom: 1rem;
   padding-left: 1.5rem;
   position: relative;
@@ -983,18 +983,18 @@ const galleryGroups = ref([
 
 .balance-benefits li::before {
   content: '✓';
-  color: #28a745;
+  color: var(--color-success);
   font-weight: bold;
   position: absolute;
   left: 0;
 }
 
 .balance-quotes blockquote {
-  border-left: 4px solid #007bff;
+  border-left: 4px solid var(--color-primary);
   padding-left: 1.5rem;
   margin: 2rem 0;
   font-style: italic;
-  color: #555;
+  color: var(--color-text-secondary);
   line-height: 1.6;
 }
 
@@ -1005,7 +1005,7 @@ const galleryGroups = ref([
 }
 
 .goal-card {
-  background: #f8f9fa;
+  background: var(--bg-light);
   padding: 2rem;
   border-radius: 10px;
   text-align: center;
@@ -1022,12 +1022,12 @@ const galleryGroups = ref([
 }
 
 .goal-card h3 {
-  color: #333;
+  color: var(--color-text-primary);
   margin-bottom: 1rem;
 }
 
 .goal-card p {
-  color: #666;
+  color: var(--color-text-secondary);
   line-height: 1.6;
 }
 
@@ -1036,7 +1036,7 @@ const galleryGroups = ref([
 }
 
 .challenge-item {
-  color: #666;
+  color: var(--color-text-secondary);
   line-height: 1.8;
   margin-bottom: 0.5rem;
   display: flex;
@@ -1063,10 +1063,10 @@ const galleryGroups = ref([
   position: relative;
   max-width: 90vw;
   max-height: 90vh;
-  background: white;
+  background: var(--bg-white);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-xl);
 }
 
 .lightbox-close {
@@ -1106,19 +1106,19 @@ const galleryGroups = ref([
 }
 
 .lightbox-info h3 {
-  color: #333;
+  color: var(--color-text-primary);
   font-size: 1.4rem;
   margin-bottom: 1rem;
 }
 
 .lightbox-info p {
-  color: #666;
+  color: var(--color-text-secondary);
   line-height: 1.6;
   margin-bottom: 1rem;
 }
 
 .lightbox-date {
-  color: #999;
+  color: var(--color-text-muted);
   font-size: 0.9rem;
 }
 
@@ -1171,12 +1171,12 @@ const galleryGroups = ref([
 .lightbox-hint {
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid #e9ecef;
+  border-top: 1px solid var(--border-color);
   text-align: center;
 }
 
 .lightbox-hint span {
-  color: #999;
+  color: var(--color-text-muted);
   font-size: 0.85rem;
   font-style: italic;
 }

@@ -76,7 +76,8 @@ const downloadResume = () => {
   min-height: 80vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  background: var(--color-primary-gradient);
+  color: var(--bg-white);
 }
 
 .hero-content {
@@ -99,33 +100,34 @@ const downloadResume = () => {
   height: 250px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid white;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 4px solid var(--bg-white);
+  box-shadow: var(--shadow-lg);
 }
 
 .image-placeholder {
   width: 250px;
   height: 250px;
   border-radius: 50%;
-  background: #ddd;
+  background: var(--bg-lighter);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #666;
+  color: var(--color-text-secondary);
   font-size: 1.1rem;
 }
 
 .intro h1 {
   font-size: 3rem;
   margin-bottom: 0.5rem;
-  color: #333;
+  color: var(--bg-white);
 }
 
 .intro h2 {
   font-size: 1.5rem;
-  color: #666;
+  color: var(--bg-white);
   margin-bottom: 1rem;
   font-weight: normal;
+  opacity: 0.9;
 }
 
 .philosophy {
@@ -135,23 +137,24 @@ const downloadResume = () => {
 .daily-equation {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #007bff;
+  color: var(--bg-white);
   margin-bottom: 1rem;
   text-align: left;
   padding: 1rem;
-  background: rgba(0, 123, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 8px;
-  border-left: 4px solid #007bff;
+  border-left: 4px solid var(--bg-white);
 }
 
 .life-quote {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: #555;
+  color: var(--bg-white);
   font-style: italic;
   text-align: center;
   padding: 0.5rem;
   position: relative;
+  opacity: 0.9;
 }
 
 .life-quote::before {
@@ -179,28 +182,73 @@ const downloadResume = () => {
 }
 
 .btn-primary {
-  background: #007bff;
-  color: white;
+  background: var(--bg-white);
+  color: var(--color-primary);
 }
 
 .btn-primary:hover {
-  background: #0056b3;
+  background: var(--bg-lighter);
 }
 
 .btn-outline {
   background: transparent;
-  color: #007bff;
-  border: 2px solid #007bff;
+  color: var(--bg-white);
+  border: 2px solid var(--bg-white);
 }
 
 .btn-outline:hover {
-  background: #007bff;
-  color: white;
+  background: var(--bg-white);
+  color: var(--color-primary);
 }
 
 .highlights {
   padding: 4rem 0;
+  background: var(--bg-white);
+}
+
+/* 深色模式下改變highlights背景 */
+[data-theme="dark"] .highlights {
+  background: var(--bg-light);
+}
+
+/* 深色模式下首頁Hero區域使用不同漸層 */
+[data-theme="dark"] .hero {
+  background: linear-gradient(135deg, #1e293b, #334155);
+}
+
+/* 深色模式下Hero區域的文字更亮 */
+[data-theme="dark"] .hero .intro h1,
+[data-theme="dark"] .hero .intro h2,
+[data-theme="dark"] .hero .daily-equation,
+[data-theme="dark"] .hero .life-quote {
+  color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .hero .daily-equation {
+  background: rgba(255, 255, 255, 0.1);
+  border-left-color: #ffffff;
+}
+
+/* 深色模式下Hero區域的按鈕樣式 */
+[data-theme="dark"] .hero .btn-primary {
+  background: #3b82f6;
+  color: white;
+}
+
+[data-theme="dark"] .hero .btn-primary:hover {
+  background: #2563eb;
+}
+
+[data-theme="dark"] .hero .btn-outline {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+[data-theme="dark"] .hero .btn-outline:hover {
   background: white;
+  color: #1e293b;
 }
 
 .container {
@@ -219,16 +267,17 @@ const downloadResume = () => {
   text-align: center;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
+  background: var(--bg-white);
 }
 
 .highlight-card h3 {
-  color: #333;
+  color: var(--color-text-primary);
   margin-bottom: 1rem;
 }
 
 .highlight-card p {
-  color: #555;
+  color: var(--color-text-secondary);
   line-height: 1.6;
 }
 
