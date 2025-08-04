@@ -171,9 +171,28 @@ const closeMenu = () => {
     padding: 2rem 0;
   }
   
+  /* 手機版日間模式文字顏色 */
+  body .nav-menu .nav-link {
+    color: #2d3748 !important;
+  }
+  
+  body .nav-menu .nav-link:hover,
+  body .nav-menu .nav-link.router-link-active {
+    color: #667eea !important;
+  }
+  
   /* 手機版深色模式 */
   body[data-theme="dark"] .nav-menu {
     background-color: #1a1a1a !important;
+  }
+  
+  body[data-theme="dark"] .nav-menu .nav-link {
+    color: #ffffff !important;
+  }
+  
+  body[data-theme="dark"] .nav-menu .nav-link:hover,
+  body[data-theme="dark"] .nav-menu .nav-link.router-link-active {
+    color: #f97316 !important;
   }
 
   body .nav-menu.active {
