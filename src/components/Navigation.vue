@@ -15,8 +15,8 @@
       </div>
 
       <div class="nav-controls">
-        <!-- 主題切換按鈕 (手機版隱藏) -->
-        <button v-if="!isMobile()" @click="toggleTheme" class="control-btn theme-btn" :title="isDark ? t('lightMode') : t('darkMode')">
+        <!-- 主題切換按鈕 -->
+        <button @click="toggleTheme" class="control-btn theme-btn" :title="isDark ? t('lightMode') : t('darkMode')">
           <svg v-if="isDark" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="5"/>
             <line x1="12" y1="1" x2="12" y2="3"/>
@@ -55,7 +55,7 @@ import { useLanguage } from '../composables/useLanguage.js'
 
 const isMenuOpen = ref(false)
 
-const { isDark, toggleTheme, isMobile } = useTheme()
+const { isDark, toggleTheme } = useTheme()
 const { currentLanguage, toggleLanguage, t } = useLanguage()
 
 const toggleMenu = () => {
