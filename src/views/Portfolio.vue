@@ -7,7 +7,7 @@
       </header>
 
       <div class="portfolio-grid">
-        <div class="project-card" v-for="project in projects" :key="project.id">
+        <div class="project-card" v-for="project in projects" :key="project.id" @click="handleCardClick(project)">
           <div class="project-image">
             <div class="project-icon">
               <span v-if="project.category === 'web'">🌐</span>
@@ -50,6 +50,7 @@
                 :href="project.demo"
                 :class="project.id === 5 ? 'btn btn-special' : 'btn btn-primary'"
                 target="_blank"
+                @click.stop="openDemo(project)"
               >
                 {{ project.id === 5 ? t('thisWebsite') : t('demo') }}
               </a>
@@ -58,6 +59,7 @@
                 :href="project.github"
                 class="btn btn-outline"
                 target="_blank"
+                @click.stop
               >
                 {{ t('github') }}
               </a>
@@ -74,6 +76,16 @@ import { ref } from 'vue'
 import { useLanguage } from '../composables/useLanguage.js'
 
 const { t } = useLanguage()
+
+const handleCardClick = (project) => {
+  if (project.demo) {
+    window.open(project.demo, '_blank')
+  }
+}
+
+const openDemo = (project) => {
+  window.open(project.demo, '_blank')
+}
 
 const projects = ref([
   {
@@ -207,6 +219,7 @@ const projects = ref([
   transition: transform var(--transition-base);
   display: flex;
   flex-direction: column;
+  cursor: pointer;
 }
 
 .project-card:hover {
