@@ -127,17 +127,3 @@
   }
 }
 
-/* Dark mode support (preparation for future) */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-text-primary: #f7fafc;
-    --color-text-secondary: #e2e8f0;
-    --color-text-muted: #a0aec0;
-    --bg-white: #1a202c;
-    --bg-light: #2d3748;
-    --bg-lighter: #4a5568;
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 8px 20px rgba(0, 0, 0, 0.4);
-  }
-}
