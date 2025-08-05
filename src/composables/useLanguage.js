@@ -227,7 +227,8 @@ const translations = {
     edu1DegreeWithBreak: '資訊科學碩士<br>(在職專班)',
     edu1School: '國立臺北教育大學',
     edu1Period: '2024 - 就讀中',
-    edu1Description: '主修軟體工程、人工智慧等核心課程，論文方向：用少量的檢驗項目預測其他項目的檢驗值',
+    edu1Description:
+      '主修軟體工程、人工智慧等核心課程，論文方向：用少量的檢驗項目預測其他項目的檢驗值',
 
     edu2Degree: '資訊工程學士',
     edu2School: '國立臺北科技大學',
@@ -253,7 +254,8 @@ const translations = {
     cert2Description: '醫療器材風險管理國際標準訓練，專精於醫療器材全生命週期風險識別與管理',
 
     cert3Name: 'ISO 13485:2016',
-    cert3FullName: 'Medical Devices Quality Management System Internal Auditor Training Course (ISO 13485:2016)',
+    cert3FullName:
+      'Medical Devices Quality Management System Internal Auditor Training Course (ISO 13485:2016)',
     cert3Issuer: 'BSI 英國標準協會',
     cert3Category: '品質管理',
     cert3Description: '醫療器材品質管理系統內部稽核員訓練，熟悉 ISO 13485 標準要求與稽核技巧',
@@ -284,19 +286,23 @@ const translations = {
     // 興趣愛好
     drawing: '繪畫',
     drawingDesc: '透過畫筆記錄生活，用色彩表達情感',
-    drawingReason: '繪畫讓我能夠靜下心來觀察世界的美好，每一筆都是對生活的記錄和情感的釋放。在繪畫的過程中，時間似乎靜止，只有我和畫布之間的對話。',
+    drawingReason:
+      '繪畫讓我能夠靜下心來觀察世界的美好，每一筆都是對生活的記錄和情感的釋放。在繪畫的過程中，時間似乎靜止，只有我和畫布之間的對話。',
 
     creation: '創作',
     creationDesc: '發揮想像力，創造有意思的想法',
-    creationReason: '創作是一種純粹的快樂，在發想與實作之間找到平衡。每當完成一件作品時，那種「原來我也可以」的成就感是無法取代的。',
+    creationReason:
+      '創作是一種純粹的快樂，在發想與實作之間找到平衡。每當完成一件作品時，那種「原來我也可以」的成就感是無法取代的。',
 
     sports: '運動',
     sportsDesc: '保持健康體魄，挑戰自我極限',
-    sportsReason: '運動讓我感受到身心的平衡與活力。每次流汗都是對自己的挑戰，每次超越都是對極限的探索。在運動中找到的不只是健康，更是內心的平靜與自信。',
+    sportsReason:
+      '運動讓我感受到身心的平衡與活力。每次流汗都是對自己的挑戰，每次超越都是對極限的探索。在運動中找到的不只是健康，更是內心的平靜與自信。',
 
     music: '音樂',
     musicDesc: '用旋律豐富生活，用節奏調節心情',
-    musicReason: '音樂是心靈的語言，能夠觸及文字無法表達的情感深處。彈奏時的專注與投入，讓我在旋律中找到寧靜，在和聲中感受生命的美好。音樂不僅豐富了我的生活，更是情感的出口。',
+    musicReason:
+      '音樂是心靈的語言，能夠觸及文字無法表達的情感深處。彈奏時的專注與投入，讓我在旋律中找到寧靜，在和聲中感受生命的美好。音樂不僅豐富了我的生活，更是情感的出口。',
 
     // 互動提示
     clickToView: '點擊查看作品',
@@ -371,8 +377,9 @@ const translations = {
 
     // 工作與生活平衡
     workLifeBalance: '工作與生活的平衡',
-    workLifeBalanceIntro: '我相信優秀的軟體工程師不只是技術專家，更是一個全面發展的人。透過多元化的興趣愛好，我能夠：',
-    
+    workLifeBalanceIntro:
+      '我相信優秀的軟體工程師不只是技術專家，更是一個全面發展的人。透過多元化的興趣愛好，我能夠：',
+
     balanceBenefit1: '培養創意思維，在程式設計中找到新的靈感',
     balanceBenefit2: '透過藝術創作訓練細緻觀察力和美感',
     balanceBenefit3: '運動讓我保持健康的身體和清晰的思維',
@@ -394,56 +401,62 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
-    project6Title: 'Jiayi 創意專案',
-    project6Description: '與七歲大兒子共同構思的創意專案，結合孩子的天真想像力與技術實現。專案體現親子合作的美好，將童心與創意轉化為實際的網站應用，展現家庭生活與技術創作的完美結合。',
-    
+    project6Title: '家一 創意專案',
+    project6Description:
+      '與七歲大兒子共同構思的創意專案，結合孩子的天真想像力與技術實現。專案體現親子合作的美好，將童心與創意轉化為實際的網站應用，展現家庭生活與技術創作的完美結合。',
+
     project5Title: '個人履歷',
-    project5Description: '使用 Vue.js 開發的個人作品集網站，展示技術專案、工作經驗和個人資訊。採用響應式設計和現代化UI，並整合語音導覽功能，提供互動式用戶體驗。',
-    
+    project5Description:
+      '使用 Vue.js 開發的個人作品集網站，展示技術專案、工作經驗和個人資訊。採用響應式設計和現代化UI，並整合語音導覽功能，提供互動式用戶體驗。',
+
     project4Title: '波爾多社區網站',
-    project4Description: '使用 Vue.js 開發的現代化社區門戶網站，提供社區資訊展示、互動功能和用戶參與平台。專案採用響應式設計，確保在各種設備上的最佳體驗。',
-    
+    project4Description:
+      '使用 Vue.js 開發的現代化社區門戶網站，提供社區資訊展示、互動功能和用戶參與平台。專案採用響應式設計，確保在各種設備上的最佳體驗。',
+
     project3Title: '測驗服務專區',
-    project3Description: '專業的英語檢定考試報名平台，支援TOEIC、TOEFL等多種測驗註冊。整合考試行事曆、線上報名、用戶管理和多語言介面，提供完整的考試服務生態系統。',
+    project3Description:
+      '專業的英語檢定考試報名平台，支援TOEIC、TOEFL等多種測驗註冊。整合考試行事曆、線上報名、用戶管理和多語言介面，提供完整的考試服務生態系統。',
     project3Company: 'Chun Shin Limited',
     project3Year: '前公司專案',
-    
+
     project2Title: '搶救杰倫大作戰',
-    project2Description: '創意專案企劃與簡報設計，展現專案規劃、創意發想和視覺呈現能力。透過Google Slides製作互動式簡報，結合創意內容和專業設計。',
-    
+    project2Description:
+      '創意專案企劃與簡報設計，展現專案規劃、創意發想和視覺呈現能力。透過Google Slides製作互動式簡報，結合創意內容和專業設計。',
+
     project1Title: '台北高爾夫協會官網',
-    project1Description: '台北市高爾夫協會官方網站開發與維護。負責賽事資訊發布系統、新聞內容管理、競賽章程下載和報名選手資訊展示功能。提供清晰的資訊架構和用戶友善的瀏覽體驗。',
+    project1Description:
+      '台北市高爾夫協會官方網站開發與維護。負責賽事資訊發布系統、新聞內容管理、競賽章程下載和報名選手資訊展示功能。提供清晰的資訊架構和用戶友善的瀏覽體驗。',
     project1Client: '台北市高爾夫協會',
     project1Year: '外包專案',
 
     // 聯絡頁面
     contactPageTitle: '聯絡我',
     contactPageSubtitle: '歡迎與我交流技術、工作機會或任何有趣的想法',
-    
+
     // 聯絡方式
     lineContact: 'Line',
     lineContactDesc: '即時通訊聯繫',
     lineContactButton: '微信聯繫',
-    
+
     phoneContact: '電話',
     phoneNumber: '+886 986 642 519',
     phoneCallButton: '撥打電話',
-    
+
     facebookContact: 'Facebook',
     facebookContactDesc: '社交媒體聯繫',
     facebookViewButton: '查看檔案',
-    
+
     primaryEmail: '主要郵箱',
     primaryEmailAddress: 'joechiboo@gmail.com',
     sendEmailButton: '發送郵件',
-    
+
     backupEmail: '備用郵箱',
     backupEmailAddress: 'stst1239joe@hotmail.com',
-    
+
     wechatContact: 'WeChat',
     wechatContactDesc: '即時通訊聯繫',
     wechatContactButton: '微信聯繫',
-    
+
     // 聯絡表單
     sendMessage: '發送訊息',
     formName: '姓名',
@@ -458,7 +471,7 @@ const translations = {
     formMessageTooShort: '訊息內容至少需要10個字元',
     sendingMessage: '發送中...',
     sendMessageButton: '發送訊息',
-    
+
     // 工作狀態
     workStatus: '工作狀態',
     currentStatus: '目前狀態：免費或收費兼職專案',
@@ -469,7 +482,7 @@ const translations = {
     interestInnovation: '創新科技專案',
     interestConsulting: '技術諮詢與指導',
     responseTime: '回覆時間：通常在24小時內回覆郵件',
-    
+
     // 位置資訊
     locationInfo: '位置資訊',
     locationTaiwan: '台灣',
@@ -682,7 +695,8 @@ const translations = {
     workExp1Position: 'IT Director',
     workExp1Company: 'Ta-An Medical Laboratory',
     workExp1Period: 'July 2019 - Present',
-    workExp1Description: 'Responsible for overall IT system planning, management and maintenance at the medical laboratory, ensuring stable operation of medical information systems.',
+    workExp1Description:
+      'Responsible for overall IT system planning, management and maintenance at the medical laboratory, ensuring stable operation of medical information systems.',
     workExp1Resp1: 'Plan and manage medical laboratory IT system architecture',
     workExp1Resp2: 'Supervise system maintenance and security management',
     workExp1Resp3: 'Coordinate cross-departmental IT requirements and project execution',
@@ -692,7 +706,8 @@ const translations = {
     workExp2Position: 'R&D Engineer',
     workExp2Company: 'TutorABC (Shanghai/Taiwan)',
     workExp2Period: 'June 2016 - July 2019',
-    workExp2Description: 'Responsible for R&D work on telesales/customer service CTI platform, focusing on improving system performance.',
+    workExp2Description:
+      'Responsible for R&D work on telesales/customer service CTI platform, focusing on improving system performance.',
     workExp2Resp1: 'Develop and maintain CTI phone platform functionality',
     workExp2Resp2: 'Optimize real-time monitoring command center system performance',
     workExp2Resp3: 'Collaborate with product team to improve user experience',
@@ -701,7 +716,8 @@ const translations = {
     workExp3Position: 'IT Engineer',
     workExp3Company: 'Wufu Technology (Shanghai)',
     workExp3Period: 'August 2015 - June 2016',
-    workExp3Description: 'Responsible for enterprise information system development and maintenance, supporting business process automation needs.',
+    workExp3Description:
+      'Responsible for enterprise information system development and maintenance, supporting business process automation needs.',
     workExp3Resp1: 'Develop enterprise internal management systems',
     workExp3Resp2: 'Maintain and optimize existing business systems',
     workExp3Resp3: 'Assist with IT infrastructure setup',
@@ -711,8 +727,10 @@ const translations = {
     workExp4Position: 'Programmer',
     workExp4Company: 'TOEIC - Zhongxin/Zhangfang Technology',
     workExp4Period: 'March 2012 - August 2015',
-    workExp4Description: 'Participated in e-commerce platform and related administrative process development, accumulating fundamental software development experience.',
-    workExp4Resp1: 'Develop and maintain exam registration website with shopping mall functionality',
+    workExp4Description:
+      'Participated in e-commerce platform and related administrative process development, accumulating fundamental software development experience.',
+    workExp4Resp1:
+      'Develop and maintain exam registration website with shopping mall functionality',
     workExp4Resp2: 'Develop international volunteer system and registration platform',
     workExp4Resp3: 'Implement data processing and reporting functions',
     workExp4Resp4: 'Conduct system testing and debugging',
@@ -724,36 +742,43 @@ const translations = {
     edu1DegreeWithBreak: 'Master of Information Science<br>(Part-time Program)',
     edu1School: 'National Taipei University of Education',
     edu1Period: '2024 - Current',
-    edu1Description: 'Major in Software Engineering, Artificial Intelligence and other core courses. Thesis direction: Predicting other test values using a small number of test items',
+    edu1Description:
+      'Major in Software Engineering, Artificial Intelligence and other core courses. Thesis direction: Predicting other test values using a small number of test items',
 
     edu2Degree: 'Bachelor of Information Engineering',
     edu2School: 'National Taipei University of Technology',
     edu2Period: '2005 - 2009',
-    edu2Description: 'Major in Software Engineering, Data Structures, Algorithms and other core courses.',
+    edu2Description:
+      'Major in Software Engineering, Data Structures, Algorithms and other core courses.',
 
     edu3Degree: 'Electronics Department',
     edu3School: 'Taipei Municipal Muzha Industrial High School',
     edu3Period: '2002 - 2005',
-    edu3Description: 'Science track background with solid mathematics and physics foundation, began developing interest in programming.',
+    edu3Description:
+      'Science track background with solid mathematics and physics foundation, began developing interest in programming.',
 
     // Professional Certifications
     cert1Name: 'ISO/IEC 27001 Lead Auditor',
     cert1FullName: 'Information Security Management Systems Lead Auditor Training Course',
     cert1Issuer: 'BSI British Standards Institution',
     cert1Category: 'Information Security',
-    cert1Description: 'Information Security Management Systems Lead Auditor Training Course, with deep understanding of ISO 27001 standards and audit capabilities',
+    cert1Description:
+      'Information Security Management Systems Lead Auditor Training Course, with deep understanding of ISO 27001 standards and audit capabilities',
 
     cert2Name: 'ISO 14971:2019',
     cert2FullName: 'Medical Device Risk Management Training Course',
     cert2Issuer: 'Professional Training Institution',
     cert2Category: 'Medical Devices',
-    cert2Description: 'Medical device risk management international standard training, specializing in medical device full lifecycle risk identification and management',
+    cert2Description:
+      'Medical device risk management international standard training, specializing in medical device full lifecycle risk identification and management',
 
     cert3Name: 'ISO 13485:2016',
-    cert3FullName: 'Medical Devices Quality Management System Internal Auditor Training Course (ISO 13485:2016)',
+    cert3FullName:
+      'Medical Devices Quality Management System Internal Auditor Training Course (ISO 13485:2016)',
     cert3Issuer: 'BSI British Standards Institution',
     cert3Category: 'Quality Management',
-    cert3Description: 'Medical device quality management system internal auditor training, familiar with ISO 13485 standard requirements and audit techniques',
+    cert3Description:
+      'Medical device quality management system internal auditor training, familiar with ISO 13485 standard requirements and audit techniques',
 
     // Certification Dates
     cert1Date: '2023',
@@ -781,19 +806,23 @@ const translations = {
     // Hobbies
     drawing: 'Drawing',
     drawingDesc: 'Recording life through brushes, expressing emotions with colors',
-    drawingReason: 'Drawing allows me to calm down and observe the beauty of the world. Every stroke is a record of life and release of emotions. In the process of drawing, time seems to stand still, with only dialogue between me and the canvas.',
+    drawingReason:
+      'Drawing allows me to calm down and observe the beauty of the world. Every stroke is a record of life and release of emotions. In the process of drawing, time seems to stand still, with only dialogue between me and the canvas.',
 
     creation: 'Creation',
     creationDesc: 'Unleashing imagination to create interesting ideas',
-    creationReason: 'Creation is pure joy, finding balance between conception and implementation. Every time I complete a work, the sense of achievement "I can do it too" is irreplaceable.',
+    creationReason:
+      'Creation is pure joy, finding balance between conception and implementation. Every time I complete a work, the sense of achievement "I can do it too" is irreplaceable.',
 
     sports: 'Sports',
     sportsDesc: 'Maintaining healthy physique, challenging personal limits',
-    sportsReason: 'Sports make me feel the balance and vitality of body and mind. Every sweat is a challenge to myself, every breakthrough is exploration of limits. In sports, I find not just health, but inner peace and confidence.',
+    sportsReason:
+      'Sports make me feel the balance and vitality of body and mind. Every sweat is a challenge to myself, every breakthrough is exploration of limits. In sports, I find not just health, but inner peace and confidence.',
 
     music: 'Music',
     musicDesc: 'Enriching life with melodies, adjusting mood with rhythms',
-    musicReason: 'Music is the language of the soul, touching emotional depths that words cannot express. The focus and dedication when playing allow me to find tranquility in melodies and feel the beauty of life in harmonies. Music not only enriches my life but serves as an emotional outlet.',
+    musicReason:
+      'Music is the language of the soul, touching emotional depths that words cannot express. The focus and dedication when playing allow me to find tranquility in melodies and feel the beauty of life in harmonies. Music not only enriches my life but serves as an emotional outlet.',
 
     // Interactive Hints
     clickToView: 'Click to view works',
@@ -814,7 +843,8 @@ const translations = {
     frogSketchDesc: 'Realistic frog sketch showcasing attention to detail',
 
     practiceDrawing6: 'Practice Drawing #6',
-    practiceDrawing6Desc: 'Drawing practice work, continuously exploring different drawing techniques',
+    practiceDrawing6Desc:
+      'Drawing practice work, continuously exploring different drawing techniques',
 
     practiceDrawing5: 'Practice Drawing #5',
     practiceDrawing5Desc: 'Showing progress in line and shadow handling',
@@ -836,13 +866,15 @@ const translations = {
 
     // Music Works
     companyPerformance: 'Company Annual Party Performance',
-    companyPerformanceDesc: 'Piano performance at company year-end gathering, sharing the beauty of music with colleagues',
+    companyPerformanceDesc:
+      'Piano performance at company year-end gathering, sharing the beauty of music with colleagues',
 
     hotelPiano: 'Hotel Piano',
     hotelPianoDesc: 'Asked permission to play, wonderful time of improvised performance',
 
     violinPractice: 'Violin Practice',
-    violinPracticeDesc: 'Exploring different instruments expressions, challenging new musical territories',
+    violinPracticeDesc:
+      'Exploring different instruments expressions, challenging new musical territories',
 
     duetPiece1: '4-Hand Duet - Piece 1 - Great',
     duetPiece1Desc: 'Piano four-hand duet with eldest son, wonderful parent-child music time',
@@ -868,18 +900,21 @@ const translations = {
 
     // Work-Life Balance
     workLifeBalance: 'Work and Life Balance',
-    workLifeBalanceIntro: 'I believe excellent software engineers are not just technical experts, but well-rounded individuals. Through diverse hobbies, I can:',
-    
+    workLifeBalanceIntro:
+      'I believe excellent software engineers are not just technical experts, but well-rounded individuals. Through diverse hobbies, I can:',
+
     balanceBenefit1: 'Cultivate creative thinking and find new inspiration in programming',
     balanceBenefit2: 'Train keen observation and aesthetic sense through artistic creation',
     balanceBenefit3: 'Exercise keeps my body healthy and mind clear',
     balanceBenefit4: 'Music enhances my focus and sensitivity to rhythm',
     balanceBenefit5: 'Diverse experiences help me better understand different user needs',
 
-    balanceQuote1: 'Creativity comes from collisions between different fields; the combination of technology and art often produces the most amazing works.',
-    balanceQuote2: 'Healthy body and mind are the foundation of continuous creation; work efficiency and quality of life are equally important.',
+    balanceQuote1:
+      'Creativity comes from collisions between different fields; the combination of technology and art often produces the most amazing works.',
+    balanceQuote2:
+      'Healthy body and mind are the foundation of continuous creation; work efficiency and quality of life are equally important.',
 
-    // Future Goals  
+    // Future Goals
     futureGoals: 'Future Goals',
     sportsChallenge: 'Sports Challenge',
     musicProduction: 'Music Production',
@@ -892,55 +927,62 @@ const translations = {
 
     // Portfolio Project Content
     project6Title: 'Jiayi Creative Project',
-    project6Description: 'Creative project co-conceived with my seven-year-old eldest son, combining childlike imagination with technical implementation. The project embodies the beauty of parent-child collaboration, transforming innocent creativity into actual web applications, showcasing the perfect blend of family life and technical creation.',
-    
+    project6Description:
+      'Creative project co-conceived with my seven-year-old eldest son, combining childlike imagination with technical implementation. The project embodies the beauty of parent-child collaboration, transforming innocent creativity into actual web applications, showcasing the perfect blend of family life and technical creation.',
+
     project5Title: 'Personal Portfolio',
-    project5Description: 'Personal portfolio website developed using Vue.js, showcasing technical projects, work experience, and personal information. Features responsive design and modern UI, integrated with voice navigation for interactive user experience.',
-    
+    project5Description:
+      'Personal portfolio website developed using Vue.js, showcasing technical projects, work experience, and personal information. Features responsive design and modern UI, integrated with voice navigation for interactive user experience.',
+
     project4Title: 'Bordeaux Community Website',
-    project4Description: 'Modern community portal website developed using Vue.js, providing community information display, interactive features, and user engagement platform. The project adopts responsive design to ensure optimal experience on various devices.',
-    
+    project4Description:
+      'Modern community portal website developed using Vue.js, providing community information display, interactive features, and user engagement platform. The project adopts responsive design to ensure optimal experience on various devices.',
+
     project3Title: 'Exam Service Center',
-    project3Description: 'Professional English proficiency test registration platform supporting various tests including TOEIC, TOEFL registration. Integrates exam calendar, online registration, user management, and multilingual interface, providing complete exam service ecosystem.',
+    project3Description:
+      'Professional English proficiency test registration platform supporting various tests including TOEIC, TOEFL registration. Integrates exam calendar, online registration, user management, and multilingual interface, providing complete exam service ecosystem.',
     project3Company: 'Chun Shin Limited',
     project3Year: 'Previous Company Project',
-    
+
     project2Title: 'Save Jay Operation',
-    project2Description: 'Creative project planning and presentation design, showcasing project planning, creative ideation, and visual presentation capabilities. Created interactive presentations using Google Slides, combining creative content with professional design.',
-    
+    project2Description:
+      'Creative project planning and presentation design, showcasing project planning, creative ideation, and visual presentation capabilities. Created interactive presentations using Google Slides, combining creative content with professional design.',
+
     project1Title: 'Taipei Golf Association Website',
-    project1Description: 'Development and maintenance of the official website for Taipei Golf Association. Responsible for tournament information publishing system, news content management, competition regulation downloads, and registered player information display. Provides clear information architecture and user-friendly browsing experience.',
+    project1Description:
+      'Development and maintenance of the official website for Taipei Golf Association. Responsible for tournament information publishing system, news content management, competition regulation downloads, and registered player information display. Provides clear information architecture and user-friendly browsing experience.',
     project1Client: 'Taipei Golf Association',
     project1Year: 'Freelance Project',
 
     // Contact Page
     contactPageTitle: 'Contact Me',
-    contactPageSubtitle: 'Welcome to discuss technology, job opportunities, or any interesting ideas',
-    
+    contactPageSubtitle:
+      'Welcome to discuss technology, job opportunities, or any interesting ideas',
+
     // Contact Methods
     lineContact: 'Line',
     lineContactDesc: 'Instant messaging',
     lineContactButton: 'WeChat Contact',
-    
+
     phoneContact: 'Phone',
     phoneNumber: '+886 986 642 519',
     phoneCallButton: 'Call',
-    
+
     facebookContact: 'Facebook',
     facebookContactDesc: 'Social media contact',
     facebookViewButton: 'View Profile',
-    
+
     primaryEmail: 'Primary Email',
     primaryEmailAddress: 'joechiboo@gmail.com',
     sendEmailButton: 'Send Email',
-    
+
     backupEmail: 'Backup Email',
     backupEmailAddress: 'stst1239joe@hotmail.com',
-    
+
     wechatContact: 'WeChat',
     wechatContactDesc: 'Instant messaging',
     wechatContactButton: 'WeChat Contact',
-    
+
     // Contact Form
     sendMessage: 'Send Message',
     formName: 'Name',
@@ -955,18 +997,19 @@ const translations = {
     formMessageTooShort: 'Message must have at least 10 characters',
     sendingMessage: 'Sending...',
     sendMessageButton: 'Send Message',
-    
+
     // Work Status
     workStatus: 'Work Status',
     currentStatus: 'Current Status: Available for freelance projects (free or paid)',
-    projectInterests: 'I am looking for new challenges and opportunities, especially interested in the following types of projects:',
+    projectInterests:
+      'I am looking for new challenges and opportunities, especially interested in the following types of projects:',
     interestFrontend: 'Frontend development projects (Vue.js)',
     interestFullstack: 'Full-stack web application development',
     interestDotNet: '.NET MVC / .NET Core',
     interestInnovation: 'Innovative technology projects',
     interestConsulting: 'Technical consulting and guidance',
     responseTime: 'Response Time: Usually reply within 24 hours',
-    
+
     // Location Information
     locationInfo: 'Location Information',
     locationTaiwan: 'Taiwan',
