@@ -30,8 +30,12 @@
               <div class="project-meta">
                 <span v-if="project.year" class="project-year">{{ project.year }}</span>
                 <span v-if="project.yearKey" class="project-year">{{ t(project.yearKey) }}</span>
-                <span v-if="project.companyKey" class="project-company">{{ t(project.companyKey) }}</span>
-                <span v-if="project.clientKey" class="project-client">{{ t(project.clientKey) }}</span>
+                <span v-if="project.companyKey" class="project-company">{{
+                  t(project.companyKey)
+                }}</span>
+                <span v-if="project.clientKey" class="project-client">{{
+                  t(project.clientKey)
+                }}</span>
               </div>
             </div>
             <p>{{ t(project.descriptionKey) }}</p>
@@ -41,7 +45,12 @@
               </span>
             </div>
             <div class="project-links">
-              <a v-if="project.demo" :href="project.demo" :class="project.id === 5 ? 'btn btn-special' : 'btn btn-primary'" target="_blank">
+              <a
+                v-if="project.demo"
+                :href="project.demo"
+                :class="project.id === 5 ? 'btn btn-special' : 'btn btn-primary'"
+                target="_blank"
+              >
                 {{ project.id === 5 ? t('thisWebsite') : t('demo') }}
               </a>
               <a
@@ -67,6 +76,16 @@ import { useLanguage } from '../composables/useLanguage.js'
 const { t } = useLanguage()
 
 const projects = ref([
+  {
+    id: 6,
+    titleKey: 'project6Title',
+    descriptionKey: 'project6Description',
+    technologies: ['HTML', 'JavaScript', 'CSS3'],
+    demo: 'https://joechiboo.github.io/jiayi/',
+    github: 'https://github.com/joechiboo/jiayi',
+    category: 'creative',
+    year: '2025',
+  },
   {
     id: 5,
     titleKey: 'project5Title',
@@ -284,7 +303,7 @@ const projects = ref([
 }
 
 /* 深色模式下的tech-tag顏色 */
-[data-theme="dark"] .tech-tag {
+[data-theme='dark'] .tech-tag {
   background: #1e3a8a;
   color: #bfdbfe;
 }
@@ -318,12 +337,12 @@ const projects = ref([
 }
 
 /* 深色模式下的按鈕顏色 */
-[data-theme="dark"] .btn-primary {
+[data-theme='dark'] .btn-primary {
   background: #1d4ed8;
   color: white;
 }
 
-[data-theme="dark"] .btn-primary:hover {
+[data-theme='dark'] .btn-primary:hover {
   background: #1e40af;
 }
 
@@ -339,12 +358,12 @@ const projects = ref([
 }
 
 /* 深色模式下的outline按鈕 */
-[data-theme="dark"] .btn-outline {
+[data-theme='dark'] .btn-outline {
   color: #60a5fa;
   border: 2px solid #60a5fa;
 }
 
-[data-theme="dark"] .btn-outline:hover {
+[data-theme='dark'] .btn-outline:hover {
   background: #60a5fa;
   color: #1a202c;
 }
@@ -368,7 +387,7 @@ const projects = ref([
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
   transition: left 0.5s;
 }
 

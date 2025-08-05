@@ -394,6 +394,9 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project6Title: 'Jiayi 創意專案',
+    project6Description: '與七歲大兒子共同構思的創意專案，結合孩子的天真想像力與技術實現。專案體現親子合作的美好，將童心與創意轉化為實際的網站應用，展現家庭生活與技術創作的完美結合。',
+    
     project5Title: '個人履歷',
     project5Description: '使用 Vue.js 開發的個人作品集網站，展示技術專案、工作經驗和個人資訊。採用響應式設計和現代化UI，並整合語音導覽功能，提供互動式用戶體驗。',
     
@@ -888,6 +891,9 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project6Title: 'Jiayi Creative Project',
+    project6Description: 'Creative project co-conceived with my seven-year-old eldest son, combining childlike imagination with technical implementation. The project embodies the beauty of parent-child collaboration, transforming innocent creativity into actual web applications, showcasing the perfect blend of family life and technical creation.',
+    
     project5Title: 'Personal Portfolio',
     project5Description: 'Personal portfolio website developed using Vue.js, showcasing technical projects, work experience, and personal information. Features responsive design and modern UI, integrated with voice navigation for interactive user experience.',
     
