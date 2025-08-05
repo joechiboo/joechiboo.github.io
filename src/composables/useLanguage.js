@@ -360,7 +360,7 @@ const translations = {
     duetPiece2Desc: '繼續與大兒子的音樂練習，培養默契與技巧',
 
     duetPiece3: '4手聯彈-曲目3-321嘿嘿',
-    duetPiece3Desc: '宮崎駿動畫配樂，充滿想像力的音樂演奏',
+    duetPiece3Desc: '聽起來很困難，彈起來很容易的趣味曲目',
 
     rockRadish: '搖滾的蘿蔔',
     rockRadishDesc: '搖滾的蘿蔔🚧 彈得不好，敬請期待更好的版本',
@@ -883,7 +883,7 @@ const translations = {
     duetPiece2Desc: 'Continuing music practice with eldest son, developing rapport and technique',
 
     duetPiece3: '4-Hand Duet - Piece 3 - 321 Hey Hey',
-    duetPiece3Desc: 'Miyazaki anime soundtrack, imaginative musical performance',
+    duetPiece3Desc: 'Sounds difficult but easy to play - a fun and interesting piece',
 
     rockRadish: 'Rock Radish',
     rockRadishDesc: 'Rock Radish 🚧 Not played well, please look forward to a better version',
