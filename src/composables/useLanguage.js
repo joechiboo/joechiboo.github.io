@@ -401,6 +401,12 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project7Title: '聯合檢驗雲重構',
+    project7Description:
+      '醫事檢驗所核心業務系統的現代化重構專案，採用Vue.js + TypeScript架構提升系統效能與用戶體驗。整合檢驗報告查詢、醫事機構管理、資料統計分析等核心功能，為醫療檢驗產業提供更穩定高效的數位化解決方案。',
+    project7Company: '大安聯合',
+    project7Year: '企業專案',
+
     project6Title: '家一 創意專案',
     project6Description:
       '與七歲大兒子共同構思的創意專案，結合孩子的天真想像力與技術實現。專案體現親子合作的美好，將童心與創意轉化為實際的網站應用，展現家庭生活與技術創作的完美結合。',
@@ -926,6 +932,12 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project7Title: 'UCL Cloud System Refactoring',
+    project7Description:
+      'Modern refactoring project for the core business system of medical laboratory services, using Vue.js + TypeScript architecture to enhance system performance and user experience. Integrates core functions including laboratory report queries, medical institution management, and data statistical analysis, providing stable and efficient digital solutions for the medical testing industry.',
+    project7Company: 'Ta-An United',
+    project7Year: 'Enterprise Project',
+
     project6Title: 'Jiayi Creative Project',
     project6Description:
       'Creative project co-conceived with my seven-year-old eldest son, combining childlike imagination with technical implementation. The project embodies the beauty of parent-child collaboration, transforming innocent creativity into actual web applications, showcasing the perfect blend of family life and technical creation.',

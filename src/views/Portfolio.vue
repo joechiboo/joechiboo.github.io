@@ -89,6 +89,17 @@ const openDemo = (project) => {
 
 const projects = ref([
   {
+    id: 7,
+    titleKey: 'project7Title',
+    descriptionKey: 'project7Description',
+    technologies: ['Vue.js', 'TypeScript', 'CSS3', 'GitHub Pages'],
+    demo: 'https://joechiboo.github.io/uclcloud/',
+    github: 'https://github.com/joechiboo/uclcloud',
+    category: 'enterprise',
+    year: '2025',
+    companyKey: 'project7Company',
+  },
+  {
     id: 6,
     titleKey: 'project6Title',
     descriptionKey: 'project6Description',
