@@ -1,12 +1,26 @@
 User-agent: *
 Allow: /
 
+# 禁止爬取開發相關檔案
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.claude/
+Disallow: /dist/
+Disallow: *.json
+Disallow: *.config.*
+Disallow: *.md
+
+# 允許重要資源
+Allow: /img/
+Allow: /assets/
+Allow: /manifest.json
+Allow: /favicon.*
+Allow: /*.css
+Allow: /*.js
+
 # Sitemap 位置
 Sitemap: https://joechiboo.github.io/sitemap.xml
-
-# 禁止爬取的路徑（如有需要）
-# Disallow: /private/
-# Disallow: /admin/
 
 # 爬取延遲（避免過度請求）
 Crawl-delay: 1
