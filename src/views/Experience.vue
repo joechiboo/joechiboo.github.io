@@ -78,8 +78,20 @@
 <script setup>
 import { computed } from 'vue'
 import { useLanguage } from '@/composables/useLanguage'
+import { useSEO } from '../composables/useSEO.js'
 
 const { t } = useLanguage()
+
+// SEO 設定
+useSEO({
+  title: 'Joe Chi-Boo - 工作經歷 | Experience',
+  description: 'Joe Chi-Boo 工作經歷與教育背景，包括15年.NET開發經驗、資訊室主任職涯發展與相關證照資格。',
+  keywords: 'Joe Chi-Boo, 工作經歷, Experience, .NET開發, 資訊室主任, 教育背景, 證照',
+  ogTitle: 'Joe Chi-Boo - 工作經歷',
+  ogDescription: '了解 Joe Chi-Boo 的專業經歷，從軟體開發到管理職的職涯發展歷程與專業成就。',
+  twitterTitle: 'Joe Chi-Boo - 工作經歷',
+  twitterDescription: '了解 Joe Chi-Boo 的專業經歷，從軟體開發到管理職的職涯發展歷程與專業成就。'
+})
 
 const workExperience = computed(() => [
   {

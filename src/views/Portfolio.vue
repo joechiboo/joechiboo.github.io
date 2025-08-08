@@ -74,8 +74,20 @@
 <script setup>
 import { ref } from 'vue'
 import { useLanguage } from '../composables/useLanguage.js'
+import { useSEO } from '../composables/useSEO.js'
 
 const { t } = useLanguage()
+
+// SEO 設定
+useSEO({
+  title: 'Joe Chi-Boo - 技術作品集 | Portfolio',
+  description: 'Joe Chi-Boo 技術作品集頁面，展示各種 Web 開發專案包括 Vue.js、.NET、JavaScript 等技術實作案例。',
+  keywords: 'Joe Chi-Boo, 作品集, Portfolio, Vue.js, .NET, JavaScript, Web Development, 前端開發',
+  ogTitle: 'Joe Chi-Boo - 技術作品集',
+  ogDescription: '探索 Joe Chi-Boo 的技術作品集，包含多個 Web 開發專案與創意實作案例。',
+  twitterTitle: 'Joe Chi-Boo - 技術作品集',
+  twitterDescription: '探索 Joe Chi-Boo 的技術作品集，包含多個 Web 開發專案與創意實作案例。'
+})
 
 const handleCardClick = (project) => {
   if (project.demo) {

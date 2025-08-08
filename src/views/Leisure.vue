@@ -220,8 +220,20 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useLanguage } from '@/composables/useLanguage'
+import { useSEO } from '../composables/useSEO.js'
 
 const { t } = useLanguage()
+
+// SEO 設定
+useSEO({
+  title: 'Joe Chi-Boo - 休閒興趣 | Leisure',
+  description: 'Joe Chi-Boo 休閒興趣展示，包括繪畫作品、音樂創作、運動活動等多元興趣愛好與創意作品分享。',
+  keywords: 'Joe Chi-Boo, 休閒興趣, Leisure, 繪畫, 音樂, 創作, 運動, 興趣愛好',
+  ogTitle: 'Joe Chi-Boo - 休閒興趣',
+  ogDescription: '探索 Joe Chi-Boo 的多元興趣世界，從繪畫創作到音樂演奏，展現豐富的業餘生活。',
+  twitterTitle: 'Joe Chi-Boo - 休閒興趣',
+  twitterDescription: '探索 Joe Chi-Boo 的多元興趣世界，從繪畫創作到音樂演奏，展現豐富的業餘生活。'
+})
 
 // 分類選擇功能
 const activeCategory = ref('drawing') // 默認選中繪畫

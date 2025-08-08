@@ -210,8 +210,20 @@
 import { ref, reactive, onMounted, onUnmounted } from 'vue'
 import emailjs from '@emailjs/browser'
 import { useLanguage } from '../composables/useLanguage.js'
+import { useSEO } from '../composables/useSEO.js'
 
 const { t } = useLanguage()
+
+// SEO 設定
+useSEO({
+  title: 'Joe Chi-Boo - 聯絡我 | Contact',
+  description: 'Joe Chi-Boo 聯絡頁面，提供多種聯絡方式包括電子郵件、LINE、微信等，歡迎合作洽談與交流。',
+  keywords: 'Joe Chi-Boo, 聯絡我, Contact, 電子郵件, LINE, 微信, 合作洽談',
+  ogTitle: 'Joe Chi-Boo - 聯絡我',
+  ogDescription: '與 Joe Chi-Boo 取得聯繫！提供多種便利的聯絡方式，歡迎合作機會與技術交流。',
+  twitterTitle: 'Joe Chi-Boo - 聯絡我',
+  twitterDescription: '與 Joe Chi-Boo 取得聯繫！提供多種便利的聯絡方式，歡迎合作機會與技術交流。'
+})
 
 const form = reactive({
   name: '',

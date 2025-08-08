@@ -55,9 +55,21 @@
 <script setup>
 import { ref } from 'vue'
 import { useLanguage } from '../composables/useLanguage.js'
+import { useSEO } from '../composables/useSEO.js'
 
 const { t } = useLanguage()
 const showToast = ref(false)
+
+// SEO 設定
+useSEO({
+  title: 'Joe Chi-Boo - 軟體工程師 & 資訊室主任',
+  description: 'Joe Chi-Boo 個人履歷網站首頁。擁有15年.NET開發經驗的軟體工程師，目前擔任資訊室主任，專精於全端開發與團隊管理。',
+  keywords: 'Joe Chi-Boo, 軟體工程師, .NET, 全端開發, 資訊室主任, 履歷, 首頁',
+  ogTitle: 'Joe Chi-Boo - 軟體工程師 & 資訊室主任',
+  ogDescription: '歡迎來到 Joe Chi-Boo 的個人履歷網站！擁有15年.NET開發經驗，專精於全端開發與團隊管理。',
+  twitterTitle: 'Joe Chi-Boo - 軟體工程師 & 資訊室主任',
+  twitterDescription: '歡迎來到 Joe Chi-Boo 的個人履歷網站！擁有15年.NET開發經驗，專精於全端開發與團隊管理。'
+})
 
 const downloadResume = () => {
   showToast.value = true

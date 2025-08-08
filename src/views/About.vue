@@ -282,8 +282,20 @@
 
 <script setup>
 import { useLanguage } from '../composables/useLanguage.js'
+import { useSEO } from '../composables/useSEO.js'
 
 const { t } = useLanguage()
+
+// SEO 設定
+useSEO({
+  title: 'Joe Chi-Boo - 關於我 | About',
+  description: 'Joe Chi-Boo 個人介紹頁面，了解我的背景、經歷、學習理念與人生哲學。資訊室主任的成長故事與職涯發展。',
+  keywords: 'Joe Chi-Boo, 關於我, About, 個人介紹, 背景, 學習理念, 資訊室主任',
+  ogTitle: 'Joe Chi-Boo - 關於我',
+  ogDescription: '深入了解 Joe Chi-Boo 的背景、經歷與人生哲學。從軟體工程師到資訊室主任的成長歷程。',
+  twitterTitle: 'Joe Chi-Boo - 關於我',
+  twitterDescription: '深入了解 Joe Chi-Boo 的背景、經歷與人生哲學。從軟體工程師到資訊室主任的成長歷程。'
+})
 </script>
 
 <style scoped>
