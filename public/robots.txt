@@ -7,14 +7,17 @@ Disallow: /node_modules/
 Disallow: /.git/
 Disallow: /.claude/
 Disallow: /dist/
-Disallow: *.json
 Disallow: *.config.*
 Disallow: *.md
+Disallow: /package*.json
+Disallow: /vite.config.*
+Disallow: /eslint.config.*
 
 # 允許重要資源
 Allow: /img/
 Allow: /assets/
 Allow: /manifest.json
+Allow: /sitemap.xml
 Allow: /favicon.*
 Allow: /*.css
 Allow: /*.js
