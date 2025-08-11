@@ -362,8 +362,8 @@ const translations = {
     duetPiece3: '4手聯彈-曲目3-321嘿嘿',
     duetPiece3Desc: '聽起來很困難，彈起來很容易的趣味曲目',
 
-    rockRadish: '搖滾的蘿蔔',
-    rockRadishDesc: '搖滾的蘿蔔🚧 彈得不好，敬請期待更好的版本',
+    rockRadish: '4手聯彈-曲目4-搖滾的蘿莉塔',
+    rockRadishDesc: '活潑有趣的一首歌',
 
     // 空狀態
     emptyCategory: '🚧 此類別的作品即將更新，敬請期待！',
@@ -891,8 +891,8 @@ const translations = {
     duetPiece3: '4-Hand Duet - Piece 3 - 321 Hey Hey',
     duetPiece3Desc: 'Sounds difficult but easy to play - a fun and interesting piece',
 
-    rockRadish: 'Rock Radish',
-    rockRadishDesc: 'Rock Radish 🚧 Not played well, please look forward to a better version',
+    rockRadish: 'Four-Hands Duet - Piece 4 - Rock Lolita',
+    rockRadishDesc: 'A lively and interesting song',
 
     // Empty States
     emptyCategory: '🚧 Works in this category are coming soon, stay tuned!',
