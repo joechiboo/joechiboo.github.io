@@ -29,7 +29,8 @@
       "Bash(true)",
       "mcp__ide__getDiagnostics",
       "Bash(npm run lint:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "WebFetch(domain:www.xml-sitemaps.com)"
     ],
     "deny": []
   }
