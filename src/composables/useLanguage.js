@@ -401,6 +401,11 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project8Title: '聯合官方網站重構',
+    project8Description:
+      '聯合醫事檢驗所官方網站的全面重構專案，採用現代化Web技術提升網站效能和使用者體驗。重新設計視覺風格與資訊架構，優化行動裝置瀏覽體驗，整合醫事服務展示、聯絡資訊管理等功能，為醫療檢驗服務提供更專業、更友善的線上平台。',
+    project8Company: '大安聯合',
+
     project7Title: '聯合檢驗雲重構',
     project7Description:
       '醫事檢驗所核心業務系統的現代化重構專案，採用Vue.js + TypeScript架構提升系統效能與用戶體驗。整合檢驗報告查詢、醫事機構管理、資料統計分析等核心功能，為醫療檢驗產業提供更穩定高效的數位化解決方案。',
@@ -932,6 +937,11 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project8Title: 'United Official Website Refactoring',
+    project8Description:
+      'Comprehensive refactoring project for the official website of United Medical Laboratory, using modern web technologies to enhance website performance and user experience. Redesigned visual style and information architecture, optimized mobile browsing experience, integrated medical service displays and contact information management functions, providing a more professional and user-friendly online platform for medical testing services.',
+    project8Company: 'Ta-An United',
+
     project7Title: 'UCL Cloud System Refactoring',
     project7Description:
       'Modern refactoring project for the core business system of medical laboratory services, using Vue.js + TypeScript architecture to enhance system performance and user experience. Integrates core functions including laboratory report queries, medical institution management, and data statistical analysis, providing stable and efficient digital solutions for the medical testing industry.',

@@ -101,6 +101,17 @@ const openDemo = (project) => {
 
 const projects = ref([
   {
+    id: 8,
+    titleKey: 'project8Title',
+    descriptionKey: 'project8Description',
+    technologies: ['Vue.js', 'TypeScript', 'CSS3', 'GitHub Pages'],
+    demo: 'https://joechiboo.github.io/ZebraSite/',
+    github: 'https://github.com/joechiboo/ZebraSite',
+    category: 'enterprise',
+    year: '2025',
+    companyKey: 'project8Company',
+  },
+  {
     id: 7,
     titleKey: 'project7Title',
     descriptionKey: 'project7Description',
