@@ -33,7 +33,8 @@
       "Bash(npm install:*)",
       "Bash(npm uninstall:*)",
       "WebFetch(domain:www.xml-sitemaps.com)",
-      "Bash(git rebase:*)"
+      "Bash(git rebase:*)",
+      "Read(//c/Users/UCLIT/.ssh/**)"
     ],
     "deny": []
   }
