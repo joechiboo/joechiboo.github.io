@@ -266,11 +266,11 @@ const translations = {
     cert3Date: '2021年',
 
     // 技術標籤
-    techDotNetMVC: '.NET MVC',
-    techSQLServer: 'SQL Server',
+    techDotNetMVC: '.NET Core',
+    techSQLServer: 'Vue',
     techMedicalInfoSys: '醫療資訊系統',
     techSecurityMgmt: '資安管理',
-    techWindowsServer: 'Windows Server',
+    techWindowsServer: 'Claude Code',
     techJQuery: 'jQuery',
     techEntityFramework: 'Entity Framework',
     techMSSQL: 'MS SQL',
@@ -797,11 +797,11 @@ const translations = {
     cert3Date: '2021',
 
     // Technology Tags
-    techDotNetMVC: '.NET MVC',
-    techSQLServer: 'SQL Server',
+    techDotNetMVC: '.NET Core',
+    techSQLServer: 'Vue',
     techMedicalInfoSys: 'Medical Information Systems',
     techSecurityMgmt: 'Security Management',
-    techWindowsServer: 'Windows Server',
+    techWindowsServer: 'Claude Code',
     techJQuery: 'jQuery',
     techEntityFramework: 'Entity Framework',
     techMSSQL: 'MS SQL',
