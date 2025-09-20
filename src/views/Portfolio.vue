@@ -105,7 +105,7 @@ const projects = ref([
     titleKey: 'project9Title',
     descriptionKey: 'project9Description',
     technologies: ['Vue.js', 'JavaScript', 'CSS3', 'GitHub Pages', '教育應用'],
-    demo: 'https://joechiboo.github.io/charmon-app/',
+    demo: 'https://joechiboo.github.io/CharMon/',
     github: 'https://github.com/joechiboo/CharMon',
     category: 'creative',
     year: '2025',
