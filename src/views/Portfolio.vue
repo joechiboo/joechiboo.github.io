@@ -101,6 +101,16 @@ const openDemo = (project) => {
 
 const projects = ref([
   {
+    id: 9,
+    titleKey: 'project9Title',
+    descriptionKey: 'project9Description',
+    technologies: ['Vue.js', 'JavaScript', 'CSS3', 'GitHub Pages', '教育應用'],
+    demo: 'https://joechiboo.github.io/charmon-app/',
+    github: 'https://github.com/joechiboo/CharMon',
+    category: 'creative',
+    year: '2025',
+  },
+  {
     id: 8,
     titleKey: 'project8Title',
     descriptionKey: 'project8Description',

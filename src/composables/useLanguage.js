@@ -434,6 +434,10 @@ const translations = {
     project2Description:
       '創意專案企劃與簡報設計，展現專案規劃、創意發想和視覺呈現能力。透過Google Slides製作互動式簡報，結合創意內容和專業設計。',
 
+    project9Title: 'CharMon 中文學習應用',
+    project9Description:
+      '針對4-12歲兒童的互動式中文學習應用，結合寶可夢主題教學、筆畫練習和注音符號學習。可生成A4列印練習單，附家長管理功能。透過遊戲化學習方式，讓孩子在趣味中掌握中文基礎。',
+
     project1Title: '台北高爾夫協會官網',
     project1Description:
       '台北市高爾夫協會官方網站開發與維護。負責賽事資訊發布系統、新聞內容管理、競賽章程下載和報名選手資訊展示功能。提供清晰的資訊架構和用戶友善的瀏覽體驗。',
@@ -969,6 +973,10 @@ const translations = {
     project2Title: 'Save Jay Operation',
     project2Description:
       'Creative project planning and presentation design, showcasing project planning, creative ideation, and visual presentation capabilities. Created interactive presentations using Google Slides, combining creative content with professional design.',
+
+    project9Title: 'CharMon Chinese Learning App',
+    project9Description:
+      'Interactive Chinese learning application for children aged 4-12, combining Pokémon-themed teaching, stroke practice, and phonetic symbol learning. Features A4 printable worksheets and parental management functions. Through gamified learning, children can master Chinese fundamentals in an engaging and fun way.',
 
     project1Title: 'Taipei Golf Association Website',
     project1Description:
