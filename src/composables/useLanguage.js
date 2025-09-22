@@ -472,6 +472,21 @@ const translations = {
     wechatContactDesc: '即時通訊聯繫',
     wechatContactButton: '微信聯繫',
 
+    // LINE Pay 商業模式
+    supportMyWork: '支持我的工作',
+    linePayTitle: 'LINE Pay 贊助支持',
+    linePayDesc: '如果我的工作對您有幫助，歡迎透過 LINE Pay 支持我的開源專案與技術分享。每一份支持都是我繼續前進的動力。',
+    whySupportTitle: '為什麼支持？',
+    linePayPoint1: '持續產出高品質的技術文章與教學內容',
+    linePayPoint2: '維護並更新開源專案，讓更多人受益',
+    linePayPoint3: '提供技術諮詢與問題解答服務',
+    supportOptionsTitle: '參考贊助金額選項',
+    supportOption1: '一杯咖啡 (給作者加油打氣)',
+    supportOption2: '一頓大餐 (支持持續開發)',
+    supportOption3: '實現你的願望 (客製化功能開發 - 一個晚上的工作)',
+    linePayScanHint: '掃描 QR Code 進行贊助',
+    linePaySupport: '您的每一份支持都讓我能夠投入更多時間在技術分享與開源貢獻上。感謝您的贊助！',
+
     // 聯絡表單
     sendMessage: '發送訊息',
     formName: '姓名',
@@ -1012,6 +1027,21 @@ const translations = {
     wechatContact: 'WeChat',
     wechatContactDesc: 'Instant messaging',
     wechatContactButton: 'WeChat Contact',
+
+    // LINE Pay Business Model
+    supportMyWork: 'Support My Work',
+    linePayTitle: 'LINE Pay Sponsorship',
+    linePayDesc: 'If my work has been helpful to you, feel free to support my open source projects and tech sharing via LINE Pay. Every bit of support motivates me to keep going.',
+    whySupportTitle: 'Why Support?',
+    linePayPoint1: 'Continuous production of high-quality technical articles and tutorials',
+    linePayPoint2: 'Maintaining and updating open source projects for everyone',
+    linePayPoint3: 'Providing technical consultation and Q&A services',
+    supportOptionsTitle: 'Reference Sponsorship Amount Options',
+    supportOption1: 'A cup of coffee (Cheer up the author)',
+    supportOption2: 'A big meal (Support continuous development)',
+    supportOption3: 'Make your wish come true (Custom feature development - One night work)',
+    linePayScanHint: 'Scan QR Code to sponsor',
+    linePaySupport: 'Your support allows me to dedicate more time to tech sharing and open source contributions. Thank you for your sponsorship!',
 
     // Contact Form
     sendMessage: 'Send Message',
