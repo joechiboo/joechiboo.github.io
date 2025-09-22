@@ -438,7 +438,7 @@ const translations = {
     project9Description:
       '針對4-12歲兒童的互動式中文學習應用，結合寶可夢主題教學、筆畫練習和注音符號學習。可生成A4列印練習單，附家長管理功能。透過遊戲化學習方式，讓孩子在趣味中掌握中文基礎。',
 
-    project10Title: 'Water Tracker 飲水追蹤應用',
+    project10Title: '飲水追蹤應用',
     project10Description:
       '專為不愛喝水的人設計的零壓力飲水追蹤應用。目標用戶是幾乎不喝水、每天喝不到1000ml的族群。核心理念是從小目標開始（250ml），湯、茶、咖啡都算數。特色包含無壓力提醒、慶祝小進步、友善鼓勵，讓喝水變成一件輕鬆愉快的事。',
 
@@ -997,7 +997,7 @@ const translations = {
     project9Description:
       'Interactive Chinese learning application for children aged 4-12, combining Pokémon-themed teaching, stroke practice, and phonetic symbol learning. Features A4 printable worksheets and parental management functions. Through gamified learning, children can master Chinese fundamentals in an engaging and fun way.',
 
-    project10Title: 'Water Tracker - Hydration Tracking App',
+    project10Title: 'Water Tracker',
     project10Description:
       'A zero-pressure hydration tracking app designed for people who dont like drinking water. Target users are those who barely drink water, consuming less than 1000ml daily. Core concept: start small (250ml), soup, tea, coffee all count. Features include no-pressure reminders, celebrating small progress, and friendly encouragement to make drinking water easy and enjoyable.',
 
