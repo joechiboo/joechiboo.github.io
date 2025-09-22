@@ -101,6 +101,16 @@ const openDemo = (project) => {
 
 const projects = ref([
   {
+    id: 10,
+    titleKey: 'project10Title',
+    descriptionKey: 'project10Description',
+    technologies: ['Vue.js', 'JavaScript', 'CSS3', 'PWA', '健康應用'],
+    demo: 'https://joechiboo.github.io/water-tracker/',
+    github: 'https://github.com/joechiboo/water-tracker',
+    category: 'creative',
+    year: '2025',
+  },
+  {
     id: 9,
     titleKey: 'project9Title',
     descriptionKey: 'project9Description',
