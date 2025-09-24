@@ -104,7 +104,7 @@ const projects = ref([
     id: 11,
     titleKey: 'project11Title',
     descriptionKey: 'project11Description',
-    technologies: ['Web Application', 'PWA', 'Responsive Design', 'JavaScript', 'CSS3', '健康應用'],
+    technologies: ['Vue.js', 'PWA', 'Responsive Design', 'JavaScript', 'CSS3', '健康應用'],
     demo: 'https://joechiboo.github.io/CyclePulse/',
     github: 'https://github.com/joechiboo/CyclePulse',
     category: 'web',
