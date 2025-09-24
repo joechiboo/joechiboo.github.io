@@ -107,7 +107,7 @@ const projects = ref([
     technologies: ['Vue.js', 'PWA', 'Responsive Design', 'JavaScript', 'CSS3', '健康應用'],
     demo: 'https://joechiboo.github.io/CyclePulse/',
     github: 'https://github.com/joechiboo/CyclePulse',
-    category: 'web',
+    category: 'creative',
     year: '2025',
   },
   {
