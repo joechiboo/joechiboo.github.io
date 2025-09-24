@@ -101,6 +101,16 @@ const openDemo = (project) => {
 
 const projects = ref([
   {
+    id: 8,
+    titleKey: 'project8Title',
+    descriptionKey: 'project8Description',
+    technologies: ['Web Application', 'PWA', 'Responsive Design', 'JavaScript', 'CSS3', '健康應用'],
+    demo: 'https://joechiboo.github.io/CyclePulse/',
+    github: 'https://github.com/joechiboo/CyclePulse',
+    category: 'web',
+    year: '2025',
+  },
+  {
     id: 7,
     titleKey: 'project7Title',
     descriptionKey: 'project7Description',

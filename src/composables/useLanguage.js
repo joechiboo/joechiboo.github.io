@@ -401,6 +401,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project8Title: 'CyclePulse 飛輪訓練計時器',
+    project8Description:
+      'CyclePulse 是一款專為飛輪訓練設計的智能 Web 應用程式，提供個人化計時、強度監控和多種訓練模式。針對手機橫向放置在飛輪手把上的使用場景進行優化，為運動愛好者打造專業的訓練體驗。支援自定義訓練計劃、即時數據追蹤和進度分析功能。',
+
     project7Title: '聯合檢驗雲重構',
     project7Description:
       '醫事檢驗所核心業務系統的現代化重構專案，採用Vue.js + TypeScript架構提升系統效能與用戶體驗。整合檢驗報告查詢、醫事機構管理、資料統計分析等核心功能，為醫療檢驗產業提供更穩定高效的數位化解決方案。',
@@ -932,6 +936,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project8Title: 'CyclePulse Spinning Workout Timer',
+    project8Description:
+      'CyclePulse is an intelligent web application designed specifically for spinning workouts, providing personalized timing, intensity monitoring, and multiple training modes. Optimized for mobile phones placed horizontally on spinning bike handlebars, creating a professional training experience for fitness enthusiasts. Features custom training plans, real-time data tracking, and progress analysis.',
+
     project7Title: 'UCL Cloud System Refactoring',
     project7Description:
       'Modern refactoring project for the core business system of medical laboratory services, using Vue.js + TypeScript architecture to enhance system performance and user experience. Integrates core functions including laboratory report queries, medical institution management, and data statistical analysis, providing stable and efficient digital solutions for the medical testing industry.',
