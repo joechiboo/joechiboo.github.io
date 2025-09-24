@@ -401,7 +401,7 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
-    project11Title: 'CyclePulse 飛輪訓練計時器',
+    project11Title: '飛輪訓練計時器',
     project11Description:
       'CyclePulse 是一款專為飛輪訓練設計的智能 Web 應用程式，提供個人化計時、強度監控和多種訓練模式。針對手機橫向放置在飛輪手把上的使用場景進行優化，為運動愛好者打造專業的訓練體驗。支援自定義訓練計劃、即時數據追蹤和進度分析功能。',
 
@@ -964,7 +964,7 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
-    project11Title: 'CyclePulse Spinning Workout Timer',
+    project11Title: 'CyclePulse',
     project11Description:
       'CyclePulse is an intelligent web application designed specifically for spinning workouts, providing personalized timing, intensity monitoring, and multiple training modes. Optimized for mobile phones placed horizontally on spinning bike handlebars, creating a professional training experience for fitness enthusiasts. Features custom training plans, real-time data tracking, and progress analysis.',
 
