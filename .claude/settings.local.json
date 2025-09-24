@@ -30,7 +30,11 @@
       "mcp__ide__getDiagnostics",
       "Bash(npm run lint:*)",
       "Bash(grep:*)",
-      "WebFetch(domain:www.xml-sitemaps.com)"
+      "Bash(npm install:*)",
+      "Bash(npm uninstall:*)",
+      "WebFetch(domain:www.xml-sitemaps.com)",
+      "Bash(git rebase:*)",
+      "Read(//c/Users/UCLIT/.ssh/**)"
     ],
     "deny": []
   }

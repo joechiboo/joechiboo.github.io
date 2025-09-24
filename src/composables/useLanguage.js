@@ -266,11 +266,11 @@ const translations = {
     cert3Date: '2021年',
 
     // 技術標籤
-    techDotNetMVC: '.NET MVC',
-    techSQLServer: 'SQL Server',
+    techDotNetMVC: '.NET Core',
+    techSQLServer: 'Vue',
     techMedicalInfoSys: '醫療資訊系統',
     techSecurityMgmt: '資安管理',
-    techWindowsServer: 'Windows Server',
+    techWindowsServer: 'Claude Code',
     techJQuery: 'jQuery',
     techEntityFramework: 'Entity Framework',
     techMSSQL: 'MS SQL',
@@ -401,9 +401,14 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
-    project8Title: 'CyclePulse 飛輪訓練計時器',
-    project8Description:
+    project11Title: 'CyclePulse 飛輪訓練計時器',
+    project11Description:
       'CyclePulse 是一款專為飛輪訓練設計的智能 Web 應用程式，提供個人化計時、強度監控和多種訓練模式。針對手機橫向放置在飛輪手把上的使用場景進行優化，為運動愛好者打造專業的訓練體驗。支援自定義訓練計劃、即時數據追蹤和進度分析功能。',
+
+    project8Title: '聯合官方網站重構',
+    project8Description:
+      '聯合醫事檢驗所官方網站的全面重構專案，採用現代化Web技術提升網站效能和使用者體驗。重新設計視覺風格與資訊架構，優化行動裝置瀏覽體驗，整合醫事服務展示、聯絡資訊管理等功能，為醫療檢驗服務提供更專業、更友善的線上平台。',
+    project8Company: '大安聯合',
 
     project7Title: '聯合檢驗雲重構',
     project7Description:
@@ -432,6 +437,14 @@ const translations = {
     project2Title: '搶救杰倫大作戰',
     project2Description:
       '創意專案企劃與簡報設計，展現專案規劃、創意發想和視覺呈現能力。透過Google Slides製作互動式簡報，結合創意內容和專業設計。',
+
+    project9Title: '字樂園',
+    project9Description:
+      '針對4-12歲兒童的互動式中文學習應用，結合寶可夢主題教學、筆畫練習和注音符號學習。可生成A4列印練習單，附家長管理功能。透過遊戲化學習方式，讓孩子在趣味中掌握中文基礎。',
+
+    project10Title: '飲水追蹤應用',
+    project10Description:
+      '專為不愛喝水的人設計的零壓力飲水追蹤應用。目標用戶是幾乎不喝水、每天喝不到1000ml的族群。核心理念是從小目標開始（250ml），湯、茶、咖啡都算數。特色包含無壓力提醒、慶祝小進步、友善鼓勵，讓喝水變成一件輕鬆愉快的事。',
 
     project1Title: '台北高爾夫協會官網',
     project1Description:
@@ -466,6 +479,21 @@ const translations = {
     wechatContact: 'WeChat',
     wechatContactDesc: '即時通訊聯繫',
     wechatContactButton: '微信聯繫',
+
+    // LINE Pay 商業模式
+    supportMyWork: '支持我的工作',
+    linePayTitle: 'LINE Pay 贊助支持',
+    linePayDesc: '如果我的工作對您有幫助，歡迎透過 LINE Pay 支持我的開源專案與技術分享。每一份支持都是我繼續前進的動力。',
+    whySupportTitle: '為什麼支持？',
+    linePayPoint1: '持續產出高品質的技術文章與教學內容',
+    linePayPoint2: '維護並更新開源專案，讓更多人受益',
+    linePayPoint3: '提供技術諮詢與問題解答服務',
+    supportOptionsTitle: '參考贊助金額選項',
+    supportOption1: '一杯咖啡 (給作者加油打氣)',
+    supportOption2: '一頓大餐 (支持持續開發)',
+    supportOption3: '實現你的願望 (客製化功能開發 - 一個晚上的工作)',
+    linePayScanHint: '掃描 QR Code 進行贊助',
+    linePaySupport: '您的每一份支持都讓我能夠投入更多時間在技術分享與開源貢獻上。感謝您的贊助！',
 
     // 聯絡表單
     sendMessage: '發送訊息',
@@ -796,11 +824,11 @@ const translations = {
     cert3Date: '2021',
 
     // Technology Tags
-    techDotNetMVC: '.NET MVC',
-    techSQLServer: 'SQL Server',
+    techDotNetMVC: '.NET Core',
+    techSQLServer: 'Vue',
     techMedicalInfoSys: 'Medical Information Systems',
     techSecurityMgmt: 'Security Management',
-    techWindowsServer: 'Windows Server',
+    techWindowsServer: 'Claude Code',
     techJQuery: 'jQuery',
     techEntityFramework: 'Entity Framework',
     techMSSQL: 'MS SQL',
@@ -936,9 +964,14 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
-    project8Title: 'CyclePulse Spinning Workout Timer',
-    project8Description:
+    project11Title: 'CyclePulse Spinning Workout Timer',
+    project11Description:
       'CyclePulse is an intelligent web application designed specifically for spinning workouts, providing personalized timing, intensity monitoring, and multiple training modes. Optimized for mobile phones placed horizontally on spinning bike handlebars, creating a professional training experience for fitness enthusiasts. Features custom training plans, real-time data tracking, and progress analysis.',
+
+    project8Title: 'United Official Website Refactoring',
+    project8Description:
+      'Comprehensive refactoring project for the official website of United Medical Laboratory, using modern web technologies to enhance website performance and user experience. Redesigned visual style and information architecture, optimized mobile browsing experience, integrated medical service displays and contact information management functions, providing a more professional and user-friendly online platform for medical testing services.',
+    project8Company: 'Ta-An United',
 
     project7Title: 'UCL Cloud System Refactoring',
     project7Description:
@@ -967,6 +1000,14 @@ const translations = {
     project2Title: 'Save Jay Operation',
     project2Description:
       'Creative project planning and presentation design, showcasing project planning, creative ideation, and visual presentation capabilities. Created interactive presentations using Google Slides, combining creative content with professional design.',
+
+    project9Title: 'CharMon (字樂園)',
+    project9Description:
+      'Interactive Chinese learning application for children aged 4-12, combining Pokémon-themed teaching, stroke practice, and phonetic symbol learning. Features A4 printable worksheets and parental management functions. Through gamified learning, children can master Chinese fundamentals in an engaging and fun way.',
+
+    project10Title: 'Water Tracker',
+    project10Description:
+      'A zero-pressure hydration tracking app designed for people who dont like drinking water. Target users are those who barely drink water, consuming less than 1000ml daily. Core concept: start small (250ml), soup, tea, coffee all count. Features include no-pressure reminders, celebrating small progress, and friendly encouragement to make drinking water easy and enjoyable.',
 
     project1Title: 'Taipei Golf Association Website',
     project1Description:
@@ -1002,6 +1043,21 @@ const translations = {
     wechatContact: 'WeChat',
     wechatContactDesc: 'Instant messaging',
     wechatContactButton: 'WeChat Contact',
+
+    // LINE Pay Business Model
+    supportMyWork: 'Support My Work',
+    linePayTitle: 'LINE Pay Sponsorship',
+    linePayDesc: 'If my work has been helpful to you, feel free to support my open source projects and tech sharing via LINE Pay. Every bit of support motivates me to keep going.',
+    whySupportTitle: 'Why Support?',
+    linePayPoint1: 'Continuous production of high-quality technical articles and tutorials',
+    linePayPoint2: 'Maintaining and updating open source projects for everyone',
+    linePayPoint3: 'Providing technical consultation and Q&A services',
+    supportOptionsTitle: 'Reference Sponsorship Amount Options',
+    supportOption1: 'A cup of coffee (Cheer up the author)',
+    supportOption2: 'A big meal (Support continuous development)',
+    supportOption3: 'Make your wish come true (Custom feature development - One night work)',
+    linePayScanHint: 'Scan QR Code to sponsor',
+    linePaySupport: 'Your support allows me to dedicate more time to tech sharing and open source contributions. Thank you for your sponsorship!',
 
     // Contact Form
     sendMessage: 'Send Message',

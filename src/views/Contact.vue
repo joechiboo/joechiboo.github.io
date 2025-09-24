@@ -185,6 +185,71 @@
             </div>
           </div>
         </section>
+
+        <!-- LINE Pay 支持區塊 -->
+        <section class="linepay-section">
+          <h2>{{ t('supportMyWork') }}</h2>
+          <div class="linepay-content">
+            <div class="linepay-info">
+              <h3>💝 {{ t('linePayTitle') }}</h3>
+              <p>{{ t('linePayDesc') }}</p>
+
+              <div class="support-reasons">
+                <h4>{{ t('whySupportTitle') }}</h4>
+                <ul>
+                  <li>
+                    <span class="icon">📚</span>
+                    <span>{{ t('linePayPoint1') }}</span>
+                  </li>
+                  <li>
+                    <span class="icon">💻</span>
+                    <span>{{ t('linePayPoint2') }}</span>
+                  </li>
+                  <li>
+                    <span class="icon">🎯</span>
+                    <span>{{ t('linePayPoint3') }}</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="support-options">
+                <h4>{{ t('supportOptionsTitle') }}</h4>
+                <div class="support-option">
+                  <span class="amount">☕ NT$100</span>
+                  <span class="description">{{ t('supportOption1') }}</span>
+                </div>
+                <div class="support-option">
+                  <span class="amount">🍽️ NT$1,000</span>
+                  <span class="description">{{ t('supportOption2') }}</span>
+                </div>
+                <div class="support-option">
+                  <span class="amount">🌟 NT$3,000</span>
+                  <span class="description">{{ t('supportOption3') }}</span>
+                </div>
+              </div>
+
+              <div class="support-message">
+                <p>{{ t('linePaySupport') }}</p>
+              </div>
+            </div>
+
+            <div class="linepay-qr-section">
+              <div class="qr-wrapper">
+                <img
+                  src="/img/linePay.png"
+                  alt="LINE Pay QR Code"
+                  class="linepay-qr-image clickable"
+                  @click="openQRLightbox('/img/linePay.png', 'LINE Pay QR Code')"
+                />
+                <p class="scan-hint">{{ t('linePayScanHint') }}</p>
+              </div>
+              <div class="linepay-id">
+                <p>LINE ID</p>
+                <strong>joechiboo</strong>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
 
@@ -834,21 +899,228 @@ const submitForm = async () => {
   }
 }
 
+/* LINE Pay 支持區塊 */
+.linepay-section {
+  background: var(--bg-white);
+  border-radius: 10px;
+  padding: 3rem;
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-md);
+}
+
+.linepay-section h2 {
+  color: var(--color-text-primary);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.linepay-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.linepay-info h3 {
+  color: var(--color-text-primary);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.linepay-info > p {
+  color: var(--color-text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.support-reasons {
+  margin: 2rem 0;
+}
+
+.support-reasons h4 {
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.support-reasons ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.support-reasons li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 0;
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+}
+
+.support-reasons .icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.support-options {
+  margin: 2rem 0;
+}
+
+.support-options h4 {
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.support-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 1rem;
+  margin: 0.5rem 0;
+  background: var(--bg-light);
+  border-radius: 8px;
+  border-left: 3px solid var(--color-primary);
+  transition: all 0.3s ease;
+}
+
+.support-option:hover {
+  background: rgba(102, 126, 234, 0.1);
+  transform: translateX(5px);
+}
+
+.support-option .amount {
+  font-weight: 600;
+  color: var(--color-primary);
+  min-width: 120px;
+  font-size: 1rem;
+}
+
+.support-option .description {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.support-message {
+  padding: 1.2rem;
+  background: var(--bg-light);
+  border-radius: 8px;
+  border-left: 4px solid var(--color-primary);
+}
+
+.support-message p {
+  color: var(--color-text-secondary);
+  font-style: italic;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.linepay-qr-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.qr-wrapper {
+  text-align: center;
+}
+
+.linepay-qr-image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  background: white;
+  padding: 15px;
+}
+
+.linepay-qr-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+}
+
+.scan-hint {
+  margin-top: 1rem;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.linepay-id {
+  text-align: center;
+  padding: 1rem 2rem;
+  background: var(--bg-light);
+  border-radius: 8px;
+}
+
+.linepay-id p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.linepay-id strong {
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* 深色模式調整 */
+[data-theme="dark"] .linepay-qr-image {
+  background: #f5f5f5;
+}
+
+[data-theme="dark"] .support-message {
+  background: var(--bg-darker, #2a2a2a);
+}
+
+[data-theme="dark"] .linepay-id {
+  background: var(--bg-darker, #2a2a2a);
+}
+
+[data-theme="dark"] .support-option {
+  background: var(--bg-darker, #2a2a2a);
+}
+
+[data-theme="dark"] .support-option:hover {
+  background: rgba(147, 51, 234, 0.1);
+}
+
 /* 響應式設計 */
 @media (max-width: 768px) {
   .lightbox-content {
     padding: 1.5rem;
     margin: 1rem;
   }
-  
+
   .lightbox-qr-image {
     max-width: 300px;
     max-height: 300px;
   }
-  
+
   .lightbox-close {
     top: 0.5rem;
     right: 0.5rem;
+  }
+
+  .linepay-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .linepay-qr-section {
+    order: -1;
+  }
+
+  .linepay-section {
+    padding: 2rem;
   }
 }
 </style>
