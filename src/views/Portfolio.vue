@@ -30,6 +30,7 @@
               <div class="project-meta">
                 <span v-if="project.year" class="project-year">{{ project.year }}</span>
                 <span v-if="project.yearKey" class="project-year">{{ t(project.yearKey) }}</span>
+                <span v-if="project.createdAt && getRelativeTimeDisplay(project.createdAt)" class="project-time">{{ getRelativeTimeDisplay(project.createdAt) }}</span>
                 <span v-if="project.companyKey" class="project-company">{{
                   t(project.companyKey)
                 }}</span>
@@ -75,8 +76,10 @@
 import { ref } from 'vue'
 import { useLanguage } from '../composables/useLanguage.js'
 import { useSEO } from '../composables/useSEO.js'
+import { useTimeDisplay } from '../composables/useTimeDisplay.js'
 
 const { t } = useLanguage()
+const { getRelativeTimeDisplay } = useTimeDisplay()
 
 // SEO 設定
 useSEO({
@@ -109,6 +112,7 @@ const projects = ref([
     github: 'https://github.com/joechiboo/Pomodoro',
     category: 'freelance',
     year: '2025',
+    createdAt: '2025-09-24T11:47:49Z',
   },
   {
     id: 11,
@@ -119,6 +123,7 @@ const projects = ref([
     github: 'https://github.com/joechiboo/CyclePulse',
     category: 'creative',
     year: '2025',
+    createdAt: '2025-09-23T23:13:17Z',
   },
   {
     id: 10,
@@ -129,6 +134,7 @@ const projects = ref([
     github: 'https://github.com/joechiboo/water-tracker',
     category: 'creative',
     year: '2025',
+    createdAt: '2025-09-22T12:45:00Z',
   },
   {
     id: 9,
@@ -139,6 +145,7 @@ const projects = ref([
     github: 'https://github.com/joechiboo/CharMon',
     category: 'creative',
     year: '2025',
+    createdAt: '2025-09-20T07:48:03Z',
   },
   {
     id: 8,
@@ -150,6 +157,7 @@ const projects = ref([
     category: 'enterprise',
     year: '2025',
     companyKey: 'project8Company',
+    createdAt: '2025-08-30T13:52:35Z',
   },
   {
     id: 7,
@@ -161,6 +169,7 @@ const projects = ref([
     category: 'enterprise',
     year: '2025',
     companyKey: 'project7Company',
+    createdAt: '2025-08-06T08:34:43Z',
   },
   {
     id: 6,
@@ -171,6 +180,7 @@ const projects = ref([
     github: 'https://github.com/joechiboo/jiayi',
     category: 'creative',
     year: '2025',
+    createdAt: '2025-08-05T01:06:32Z',
   },
   {
     id: 5,
@@ -181,6 +191,7 @@ const projects = ref([
     github: 'https://github.com/joechiboo/joechiboo.github.io',
     category: 'web',
     year: '2025',
+    createdAt: '2025-08-01T23:41:43Z',
   },
   {
     id: 4,
@@ -365,6 +376,15 @@ const projects = ref([
 .project-client {
   background: #f59e0b;
   color: white;
+}
+
+.project-time {
+  background: #8b5cf6;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
 }
 
 .project-content p {

@@ -34,7 +34,15 @@
       "Bash(npm uninstall:*)",
       "WebFetch(domain:www.xml-sitemaps.com)",
       "Bash(git rebase:*)",
-      "Read(//c/Users/UCLIT/.ssh/**)"
+      "Read(//c/Users/UCLIT/.ssh/**)",
+      "Bash(git stash:*)",
+      "Bash(winget install:*)",
+      "Bash(\"C:\\Program Files\\GitHub CLI\\gh.exe\" --version)",
+      "Bash(refreshenv)",
+      "Bash(\"C:\\Program Files\\GitHub CLI\\gh.exe\" auth login)",
+      "Bash(\"C:\\Program Files\\GitHub CLI\\gh.exe\" repo list)",
+      "Bash(\"C:\\Program Files\\GitHub CLI\\gh.exe\" auth status)",
+      "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" repo list)"
     ],
     "deny": []
   }
