@@ -101,6 +101,16 @@ const openDemo = (project) => {
 
 const projects = ref([
   {
+    id: 12,
+    titleKey: 'project12Title',
+    descriptionKey: 'project12Description',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'PWA', '生產力工具'],
+    demo: 'https://joechiboo.github.io/Pomodoro/',
+    github: 'https://github.com/joechiboo/Pomodoro',
+    category: 'creative',
+    year: '2025',
+  },
+  {
     id: 11,
     titleKey: 'project11Title',
     descriptionKey: 'project11Description',

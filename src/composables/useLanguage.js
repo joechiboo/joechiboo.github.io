@@ -401,6 +401,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project12Title: '番茄鐘專注計時器',
+    project12Description:
+      '基於經典番茄工作法的專注計時應用，承接他人的創意靈感並加以實現。番茄工作法是一種時間管理方法，通過25分鐘專注工作與5分鐘休息的循環，幫助提高工作效率與專注力。應用提供簡潔直觀的倒數計時介面，是提升工作和學習效率的實用工具。',
+
     project11Title: '飛輪訓練計時器',
     project11Description:
       'CyclePulse 是一款專為飛輪訓練設計的智能 Web 應用程式，提供個人化計時、強度監控和多種訓練模式。針對手機橫向放置在飛輪手把上的使用場景進行優化，為運動愛好者打造專業的訓練體驗。支援自定義訓練計劃、即時數據追蹤和進度分析功能。',
@@ -964,6 +968,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project12Title: 'Pomodoro Focus Timer',
+    project12Description:
+      'A focus timer application based on the classic Pomodoro Technique, building upon others\' creative inspiration. The Pomodoro Technique is a time management method that uses 25-minute focused work sessions followed by 5-minute breaks to enhance productivity and concentration. The application provides a clean, intuitive countdown interface, serving as a practical tool for improving work and study efficiency.',
+
     project11Title: 'CyclePulse',
     project11Description:
       'CyclePulse is an intelligent web application designed specifically for spinning workouts, providing personalized timing, intensity monitoring, and multiple training modes. Optimized for mobile phones placed horizontally on spinning bike handlebars, creating a professional training experience for fitness enthusiasts. Features custom training plans, real-time data tracking, and progress analysis.',
