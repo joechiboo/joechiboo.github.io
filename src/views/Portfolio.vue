@@ -112,7 +112,7 @@ const projects = ref([
     github: 'https://github.com/joechiboo/Pomodoro',
     category: 'freelance',
     year: '2025',
-    createdAt: '2025-09-24T11:47:49Z',
+    createdAt: '2025-09-26T11:47:49Z',
   },
   {
     id: 11,
