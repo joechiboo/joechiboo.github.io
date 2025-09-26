@@ -107,7 +107,7 @@ const projects = ref([
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'PWA', '生產力工具'],
     demo: 'https://joechiboo.github.io/Pomodoro/',
     github: 'https://github.com/joechiboo/Pomodoro',
-    category: 'creative',
+    category: 'freelance',
     year: '2025',
   },
   {
