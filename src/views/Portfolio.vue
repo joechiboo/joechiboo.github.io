@@ -381,10 +381,11 @@ const projects = ref([
 .project-time {
   background: #8b5cf6;
   color: white;
-  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
   text-transform: uppercase;
-  font-size: 0.75rem;
-  letter-spacing: 0.5px;
 }
 
 .project-content p {
