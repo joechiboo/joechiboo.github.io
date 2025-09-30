@@ -104,6 +104,17 @@ const openDemo = (project) => {
 
 const projects = ref([
   {
+    id: 13,
+    titleKey: 'project13Title',
+    descriptionKey: 'project13Description',
+    technologies: ['Vue.js', 'JavaScript', 'CSS3', 'LocalStorage', '食材管理'],
+    demo: 'https://joechiboo.github.io/FridgeMaster',
+    github: 'https://github.com/joechiboo/FridgeMaster',
+    category: 'web',
+    year: '2025',
+    createdAt: '2025-10-01T00:00:00Z',
+  },
+  {
     id: 12,
     titleKey: 'project12Title',
     descriptionKey: 'project12Description',

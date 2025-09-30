@@ -401,6 +401,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project13Title: '冰箱管理大師',
+    project13Description:
+      '「冰箱管理大師」Web 版是一款食材管理平台，使用者可以透過電腦快速輸入與管理冰箱食材資訊。系統會在食材即將過期前主動提醒，並提供清晰的庫存檢視、分類與篩選工具，協助使用者減少浪費與規劃餐點。',
+
     project12Title: '番茄鐘專注計時器',
     project12Description:
       '基於經典番茄工作法的專注計時應用，承接他人的創意靈感並加以實現。番茄工作法是一種時間管理方法，通過25分鐘專注工作與5分鐘休息的循環，幫助提高工作效率與專注力。應用提供簡潔直觀的倒數計時介面，是提升工作和學習效率的實用工具。',
@@ -968,6 +972,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project13Title: 'FridgeMaster',
+    project13Description:
+      'FridgeMaster Web version is a food ingredient management platform that allows users to quickly input and manage fridge food information via computer. The system proactively reminds users before ingredients expire and provides clear inventory views, categorization, and filtering tools to help users reduce waste and plan meals.',
+
     project12Title: 'Pomodoro Focus Timer',
     project12Description:
       'A focus timer application based on the classic Pomodoro Technique, building upon others\' creative inspiration. The Pomodoro Technique is a time management method that uses 25-minute focused work sessions followed by 5-minute breaks to enhance productivity and concentration. The application provides a clean, intuitive countdown interface, serving as a practical tool for improving work and study efficiency.',
