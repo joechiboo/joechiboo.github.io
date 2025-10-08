@@ -401,6 +401,11 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project14Title: '工作進度',
+    project14Description:
+      '企業工作進度管理系統，用於追蹤與視覺化團隊工作進度。提供直觀的進度檢視介面，協助團隊成員即時掌握專案狀態，提升工作協作效率與透明度。',
+    project14Company: '大安聯合',
+
     project13Title: '冰箱管理大師',
     project13Description:
       '「冰箱管理大師」Web 版是一款食材管理平台，使用者可以透過電腦快速輸入與管理冰箱食材資訊。系統會在食材即將過期前主動提醒，並提供清晰的庫存檢視、分類與篩選工具，協助使用者減少浪費與規劃餐點。',
@@ -972,6 +977,11 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project14Title: 'Work Progress',
+    project14Description:
+      'Enterprise work progress management system for tracking and visualizing team work progress. Provides an intuitive progress view interface to help team members grasp project status in real-time, enhancing work collaboration efficiency and transparency.',
+    project14Company: 'Ta-An United',
+
     project13Title: 'FridgeMaster',
     project13Description:
       'FridgeMaster Web version is a food ingredient management platform that allows users to quickly input and manage fridge food information via computer. The system proactively reminds users before ingredients expire and provides clear inventory views, categorization, and filtering tools to help users reduce waste and plan meals.',
