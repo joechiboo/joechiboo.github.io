@@ -401,6 +401,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project15Title: 'Fast-Trivia 快問快答',
+    project15Description:
+      'Fast-Trivia 是一款互動式益智問答遊戲應用，提供多樣化的問答挑戰和即時反饋。遊戲設計簡潔直覺，適合各年齡層玩家。透過趣味性的問答形式，提升知識學習的樂趣與效率，是寓教於樂的最佳選擇。',
+
     project14Title: '工作進度',
     project14Description:
       '企業工作進度管理系統，用於追蹤與視覺化團隊工作進度。提供直觀的進度檢視介面，協助團隊成員即時掌握專案狀態，提升工作協作效率與透明度。',
@@ -977,6 +981,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project15Title: 'Fast-Trivia',
+    project15Description:
+      'Fast-Trivia is an interactive trivia quiz game application offering diverse question challenges with instant feedback. The game features a clean and intuitive design suitable for players of all ages. Through engaging quiz formats, it enhances the joy and efficiency of knowledge learning, making it the perfect choice for educational entertainment.',
+
     project14Title: 'Work Progress',
     project14Description:
       'Enterprise work progress management system for tracking and visualizing team work progress. Provides an intuitive progress view interface to help team members grasp project status in real-time, enhancing work collaboration efficiency and transparency.',

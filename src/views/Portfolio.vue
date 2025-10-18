@@ -104,6 +104,16 @@ const openDemo = (project) => {
 
 const projects = ref([
   {
+    id: 15,
+    titleKey: 'project15Title',
+    descriptionKey: 'project15Description',
+    technologies: ['Vue.js', 'JavaScript', 'CSS3', 'Responsive Design', '教育應用'],
+    demo: 'https://joechiboo.github.io/Fast-Trivia/',
+    github: 'https://github.com/joechiboo/Fast-Trivia',
+    category: 'creative',
+    year: '2025',
+  },
+  {
     id: 14,
     titleKey: 'project14Title',
     descriptionKey: 'project14Description',
