@@ -112,6 +112,7 @@ const projects = ref([
     github: 'https://github.com/joechiboo/Fast-Trivia',
     category: 'creative',
     year: '2025',
+    createdAt: '2025-10-19T00:00:00Z',
   },
   {
     id: 14,
