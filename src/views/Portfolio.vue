@@ -104,6 +104,17 @@ const openDemo = (project) => {
 
 const projects = ref([
   {
+    id: 16,
+    titleKey: 'project16Title',
+    descriptionKey: 'project16Description',
+    technologies: ['Node.js', 'Express', 'Socket.io', 'PostgreSQL', 'Redis', 'Vue.js', 'Flutter'],
+    demo: null,
+    github: 'https://github.com/joechiboo/kids-time-control',
+    category: 'creative',
+    year: '2025',
+    createdAt: '2025-10-23T00:00:00Z',
+  },
+  {
     id: 15,
     titleKey: 'project15Title',
     descriptionKey: 'project15Description',

@@ -401,6 +401,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project16Title: 'Kids Time Control 兒童數位健康控制系統',
+    project16Description:
+      '一個幫助家長管理孩童數位裝置使用時間的完整解決方案，透過正向激勵機制（積分獎勵）取代單純的限制，培養孩子自主管理時間的能力。支援智能時間管理、任務積分系統、獎勵商城和使用數據分析等功能，採用跨平台架構（Vue.js 家長管理端 + Flutter 兒童互動端），幫助孩子建立健康的數位使用習慣。',
+
     project15Title: 'Fast-Trivia 快問快答',
     project15Description:
       'Fast-Trivia 是一款互動式益智問答遊戲應用，提供多樣化的問答挑戰和即時反饋。遊戲設計簡潔直覺，適合各年齡層玩家。透過趣味性的問答形式，提升知識學習的樂趣與效率，是寓教於樂的最佳選擇。',
@@ -981,6 +985,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project16Title: 'Kids Time Control',
+    project16Description:
+      'A comprehensive solution to help parents manage children\'s digital device usage time through positive reinforcement mechanisms (points rewards) instead of pure restrictions, cultivating children\'s ability to self-manage their time. Features intelligent time management, task point system, reward marketplace, and usage data analytics. Built with cross-platform architecture (Vue.js parent management + Flutter child interaction), helping children establish healthy digital usage habits.',
+
     project15Title: 'Fast-Trivia',
     project15Description:
       'Fast-Trivia is an interactive trivia quiz game application offering diverse question challenges with instant feedback. The game features a clean and intuitive design suitable for players of all ages. Through engaging quiz formats, it enhances the joy and efficiency of knowledge learning, making it the perfect choice for educational entertainment.',
