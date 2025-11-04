@@ -403,7 +403,7 @@ const translations = {
     // 作品集專案內容
     project16Title: 'Kids Time Control 兒童數位健康控制系統',
     project16Description:
-      '一個幫助家長管理孩童數位裝置使用時間的完整解決方案，透過正向激勵機制（積分獎勵）取代單純的限制，培養孩子自主管理時間的能力。支援智能時間管理、任務積分系統、獎勵商城和使用數據分析等功能，採用跨平台架構（Vue.js 家長管理端 + Flutter 兒童互動端），幫助孩子建立健康的數位使用習慣。',
+      '基於兒童發展心理學的數位健康管理系統，協助家長透過建立常規、環境設計、自然後果引導孩子培養內在動機與自律能力。摒棄遊戲化獎勵機制，避免孩子因外在獎勵而失去內在動力。參考美國兒科學會（AAP）與世界衛生組織（WHO）指南，強調溫暖陪伴與正向溝通，幫助 4-12 歲兒童建立健康的數位使用習慣。採用跨平台架構（Vue.js 家長管理端 + Flutter 兒童互動端），提供時間管理、使用數據分析與教育內容推薦。',
 
     project15Title: 'Fast-Trivia 快問快答',
     project15Description:
@@ -986,7 +986,7 @@ const translations = {
     // Portfolio Project Content
     project16Title: 'Kids Time Control',
     project16Description:
-      'A comprehensive solution to help parents manage children\'s digital device usage time through positive reinforcement mechanisms (points rewards) instead of pure restrictions, cultivating children\'s ability to self-manage their time. Features intelligent time management, task point system, reward marketplace, and usage data analytics. Built with cross-platform architecture (Vue.js parent management + Flutter child interaction), helping children establish healthy digital usage habits.',
+      'A digital health management system grounded in child developmental psychology, helping parents guide children to develop intrinsic motivation and self-discipline through establishing routines, environmental design, and natural consequences. Avoids gamification and reward mechanisms that can undermine intrinsic motivation. Based on AAP (American Academy of Pediatrics) and WHO (World Health Organization) guidelines, emphasizing warm companionship and positive communication to help children aged 4-12 establish healthy digital usage habits. Built with cross-platform architecture (Vue.js parent management + Flutter child interaction), providing time management, usage analytics, and educational content recommendations.',
 
     project15Title: 'Fast-Trivia',
     project15Description:
