@@ -104,6 +104,17 @@ const openDemo = (project) => {
 
 const projects = ref([
   {
+    id: 17,
+    titleKey: 'project17Title',
+    descriptionKey: 'project17Description',
+    technologies: ['.NET 8', 'ASP.NET Core', 'SignalR', 'Vue.js', 'SQL Server', 'Entity Framework Core', 'Real-time Collaboration'],
+    demo: 'https://joechiboo.github.io/LiveSheet/',
+    github: 'https://github.com/joechiboo/LiveSheet',
+    category: 'tech',
+    year: '2025',
+    createdAt: '2025-11-06T00:00:00Z',
+  },
+  {
     id: 16,
     titleKey: 'project16Title',
     descriptionKey: 'project16Description',
