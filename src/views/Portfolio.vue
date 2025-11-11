@@ -108,7 +108,7 @@ const projects = ref([
     titleKey: 'project18Title',
     descriptionKey: 'project18Description',
     technologies: ['Vue.js', 'Web Bluetooth API', 'Gamification', 'Health & Fitness', 'PWA'],
-    demo: null,
+    demo: 'https://joechiboo.github.io/HeartHero/',
     github: 'https://github.com/joechiboo/HeartHero',
     category: 'creative',
     year: '2025',
