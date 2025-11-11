@@ -401,9 +401,14 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project18Title: 'HeartHero 心跳英雄',
+    project18Description:
+      '用心跳打敗魔王！一款結合心率監測與遊戲化的創新健身應用。透過藍牙心率監測設備，將使用者的即時心跳轉化為遊戲戰鬥力，心率越高攻擊越強，讓運動變得有趣且充滿動力。採用 Spec-Driven Development (SDD) 開發模式，目前處於規格定義階段。計畫使用 Vue.js + Web Bluetooth API 打造跨平台 PWA 應用，讓使用者在享受遊戲樂趣的同時達到健身目標。適合不愛運動但喜歡遊戲的族群，透過遊戲化機制培養運動習慣。',
+
     project17Title: 'LiveSheet 即時協作試算表系統',
     project17Description:
       '基於 .NET 8 + SignalR + Vue.js 打造的即時協作試算表系統，讓團隊成員能夠同時編輯共享工作表，實現類似 Google Sheets 的協作體驗但可自主部署。採用 SignalR 實現亞秒級即時同步，支援 5-10 人同時編輯，提供熟悉的試算表介面與操作流程。後端使用 ASP.NET Core 8 與 Entity Framework Core (DB First)，資料持久化儲存於 SQL Server，確保資料不遺失。專案採分階段開發，目前已完成規格設計（Phase 0），正進行 MVP 開發。',
+    project17Company: '大安聯合',
 
     project16Title: 'Kids Time Control 兒童數位健康控制系統',
     project16Description:
@@ -988,9 +993,14 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project18Title: 'HeartHero',
+    project18Description:
+      'Defeat monsters with your heartbeat! An innovative fitness app that combines heart rate monitoring with gamification. Using Bluetooth heart rate devices, it transforms your real-time heartbeat into gaming combat power - the higher your heart rate, the stronger your attacks, making exercise fun and motivating. Developed using Spec-Driven Development (SDD) methodology, currently in specification phase. Plans to build a cross-platform PWA using Vue.js + Web Bluetooth API, allowing users to achieve fitness goals while enjoying gameplay. Perfect for people who dislike exercise but love gaming, cultivating exercise habits through gamification.',
+
     project17Title: 'LiveSheet Real-time Collaborative Spreadsheet',
     project17Description:
       'A real-time collaborative spreadsheet system built with .NET 8 + SignalR + Vue.js, enabling team members to simultaneously edit shared worksheets with a Google Sheets-like experience but self-hosted. Utilizes SignalR for sub-second real-time synchronization, supporting 5-10 concurrent editors with a familiar spreadsheet interface and workflow. Backend powered by ASP.NET Core 8 and Entity Framework Core (DB First approach), with persistent data storage in SQL Server to prevent data loss. The project follows a phased development approach, currently in Phase 0 (specification complete) and moving toward MVP development.',
+    project17Company: 'Ta-An United',
 
     project16Title: 'Kids Time Control',
     project16Description:

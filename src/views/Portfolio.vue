@@ -104,13 +104,25 @@ const openDemo = (project) => {
 
 const projects = ref([
   {
+    id: 18,
+    titleKey: 'project18Title',
+    descriptionKey: 'project18Description',
+    technologies: ['Vue.js', 'Web Bluetooth API', 'Gamification', 'Health & Fitness', 'PWA'],
+    demo: null,
+    github: 'https://github.com/joechiboo/HeartHero',
+    category: 'creative',
+    year: '2025',
+    createdAt: '2025-11-11T00:00:00Z',
+  },
+  {
     id: 17,
     titleKey: 'project17Title',
     descriptionKey: 'project17Description',
     technologies: ['.NET 8', 'ASP.NET Core', 'SignalR', 'Vue.js', 'SQL Server', 'Entity Framework Core', 'Real-time Collaboration'],
     demo: 'https://joechiboo.github.io/LiveSheet/',
     github: 'https://github.com/joechiboo/LiveSheet',
-    category: 'tech',
+    category: 'enterprise',
+    companyKey: 'project17Company',
     year: '2025',
     createdAt: '2025-11-06T00:00:00Z',
   },
