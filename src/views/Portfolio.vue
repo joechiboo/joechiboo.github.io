@@ -104,6 +104,28 @@ const openDemo = (project) => {
 
 const projects = ref([
   {
+    id: 20,
+    titleKey: 'project20Title',
+    descriptionKey: 'project20Description',
+    technologies: ['Vue.js 3', 'Vite', 'Chart.js', 'Composition API', 'Responsive Design'],
+    demo: 'https://joechiboo.github.io/HomeCalc/',
+    github: 'https://github.com/joechiboo/HomeCalc',
+    category: 'creative',
+    year: '2025',
+    createdAt: '2025-11-14T00:00:00Z',
+  },
+  {
+    id: 19,
+    titleKey: 'project19Title',
+    descriptionKey: 'project19Description',
+    technologies: ['Vue.js', 'Knowledge Management', 'Note-taking', 'Reading Tracker'],
+    demo: 'https://joechiboo.github.io/ReadTrack/',
+    github: 'https://github.com/joechiboo/ReadTrack',
+    category: 'creative',
+    year: '2025',
+    createdAt: '2025-11-14T00:00:00Z',
+  },
+  {
     id: 18,
     titleKey: 'project18Title',
     descriptionKey: 'project18Description',

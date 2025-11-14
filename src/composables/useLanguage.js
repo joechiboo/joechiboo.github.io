@@ -401,6 +401,14 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project20Title: 'HomeCalc 房貸計算助手',
+    project20Description:
+      '從頭期款儲蓄到房貸管理的完整購屋工具。提供精準的本息平均攤還計算，與銀行試算結果相符。支援多方案比較、視覺化圖表展示本金與利息趨勢、還款進度追蹤等功能。採用 Vue.js 3 Composition API 與 Chart.js 打造，提供跨裝置響應式介面。所有計算在本地完成，保護使用者隱私。分階段開發中，目前處於 MVP 階段，專注於架構設計、計算邏輯與基礎介面實作。適合正在規劃購屋的族群，協助做出明智的財務決策。',
+
+    project19Title: 'ReadTrack 閱讀追蹤系統',
+    project19Description:
+      '將閱讀轉化為lasting見解的知識管理工具。幫助使用者記錄閱讀進度、捕捉思考筆記、建立專屬知識庫。透過系統化的追蹤機制，讓每天一點時間的閱讀累積成一生的智慧。專案目前處於開發初期，採用 Spec-Driven Development 方法論進行規劃。適合喜愛閱讀、希望將閱讀內容內化為個人知識體系的使用者。未來計畫整合筆記功能、知識圖譜視覺化等進階特色。',
+
     project18Title: 'HeartHero 心跳英雄',
     project18Description:
       '用心跳打敗魔王！一款結合心率監測與遊戲化的創新健身應用。透過藍牙心率監測設備，將使用者的即時心跳轉化為遊戲戰鬥力，心率越高攻擊越強，讓運動變得有趣且充滿動力。採用 Spec-Driven Development (SDD) 開發模式，目前處於規格定義階段。計畫使用 Vue.js + Web Bluetooth API 打造跨平台 PWA 應用，讓使用者在享受遊戲樂趣的同時達到健身目標。適合不愛運動但喜歡遊戲的族群，透過遊戲化機制培養運動習慣。',
@@ -993,6 +1001,14 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project20Title: 'HomeCalc Mortgage Calculator',
+    project20Description:
+      'A comprehensive home buying assistant from down payment savings to mortgage management. Provides precise equal principal and interest repayment calculations that match bank estimates. Features multi-plan comparison, visual charts showing principal and interest trends, and payment progress tracking. Built with Vue.js 3 Composition API and Chart.js, offering responsive cross-device interface. All calculations performed locally to protect user privacy. Currently in MVP phase, focusing on architecture design, calculation logic, and basic interface implementation. Perfect for those planning home purchases, helping make informed financial decisions.',
+
+    project19Title: 'ReadTrack Reading Tracker',
+    project19Description:
+      'A knowledge management tool that transforms reading into lasting insights. Helps users track reading progress, capture thoughtful notes, and build a personal knowledge base. Through systematic tracking mechanisms, daily reading accumulates into lifelong wisdom. Currently in early development using Spec-Driven Development methodology. Ideal for avid readers who want to internalize reading content into their personal knowledge system. Future plans include note integration, knowledge graph visualization, and other advanced features.',
+
     project18Title: 'HeartHero',
     project18Description:
       'Defeat monsters with your heartbeat! An innovative fitness app that combines heart rate monitoring with gamification. Using Bluetooth heart rate devices, it transforms your real-time heartbeat into gaming combat power - the higher your heart rate, the stronger your attacks, making exercise fun and motivating. Developed using Spec-Driven Development (SDD) methodology, currently in specification phase. Plans to build a cross-platform PWA using Vue.js + Web Bluetooth API, allowing users to achieve fitness goals while enjoying gameplay. Perfect for people who dislike exercise but love gaming, cultivating exercise habits through gamification.',
