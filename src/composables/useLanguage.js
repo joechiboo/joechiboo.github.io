@@ -401,6 +401,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project21Title: 'Wish Pool 許願池',
+    project21Description:
+      '投幣許願平台 - 讓你的專案願望成真，也可以資助別人的夢想。一個社群導向的許願分享應用，使用者可以發布個人願望、為他人的願望送上支持、分享願望實現的喜悅。支援匿名許願，搭配星星飄散動畫效果營造溫馨氛圍。採用現代化技術棧：Vue 3 + TypeScript + Vite + Pinia + Tailwind CSS 4，提供流暢的使用體驗。透過社群力量將夢想化為現實，讓每個願望都有被實現的機會。',
+
     project20Title: 'HomeCalc 房貸計算助手',
     project20Description:
       '從頭期款儲蓄到房貸管理的完整購屋工具。提供精準的本息平均攤還計算，與銀行試算結果相符。支援多方案比較、視覺化圖表展示本金與利息趨勢、還款進度追蹤等功能。採用 Vue.js 3 Composition API 與 Chart.js 打造，提供跨裝置響應式介面。所有計算在本地完成，保護使用者隱私。分階段開發中，目前處於 MVP 階段，專注於架構設計、計算邏輯與基礎介面實作。適合正在規劃購屋的族群，協助做出明智的財務決策。',
@@ -471,10 +475,6 @@ const translations = {
     project3Company: 'Chun Shin Limited',
     project3Year: '前公司專案',
 
-    project2Title: '搶救杰倫大作戰',
-    project2Description:
-      '創意專案企劃與簡報設計，展現專案規劃、創意發想和視覺呈現能力。透過Google Slides製作互動式簡報，結合創意內容和專業設計。',
-
     project9Title: '字樂園',
     project9Description:
       '針對4-12歲兒童的互動式中文學習應用，結合寶可夢主題教學、筆畫練習和注音符號學習。可生成A4列印練習單，附家長管理功能。透過遊戲化學習方式，讓孩子在趣味中掌握中文基礎。',
@@ -482,12 +482,6 @@ const translations = {
     project10Title: '飲水追蹤應用',
     project10Description:
       '專為不愛喝水的人設計的零壓力飲水追蹤應用。目標用戶是幾乎不喝水、每天喝不到1000ml的族群。核心理念是從小目標開始（250ml），湯、茶、咖啡都算數。特色包含無壓力提醒、慶祝小進步、友善鼓勵，讓喝水變成一件輕鬆愉快的事。',
-
-    project1Title: '台北高爾夫協會官網',
-    project1Description:
-      '台北市高爾夫協會官方網站開發與維護。負責賽事資訊發布系統、新聞內容管理、競賽章程下載和報名選手資訊展示功能。提供清晰的資訊架構和用戶友善的瀏覽體驗。',
-    project1Client: '台北市高爾夫協會',
-    project1Year: '外包專案',
 
     // 聯絡頁面
     contactPageTitle: '聯絡我',
@@ -1001,6 +995,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project21Title: 'Wish Pool',
+    project21Description:
+      'A coin-toss wishing platform - Make your project wishes come true and support others\' dreams. A community-driven wish-sharing application where users can post personal wishes, send support to others\' wishes, and share the joy of wish fulfillment. Features anonymous wishing with star-scattering animation effects creating a warm atmosphere. Built with modern tech stack: Vue 3 + TypeScript + Vite + Pinia + Tailwind CSS 4, providing a smooth user experience. Turn dreams into reality through community power, giving every wish a chance to come true.',
+
     project20Title: 'HomeCalc Mortgage Calculator',
     project20Description:
       'A comprehensive home buying assistant from down payment savings to mortgage management. Provides precise equal principal and interest repayment calculations that match bank estimates. Features multi-plan comparison, visual charts showing principal and interest trends, and payment progress tracking. Built with Vue.js 3 Composition API and Chart.js, offering responsive cross-device interface. All calculations performed locally to protect user privacy. Currently in MVP phase, focusing on architecture design, calculation logic, and basic interface implementation. Perfect for those planning home purchases, helping make informed financial decisions.',
@@ -1071,10 +1069,6 @@ const translations = {
     project3Company: 'Chun Shin Limited',
     project3Year: 'Previous Company Project',
 
-    project2Title: 'Save Jay Operation',
-    project2Description:
-      'Creative project planning and presentation design, showcasing project planning, creative ideation, and visual presentation capabilities. Created interactive presentations using Google Slides, combining creative content with professional design.',
-
     project9Title: 'CharMon (字樂園)',
     project9Description:
       'Interactive Chinese learning application for children aged 4-12, combining Pokémon-themed teaching, stroke practice, and phonetic symbol learning. Features A4 printable worksheets and parental management functions. Through gamified learning, children can master Chinese fundamentals in an engaging and fun way.',
@@ -1082,12 +1076,6 @@ const translations = {
     project10Title: 'Water Tracker',
     project10Description:
       'A zero-pressure hydration tracking app designed for people who dont like drinking water. Target users are those who barely drink water, consuming less than 1000ml daily. Core concept: start small (250ml), soup, tea, coffee all count. Features include no-pressure reminders, celebrating small progress, and friendly encouragement to make drinking water easy and enjoyable.',
-
-    project1Title: 'Taipei Golf Association Website',
-    project1Description:
-      'Development and maintenance of the official website for Taipei Golf Association. Responsible for tournament information publishing system, news content management, competition regulation downloads, and registered player information display. Provides clear information architecture and user-friendly browsing experience.',
-    project1Client: 'Taipei Golf Association',
-    project1Year: 'Freelance Project',
 
     // Contact Page
     contactPageTitle: 'Contact Me',
