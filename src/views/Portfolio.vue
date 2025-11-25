@@ -104,6 +104,17 @@ const openDemo = (project) => {
 
 const projects = ref([
   {
+    id: 21,
+    titleKey: 'project21Title',
+    descriptionKey: 'project21Description',
+    technologies: ['Vue 3', 'TypeScript', 'Vite', 'Vue Router 4', 'Pinia', 'Tailwind CSS 4'],
+    demo: 'https://joechiboo.github.io/wish-pool/',
+    github: 'https://github.com/joechiboo/wish-pool',
+    category: 'creative',
+    year: '2025',
+    createdAt: '2025-11-25T00:00:00Z',
+  },
+  {
     id: 20,
     titleKey: 'project20Title',
     descriptionKey: 'project20Description',

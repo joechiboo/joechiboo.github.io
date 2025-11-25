@@ -401,6 +401,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project21Title: 'Wish Pool 許願池',
+    project21Description:
+      '投幣許願平台 - 讓你的專案願望成真，也可以資助別人的夢想。一個社群導向的許願分享應用，使用者可以發布個人願望、為他人的願望送上支持、分享願望實現的喜悅。支援匿名許願，搭配星星飄散動畫效果營造溫馨氛圍。採用現代化技術棧：Vue 3 + TypeScript + Vite + Pinia + Tailwind CSS 4，提供流暢的使用體驗。透過社群力量將夢想化為現實，讓每個願望都有被實現的機會。',
+
     project20Title: 'HomeCalc 房貸計算助手',
     project20Description:
       '從頭期款儲蓄到房貸管理的完整購屋工具。提供精準的本息平均攤還計算，與銀行試算結果相符。支援多方案比較、視覺化圖表展示本金與利息趨勢、還款進度追蹤等功能。採用 Vue.js 3 Composition API 與 Chart.js 打造，提供跨裝置響應式介面。所有計算在本地完成，保護使用者隱私。分階段開發中，目前處於 MVP 階段，專注於架構設計、計算邏輯與基礎介面實作。適合正在規劃購屋的族群，協助做出明智的財務決策。',
@@ -991,6 +995,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project21Title: 'Wish Pool',
+    project21Description:
+      'A coin-toss wishing platform - Make your project wishes come true and support others\' dreams. A community-driven wish-sharing application where users can post personal wishes, send support to others\' wishes, and share the joy of wish fulfillment. Features anonymous wishing with star-scattering animation effects creating a warm atmosphere. Built with modern tech stack: Vue 3 + TypeScript + Vite + Pinia + Tailwind CSS 4, providing a smooth user experience. Turn dreams into reality through community power, giving every wish a chance to come true.',
+
     project20Title: 'HomeCalc Mortgage Calculator',
     project20Description:
       'A comprehensive home buying assistant from down payment savings to mortgage management. Provides precise equal principal and interest repayment calculations that match bank estimates. Features multi-plan comparison, visual charts showing principal and interest trends, and payment progress tracking. Built with Vue.js 3 Composition API and Chart.js, offering responsive cross-device interface. All calculations performed locally to protect user privacy. Currently in MVP phase, focusing on architecture design, calculation logic, and basic interface implementation. Perfect for those planning home purchases, helping make informed financial decisions.',
