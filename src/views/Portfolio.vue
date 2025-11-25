@@ -308,31 +308,6 @@ const projects = ref([
     yearKey: 'project3Year',
     companyKey: 'project3Company',
   },
-  {
-    id: 2,
-    titleKey: 'project2Title',
-    descriptionKey: 'project2Description',
-    technologies: ['Project Planning', 'Creative Design', 'Google Slides', 'Presentation'],
-    demo: 'https://docs.google.com/presentation/d/1o8wMB3w1GFzAHgo4Aj92EPqpsxqORiLyoJ8CbuIWWW0/edit?slide=id.p4#slide=id.p4',
-    github: null,
-    category: 'creative',
-  },
-  {
-    id: 1,
-    titleKey: 'project1Title',
-    descriptionKey: 'project1Description',
-    technologies: [
-      'Web Development',
-      'Content Management',
-      'Information Architecture',
-      'User Interface',
-    ],
-    demo: 'https://www.taipeigolf.org.tw/',
-    github: null,
-    category: 'freelance',
-    yearKey: 'project1Year',
-    clientKey: 'project1Client',
-  },
 ])
 </script>
 
