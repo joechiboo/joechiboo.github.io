@@ -104,6 +104,17 @@ const openDemo = (project) => {
 
 const projects = ref([
   {
+    id: 22,
+    titleKey: 'project22Title',
+    descriptionKey: 'project22Description',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'CSS Animation'],
+    demo: 'https://joechiboo.github.io/Fullscreen-Marquee/',
+    github: 'https://github.com/joechiboo/Fullscreen-Marquee',
+    category: 'creative',
+    year: '2025',
+    createdAt: '2025-12-03T00:00:00Z',
+  },
+  {
     id: 21,
     titleKey: 'project21Title',
     descriptionKey: 'project21Description',

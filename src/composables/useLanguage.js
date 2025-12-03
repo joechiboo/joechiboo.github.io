@@ -401,6 +401,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project22Title: '全螢幕跑馬燈',
+    project22Description:
+      '一個簡潔有趣的全螢幕跑馬燈應用，讓文字在螢幕上滾動展示。適合用於活動現場、演講展示、店面公告等場景。支援自訂文字內容、滾動速度、顏色設定等功能，操作簡單直覺。採用純 HTML/CSS/JavaScript 實作，無需任何框架依賴，輕量快速。響應式設計確保在各種設備上都能完美呈現。',
+
     project21Title: 'Wish Pool 許願池',
     project21Description:
       '投幣許願平台 - 讓你的專案願望成真，也可以資助別人的夢想。一個社群導向的許願分享應用，使用者可以發布個人願望、為他人的願望送上支持、分享願望實現的喜悅。支援匿名許願，搭配星星飄散動畫效果營造溫馨氛圍。採用現代化技術棧：Vue 3 + TypeScript + Vite + Pinia + Tailwind CSS 4，提供流暢的使用體驗。透過社群力量將夢想化為現實，讓每個願望都有被實現的機會。',
@@ -995,6 +999,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project22Title: 'Fullscreen Marquee',
+    project22Description:
+      'A simple and fun fullscreen marquee application that scrolls text across the screen. Perfect for events, presentations, store announcements, and more. Features customizable text content, scroll speed, and color settings with an intuitive interface. Built with pure HTML/CSS/JavaScript without any framework dependencies, making it lightweight and fast. Responsive design ensures perfect display on all devices.',
+
     project21Title: 'Wish Pool',
     project21Description:
       'A coin-toss wishing platform - Make your project wishes come true and support others\' dreams. A community-driven wish-sharing application where users can post personal wishes, send support to others\' wishes, and share the joy of wish fulfillment. Features anonymous wishing with star-scattering animation effects creating a warm atmosphere. Built with modern tech stack: Vue 3 + TypeScript + Vite + Pinia + Tailwind CSS 4, providing a smooth user experience. Turn dreams into reality through community power, giving every wish a chance to come true.',
