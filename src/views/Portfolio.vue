@@ -39,7 +39,7 @@
           <div class="project-content">
             <div class="project-header">
               <h3>{{ t(project.titleKey) }}</h3>
-              <div class="project-meta" v-if="!isCompact">
+              <div class="project-meta">
                 <span v-if="project.year" class="project-year">{{ project.year }}</span>
                 <span v-if="project.yearKey" class="project-year">{{ t(project.yearKey) }}</span>
                 <span v-if="project.createdAt && getRelativeTimeDisplay(project.createdAt)" class="project-time">{{ getRelativeTimeDisplay(project.createdAt) }}</span>
