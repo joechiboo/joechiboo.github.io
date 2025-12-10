@@ -56,7 +56,7 @@
                 {{ tech }}
               </span>
             </div>
-            <div class="project-links">
+            <div class="project-links" v-if="!isCompact">
               <a
                 v-if="project.demo"
                 :href="project.demo"
@@ -67,7 +67,7 @@
                 {{ project.id === 5 ? t('thisWebsite') : t('demo') }}
               </a>
               <a
-                v-if="project.github && !isCompact"
+                v-if="project.github"
                 :href="project.github"
                 class="btn btn-outline"
                 target="_blank"
