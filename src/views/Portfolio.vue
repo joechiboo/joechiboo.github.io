@@ -1,21 +1,20 @@
 <template>
   <div class="portfolio">
     <div class="container">
+      <div class="layout-controls">
+        <span class="layout-label">{{ t('layoutColumns') }}:</span>
+        <button
+          v-for="col in [3, 4, 5, 6]"
+          :key="col"
+          :class="['layout-btn', { active: columns === col }]"
+          @click="setColumns(col)"
+        >
+          {{ col }}
+        </button>
+      </div>
+
       <header class="page-header">
-        <div class="header-row">
-          <h1>{{ t('portfolioTitle') }}</h1>
-          <div class="layout-controls">
-            <span class="layout-label">{{ t('layoutColumns') }}:</span>
-            <button
-              v-for="col in [3, 4, 5, 6]"
-              :key="col"
-              :class="['layout-btn', { active: columns === col }]"
-              @click="setColumns(col)"
-            >
-              {{ col }}
-            </button>
-          </div>
-        </div>
+        <h1>{{ t('portfolioTitle') }}</h1>
         <p>{{ t('portfolioSubtitle') }}</p>
       </header>
 
@@ -379,32 +378,30 @@ const projects = ref([
   padding: 2rem;
 }
 
+.container {
+  position: relative;
+}
+
 .page-header {
   text-align: center;
   margin-bottom: 4rem;
 }
 
-.header-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
 .page-header h1 {
   font-size: 3rem;
   color: var(--color-text-primary);
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 }
 
 .page-header p {
   font-size: 1.2rem;
   color: var(--color-text-secondary);
-  margin-top: 1rem;
 }
 
 .layout-controls {
+  position: absolute;
+  top: 0;
+  right: 0;
   display: flex;
   align-items: center;
   gap: 0.5rem;
