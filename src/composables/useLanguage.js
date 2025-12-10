@@ -28,6 +28,7 @@ const translations = {
     // 作品集頁面
     portfolioTitle: '技術作品集',
     portfolioSubtitle: '我的技術專案與開發經驗展示',
+    layoutColumns: '每行顯示',
     webDev: '網站開發',
     enterprise: '企業專案',
     creative: '創意專案',
@@ -479,6 +480,12 @@ const translations = {
     project3Company: 'Chun Shin Limited',
     project3Year: '前公司專案',
 
+    project2Title: '台北市高爾夫球協會',
+    project2Description:
+      '台北市高爾夫球協會官方網站，提供會員管理、賽事資訊、活動報名等功能。整合會員系統與線上報名機制，支援協會各項業務運作與會員服務。響應式設計確保各裝置良好體驗。',
+    project2Client: '台北市高爾夫球協會',
+    project2Year: '外包專案',
+
     project9Title: '字樂園',
     project9Description:
       '針對4-12歲兒童的互動式中文學習應用，結合寶可夢主題教學、筆畫練習和注音符號學習。可生成A4列印練習單，附家長管理功能。透過遊戲化學習方式，讓孩子在趣味中掌握中文基礎。',
@@ -593,6 +600,7 @@ const translations = {
     // 作品集頁面
     portfolioTitle: 'Technical Portfolio',
     portfolioSubtitle: 'Showcase of my technical projects and development experience',
+    layoutColumns: 'Columns',
     webDev: 'Web Development',
     enterprise: 'Enterprise Projects',
     creative: 'Creative Projects',
@@ -1076,6 +1084,12 @@ const translations = {
       'Professional English proficiency test registration platform supporting various tests including TOEIC, TOEFL registration. Integrates exam calendar, online registration, user management, and multilingual interface, providing complete exam service ecosystem.',
     project3Company: 'Chun Shin Limited',
     project3Year: 'Previous Company Project',
+
+    project2Title: 'Taipei Golf Association',
+    project2Description:
+      'Official website for Taipei Golf Association, featuring membership management, event information, and activity registration. Integrates member system with online registration mechanism, supporting association operations and member services. Responsive design ensures great experience across all devices.',
+    project2Client: 'Taipei Golf Association',
+    project2Year: 'Freelance Project',
 
     project9Title: 'CharMon (字樂園)',
     project9Description:

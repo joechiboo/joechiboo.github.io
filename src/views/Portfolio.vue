@@ -4,11 +4,22 @@
       <header class="page-header">
         <h1>{{ t('portfolioTitle') }}</h1>
         <p>{{ t('portfolioSubtitle') }}</p>
+        <div class="layout-controls">
+          <span class="layout-label">{{ t('layoutColumns') }}:</span>
+          <button
+            v-for="col in [3, 4, 5, 6]"
+            :key="col"
+            :class="['layout-btn', { active: columns === col }]"
+            @click="setColumns(col)"
+          >
+            {{ col }}
+          </button>
+        </div>
       </header>
 
-      <div class="portfolio-grid">
-        <div class="project-card" v-for="project in projects" :key="project.id" @click="handleCardClick(project)">
-          <div class="project-image">
+      <div class="portfolio-grid" :class="gridClass">
+        <div class="project-card" :class="{ compact: isCompact }" v-for="project in projects" :key="project.id" @click="handleCardClick(project)">
+          <div class="project-image" :class="{ 'compact-image': isCompact }">
             <div class="project-icon">
               <span v-if="project.category === 'web'">🌐</span>
               <span v-else-if="project.category === 'enterprise'">🏢</span>
@@ -39,8 +50,8 @@
                 }}</span>
               </div>
             </div>
-            <p>{{ t(project.descriptionKey) }}</p>
-            <div class="tech-stack">
+            <p v-if="!isCompact">{{ t(project.descriptionKey) }}</p>
+            <div class="tech-stack" v-if="!isCompact">
               <span v-for="tech in project.technologies" :key="tech" class="tech-tag">
                 {{ tech }}
               </span>
@@ -56,7 +67,7 @@
                 {{ project.id === 5 ? t('thisWebsite') : t('demo') }}
               </a>
               <a
-                v-if="project.github"
+                v-if="project.github && !isCompact"
                 :href="project.github"
                 class="btn btn-outline"
                 target="_blank"
@@ -73,7 +84,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useLanguage } from '../composables/useLanguage.js'
 import { useSEO } from '../composables/useSEO.js'
 import { useTimeDisplay } from '../composables/useTimeDisplay.js'
@@ -91,6 +102,15 @@ useSEO({
   twitterTitle: 'Joe Chi-Boo - 技術作品集',
   twitterDescription: '探索 Joe Chi-Boo 的技術作品集，包含多個 Web 開發專案與創意實作案例。'
 })
+
+// 排版控制
+const columns = ref(3)
+const gridClass = computed(() => `grid-${columns.value}`)
+const isCompact = computed(() => columns.value >= 5)
+
+const setColumns = (col) => {
+  columns.value = col
+}
 
 const handleCardClick = (project) => {
   if (project.demo) {
@@ -330,6 +350,17 @@ const projects = ref([
     yearKey: 'project3Year',
     companyKey: 'project3Company',
   },
+  {
+    id: 2,
+    titleKey: 'project2Title',
+    descriptionKey: 'project2Description',
+    technologies: ['Web Development', 'Membership System', 'Event Management', 'Responsive Design'],
+    demo: 'https://www.taipeigolf.org.tw/',
+    github: null,
+    category: 'freelance',
+    yearKey: 'project2Year',
+    clientKey: 'project2Client',
+  },
 ])
 </script>
 
@@ -362,23 +393,89 @@ const projects = ref([
   color: var(--color-text-secondary);
 }
 
+.layout-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.layout-label {
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  margin-right: 0.5rem;
+}
+
+.layout-btn {
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--color-text-secondary);
+  background: transparent;
+  color: var(--color-text-secondary);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.layout-btn:hover {
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.layout-btn.active {
+  background: #007bff;
+  border-color: #007bff;
+  color: white;
+}
+
+[data-theme='dark'] .layout-btn.active {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
-/* 平板尺寸：3列佈局 */
+.portfolio-grid.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.portfolio-grid.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.portfolio-grid.grid-5 {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.portfolio-grid.grid-6 {
+  grid-template-columns: repeat(6, 1fr);
+  gap: 0.8rem;
+}
+
+/* 平板尺寸 */
 @media (max-width: 1024px) and (min-width: 769px) {
-  .portfolio-grid {
+  .portfolio-grid.grid-3,
+  .portfolio-grid.grid-4 {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .portfolio-grid.grid-5,
+  .portfolio-grid.grid-6 {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 /* 中等螢幕：2列佈局 */
 @media (min-width: 481px) and (max-width: 768px) {
   .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
 
@@ -408,15 +505,28 @@ const projects = ref([
   text-align: center;
 }
 
+.project-image.compact-image {
+  height: 120px;
+}
+
 .project-icon {
   font-size: 4rem;
   margin-bottom: 1rem;
+}
+
+.compact .project-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .project-category {
   font-size: 1.1rem;
   font-weight: 600;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.compact .project-category {
+  font-size: 0.85rem;
 }
 
 .project-content {
@@ -426,8 +536,16 @@ const projects = ref([
   flex: 1;
 }
 
+.compact .project-content {
+  padding: 1rem;
+}
+
 .project-header {
   margin-bottom: 1rem;
+}
+
+.compact .project-header {
+  margin-bottom: 0.5rem;
 }
 
 .project-content h3 {
@@ -436,11 +554,21 @@ const projects = ref([
   font-size: 1.3rem;
 }
 
+.compact .project-content h3 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
 .project-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+.compact .project-meta {
+  gap: 0.3rem;
+  margin-bottom: 0.3rem;
 }
 
 .project-year,
@@ -452,6 +580,14 @@ const projects = ref([
   border-radius: 12px;
   font-size: 0.8rem;
   font-weight: 500;
+}
+
+.compact .project-year,
+.compact .project-company,
+.compact .project-client,
+.compact .project-time {
+  padding: 0.15rem 0.4rem;
+  font-size: 0.7rem;
 }
 
 .project-company {
@@ -519,6 +655,12 @@ const projects = ref([
   display: inline-block;
   width: 100px;
   text-align: center;
+}
+
+.compact .btn {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+  width: auto;
 }
 
 .btn-primary {
