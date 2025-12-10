@@ -2,19 +2,21 @@
   <div class="portfolio">
     <div class="container">
       <header class="page-header">
-        <h1>{{ t('portfolioTitle') }}</h1>
-        <p>{{ t('portfolioSubtitle') }}</p>
-        <div class="layout-controls">
-          <span class="layout-label">{{ t('layoutColumns') }}:</span>
-          <button
-            v-for="col in [3, 4, 5, 6]"
-            :key="col"
-            :class="['layout-btn', { active: columns === col }]"
-            @click="setColumns(col)"
-          >
-            {{ col }}
-          </button>
+        <div class="header-row">
+          <h1>{{ t('portfolioTitle') }}</h1>
+          <div class="layout-controls">
+            <span class="layout-label">{{ t('layoutColumns') }}:</span>
+            <button
+              v-for="col in [3, 4, 5, 6]"
+              :key="col"
+              :class="['layout-btn', { active: columns === col }]"
+              @click="setColumns(col)"
+            >
+              {{ col }}
+            </button>
+          </div>
         </div>
+        <p>{{ t('portfolioSubtitle') }}</p>
       </header>
 
       <div class="portfolio-grid" :class="gridClass">
@@ -382,23 +384,30 @@ const projects = ref([
   margin-bottom: 4rem;
 }
 
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
 .page-header h1 {
   font-size: 3rem;
   color: var(--color-text-primary);
-  margin-bottom: 1rem;
+  margin-bottom: 0;
 }
 
 .page-header p {
   font-size: 1.2rem;
   color: var(--color-text-secondary);
+  margin-top: 1rem;
 }
 
 .layout-controls {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
-  margin-top: 1.5rem;
 }
 
 .layout-label {
