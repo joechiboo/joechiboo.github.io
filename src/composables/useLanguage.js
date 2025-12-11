@@ -402,6 +402,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project23Title: '手指輪盤',
+    project23Description:
+      '一款互動式多點觸控遊戲，專為團體決策設計。多人同時將手指放在螢幕上，倒數計時後隨機選出一位「幸運兒」——非常適合決定誰請客、誰先開始等場景。支援多點觸控同時偵測，每根手指都有獨特的顏色視覺效果。可調整倒數時間（1-5秒），搭配旋轉掃描光束和粒子爆炸動畫效果。支援設備震動回饋，離開螢幕後自動重置。採用純 HTML/CSS/JavaScript 開發，運用 Canvas 2D 繪圖、Touch Events API 和 Vibration API，無需任何框架依賴。',
+
     project22Title: '全螢幕跑馬燈',
     project22Description:
       '一個簡潔有趣的全螢幕跑馬燈應用，讓文字在螢幕上滾動展示。適合用於活動現場、演講展示、店面公告等場景。支援自訂文字內容、滾動速度、顏色設定等功能，操作簡單直覺。採用純 HTML/CSS/JavaScript 實作，無需任何框架依賴，輕量快速。響應式設計確保在各種設備上都能完美呈現。',
@@ -1007,6 +1011,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project23Title: 'Finger Roulette',
+    project23Description:
+      'An interactive multi-touch game designed for group decision-making. Multiple people place their fingers on the screen simultaneously, and after a countdown, one finger is randomly selected as the "winner" — perfect for deciding who pays, who goes first, and more. Features multi-touch support with unique color effects for each finger. Adjustable countdown timer (1-5 seconds) with rotating scan beam and particle explosion animations. Supports device vibration feedback and automatic reset when all fingers leave the screen. Built with pure HTML/CSS/JavaScript using Canvas 2D graphics, Touch Events API, and Vibration API — no framework dependencies required.',
+
     project22Title: 'Fullscreen Marquee',
     project22Description:
       'A simple and fun fullscreen marquee application that scrolls text across the screen. Perfect for events, presentations, store announcements, and more. Features customizable text content, scroll speed, and color settings with an intuitive interface. Built with pure HTML/CSS/JavaScript without any framework dependencies, making it lightweight and fast. Responsive design ensures perfect display on all devices.',

@@ -125,6 +125,17 @@ const openDemo = (project) => {
 
 const projects = ref([
   {
+    id: 23,
+    titleKey: 'project23Title',
+    descriptionKey: 'project23Description',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Canvas 2D', 'Touch Events API', 'Vibration API'],
+    demo: 'https://joechiboo.github.io/finger-roulette/',
+    github: 'https://github.com/joechiboo/finger-roulette',
+    category: 'creative',
+    year: '2025',
+    createdAt: '2025-12-12T00:00:00Z',
+  },
+  {
     id: 22,
     titleKey: 'project22Title',
     descriptionKey: 'project22Description',
