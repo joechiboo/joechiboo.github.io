@@ -494,6 +494,10 @@ const projects = ref([
   .portfolio-grid {
     grid-template-columns: repeat(2, 1fr) !important;
   }
+
+  .layout-controls {
+    display: none;
+  }
 }
 
 .project-card {
@@ -754,11 +758,15 @@ const projects = ref([
   }
 
   .portfolio-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   .project-links {
     flex-direction: column;
+  }
+
+  .layout-controls {
+    display: none;
   }
 }
 </style>
