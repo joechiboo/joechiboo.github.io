@@ -125,6 +125,17 @@ const openDemo = (project) => {
 
 const projects = ref([
   {
+    id: 24,
+    titleKey: 'project24Title',
+    descriptionKey: 'project24Description',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Mobile Sensors', 'Device Orientation API'],
+    demo: 'https://joechiboo.github.io/iBeer/',
+    github: 'https://github.com/joechiboo/iBeer',
+    category: 'creative',
+    year: '2026',
+    createdAt: '2026-01-29T00:00:00Z',
+  },
+  {
     id: 23,
     titleKey: 'project23Title',
     descriptionKey: 'project23Description',

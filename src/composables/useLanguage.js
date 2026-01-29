@@ -402,6 +402,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project24Title: 'iBeer 虛擬啤酒',
+    project24Description:
+      '🍺 傾斜手機來喝酒！一款趣味互動的虛擬啤酒 App，使用手機的陀螺儀和方向感測器，模擬真實喝啤酒的體驗。只需傾斜手機，就能看到啤酒隨著重力流動，泡沫逐漸減少，帶來逼真的互動效果。採用純 HTML5 技術打造，使用 Device Orientation API 讀取手機傾斜角度，搭配流暢的 CSS3 動畫效果。適合在聚會或休閒時刻使用，為朋友帶來歡樂氛圍。輕量級設計，無需安裝，打開網頁即可使用。',
+
     project23Title: '手指輪盤',
     project23Description:
       '一款互動式多點觸控遊戲，專為團體決策設計。多人同時將手指放在螢幕上，倒數計時後隨機選出一位「幸運兒」——非常適合決定誰請客、誰先開始等場景。支援多點觸控同時偵測，每根手指都有獨特的顏色視覺效果。可調整倒數時間（1-5秒），搭配旋轉掃描光束和粒子爆炸動畫效果。支援設備震動回饋，離開螢幕後自動重置。採用純 HTML/CSS/JavaScript 開發，運用 Canvas 2D 繪圖、Touch Events API 和 Vibration API，無需任何框架依賴。',
@@ -1011,6 +1015,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project24Title: 'iBeer Virtual Beer',
+    project24Description:
+      '🍺 Tilt your phone to drink! A fun interactive virtual beer app that uses your phone\'s gyroscope and orientation sensors to simulate a realistic beer-drinking experience. Simply tilt your phone to watch the beer flow with gravity and foam gradually decrease, creating an authentic interactive effect. Built with pure HTML5 technology, utilizing the Device Orientation API to read phone tilt angles, combined with smooth CSS3 animation effects. Perfect for parties or leisure moments, bringing joy to friends. Lightweight design with no installation required - just open the webpage and use.',
+
     project23Title: 'Finger Roulette',
     project23Description:
       'An interactive multi-touch game designed for group decision-making. Multiple people place their fingers on the screen simultaneously, and after a countdown, one finger is randomly selected as the "winner" — perfect for deciding who pays, who goes first, and more. Features multi-touch support with unique color effects for each finger. Adjustable countdown timer (1-5 seconds) with rotating scan beam and particle explosion animations. Supports device vibration feedback and automatic reset when all fingers leave the screen. Built with pure HTML/CSS/JavaScript using Canvas 2D graphics, Touch Events API, and Vibration API — no framework dependencies required.',
