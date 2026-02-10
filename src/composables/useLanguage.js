@@ -402,6 +402,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project25Title: 'Perf-Toolkit 績效管理工具包',
+    project25Description:
+      '專為 5-15 人 IT 團隊打造的績效管理系統，涵蓋從資料蒐集到報告生成的完整工作流程。包含四大核心模組：考核評分框架（五維度加權評分）、里程碑追蹤（年度計畫與月度進度監控）、出缺勤分析（HR CSV 匯入統計分析）、報告產生器（主管版/公開版/個人版）。系統設計強調工具不做決策，僅提供數據供人為判斷。採用 JSON/CSV 儲存的輕量架構，零部署成本，支援模組漸進式導入，並預設資料匿名化保護隱私。採用規格驅動開發（SDD）方法論結合 AI 協作進行開發。',
+
     project24Title: 'iBeer 虛擬啤酒',
     project24Description:
       '🍺 傾斜手機來喝酒！一款趣味互動的虛擬啤酒 App，使用手機的陀螺儀和方向感測器，模擬真實喝啤酒的體驗。只需傾斜手機，就能看到啤酒隨著重力流動，泡沫逐漸減少，帶來逼真的互動效果。採用純 HTML5 技術打造，使用 Device Orientation API 讀取手機傾斜角度，搭配流暢的 CSS3 動畫效果。適合在聚會或休閒時刻使用，為朋友帶來歡樂氛圍。輕量級設計，無需安裝，打開網頁即可使用。',
@@ -1015,6 +1019,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project25Title: 'Perf-Toolkit Performance Management',
+    project25Description:
+      'A performance management system designed for 5-15 person IT teams, covering the complete workflow from data collection to report generation. Features four core modules: Assessment Framework (weighted scoring across five dimensions), Milestone Tracking (annual work plans and monthly progress monitoring), Attendance Analysis (HR CSV import and statistical analysis), and Report Generator (manager, public, and individual versions). The system emphasizes that tools don\'t make decisions but provide data for human judgment. Uses lightweight JSON/CSV storage architecture with zero deployment cost, supports gradual adoption of individual modules, and defaults to data anonymization for privacy. Developed using Spec-Driven Development (SDD) methodology combined with AI collaboration.',
+
     project24Title: 'iBeer Virtual Beer',
     project24Description:
       '🍺 Tilt your phone to drink! A fun interactive virtual beer app that uses your phone\'s gyroscope and orientation sensors to simulate a realistic beer-drinking experience. Simply tilt your phone to watch the beer flow with gravity and foam gradually decrease, creating an authentic interactive effect. Built with pure HTML5 technology, utilizing the Device Orientation API to read phone tilt angles, combined with smooth CSS3 animation effects. Perfect for parties or leisure moments, bringing joy to friends. Lightweight design with no installation required - just open the webpage and use.',

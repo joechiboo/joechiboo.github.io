@@ -125,6 +125,17 @@ const openDemo = (project) => {
 
 const projects = ref([
   {
+    id: 25,
+    titleKey: 'project25Title',
+    descriptionKey: 'project25Description',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Python', 'JSON/CSV', 'Spec-Driven Development'],
+    demo: 'https://joechiboo.github.io/perf-toolkit/',
+    github: 'https://github.com/joechiboo/perf-toolkit',
+    category: 'web',
+    year: '2026',
+    createdAt: '2026-02-10T00:00:00Z',
+  },
+  {
     id: 24,
     titleKey: 'project24Title',
     descriptionKey: 'project24Description',
