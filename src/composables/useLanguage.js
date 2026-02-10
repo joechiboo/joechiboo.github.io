@@ -405,6 +405,7 @@ const translations = {
     project25Title: 'Perf-Toolkit 績效管理工具包',
     project25Description:
       '專為 5-15 人 IT 團隊打造的績效管理系統，涵蓋從資料蒐集到報告生成的完整工作流程。包含四大核心模組：考核評分框架（五維度加權評分）、里程碑追蹤（年度計畫與月度進度監控）、出缺勤分析（HR CSV 匯入統計分析）、報告產生器（主管版/公開版/個人版）。系統設計強調工具不做決策，僅提供數據供人為判斷。採用 JSON/CSV 儲存的輕量架構，零部署成本，支援模組漸進式導入，並預設資料匿名化保護隱私。採用規格驅動開發（SDD）方法論結合 AI 協作進行開發。',
+    project25Company: '大安聯合',
 
     project24Title: 'iBeer 虛擬啤酒',
     project24Description:
@@ -1022,6 +1023,7 @@ const translations = {
     project25Title: 'Perf-Toolkit Performance Management',
     project25Description:
       'A performance management system designed for 5-15 person IT teams, covering the complete workflow from data collection to report generation. Features four core modules: Assessment Framework (weighted scoring across five dimensions), Milestone Tracking (annual work plans and monthly progress monitoring), Attendance Analysis (HR CSV import and statistical analysis), and Report Generator (manager, public, and individual versions). The system emphasizes that tools don\'t make decisions but provide data for human judgment. Uses lightweight JSON/CSV storage architecture with zero deployment cost, supports gradual adoption of individual modules, and defaults to data anonymization for privacy. Developed using Spec-Driven Development (SDD) methodology combined with AI collaboration.',
+    project25Company: 'Ta-An United',
 
     project24Title: 'iBeer Virtual Beer',
     project24Description:
