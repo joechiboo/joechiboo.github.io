@@ -366,6 +366,9 @@ const translations = {
     rockRadish: '4手聯彈-曲目4-搖滾的蘿莉塔',
     rockRadishDesc: '活潑有趣的一首歌',
 
+    chopinNocturne: '蕭邦 - 夜曲 op.9 No.2',
+    chopinNocturneDesc: '蕭邦最經典的夜曲之一，優美的旋律如夜晚的低語，展現鋼琴獨奏的細膩與浪漫',
+
     // 空狀態
     emptyCategory: '🚧 此類別的作品即將更新，敬請期待！',
     comingSoon: '待續...',
@@ -981,6 +984,9 @@ const translations = {
 
     rockRadish: 'Four-Hands Duet - Piece 4 - Rock Lolita',
     rockRadishDesc: 'A lively and interesting song',
+
+    chopinNocturne: 'Chopin - Nocturne op.9 No.2',
+    chopinNocturneDesc: 'One of Chopin\'s most iconic nocturnes, with a beautiful melody that whispers like the night, showcasing the delicacy and romance of piano solo performance',
 
     // Empty States
     emptyCategory: '🚧 Works in this category are coming soon, stay tuned!',

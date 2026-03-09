@@ -75,6 +75,12 @@
                     allowfullscreen
                   ></iframe>
 
+                  <!-- 音檔播放器 -->
+                  <div v-else-if="item.audio" class="audio-placeholder">
+                    <div class="audio-icon">🎹</div>
+                    <audio controls :src="item.audio" class="audio-player" @click.stop></audio>
+                  </div>
+
                   <!-- 一般圖片 -->
                   <img
                     v-else-if="item.image"
@@ -496,6 +502,13 @@ const galleryGroups = ref([
         youtube: 'cDceNUIYojM',
         date: '2025',
       },
+      {
+        id: 8,
+        get title() { return t('chopinNocturne') },
+        get description() { return t('chopinNocturneDesc') },
+        audio: '/img/music/voice_260877.aac',
+        date: '2026',
+      },
     ],
   },
 ])
@@ -873,6 +886,28 @@ const galleryGroups = ref([
 .image-placeholder {
   color: var(--color-text-secondary);
   font-size: 1rem;
+}
+
+/* 音檔播放器樣式 */
+.audio-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding: 1rem;
+}
+
+.audio-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.audio-player {
+  width: 90%;
+  max-width: 280px;
+  height: 36px;
 }
 
 /* YouTube 播放器樣式 */
