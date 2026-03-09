@@ -61,7 +61,7 @@
                 class="gallery-item"
                 v-for="(item, index) in currentGroupData.items"
                 :key="item.id"
-                @click="!item.youtube && !item.isComingSoon && openLightbox(item, currentGroupData, index)"
+                @click="!item.youtube && !item.audio && !item.isComingSoon && openLightbox(item, currentGroupData, index)"
                 :class="{ 'clickable': item.image && !item.youtube }"
               >
                 <div class="gallery-image">
@@ -76,9 +76,9 @@
                   ></iframe>
 
                   <!-- 音檔播放器 -->
-                  <div v-else-if="item.audio" class="audio-placeholder">
+                  <div v-else-if="item.audio" class="audio-placeholder" @click.stop>
                     <div class="audio-icon">🎹</div>
-                    <audio controls :src="item.audio" class="audio-player" @click.stop></audio>
+                    <audio controls :src="item.audio" class="audio-player"></audio>
                   </div>
 
                   <!-- 一般圖片 -->
