@@ -78,7 +78,10 @@
                   <!-- 音檔播放器 -->
                   <div v-else-if="item.audio" class="audio-placeholder" @click.stop>
                     <div class="audio-icon">🎹</div>
-                    <audio controls :src="item.audio" class="audio-player"></audio>
+                    <button class="audio-play-btn" @click="toggleAudio(item)">
+                      {{ item._playing ? '⏸' : '▶' }}
+                    </button>
+                    <audio :ref="el => { if (el) audioRefs[item.id] = el }" :src="item.audio"></audio>
                   </div>
 
                   <!-- 一般圖片 -->
@@ -240,6 +243,22 @@ useSEO({
   twitterTitle: 'Joe Chi-Boo - 休閒興趣',
   twitterDescription: '探索 Joe Chi-Boo 的多元興趣世界，從繪畫創作到音樂演奏，展現豐富的業餘生活。'
 })
+
+// 音檔播放
+const audioRefs = ref({})
+
+const toggleAudio = (item) => {
+  const audio = audioRefs.value[item.id]
+  if (!audio) return
+  if (audio.paused) {
+    audio.play()
+    item._playing = true
+    audio.onended = () => { item._playing = false }
+  } else {
+    audio.pause()
+    item._playing = false
+  }
+}
 
 // 分類選擇功能
 const activeCategory = ref('drawing') // 默認選中繪畫
@@ -904,10 +923,24 @@ const galleryGroups = ref([
   margin-bottom: 0.5rem;
 }
 
-.audio-player {
-  width: 90%;
-  max-width: 280px;
-  height: 36px;
+.audio-play-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.audio-play-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
 }
 
 /* YouTube 播放器樣式 */
