@@ -125,6 +125,17 @@ const openDemo = (project) => {
 
 const projects = ref([
   {
+    id: 26,
+    titleKey: 'project26Title',
+    descriptionKey: 'project26Description',
+    technologies: ['Python', 'PyTorch', 'OpenCV', 'ONNX Runtime', 'JavaScript', 'face-api.js', 'GitHub Pages'],
+    demo: 'https://joechiboo.github.io/RoboEye-/',
+    github: 'https://github.com/joechiboo/RoboEye-',
+    category: 'creative',
+    year: '2026',
+    createdAt: '2026-04-09T00:00:00Z',
+  },
+  {
     id: 25,
     titleKey: 'project25Title',
     descriptionKey: 'project25Description',

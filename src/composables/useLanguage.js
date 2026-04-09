@@ -405,6 +405,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project26Title: 'RoboEye 機器人視覺',
+    project26Description:
+      '結合 CNN 卷積神經網路的機器人視覺研究與實作課程專案。透過瀏覽器即時擷取攝影機畫面，進行人臉偵測與年齡、性別預測。內建三種不同精度與效能的模型比較：Caffe（2015 年經典 8 分類器）、MobileNetV2 + DEX（輕量回歸模型，精確預測 0-100 歲）、InsightFace Buffalo_l（高精度大型模型）。所有推論皆在瀏覽器端完成，無需上傳資料至伺服器，兼顧隱私與便利性。提供即時 FPS 與偵測人臉數量等效能指標顯示。',
+
     project25Title: 'Perf-Toolkit 績效管理工具包',
     project25Description:
       '專為 5-15 人 IT 團隊打造的績效管理系統，涵蓋從資料蒐集到報告生成的完整工作流程。包含四大核心模組：考核評分框架（五維度加權評分）、里程碑追蹤（年度計畫與月度進度監控）、出缺勤分析（HR CSV 匯入統計分析）、報告產生器（主管版/公開版/個人版）。系統設計強調工具不做決策，僅提供數據供人為判斷。採用 JSON/CSV 儲存的輕量架構，零部署成本，支援模組漸進式導入，並預設資料匿名化保護隱私。採用規格驅動開發（SDD）方法論結合 AI 協作進行開發。',
@@ -1026,6 +1030,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project26Title: 'RoboEye Robot Vision',
+    project26Description:
+      'A course project applying convolutional neural networks (CNN) to robot vision research. Captures live webcam feeds in the browser for real-time face detection with age and gender prediction. Features three models with different accuracy/efficiency tradeoffs: Caffe (classic 2015 8-category classifier), MobileNetV2 + DEX (lightweight regression model for precise 0-100 age prediction), and InsightFace Buffalo_l (high-accuracy large model). All inference runs entirely client-side in the browser — no data uploaded to any server, ensuring privacy. Displays real-time performance metrics including FPS and detected face count.',
+
     project25Title: 'Perf-Toolkit Performance Management',
     project25Description:
       'A performance management system designed for 5-15 person IT teams, covering the complete workflow from data collection to report generation. Features four core modules: Assessment Framework (weighted scoring across five dimensions), Milestone Tracking (annual work plans and monthly progress monitoring), Attendance Analysis (HR CSV import and statistical analysis), and Report Generator (manager, public, and individual versions). The system emphasizes that tools don\'t make decisions but provide data for human judgment. Uses lightweight JSON/CSV storage architecture with zero deployment cost, supports gradual adoption of individual modules, and defaults to data anonymization for privacy. Developed using Spec-Driven Development (SDD) methodology combined with AI collaboration.',
