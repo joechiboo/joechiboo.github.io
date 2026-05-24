@@ -411,9 +411,9 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
-    project28Title: 'Lessons After School 離開學校後的課',
+    project28Title: 'Lessons After School 出社會該學習的事',
     project28Description:
-      '💡 一個記錄「離開學校之後才學到的事」的內容專案。學校教知識，但人生的真相往往在出社會、進職場之後才慢慢看清——關於工作、人際、社會、自我認識的種種體悟，集結成一份持續累積的洞察筆記。目前內容偏向職場與社會觀察，未來計畫擴展到更廣泛的人生議題。專案以長期累積、緩慢生長為原則，不追求數量，只記錄真正想清楚的事。',
+      '💡 一個記錄職場觀察與人生體悟的內容專案。從日常生活的小場景出發，對照職場上反覆出現的問題，提煉出能帶走的原則。學校教知識，但人生的真相往往在出社會、進職場之後才慢慢看清——目前內容包含「求救的三個層次」、「先彙整再發問」、「講重點」等職場洞察。採用 VitePress 打造，以 Markdown 撰寫，部署於 GitHub Pages。專案以長期累積、緩慢生長為原則，不追求數量，只記錄真正想清楚的事。',
 
     project27Title: 'CubeLab 魔術方塊實驗室',
     project27Description:
@@ -1052,7 +1052,7 @@ const translations = {
     // Portfolio Project Content
     project28Title: 'Lessons After School',
     project28Description:
-      '💡 A content project capturing "the things you only learn after leaving school." School teaches knowledge, but life\'s real lessons often only become clear once you step into the workplace and society — observations on work, relationships, society, and self-understanding, collected into a continuously growing notebook of insights. Current content leans toward workplace and social observations, with plans to expand to broader life topics. The project is built on long-term accumulation and slow growth — not chasing quantity, only recording the things truly understood.',
+      '💡 A content project capturing workplace observations and life lessons. Starting from everyday scenarios and contrasting them with recurring workplace problems, it extracts transferable principles. School teaches knowledge, but life\'s real lessons often only become clear once you step into the workplace — current essays include "Three Levels of Asking for Help," "Summarize Before Asking," and "Getting to the Point." Built with VitePress, written in Markdown, deployed on GitHub Pages. The project follows the principle of long-term accumulation and slow growth — not chasing quantity, only recording the things truly understood.',
 
     project27Title: 'CubeLab Rubik\'s Cube Lab',
     project27Description:
