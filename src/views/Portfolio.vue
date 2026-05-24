@@ -125,6 +125,17 @@ const openDemo = (project) => {
 
 const projects = ref([
   {
+    id: 27,
+    titleKey: 'project27Title',
+    descriptionKey: 'project27Description',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'GitHub Pages', 'GitHub Actions'],
+    demo: 'https://joechiboo.github.io/CubeLab/',
+    github: 'https://github.com/joechiboo/CubeLab',
+    category: 'creative',
+    year: '2026',
+    createdAt: '2026-05-24T00:00:00Z',
+  },
+  {
     id: 26,
     titleKey: 'project26Title',
     descriptionKey: 'project26Description',
