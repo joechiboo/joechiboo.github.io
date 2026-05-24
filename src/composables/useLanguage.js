@@ -33,6 +33,12 @@ const translations = {
     enterprise: '企業專案',
     creative: '創意專案',
     freelance: '外包專案',
+    tool: '實用工具',
+    health: '健康應用',
+    family: '親子共學',
+    fun: '趣味互動',
+    learning: '學習研究',
+    insight: '人生洞察',
     tech: '技術專案',
 
     // 語音介紹
@@ -405,6 +411,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project28Title: 'Lessons After School 離開學校後的課',
+    project28Description:
+      '💡 一個記錄「離開學校之後才學到的事」的內容專案。學校教知識，但人生的真相往往在出社會、進職場之後才慢慢看清——關於工作、人際、社會、自我認識的種種體悟，集結成一份持續累積的洞察筆記。目前內容偏向職場與社會觀察，未來計畫擴展到更廣泛的人生議題。專案以長期累積、緩慢生長為原則，不追求數量，只記錄真正想清楚的事。',
+
     project27Title: 'CubeLab 魔術方塊實驗室',
     project27Description:
       '🧊 與小朋友一起打造的魔術方塊互動實驗室，邊玩邊學的程式遊樂場。內建可旋轉的 3D 魔術方塊與速解計時器，讓使用者在瀏覽器中直接體驗轉動魔方的樂趣。採用純 HTML5 + CSS3 + JavaScript 開發，零依賴、零建置流程，打開網頁即可使用。透過 GitHub Actions 自動部署至 GitHub Pages，每次推送都能即時更新。專案以親子共學為出發點，從基礎介面到互動邏輯逐步擴充，是一個持續演化中的程式練習場，也是父子共同成長的紀錄。',
@@ -629,6 +639,12 @@ const translations = {
     enterprise: 'Enterprise Projects',
     creative: 'Creative Projects',
     freelance: 'Freelance Projects',
+    tool: 'Tools',
+    health: 'Health',
+    family: 'Family',
+    fun: 'Fun',
+    learning: 'Learning',
+    insight: 'Insight',
     tech: 'Technical Projects',
 
     // 語音介紹
@@ -1034,6 +1050,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project28Title: 'Lessons After School',
+    project28Description:
+      '💡 A content project capturing "the things you only learn after leaving school." School teaches knowledge, but life\'s real lessons often only become clear once you step into the workplace and society — observations on work, relationships, society, and self-understanding, collected into a continuously growing notebook of insights. Current content leans toward workplace and social observations, with plans to expand to broader life topics. The project is built on long-term accumulation and slow growth — not chasing quantity, only recording the things truly understood.',
+
     project27Title: 'CubeLab Rubik\'s Cube Lab',
     project27Description:
       '🧊 An interactive Rubik\'s cube playground built together with my kid — a code experiment we explore while playing. Features a rotatable 3D cube and a speedcubing timer, letting users experience cube turning directly in the browser. Built with pure HTML5 + CSS3 + JavaScript: zero dependencies, no build pipeline, just open the page and play. Auto-deployed to GitHub Pages via GitHub Actions, so every push goes live instantly. Designed as a parent-child learning project, it grows iteratively from basic UI to richer interaction logic — a continuously evolving coding playground and a record of growing together.',
