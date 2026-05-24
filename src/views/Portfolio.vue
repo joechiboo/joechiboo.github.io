@@ -24,15 +24,27 @@
             <div class="project-icon">
               <span v-if="project.category === 'web'">🌐</span>
               <span v-else-if="project.category === 'enterprise'">🏢</span>
-              <span v-else-if="project.category === 'creative'">🎨</span>
               <span v-else-if="project.category === 'freelance'">🤝</span>
+              <span v-else-if="project.category === 'tool'">🛠️</span>
+              <span v-else-if="project.category === 'health'">❤️</span>
+              <span v-else-if="project.category === 'family'">👨‍👩‍👧</span>
+              <span v-else-if="project.category === 'fun'">🎮</span>
+              <span v-else-if="project.category === 'learning'">🧠</span>
+              <span v-else-if="project.category === 'insight'">💡</span>
+              <span v-else-if="project.category === 'creative'">🎨</span>
               <span v-else>💻</span>
             </div>
             <div class="project-category">
               <span v-if="project.category === 'web'">{{ t('webDev') }}</span>
               <span v-else-if="project.category === 'enterprise'">{{ t('enterprise') }}</span>
-              <span v-else-if="project.category === 'creative'">{{ t('creative') }}</span>
               <span v-else-if="project.category === 'freelance'">{{ t('freelance') }}</span>
+              <span v-else-if="project.category === 'tool'">{{ t('tool') }}</span>
+              <span v-else-if="project.category === 'health'">{{ t('health') }}</span>
+              <span v-else-if="project.category === 'family'">{{ t('family') }}</span>
+              <span v-else-if="project.category === 'fun'">{{ t('fun') }}</span>
+              <span v-else-if="project.category === 'learning'">{{ t('learning') }}</span>
+              <span v-else-if="project.category === 'insight'">{{ t('insight') }}</span>
+              <span v-else-if="project.category === 'creative'">{{ t('creative') }}</span>
               <span v-else>{{ t('tech') }}</span>
             </div>
           </div>
@@ -125,13 +137,24 @@ const openDemo = (project) => {
 
 const projects = ref([
   {
+    id: 28,
+    titleKey: 'project28Title',
+    descriptionKey: 'project28Description',
+    technologies: ['Content', 'Writing', 'Life Lessons', 'Workplace Insights'],
+    demo: null,
+    github: 'https://github.com/joechiboo/lessons-after-school',
+    category: 'insight',
+    year: '2026',
+    createdAt: '2026-05-24T12:00:00Z',
+  },
+  {
     id: 27,
     titleKey: 'project27Title',
     descriptionKey: 'project27Description',
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'GitHub Pages', 'GitHub Actions'],
     demo: 'https://joechiboo.github.io/CubeLab/',
     github: 'https://github.com/joechiboo/CubeLab',
-    category: 'creative',
+    category: 'family',
     year: '2026',
     createdAt: '2026-05-24T00:00:00Z',
   },
@@ -142,7 +165,7 @@ const projects = ref([
     technologies: ['Python', 'PyTorch', 'OpenCV', 'ONNX Runtime', 'JavaScript', 'face-api.js', 'GitHub Pages'],
     demo: 'https://joechiboo.github.io/RoboEye-/',
     github: 'https://github.com/joechiboo/RoboEye-',
-    category: 'creative',
+    category: 'learning',
     year: '2026',
     createdAt: '2026-04-09T00:00:00Z',
   },
@@ -165,7 +188,7 @@ const projects = ref([
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Mobile Sensors', 'Device Orientation API'],
     demo: 'https://joechiboo.github.io/iBeer/',
     github: 'https://github.com/joechiboo/iBeer',
-    category: 'creative',
+    category: 'fun',
     year: '2026',
     createdAt: '2026-01-29T00:00:00Z',
   },
@@ -176,7 +199,7 @@ const projects = ref([
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Canvas 2D', 'Touch Events API', 'Vibration API'],
     demo: 'https://joechiboo.github.io/finger-roulette/',
     github: 'https://github.com/joechiboo/finger-roulette',
-    category: 'creative',
+    category: 'fun',
     year: '2025',
     createdAt: '2025-12-12T00:00:00Z',
   },
@@ -187,7 +210,7 @@ const projects = ref([
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'CSS Animation'],
     demo: 'https://joechiboo.github.io/Fullscreen-Marquee/',
     github: 'https://github.com/joechiboo/Fullscreen-Marquee',
-    category: 'creative',
+    category: 'tool',
     year: '2025',
     createdAt: '2025-12-03T00:00:00Z',
   },
@@ -198,7 +221,7 @@ const projects = ref([
     technologies: ['Vue 3', 'TypeScript', 'Vite', 'Vue Router 4', 'Pinia', 'Tailwind CSS 4'],
     demo: 'https://joechiboo.github.io/wish-pool/',
     github: 'https://github.com/joechiboo/wish-pool',
-    category: 'creative',
+    category: 'fun',
     year: '2025',
     createdAt: '2025-11-25T00:00:00Z',
   },
@@ -209,7 +232,7 @@ const projects = ref([
     technologies: ['Vue.js 3', 'Vite', 'Chart.js', 'Composition API', 'Responsive Design'],
     demo: 'https://joechiboo.github.io/HomeCalc/',
     github: 'https://github.com/joechiboo/HomeCalc',
-    category: 'creative',
+    category: 'tool',
     year: '2025',
     createdAt: '2025-11-14T00:00:00Z',
   },
@@ -220,7 +243,7 @@ const projects = ref([
     technologies: ['Vue.js', 'Knowledge Management', 'Note-taking', 'Reading Tracker'],
     demo: 'https://joechiboo.github.io/ReadTrack/',
     github: 'https://github.com/joechiboo/ReadTrack',
-    category: 'creative',
+    category: 'tool',
     year: '2025',
     createdAt: '2025-11-14T00:00:00Z',
   },
@@ -231,7 +254,7 @@ const projects = ref([
     technologies: ['Vue.js', 'Web Bluetooth API', 'Gamification', 'Health & Fitness', 'PWA'],
     demo: 'https://joechiboo.github.io/HeartHero/',
     github: 'https://github.com/joechiboo/HeartHero',
-    category: 'creative',
+    category: 'health',
     year: '2025',
     createdAt: '2025-11-11T00:00:00Z',
   },
@@ -254,7 +277,7 @@ const projects = ref([
     technologies: ['Node.js', 'Express', 'Socket.io', 'PostgreSQL', 'Redis', 'Vue.js', 'Flutter'],
     demo: null,
     github: 'https://github.com/joechiboo/kids-time-control',
-    category: 'creative',
+    category: 'family',
     year: '2025',
     createdAt: '2025-10-23T00:00:00Z',
   },
@@ -265,7 +288,7 @@ const projects = ref([
     technologies: ['Vue.js', 'JavaScript', 'CSS3', 'Responsive Design', '教育應用'],
     demo: 'https://joechiboo.github.io/Fast-Trivia/',
     github: 'https://github.com/joechiboo/Fast-Trivia',
-    category: 'creative',
+    category: 'tool',
     year: '2025',
     createdAt: '2025-10-19T00:00:00Z',
   },
@@ -276,7 +299,7 @@ const projects = ref([
     technologies: ['Vue.js', 'JavaScript', 'CSS3', 'GitHub Pages', 'Automation', 'Scheduled Tasks'],
     demo: 'https://joechiboo.github.io/work-progress/',
     github: 'https://github.com/joechiboo/work-progress',
-    category: 'creative',
+    category: 'tool',
     year: '2025',
     createdAt: '2025-10-08T00:00:00Z',
   },
@@ -309,7 +332,7 @@ const projects = ref([
     technologies: ['Vue.js', 'PWA', 'Responsive Design', 'JavaScript', 'CSS3', '健康應用'],
     demo: 'https://joechiboo.github.io/CyclePulse/',
     github: 'https://github.com/joechiboo/CyclePulse',
-    category: 'creative',
+    category: 'health',
     year: '2025',
     createdAt: '2025-09-23T23:13:17Z',
   },
@@ -320,7 +343,7 @@ const projects = ref([
     technologies: ['Vue.js', 'JavaScript', 'CSS3', 'PWA', '健康應用'],
     demo: 'https://joechiboo.github.io/water-tracker/',
     github: 'https://github.com/joechiboo/water-tracker',
-    category: 'creative',
+    category: 'health',
     year: '2025',
     createdAt: '2025-09-22T12:45:00Z',
   },
@@ -331,7 +354,7 @@ const projects = ref([
     technologies: ['Vue.js', 'JavaScript', 'CSS3', 'GitHub Pages', '教育應用'],
     demo: 'https://joechiboo.github.io/CharMon/',
     github: 'https://github.com/joechiboo/CharMon',
-    category: 'creative',
+    category: 'tool',
     year: '2025',
     createdAt: '2025-09-20T07:48:03Z',
   },
@@ -366,7 +389,7 @@ const projects = ref([
     technologies: ['HTML', 'JavaScript', 'CSS3'],
     demo: 'https://joechiboo.github.io/jiayi/',
     github: 'https://github.com/joechiboo/jiayi',
-    category: 'creative',
+    category: 'family',
     year: '2025',
     createdAt: '2025-08-05T01:06:32Z',
   },
