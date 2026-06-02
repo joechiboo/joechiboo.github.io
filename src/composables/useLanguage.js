@@ -411,6 +411,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project29Title: 'GreenKeeper 除草機模擬器',
+    project29Description:
+      '🌱 一個展示自動除草機路徑規劃的網頁模擬器，靈感來自掃地機器人的覆蓋率問題。在正方形院子中模擬除草機的移動軌跡，即時追蹤並視覺化覆蓋率——剪過的草顏色會變淺，讓演算法的效率一目了然。內建多種覆蓋演算法比較（隨機碰撞反彈、規律掃描等）、障礙物配置與分析工具，可直觀比較不同路徑策略的優劣。採用純 HTML5 + CSS3 + JavaScript 開發，零依賴、開啟網頁即可使用，透過 GitHub Actions 自動部署至 GitHub Pages。是一個輕量級的互動式教育專案，展示路徑規劃演算法的實際應用。',
+
     project28Title: 'Lessons After School 出社會該學習的事',
     project28Description:
       '💡 一個記錄職場觀察與人生體悟的內容專案。從日常生活的小場景出發，對照職場上反覆出現的問題，提煉出能帶走的原則。學校教知識，但人生的真相往往在出社會、進職場之後才慢慢看清——目前內容包含「求救的三個層次」、「先彙整再發問」、「講重點」等職場洞察。採用 VitePress 打造，以 Markdown 撰寫，部署於 GitHub Pages。專案以長期累積、緩慢生長為原則，不追求數量，只記錄真正想清楚的事。',
@@ -1050,6 +1054,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project29Title: 'GreenKeeper Lawn Mower Simulator',
+    project29Description:
+      '🌱 A web-based simulator demonstrating robotic lawn mower path planning, inspired by the coverage problem of robot vacuum cleaners. Simulates a mower\'s movement across a square yard while tracking and visualizing coverage in real time — mowed grass fades in color, making algorithm efficiency immediately visible. Features multiple coverage algorithms to compare (random bounce, systematic scanning, etc.), obstacle configuration, and analysis tools for evaluating different path strategies. Built with pure HTML5 + CSS3 + JavaScript: zero dependencies, just open the page and run. Auto-deployed to GitHub Pages via GitHub Actions. A lightweight, interactive educational project showcasing practical applications of path planning algorithms.',
+
     project28Title: 'Lessons After School',
     project28Description:
       '💡 A content project capturing workplace observations and life lessons. Starting from everyday scenarios and contrasting them with recurring workplace problems, it extracts transferable principles. School teaches knowledge, but life\'s real lessons often only become clear once you step into the workplace — current essays include "Three Levels of Asking for Help," "Summarize Before Asking," and "Getting to the Point." Built with VitePress, written in Markdown, deployed on GitHub Pages. The project follows the principle of long-term accumulation and slow growth — not chasing quantity, only recording the things truly understood.',
