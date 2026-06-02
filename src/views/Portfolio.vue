@@ -137,6 +137,17 @@ const openDemo = (project) => {
 
 const projects = ref([
   {
+    id: 29,
+    titleKey: 'project29Title',
+    descriptionKey: 'project29Description',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Path Planning', 'Simulation', 'GitHub Pages', 'GitHub Actions'],
+    demo: 'https://joechiboo.github.io/greenkeeper/',
+    github: 'https://github.com/joechiboo/greenkeeper',
+    category: 'learning',
+    year: '2026',
+    createdAt: '2026-06-02T00:00:00Z',
+  },
+  {
     id: 28,
     titleKey: 'project28Title',
     descriptionKey: 'project28Description',
