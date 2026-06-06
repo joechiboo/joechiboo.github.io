@@ -18,8 +18,44 @@
         <p>{{ t('portfolioSubtitle') }}</p>
       </header>
 
-      <div class="portfolio-grid" :class="gridClass">
-        <div class="project-card" :class="{ compact: isCompact }" v-for="project in projects" :key="project.id" @click="handleCardClick(project)">
+      <div class="portfolio-toolbar">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input
+            v-model="searchQuery"
+            type="text"
+            class="search-input"
+            :placeholder="t('searchPlaceholder')"
+          />
+          <button
+            v-if="searchQuery"
+            class="search-clear"
+            type="button"
+            :aria-label="t('clearSearch')"
+            @click="searchQuery = ''"
+          >
+            ×
+          </button>
+        </div>
+
+        <div class="filter-chips">
+          <button
+            v-for="cat in categoryFilters"
+            :key="cat.value"
+            :class="['filter-chip', { active: activeCategory === cat.value }]"
+            type="button"
+            @click="activeCategory = cat.value"
+          >
+            <span class="chip-icon">{{ cat.icon }}</span>
+            <span class="chip-label">{{ t(cat.labelKey) }}</span>
+          </button>
+        </div>
+      </div>
+
+      <p class="result-count">{{ filteredProjects.length }} {{ t('resultCountUnit') }}</p>
+
+      <div v-if="filteredProjects.length" class="portfolio-grid" :class="gridClass">
+        <div class="project-card" :class="{ compact: isCompact }" v-for="project in filteredProjects" :key="project.id" @click="handleCardClick(project)">
           <div class="project-image" :class="{ 'compact-image': isCompact }">
             <div class="project-icon">
               <span v-if="project.category === 'web'">🌐</span>
@@ -92,6 +128,12 @@
           </div>
         </div>
       </div>
+
+      <div v-else class="no-result">
+        <div class="no-result-icon">🔍</div>
+        <p class="no-result-title">{{ t('searchNoResult') }}</p>
+        <p class="no-result-hint">{{ t('searchNoResultHint') }}</p>
+      </div>
     </div>
   </div>
 </template>
@@ -102,7 +144,7 @@ import { useLanguage } from '../composables/useLanguage.js'
 import { useSEO } from '../composables/useSEO.js'
 import { useTimeDisplay } from '../composables/useTimeDisplay.js'
 
-const { t } = useLanguage()
+const { t, translations } = useLanguage()
 const { getRelativeTimeDisplay } = useTimeDisplay()
 
 // SEO 設定
@@ -125,6 +167,50 @@ const setColumns = (col) => {
   columns.value = col
 }
 
+// 搜尋與類別篩選
+const searchQuery = ref('')
+const activeCategory = ref('all')
+
+const categoryFilters = [
+  { value: 'all', labelKey: 'filterAll', icon: '📂' },
+  { value: 'web', labelKey: 'webDev', icon: '🌐' },
+  { value: 'enterprise', labelKey: 'enterprise', icon: '🏢' },
+  { value: 'creative', labelKey: 'creative', icon: '🎨' },
+  { value: 'freelance', labelKey: 'freelance', icon: '🤝' },
+]
+
+// 從 GitHub / Demo 連結中取出 repo 名稱（例如 finger-roulette）
+const getRepoName = (project) => {
+  const url = project.github || project.demo || ''
+  const match = url.match(/github\.com\/[^/]+\/([^/]+)/i) || url.match(/github\.io\/([^/]+)/i)
+  return match ? match[1] : ''
+}
+
+// 建立可搜尋字串：中英文名稱 + repo 名稱 + 連結
+const getSearchHaystack = (project) => {
+  const zhTitle = translations.zh?.[project.titleKey] || ''
+  const enTitle = translations.en?.[project.titleKey] || ''
+  return [
+    zhTitle,
+    enTitle,
+    getRepoName(project),
+    project.github || '',
+    project.demo || '',
+  ]
+    .join(' ')
+    .toLowerCase()
+}
+
+const filteredProjects = computed(() => {
+  const keyword = searchQuery.value.trim().toLowerCase()
+  return projects.value.filter((project) => {
+    const matchCategory =
+      activeCategory.value === 'all' || project.category === activeCategory.value
+    const matchKeyword = !keyword || getSearchHaystack(project).includes(keyword)
+    return matchCategory && matchKeyword
+  })
+})
+
 const handleCardClick = (project) => {
   if (project.demo) {
     window.open(project.demo, '_blank')
@@ -136,6 +222,17 @@ const openDemo = (project) => {
 }
 
 const projects = ref([
+  {
+    id: 30,
+    titleKey: 'project30Title',
+    descriptionKey: 'project30Description',
+    technologies: ['Vue 3', 'Vite', 'Tailwind CSS', 'Tesseract.js', 'CSV', 'Seeded RNG', 'GitHub Pages'],
+    demo: 'https://joechiboo.github.io/ParkFee/',
+    github: 'https://github.com/joechiboo/ParkFee',
+    category: 'tool',
+    year: '2026',
+    createdAt: '2026-06-06T00:00:00Z',
+  },
   {
     id: 29,
     titleKey: 'project29Title',
@@ -474,7 +571,152 @@ const projects = ref([
 
 .page-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+}
+
+/* 搜尋 + 篩選工具列 */
+.portfolio-toolbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.search-box {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1rem;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 2.75rem;
+  border: 2px solid var(--color-text-secondary);
+  border-radius: 25px;
+  background: var(--bg-white);
+  color: var(--color-text-primary);
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-input::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.7;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+.search-clear {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: var(--bg-lighter);
+  color: var(--color-text-secondary);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.search-clear:hover {
+  background: #007bff;
+  color: white;
+}
+
+.filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.9rem;
+  border: 2px solid var(--color-text-secondary);
+  border-radius: 20px;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-chip:hover {
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.filter-chip.active {
+  background: #007bff;
+  border-color: #007bff;
+  color: white;
+}
+
+[data-theme='dark'] .filter-chip.active {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.chip-icon {
+  font-size: 0.95rem;
+}
+
+.result-count {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+/* 無搜尋結果 */
+.no-result {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: var(--color-text-secondary);
+}
+
+.no-result-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.no-result-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-text-primary);
+}
+
+.no-result-hint {
+  font-size: 0.9rem;
 }
 
 .page-header h1 {
@@ -831,9 +1073,25 @@ const projects = ref([
   left: 100%;
 }
 
+/* 平板/手機：縮小篩選按鈕、避免擠壓 */
+@media (max-width: 768px) {
+  .portfolio-toolbar {
+    margin-bottom: 0.75rem;
+  }
+
+  .filter-chip {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.82rem;
+  }
+}
+
 @media (max-width: 480px) {
   .page-header h1 {
     font-size: 2rem;
+  }
+
+  .page-header {
+    margin-bottom: 1.5rem;
   }
 
   .portfolio-grid {
@@ -846,6 +1104,30 @@ const projects = ref([
 
   .layout-controls {
     display: none;
+  }
+
+  .search-input {
+    font-size: 0.95rem;
+    padding: 0.65rem 2.5rem;
+  }
+
+  /* 手機上類別篩選改為可橫向滑動，維持單行不換行 */
+  .filter-chips {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: 0.25rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .filter-chips::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-chip {
+    flex: 0 0 auto;
   }
 }
 </style>

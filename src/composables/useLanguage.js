@@ -40,6 +40,12 @@ const translations = {
     learning: '學習研究',
     insight: '人生洞察',
     tech: '技術專案',
+    searchPlaceholder: '搜尋作品名稱或 repo...',
+    filterAll: '全部',
+    searchNoResult: '找不到符合的作品',
+    searchNoResultHint: '試試其他關鍵字或切換類別',
+    clearSearch: '清除',
+    resultCountUnit: '個作品',
 
     // 語音介紹
     voiceIntro: '自我介紹',
@@ -411,6 +417,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project30Title: 'ParkFee 社區機車車位管理',
+    project30Description:
+      '🅿️ 一套把社區機車車位管理變成「可重現、可稽核」年度作業的工具，源自樂菲莊園地下停車場管理辦法的真實需求。完整跑通「登記 → 抽籤 → 車位分配 → 繳費 → e-Tag 名單匯出」的最小閉環：分階段配位保障每戶一位、超額公開抽籤＋候補，抽籤採固定亂數種子讓結果可重現、供權責委員監察。內建純前端車牌辨識（Tesseract.js），登記時掃描帶入車號、巡邏拍照比對名冊標記停錯位／佔用／未登記，照片全程在裝置端處理、不上傳。隱私優先設計：v1 只處理戶號＋車號、不存個資。採用 Vue 3 + Vite + Tailwind 開發，無後端、名冊以 CSV 匯入匯出，部署於 GitHub Pages。',
+
     project29Title: 'GreenKeeper 除草機模擬器',
     project29Description:
       '🌱 一個展示自動除草機路徑規劃的網頁模擬器，靈感來自掃地機器人的覆蓋率問題。在正方形院子中模擬除草機的移動軌跡，即時追蹤並視覺化覆蓋率——剪過的草顏色會變淺，讓演算法的效率一目了然。內建多種覆蓋演算法比較（隨機碰撞反彈、規律掃描等）、障礙物配置與分析工具，可直觀比較不同路徑策略的優劣。採用純 HTML5 + CSS3 + JavaScript 開發，零依賴、開啟網頁即可使用，透過 GitHub Actions 自動部署至 GitHub Pages。是一個輕量級的互動式教育專案，展示路徑規劃演算法的實際應用。',
@@ -650,6 +660,12 @@ const translations = {
     learning: 'Learning',
     insight: 'Insight',
     tech: 'Technical Projects',
+    searchPlaceholder: 'Search by name or repo...',
+    filterAll: 'All',
+    searchNoResult: 'No matching projects found',
+    searchNoResultHint: 'Try a different keyword or category',
+    clearSearch: 'Clear',
+    resultCountUnit: 'projects',
 
     // 語音介紹
     voiceIntro: 'Voice Intro',
@@ -1054,6 +1070,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project30Title: 'ParkFee Community Parking Manager',
+    project30Description:
+      '🅿️ A tool that turns community motorcycle parking management into a reproducible, auditable annual workflow, born from the real needs of a residential underground parking lot. It runs the full minimal loop — registration → lottery → space assignment → payment → e-Tag whitelist export. Phased allocation guarantees one space per household, with public lottery and waitlists for overflow; the lottery uses a fixed random seed so results are reproducible and verifiable by oversight committee members. Includes pure front-end license plate recognition (Tesseract.js): scan plates during registration, and during patrols photograph and match against the roster to flag wrong-spot / occupied / unregistered vehicles — all photos processed on-device, never uploaded. Privacy-first by design: v1 handles only household number + plate number, storing no personal data. Built with Vue 3 + Vite + Tailwind, backend-free with CSV import/export, deployed on GitHub Pages.',
+
     project29Title: 'GreenKeeper Lawn Mower Simulator',
     project29Description:
       '🌱 A web-based simulator demonstrating robotic lawn mower path planning, inspired by the coverage problem of robot vacuum cleaners. Simulates a mower\'s movement across a square yard while tracking and visualizing coverage in real time — mowed grass fades in color, making algorithm efficiency immediately visible. Features multiple coverage algorithms to compare (random bounce, systematic scanning, etc.), obstacle configuration, and analysis tools for evaluating different path strategies. Built with pure HTML5 + CSS3 + JavaScript: zero dependencies, just open the page and run. Auto-deployed to GitHub Pages via GitHub Actions. A lightweight, interactive educational project showcasing practical applications of path planning algorithms.',
