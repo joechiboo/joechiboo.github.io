@@ -48,6 +48,7 @@
           >
             <span class="chip-icon">{{ cat.icon }}</span>
             <span class="chip-label">{{ t(cat.labelKey) }}</span>
+            <span class="chip-count">{{ cat.count }}</span>
           </button>
         </div>
       </div>
@@ -58,30 +59,10 @@
         <div class="project-card" :class="{ compact: isCompact }" v-for="project in filteredProjects" :key="project.id" @click="handleCardClick(project)">
           <div class="project-image" :class="{ 'compact-image': isCompact }">
             <div class="project-icon">
-              <span v-if="project.category === 'web'">🌐</span>
-              <span v-else-if="project.category === 'enterprise'">🏢</span>
-              <span v-else-if="project.category === 'freelance'">🤝</span>
-              <span v-else-if="project.category === 'tool'">🛠️</span>
-              <span v-else-if="project.category === 'health'">❤️</span>
-              <span v-else-if="project.category === 'family'">👨‍👩‍👧</span>
-              <span v-else-if="project.category === 'fun'">🎮</span>
-              <span v-else-if="project.category === 'learning'">🧠</span>
-              <span v-else-if="project.category === 'insight'">💡</span>
-              <span v-else-if="project.category === 'creative'">🎨</span>
-              <span v-else>💻</span>
+              <span>{{ getCategoryMeta(project.category).icon }}</span>
             </div>
             <div class="project-category">
-              <span v-if="project.category === 'web'">{{ t('webDev') }}</span>
-              <span v-else-if="project.category === 'enterprise'">{{ t('enterprise') }}</span>
-              <span v-else-if="project.category === 'freelance'">{{ t('freelance') }}</span>
-              <span v-else-if="project.category === 'tool'">{{ t('tool') }}</span>
-              <span v-else-if="project.category === 'health'">{{ t('health') }}</span>
-              <span v-else-if="project.category === 'family'">{{ t('family') }}</span>
-              <span v-else-if="project.category === 'fun'">{{ t('fun') }}</span>
-              <span v-else-if="project.category === 'learning'">{{ t('learning') }}</span>
-              <span v-else-if="project.category === 'insight'">{{ t('insight') }}</span>
-              <span v-else-if="project.category === 'creative'">{{ t('creative') }}</span>
-              <span v-else>{{ t('tech') }}</span>
+              <span>{{ t(getCategoryMeta(project.category).labelKey) }}</span>
             </div>
           </div>
           <div class="project-content">
@@ -171,13 +152,45 @@ const setColumns = (col) => {
 const searchQuery = ref('')
 const activeCategory = ref('all')
 
-const categoryFilters = [
-  { value: 'all', labelKey: 'filterAll', icon: '📂' },
-  { value: 'web', labelKey: 'webDev', icon: '🌐' },
-  { value: 'enterprise', labelKey: 'enterprise', icon: '🏢' },
-  { value: 'creative', labelKey: 'creative', icon: '🎨' },
-  { value: 'freelance', labelKey: 'freelance', icon: '🤝' },
-]
+// 類別中繼資料（單一來源：卡片圖示/標籤與篩選按鈕共用）
+const categoryMeta = {
+  web: { icon: '🌐', labelKey: 'webDev' },
+  enterprise: { icon: '🏢', labelKey: 'enterprise' },
+  freelance: { icon: '🤝', labelKey: 'freelance' },
+  tool: { icon: '🛠️', labelKey: 'tool' },
+  health: { icon: '❤️', labelKey: 'health' },
+  family: { icon: '👨‍👩‍👧', labelKey: 'family' },
+  fun: { icon: '🎮', labelKey: 'fun' },
+  learning: { icon: '🧠', labelKey: 'learning' },
+  insight: { icon: '💡', labelKey: 'insight' },
+  creative: { icon: '🎨', labelKey: 'creative' },
+}
+const DEFAULT_CATEGORY = { icon: '💻', labelKey: 'tech' }
+const getCategoryMeta = (category) => categoryMeta[category] || DEFAULT_CATEGORY
+
+// 依資料中實際存在的類別動態 group by 產生篩選按鈕（含「全部」與各類別數量）
+const categoryFilters = computed(() => {
+  const counts = {}
+  for (const p of projects.value) {
+    counts[p.category] = (counts[p.category] || 0) + 1
+  }
+  const chips = [
+    { value: 'all', labelKey: 'filterAll', icon: '📂', count: projects.value.length },
+  ]
+  // 先依 categoryMeta 的定義順序排列，只保留實際有作品的類別
+  for (const value of Object.keys(categoryMeta)) {
+    if (counts[value]) {
+      chips.push({ value, ...categoryMeta[value], count: counts[value] })
+    }
+  }
+  // 補上 categoryMeta 未定義、但資料中出現的類別
+  for (const value of Object.keys(counts)) {
+    if (value && !categoryMeta[value]) {
+      chips.push({ value, ...DEFAULT_CATEGORY, count: counts[value] })
+    }
+  }
+  return chips
+})
 
 // 從 GitHub / Demo 連結中取出 repo 名稱（例如 finger-roulette）
 const getRepoName = (project) => {
@@ -686,6 +699,21 @@ const projects = ref([
 
 .chip-icon {
   font-size: 0.95rem;
+}
+
+.chip-count {
+  font-size: 0.72rem;
+  font-weight: 600;
+  min-width: 1.1rem;
+  padding: 0 0.3rem;
+  border-radius: 10px;
+  background: var(--bg-lighter);
+  color: var(--color-text-secondary);
+}
+
+.filter-chip.active .chip-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
 }
 
 .result-count {
