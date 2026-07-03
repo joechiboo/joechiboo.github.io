@@ -120,7 +120,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useLanguage } from '../composables/useLanguage.js'
 import { useSEO } from '../composables/useSEO.js'
 import { useTimeDisplay } from '../composables/useTimeDisplay.js'
@@ -216,7 +216,7 @@ const getSearchHaystack = (project) => {
 
 const filteredProjects = computed(() => {
   const keyword = searchQuery.value.trim().toLowerCase()
-  return projects.value.filter((project) => {
+  return sortedProjects.value.filter((project) => {
     const matchCategory =
       activeCategory.value === 'all' || project.category === activeCategory.value
     const matchKeyword = !keyword || getSearchHaystack(project).includes(keyword)
@@ -233,6 +233,41 @@ const handleCardClick = (project) => {
 const openDemo = (project) => {
   window.open(project.demo, '_blank')
 }
+
+// 依 GitHub repo 最後 push 時間排序，沒有 GitHub 的專案排最後
+const repoPushedAt = ref({})
+
+onMounted(async () => {
+  try {
+    const res = await fetch('https://api.github.com/users/joechiboo/repos?per_page=100')
+    if (!res.ok) return
+    const repos = await res.json()
+    const map = {}
+    for (const repo of repos) {
+      map[repo.name.toLowerCase()] = new Date(repo.pushed_at).getTime()
+    }
+    repoPushedAt.value = map
+  } catch {
+    // API 失敗時維持原本順序
+  }
+})
+
+const getGithubPushedAt = (project) => {
+  if (!project.github) return null
+  const repoName = project.github.split('/').filter(Boolean).pop().toLowerCase()
+  return repoPushedAt.value[repoName] ?? null
+}
+
+const sortedProjects = computed(() =>
+  [...projects.value].sort((a, b) => {
+    const ta = getGithubPushedAt(a)
+    const tb = getGithubPushedAt(b)
+    if (ta !== null && tb !== null) return tb - ta
+    if (ta !== null) return -1
+    if (tb !== null) return 1
+    return 0
+  })
+)
 
 const projects = ref([
   {
