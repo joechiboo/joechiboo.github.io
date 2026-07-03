@@ -71,7 +71,7 @@
               <div class="project-meta">
                 <span v-if="project.year" class="project-year">{{ project.year }}</span>
                 <span v-if="project.yearKey" class="project-year">{{ t(project.yearKey) }}</span>
-                <span v-if="project.createdAt && getRelativeTimeDisplay(project.createdAt)" class="project-time">{{ getRelativeTimeDisplay(project.createdAt) }}</span>
+                <span v-if="getUpdatedDisplay(project)" class="project-time">{{ getUpdatedDisplay(project) }}</span>
                 <span v-if="project.companyKey" class="project-company">{{
                   t(project.companyKey)
                 }}</span>
@@ -123,10 +123,8 @@
 import { ref, computed, onMounted } from 'vue'
 import { useLanguage } from '../composables/useLanguage.js'
 import { useSEO } from '../composables/useSEO.js'
-import { useTimeDisplay } from '../composables/useTimeDisplay.js'
 
-const { t, translations } = useLanguage()
-const { getRelativeTimeDisplay } = useTimeDisplay()
+const { t, translations, currentLanguage } = useLanguage()
 
 // SEO 設定
 useSEO({
@@ -256,6 +254,20 @@ const getGithubPushedAt = (project) => {
   if (!project.github) return null
   const repoName = project.github.split('/').filter(Boolean).pop().toLowerCase()
   return repoPushedAt.value[repoName] ?? null
+}
+
+// GitHub 更新時間的相對顯示（例如「3 天前更新」/ "Updated 3 days ago"）
+const getUpdatedDisplay = (project) => {
+  const ts = getGithubPushedAt(project)
+  if (ts === null) return null
+  const locale = currentLanguage.value === 'zh' ? 'zh-TW' : 'en'
+  const rtf = new Intl.RelativeTimeFormat(locale, { numeric: 'auto' })
+  const days = Math.round((ts - Date.now()) / 86400000)
+  let rel
+  if (days > -30) rel = rtf.format(Math.min(days, 0), 'day')
+  else if (days > -365) rel = rtf.format(Math.round(days / 30), 'month')
+  else rel = rtf.format(Math.round(days / 365), 'year')
+  return t('updatedAt').replace('{time}', rel)
 }
 
 const sortedProjects = computed(() =>

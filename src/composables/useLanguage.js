@@ -46,6 +46,7 @@ const translations = {
     searchNoResultHint: '試試其他關鍵字或切換類別',
     clearSearch: '清除',
     resultCountUnit: '個作品',
+    updatedAt: '{time}更新',
 
     // 語音介紹
     voiceIntro: '自我介紹',
@@ -666,6 +667,7 @@ const translations = {
     searchNoResultHint: 'Try a different keyword or category',
     clearSearch: 'Clear',
     resultCountUnit: 'projects',
+    updatedAt: 'Updated {time}',
 
     // 語音介紹
     voiceIntro: 'Voice Intro',
