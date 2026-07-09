@@ -283,6 +283,17 @@ const sortedProjects = computed(() =>
 
 const projects = ref([
   {
+    id: 31,
+    titleKey: 'project31Title',
+    descriptionKey: 'project31Description',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'RWD', 'GitHub Pages'],
+    demo: 'https://joechiboo.github.io/lucky-draw/',
+    github: 'https://github.com/joechiboo/lucky-draw',
+    category: 'tool',
+    year: '2026',
+    createdAt: '2026-07-09T04:25:43Z',
+  },
+  {
     id: 30,
     titleKey: 'project30Title',
     descriptionKey: 'project30Description',

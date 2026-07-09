@@ -418,6 +418,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project31Title: 'Lucky Draw 抽籤工具',
+    project31Description:
+      '🎲 一個簡單好看的抽籤網頁：設定 1–24 之間的起訖區間，按下抽籤即隨機抽出號碼，附滾動數字動畫。支援「不重複模式」——已抽過的號碼不再出現，全部抽完會提示並可一鍵重置，同時顯示本輪已抽出的歷史號碼。行動優先的 RWD 設計，按鈕大、單手可操作，並跟隨系統自動切換深淺色主題。純靜態單檔 index.html（inline CSS/JS），無框架、無 build step，開啟即用，部署於 GitHub Pages。',
+
     project30Title: 'ParkFee 社區機車車位管理',
     project30Description:
       '🅿️ 一套把社區機車車位管理變成「可重現、可稽核」年度作業的工具，源自樂菲莊園地下停車場管理辦法的真實需求。完整跑通「登記 → 抽籤 → 車位分配 → 繳費 → e-Tag 名單匯出」的最小閉環：分階段配位保障每戶一位、超額公開抽籤＋候補，抽籤採固定亂數種子讓結果可重現、供權責委員監察。內建純前端車牌辨識（Tesseract.js），登記時掃描帶入車號、巡邏拍照比對名冊標記停錯位／佔用／未登記，照片全程在裝置端處理、不上傳。隱私優先設計：v1 只處理戶號＋車號、不存個資。採用 Vue 3 + Vite + Tailwind 開發，無後端、名冊以 CSV 匯入匯出，部署於 GitHub Pages。',
@@ -1072,6 +1076,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project31Title: 'Lucky Draw',
+    project31Description:
+      "🎲 A simple, good-looking number draw web app: set a range between 1 and 24, hit the draw button, and a random number is picked with a rolling-number animation. Features a no-repeat mode — drawn numbers won't appear again, with a prompt and one-tap reset once the pool is exhausted — plus a history of numbers drawn this round. Mobile-first responsive design with large, one-hand-friendly buttons, automatically following the system light/dark theme. A single static index.html with inline CSS/JS — no framework, no build step — deployed on GitHub Pages.",
+
     project30Title: 'ParkFee Community Parking Manager',
     project30Description:
       '🅿️ A tool that turns community motorcycle parking management into a reproducible, auditable annual workflow, born from the real needs of a residential underground parking lot. It runs the full minimal loop — registration → lottery → space assignment → payment → e-Tag whitelist export. Phased allocation guarantees one space per household, with public lottery and waitlists for overflow; the lottery uses a fixed random seed so results are reproducible and verifiable by oversight committee members. Includes pure front-end license plate recognition (Tesseract.js): scan plates during registration, and during patrols photograph and match against the roster to flag wrong-spot / occupied / unregistered vehicles — all photos processed on-device, never uploaded. Privacy-first by design: v1 handles only household number + plate number, storing no personal data. Built with Vue 3 + Vite + Tailwind, backend-free with CSV import/export, deployed on GitHub Pages.',
