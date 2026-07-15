@@ -418,6 +418,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project32Title: 'Pickup Board 家庭接送看板',
+    project32Description:
+      '🚸 給家庭用的小孩夏令營／課後活動接送看板，解決「誰送誰接」只存在爸媽腦袋裡的問題，讓爸媽、爺爺奶奶都能一眼看懂今天誰送誰接、幾點、在哪。「今天」頁兩個小孩各一張卡片，顯示活動時間、地點、接送人與備註；「本週」頁提供整週總覽；一鍵產生 LINE 純文字版（今天／明天／本週），複製貼到家庭群組；管理頁支援週幾重複＋起訖日期，不同梯次營隊各建一筆。採用 React 19 + Vite 開發，資料存 localStorage、存取層獨立抽出以便日後換共享後端，部署於 GitHub Pages。',
+
     project31Title: 'Lucky Draw 抽籤工具',
     project31Description:
       '🎲 一個簡單好看的抽籤網頁：設定 1–24 之間的起訖區間，按下抽籤即隨機抽出號碼，附滾動數字動畫。支援「不重複模式」——已抽過的號碼不再出現，全部抽完會提示並可一鍵重置，同時顯示本輪已抽出的歷史號碼。行動優先的 RWD 設計，按鈕大、單手可操作，並跟隨系統自動切換深淺色主題。純靜態單檔 index.html（inline CSS/JS），無框架、無 build step，開啟即用，部署於 GitHub Pages。',
@@ -1076,6 +1080,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project32Title: 'Pickup Board',
+    project32Description:
+      "🚸 A family pickup/drop-off board for kids' summer camps and after-school activities — solving the problem of handoff info living only in parents' heads, so parents and grandparents can see at a glance who drops off, who picks up, when, and where. The Today view shows one card per child with activity time, location, driver, and notes; the Week view gives a full-week overview; one tap generates a plain-text LINE version (today / tomorrow / this week) to paste into the family group chat; the admin view supports weekly recurrence with start/end dates, one entry per camp session. Built with React 19 + Vite, data stored in localStorage with an isolated storage layer ready for a future shared backend, deployed on GitHub Pages.",
+
     project31Title: 'Lucky Draw',
     project31Description:
       "🎲 A simple, good-looking number draw web app: set a range between 1 and 24, hit the draw button, and a random number is picked with a rolling-number animation. Features a no-repeat mode — drawn numbers won't appear again, with a prompt and one-tap reset once the pool is exhausted — plus a history of numbers drawn this round. Mobile-first responsive design with large, one-hand-friendly buttons, automatically following the system light/dark theme. A single static index.html with inline CSS/JS — no framework, no build step — deployed on GitHub Pages.",

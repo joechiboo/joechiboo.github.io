@@ -283,6 +283,17 @@ const sortedProjects = computed(() =>
 
 const projects = ref([
   {
+    id: 32,
+    titleKey: 'project32Title',
+    descriptionKey: 'project32Description',
+    technologies: ['React 19', 'Vite', 'JavaScript', 'localStorage', 'GitHub Pages'],
+    demo: 'https://joechiboo.github.io/pickup-board/',
+    github: 'https://github.com/joechiboo/pickup-board',
+    category: 'tool',
+    year: '2026',
+    createdAt: '2026-07-15T08:46:36Z',
+  },
+  {
     id: 31,
     titleKey: 'project31Title',
     descriptionKey: 'project31Description',
