@@ -418,6 +418,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project33Title: '紅蓮劍姬 - 地城試煉',
+    project33Description:
+      '⚔️ 一款單一 HTML 檔的 2D 俯視角動作遊戲，操控劍士探索地下城。核心強調「打擊感」——命中凍幀（hitstop）、螢幕震動、角色擊退、暴擊數字與劍氣視效，Android 裝置還支援震動回饋。戰鬥採自動索敵三連斬、含無敵幀的衝刺，以及奧義「光之太刀」的時停快斬。成長為 roguelite 設計：擊敗敵人掉落經驗珠升級，死亡不失等級；精英與頭目掉落裝備（劍提升攻擊與範圍、甲提升減傷與血量）。每 5 層出現「地城守衛」、每 10 層出現「深淵稜鏡」，各具獨特攻擊模式。支援觸控搖桿與 WASD/鍵盤雙輸入，畫面依裝置比例響應式縮放。全程 Canvas 程序繪製、零外部依賴，圖形皆為原創（非官方素材，為同人創作），部署於 GitHub Pages。',
+
     project32Title: 'Pickup Board 家庭接送看板',
     project32Description:
       '🚸 給家庭用的小孩夏令營／課後活動接送看板，解決「誰送誰接」只存在爸媽腦袋裡的問題，讓爸媽、爺爺奶奶都能一眼看懂今天誰送誰接、幾點、在哪。「今天」頁兩個小孩各一張卡片，顯示活動時間、地點、接送人與備註；「本週」頁提供整週總覽；一鍵產生 LINE 純文字版（今天／明天／本週），複製貼到家庭群組；管理頁支援週幾重複＋起訖日期，不同梯次營隊各建一筆。採用 React 19 + Vite 開發，資料存 localStorage、存取層獨立抽出以便日後換共享後端，部署於 GitHub Pages。',
@@ -1080,6 +1084,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project33Title: 'Guren Kenki - Dungeon Trials',
+    project33Description:
+      "⚔️ A single-HTML-file 2D top-down action game where you control a swordfighter exploring dungeons. The core focus is on impact feedback — hitstop freeze frames, screen shake, knockback, crit numbers, sword-aura effects, and haptic vibration on Android devices. Combat features auto-targeting three-hit combos, a dash with invincibility frames, and a special ability, \"Blade of Light,\" with time-stop rapid strikes. Progression is roguelite: defeated enemies drop experience orbs for leveling up, and your level is preserved on death; elites and bosses drop gear (swords boost attack and range, armor boosts damage reduction and max HP). A \"Dungeon Guardian\" appears every 5 floors and an \"Abyss Prism\" every 10, each with unique attack patterns. Supports both touch joystick and WASD/keyboard input, with a canvas that scales responsively to device dimensions. Entirely Canvas procedural rendering with zero external dependencies; all graphics are original (an unofficial fan creation, no official assets), deployed on GitHub Pages.",
+
     project32Title: 'Pickup Board',
     project32Description:
       "🚸 A family pickup/drop-off board for kids' summer camps and after-school activities — solving the problem of handoff info living only in parents' heads, so parents and grandparents can see at a glance who drops off, who picks up, when, and where. The Today view shows one card per child with activity time, location, driver, and notes; the Week view gives a full-week overview; one tap generates a plain-text LINE version (today / tomorrow / this week) to paste into the family group chat; the admin view supports weekly recurrence with start/end dates, one entry per camp session. Built with React 19 + Vite, data stored in localStorage with an isolated storage layer ready for a future shared backend, deployed on GitHub Pages.",

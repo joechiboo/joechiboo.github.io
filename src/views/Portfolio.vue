@@ -283,6 +283,17 @@ const sortedProjects = computed(() =>
 
 const projects = ref([
   {
+    id: 33,
+    titleKey: 'project33Title',
+    descriptionKey: 'project33Description',
+    technologies: ['HTML5', 'Canvas 2D', 'JavaScript', 'Vibration API', 'RWD', 'GitHub Pages'],
+    demo: 'https://joechiboo.github.io/gurenkenki/',
+    github: 'https://github.com/joechiboo/gurenkenki',
+    category: 'fun',
+    year: '2026',
+    createdAt: '2026-07-18T00:00:00Z',
+  },
+  {
     id: 32,
     titleKey: 'project32Title',
     descriptionKey: 'project32Description',
