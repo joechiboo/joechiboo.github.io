@@ -446,7 +446,7 @@ const translations = {
     project27Description:
       '🧊 與小朋友一起打造的魔術方塊互動實驗室，邊玩邊學的程式遊樂場。內建可旋轉的 3D 魔術方塊與速解計時器，讓使用者在瀏覽器中直接體驗轉動魔方的樂趣。採用純 HTML5 + CSS3 + JavaScript 開發，零依賴、零建置流程，打開網頁即可使用。透過 GitHub Actions 自動部署至 GitHub Pages，每次推送都能即時更新。專案以親子共學為出發點，從基礎介面到互動邏輯逐步擴充，是一個持續演化中的程式練習場，也是父子共同成長的紀錄。',
 
-    project26Title: 'RoboEye 機器人視覺',
+    project26Title: 'RoboEye CNN 年齡性別辨識',
     project26Description:
       '結合 CNN 卷積神經網路的機器人視覺研究與實作課程專案。透過瀏覽器即時擷取攝影機畫面，進行人臉偵測與年齡、性別預測。內建三種不同精度與效能的模型比較：Caffe（2015 年經典 8 分類器）、MobileNetV2 + DEX（輕量回歸模型，精確預測 0-100 歲）、InsightFace Buffalo_l（高精度大型模型）。所有推論皆在瀏覽器端完成，無需上傳資料至伺服器，兼顧隱私與便利性。提供即時 FPS 與偵測人臉數量等效能指標顯示。',
 
@@ -1112,7 +1112,7 @@ const translations = {
     project27Description:
       '🧊 An interactive Rubik\'s cube playground built together with my kid — a code experiment we explore while playing. Features a rotatable 3D cube and a speedcubing timer, letting users experience cube turning directly in the browser. Built with pure HTML5 + CSS3 + JavaScript: zero dependencies, no build pipeline, just open the page and play. Auto-deployed to GitHub Pages via GitHub Actions, so every push goes live instantly. Designed as a parent-child learning project, it grows iteratively from basic UI to richer interaction logic — a continuously evolving coding playground and a record of growing together.',
 
-    project26Title: 'RoboEye Robot Vision',
+    project26Title: 'RoboEye CNN Age & Gender Recognition',
     project26Description:
       'A course project applying convolutional neural networks (CNN) to robot vision research. Captures live webcam feeds in the browser for real-time face detection with age and gender prediction. Features three models with different accuracy/efficiency tradeoffs: Caffe (classic 2015 8-category classifier), MobileNetV2 + DEX (lightweight regression model for precise 0-100 age prediction), and InsightFace Buffalo_l (high-accuracy large model). All inference runs entirely client-side in the browser — no data uploaded to any server, ensuring privacy. Displays real-time performance metrics including FPS and detected face count.',
 
