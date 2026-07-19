@@ -418,6 +418,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project34Title: 'CoinCare 愛心投幣箱 3D',
+    project34Description:
+      '💛 一款融合遊戲與慈善的 3D 網頁互動體驗——「不管有沒有投準，每一枚硬幣都是愛心」。玩家對著左右 180° 擺動的護士角色投幣：投進杯子累積連擊，沒投準則落入下方愛心捐款箱（一樣算捐獻）。杯子滿 5 枚後護士會傾杯為病人灌水，病人坐起康復；每治癒一位病人，護士擺動速度就加快，形成難度遞進。擺動採正弦速度曲線（兩端慢、中間快），創造自然節奏與技巧深度。採用 Three.js 打造，所有 3D 場景（護士、病床、捐款箱、金幣）皆為純程式化 primitives、無外部模型，搭配 WebAudio API 音效，手機優先直式版面支援觸控／滑鼠／鍵盤三種輸入。純靜態、零依賴，部署於 GitHub Pages。',
+
     project33Title: '紅蓮劍姬 - 地城試煉',
     project33Description:
       '⚔️ 一款單一 HTML 檔的 2D 俯視角動作遊戲，操控劍士探索地下城。核心強調「打擊感」——命中凍幀（hitstop）、螢幕震動、角色擊退、暴擊數字與劍氣視效，Android 裝置還支援震動回饋。戰鬥採自動索敵三連斬、含無敵幀的衝刺，以及奧義「光之太刀」的時停快斬。成長為 roguelite 設計：擊敗敵人掉落經驗珠升級，死亡不失等級；精英與頭目掉落裝備（劍提升攻擊與範圍、甲提升減傷與血量）。每 5 層出現「地城守衛」、每 10 層出現「深淵稜鏡」，各具獨特攻擊模式。支援觸控搖桿與 WASD/鍵盤雙輸入，畫面依裝置比例響應式縮放。全程 Canvas 程序繪製、零外部依賴，圖形皆為原創（非官方素材，為同人創作），部署於 GitHub Pages。',
@@ -1084,6 +1088,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project34Title: 'CoinCare 3D Charity Coin Box',
+    project34Description:
+      "💛 A 3D web experience blending gameplay and charity — \"whether you aim well or not, every coin is an act of kindness.\" Players toss coins at a nurse character swinging 180° left and right: land in her cup to build a combo, or miss and drop into the heart-shaped donation box below (which still counts as a donation). After 5 coins fill the cup, the nurse tips it to give water to a bedridden patient, who sits up and recovers; each healed patient speeds up the nurse's swing, ramping up difficulty. The swing follows a sine-based speed curve (slow at the ends, fast in the middle) for natural rhythm and skill depth. Built with Three.js, all 3D scenery (nurse, sickbed, donation box, coins) is procedurally generated primitives with no external models, paired with WebAudio API sound effects. A mobile-first portrait layout supports touch, mouse, and keyboard input. Fully static and dependency-free, deployed on GitHub Pages.",
+
     project33Title: 'Guren Kenki - Dungeon Trials',
     project33Description:
       "⚔️ A single-HTML-file 2D top-down action game where you control a swordfighter exploring dungeons. The core focus is on impact feedback — hitstop freeze frames, screen shake, knockback, crit numbers, sword-aura effects, and haptic vibration on Android devices. Combat features auto-targeting three-hit combos, a dash with invincibility frames, and a special ability, \"Blade of Light,\" with time-stop rapid strikes. Progression is roguelite: defeated enemies drop experience orbs for leveling up, and your level is preserved on death; elites and bosses drop gear (swords boost attack and range, armor boosts damage reduction and max HP). A \"Dungeon Guardian\" appears every 5 floors and an \"Abyss Prism\" every 10, each with unique attack patterns. Supports both touch joystick and WASD/keyboard input, with a canvas that scales responsively to device dimensions. Entirely Canvas procedural rendering with zero external dependencies; all graphics are original (an unofficial fan creation, no official assets), deployed on GitHub Pages.",

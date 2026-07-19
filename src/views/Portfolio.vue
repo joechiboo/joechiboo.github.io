@@ -287,6 +287,17 @@ const sortedProjects = computed(() =>
 // 想暫時下架某個作品時，在該筆加上 hidden: true 即可（不刪資料，之後移除該旗標就會重新顯示）
 const projects = ref([
   {
+    id: 34,
+    titleKey: 'project34Title',
+    descriptionKey: 'project34Description',
+    technologies: ['Three.js', 'JavaScript', 'ES Modules', 'WebAudio API', 'GitHub Pages'],
+    demo: 'https://joechiboo.github.io/coincare/',
+    github: 'https://github.com/joechiboo/coincare',
+    category: 'fun',
+    year: '2026',
+    createdAt: '2026-07-19T00:00:00Z',
+  },
+  {
     id: 33,
     titleKey: 'project33Title',
     descriptionKey: 'project33Description',
