@@ -166,14 +166,17 @@ const categoryMeta = {
 const DEFAULT_CATEGORY = { icon: '💻', labelKey: 'tech' }
 const getCategoryMeta = (category) => categoryMeta[category] || DEFAULT_CATEGORY
 
+// 只顯示未隱藏的作品（在 project 上設 hidden: true 即可從清單/篩選/計數中移除，資料仍保留可隨時恢復）
+const visibleProjects = computed(() => projects.value.filter((p) => !p.hidden))
+
 // 依資料中實際存在的類別動態 group by 產生篩選按鈕（含「全部」與各類別數量）
 const categoryFilters = computed(() => {
   const counts = {}
-  for (const p of projects.value) {
+  for (const p of visibleProjects.value) {
     counts[p.category] = (counts[p.category] || 0) + 1
   }
   const chips = [
-    { value: 'all', labelKey: 'filterAll', icon: '📂', count: projects.value.length },
+    { value: 'all', labelKey: 'filterAll', icon: '📂', count: visibleProjects.value.length },
   ]
   // 先依 categoryMeta 的定義順序排列，只保留實際有作品的類別
   for (const value of Object.keys(categoryMeta)) {
@@ -271,7 +274,7 @@ const getUpdatedDisplay = (project) => {
 }
 
 const sortedProjects = computed(() =>
-  [...projects.value].sort((a, b) => {
+  [...visibleProjects.value].sort((a, b) => {
     const ta = getGithubPushedAt(a)
     const tb = getGithubPushedAt(b)
     if (ta !== null && tb !== null) return tb - ta
@@ -281,6 +284,7 @@ const sortedProjects = computed(() =>
   })
 )
 
+// 想暫時下架某個作品時，在該筆加上 hidden: true 即可（不刪資料，之後移除該旗標就會重新顯示）
 const projects = ref([
   {
     id: 33,
