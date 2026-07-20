@@ -535,7 +535,7 @@ const translations = {
 
     project5Title: '個人履歷',
     project5Description:
-      '使用 Vue.js 開發的個人作品集網站，展示技術專案、工作經驗和個人資訊。採用響應式設計和現代化UI，並整合語音導覽功能，提供互動式用戶體驗。',
+      '🌐 使用 Vue 3 + Vue Router 打造的個人履歷／作品集網站，也就是你正在瀏覽的這個站。包含首頁、關於我、工作經歷、作品集、生活興趣與聯絡等頁面，支援深色／淺色主題切換與中英文雙語即時切換。作品集頁提供關鍵字搜尋、類別篩選、作品封存，以及依各 repo 的 GitHub 最後更新時間動態排序與顯示；並整合語音導覽、EmailJS 聯絡表單、PWA 離線支援，以及完整 SEO（Open Graph、sitemap、prerender 預渲染）。採響應式設計適配手機與桌面，透過 GitHub Pages 自動部署。',
 
     project4Title: '波爾多社區網站',
     project4Description:
@@ -1207,7 +1207,7 @@ const translations = {
 
     project5Title: 'Personal Portfolio',
     project5Description:
-      'Personal portfolio website developed using Vue.js, showcasing technical projects, work experience, and personal information. Features responsive design and modern UI, integrated with voice navigation for interactive user experience.',
+      "🌐 A personal résumé / portfolio site built with Vue 3 + Vue Router — the very site you are viewing. It includes Home, About, Experience, Portfolio, Leisure, and Contact pages, with dark/light theme switching and instant Chinese/English bilingual toggling. The portfolio page offers keyword search, category filtering, project archiving, and dynamic sorting/labeling by each repo's latest GitHub update time; it also integrates voice narration, an EmailJS contact form, PWA offline support, and full SEO (Open Graph, sitemap, prerendering). Responsive design adapts to mobile and desktop, auto-deployed via GitHub Pages.",
 
     project4Title: 'Bordeaux Community Website',
     project4Description:
