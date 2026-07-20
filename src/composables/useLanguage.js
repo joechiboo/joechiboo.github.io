@@ -46,6 +46,8 @@ const translations = {
     searchNoResultHint: '試試其他關鍵字或切換類別',
     clearSearch: '清除',
     resultCountUnit: '個作品',
+    showArchived: '顯示封存作品',
+    archivedBadge: '封存',
     updatedAt: '{time}更新',
 
     // 語音介紹
@@ -683,6 +685,8 @@ const translations = {
     searchNoResultHint: 'Try a different keyword or category',
     clearSearch: 'Clear',
     resultCountUnit: 'projects',
+    showArchived: 'Show archived',
+    archivedBadge: 'Archived',
     updatedAt: 'Updated {time}',
 
     // 語音介紹
