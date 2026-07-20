@@ -53,7 +53,13 @@
         </div>
       </div>
 
-      <p class="result-count">{{ filteredProjects.length }} {{ t('resultCountUnit') }}</p>
+      <div class="result-bar">
+        <p class="result-count">{{ filteredProjects.length }} {{ t('resultCountUnit') }}</p>
+        <label v-if="hiddenCount > 0" class="show-hidden-toggle">
+          <input v-model="showHidden" type="checkbox" />
+          <span>{{ t('showArchived') }} ({{ hiddenCount }})</span>
+        </label>
+      </div>
 
       <div v-if="filteredProjects.length" class="portfolio-grid" :class="gridClass">
         <div class="project-card" :class="{ compact: isCompact }" v-for="project in filteredProjects" :key="project.id" @click="handleCardClick(project)">
@@ -69,6 +75,7 @@
             <div class="project-header">
               <h3>{{ t(project.titleKey) }}</h3>
               <div class="project-meta">
+                <span v-if="project.hidden" class="project-archived">{{ t('archivedBadge') }}</span>
                 <span v-if="project.year" class="project-year">{{ project.year }}</span>
                 <span v-if="project.yearKey" class="project-year">{{ t(project.yearKey) }}</span>
                 <span v-if="getUpdatedDisplay(project)" class="project-time">{{ getUpdatedDisplay(project) }}</span>
@@ -166,8 +173,15 @@ const categoryMeta = {
 const DEFAULT_CATEGORY = { icon: '💻', labelKey: 'tech' }
 const getCategoryMeta = (category) => categoryMeta[category] || DEFAULT_CATEGORY
 
+// 顯示/隱藏封存作品的開關（預設隱藏；勾選後連同 hidden 作品一起顯示）
+const showHidden = ref(false)
+const hiddenCount = computed(() => projects.value.filter((p) => p.hidden).length)
+
 // 只顯示未隱藏的作品（在 project 上設 hidden: true 即可從清單/篩選/計數中移除，資料仍保留可隨時恢復）
-const visibleProjects = computed(() => projects.value.filter((p) => !p.hidden))
+// 勾選「顯示封存作品」後則顯示全部
+const visibleProjects = computed(() =>
+  showHidden.value ? projects.value : projects.value.filter((p) => !p.hidden)
+)
 
 // 依資料中實際存在的類別動態 group by 產生篩選按鈕（含「全部」與各類別數量）
 const categoryFilters = computed(() => {
@@ -294,6 +308,7 @@ const projects = ref([
     demo: 'https://joechiboo.github.io/coincare/',
     github: 'https://github.com/joechiboo/coincare',
     category: 'fun',
+    hidden: true,
     year: '2026',
     createdAt: '2026-07-19T00:00:00Z',
   },
@@ -382,6 +397,7 @@ const projects = ref([
     demo: 'https://joechiboo.github.io/RoboEye-/',
     github: 'https://github.com/joechiboo/RoboEye-',
     category: 'learning',
+    hidden: true,
     year: '2026',
     createdAt: '2026-04-09T00:00:00Z',
   },
@@ -393,6 +409,7 @@ const projects = ref([
     demo: 'https://joechiboo.github.io/perf-toolkit/',
     github: 'https://github.com/joechiboo/perf-toolkit',
     category: 'enterprise',
+    hidden: true,
     companyKey: 'project25Company',
     year: '2026',
     createdAt: '2026-02-10T00:00:00Z',
@@ -405,6 +422,7 @@ const projects = ref([
     demo: 'https://joechiboo.github.io/iBeer/',
     github: 'https://github.com/joechiboo/iBeer',
     category: 'fun',
+    hidden: true,
     year: '2026',
     createdAt: '2026-01-29T00:00:00Z',
   },
@@ -416,6 +434,7 @@ const projects = ref([
     demo: 'https://joechiboo.github.io/finger-roulette/',
     github: 'https://github.com/joechiboo/finger-roulette',
     category: 'fun',
+    hidden: true,
     year: '2025',
     createdAt: '2025-12-12T00:00:00Z',
   },
@@ -427,6 +446,7 @@ const projects = ref([
     demo: 'https://joechiboo.github.io/Fullscreen-Marquee/',
     github: 'https://github.com/joechiboo/Fullscreen-Marquee',
     category: 'tool',
+    hidden: true,
     year: '2025',
     createdAt: '2025-12-03T00:00:00Z',
   },
@@ -438,6 +458,7 @@ const projects = ref([
     demo: 'https://joechiboo.github.io/wish-pool/',
     github: 'https://github.com/joechiboo/wish-pool',
     category: 'fun',
+    hidden: true,
     year: '2025',
     createdAt: '2025-11-25T00:00:00Z',
   },
@@ -471,6 +492,7 @@ const projects = ref([
     demo: 'https://joechiboo.github.io/HeartHero/',
     github: 'https://github.com/joechiboo/HeartHero',
     category: 'health',
+    hidden: true,
     year: '2025',
     createdAt: '2025-11-11T00:00:00Z',
   },
@@ -482,6 +504,7 @@ const projects = ref([
     demo: 'https://joechiboo.github.io/LiveSheet/',
     github: 'https://github.com/joechiboo/LiveSheet',
     category: 'enterprise',
+    hidden: true,
     companyKey: 'project17Company',
     year: '2025',
     createdAt: '2025-11-06T00:00:00Z',
@@ -505,6 +528,7 @@ const projects = ref([
     demo: 'https://joechiboo.github.io/Fast-Trivia/',
     github: 'https://github.com/joechiboo/Fast-Trivia',
     category: 'tool',
+    hidden: true,
     year: '2025',
     createdAt: '2025-10-19T00:00:00Z',
   },
@@ -527,6 +551,7 @@ const projects = ref([
     demo: 'https://joechiboo.github.io/FridgeMaster',
     github: 'https://github.com/joechiboo/FridgeMaster',
     category: 'freelance',
+    hidden: true,
     year: '2025',
     createdAt: '2025-10-01T00:00:00Z',
   },
@@ -538,6 +563,7 @@ const projects = ref([
     demo: 'https://joechiboo.github.io/Pomodoro/',
     github: 'https://github.com/joechiboo/Pomodoro',
     category: 'freelance',
+    hidden: true,
     year: '2025',
     createdAt: '2025-09-26T11:47:49Z',
   },
@@ -549,6 +575,7 @@ const projects = ref([
     demo: 'https://joechiboo.github.io/CyclePulse/',
     github: 'https://github.com/joechiboo/CyclePulse',
     category: 'health',
+    hidden: true,
     year: '2025',
     createdAt: '2025-09-23T23:13:17Z',
   },
@@ -560,6 +587,7 @@ const projects = ref([
     demo: 'https://joechiboo.github.io/water-tracker/',
     github: 'https://github.com/joechiboo/water-tracker',
     category: 'health',
+    hidden: true,
     year: '2025',
     createdAt: '2025-09-22T12:45:00Z',
   },
@@ -571,6 +599,7 @@ const projects = ref([
     demo: 'https://joechiboo.github.io/CharMon/',
     github: 'https://github.com/joechiboo/CharMon',
     category: 'tool',
+    hidden: true,
     year: '2025',
     createdAt: '2025-09-20T07:48:03Z',
   },
@@ -582,6 +611,7 @@ const projects = ref([
     demo: 'https://joechiboo.github.io/ZebraSite/',
     github: 'https://github.com/joechiboo/ZebraSite',
     category: 'enterprise',
+    hidden: true,
     year: '2025',
     companyKey: 'project8Company',
     createdAt: '2025-08-30T13:52:35Z',
@@ -811,11 +841,33 @@ const projects = ref([
   color: white;
 }
 
+.result-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
 .result-count {
   text-align: center;
   color: var(--color-text-secondary);
   font-size: 0.85rem;
-  margin-bottom: 2rem;
+}
+
+.show-hidden-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.show-hidden-toggle input {
+  cursor: pointer;
 }
 
 /* 無搜尋結果 */
@@ -1073,6 +1125,15 @@ const projects = ref([
   font-size: 0.8rem;
   font-weight: 500;
   text-transform: uppercase;
+}
+
+.project-archived {
+  background: #6b7280;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
 }
 
 .project-content p {
