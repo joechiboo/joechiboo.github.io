@@ -643,7 +643,7 @@ const projects = ref([
     id: 5,
     titleKey: 'project5Title',
     descriptionKey: 'project5Description',
-    technologies: ['Vue.js', 'JavaScript', 'CSS3', 'GitHub Pages', 'Responsive Design'],
+    technologies: ['Vue 3', 'Vue Router 4', 'Vite', 'EmailJS', 'i18n', 'PWA', 'GitHub Pages'],
     demo: window.location.origin,
     github: 'https://github.com/joechiboo/joechiboo.github.io',
     category: 'web',
