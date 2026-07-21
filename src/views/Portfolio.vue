@@ -301,6 +301,17 @@ const sortedProjects = computed(() =>
 // 想暫時下架某個作品時，在該筆加上 hidden: true 即可（不刪資料，之後移除該旗標就會重新顯示）
 const projects = ref([
   {
+    id: 35,
+    titleKey: 'project35Title',
+    descriptionKey: 'project35Description',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'PDF Export', 'LIS/Excel Import', 'GitHub Pages'],
+    demo: 'https://joechiboo.github.io/lab-report-generator/',
+    github: 'https://github.com/joechiboo/lab-report-generator',
+    category: 'enterprise',
+    year: '2026',
+    createdAt: '2026-07-21T00:00:00Z',
+  },
+  {
     id: 34,
     titleKey: 'project34Title',
     descriptionKey: 'project34Description',
