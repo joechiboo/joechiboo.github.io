@@ -420,6 +420,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project35Title: 'Lab Report Generator 檢驗報告產生器',
+    project35Description:
+      '🧪 一款輕量級的醫療檢驗報告產生工具，專為公司檢驗部門設計的內部工具。可手動輸入受檢者資訊與檢驗數據，或直接從 Excel／LIS 系統複製貼上（支援 Tab／逗號分隔）匯入。系統依參考區間自動判讀異常值並以顏色標示（異常紅字加 H/L 前綴、正常藍字），支援複雜參考區間格式（如 150-400、Male: 4.20-6.20、<200、≥13 等），非數值結果自動跳過判讀，並可插入群組標題分類項目。透過瀏覽器列印功能匯出 A4 PDF 報告。強調純前端設計，資料完全在本機處理、不上傳外傳，兼顧隱私與便利。採用純 Vanilla JavaScript + HTML5 + CSS3 開發，零外部依賴，部署於 GitHub Pages。',
+
     project34Title: 'CoinCare 愛心投幣箱 3D',
     project34Description:
       '💛 一款融合遊戲與慈善的 3D 網頁互動體驗——「不管有沒有投準，每一枚硬幣都是愛心」。玩家對著左右 180° 擺動的護士角色投幣：投進杯子累積連擊，沒投準則落入下方愛心捐款箱（一樣算捐獻）。杯子滿 5 枚後護士會傾杯為病人灌水，病人坐起康復；每治癒一位病人，護士擺動速度就加快，形成難度遞進。擺動採正弦速度曲線（兩端慢、中間快），創造自然節奏與技巧深度。採用 Three.js 打造，所有 3D 場景（護士、病床、捐款箱、金幣）皆為純程式化 primitives、無外部模型，搭配 WebAudio API 音效，手機優先直式版面支援觸控／滑鼠／鍵盤三種輸入。純靜態、零依賴，部署於 GitHub Pages。',
@@ -1092,6 +1096,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project35Title: 'Lab Report Generator',
+    project35Description:
+      "🧪 A lightweight medical lab report generator — an internal tool built for a company's clinical testing department. Users can manually enter subject information and test data, or import directly by copy-pasting from Excel or a LIS system (tab/comma separated). The system automatically flags out-of-range values against reference intervals with color coding (abnormal in red with H/L prefixes, normal in blue), supports complex reference-interval formats (e.g., 150-400, Male: 4.20-6.20, <200, ≥13), skips interpretation for non-numeric results, and allows group headers to categorize items. A4 PDF reports are exported via the browser's print function. It emphasizes a pure front-end design — all data is processed locally, never uploaded or transmitted — balancing privacy and convenience. Built with pure Vanilla JavaScript + HTML5 + CSS3, zero external dependencies, deployed on GitHub Pages.",
+
     project34Title: 'CoinCare 3D Charity Coin Box',
     project34Description:
       "💛 A 3D web experience blending gameplay and charity — \"whether you aim well or not, every coin is an act of kindness.\" Players toss coins at a nurse character swinging 180° left and right: land in her cup to build a combo, or miss and drop into the heart-shaped donation box below (which still counts as a donation). After 5 coins fill the cup, the nurse tips it to give water to a bedridden patient, who sits up and recovers; each healed patient speeds up the nurse's swing, ramping up difficulty. The swing follows a sine-based speed curve (slow at the ends, fast in the middle) for natural rhythm and skill depth. Built with Three.js, all 3D scenery (nurse, sickbed, donation box, coins) is procedurally generated primitives with no external models, paired with WebAudio API sound effects. A mobile-first portrait layout supports touch, mouse, and keyboard input. Fully static and dependency-free, deployed on GitHub Pages.",
