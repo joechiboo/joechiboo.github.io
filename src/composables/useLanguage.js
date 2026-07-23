@@ -420,6 +420,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project36Title: 'TempoKid 兒童節拍訓練',
+    project36Description:
+      '🥁 一款專為兒童設計的節拍穩定度訓練遊戲，幫助小朋友透過互動練習培養音樂節奏感。玩法簡單：先選擇節拍速度（建議從 80 BPM 開始），聽完 4 拍導入段落後跟著節拍點擊按鈕，系統即時回饋準確度——準確率達 80% 以上就可以挑戰更快的速度。名稱結合 Tempo（節拍）與 Kid（小孩），直指其為兒童節奏訓練工具的定位。採用純前端 HTML + JavaScript 開發，以 Web Audio API 產生節拍音並偵測點擊準確度，無框架、無 build 流程、單一 HTML 檔即可執行，適配手機與平板瀏覽器，部署於 GitHub Pages。',
+
     project35Title: 'Lab Report Generator 檢驗報告產生器',
     project35Description:
       '🧪 一款輕量級的醫療檢驗報告產生工具，專為公司檢驗部門設計的內部工具。可手動輸入受檢者資訊與檢驗數據，或直接從 Excel／LIS 系統複製貼上（支援 Tab／逗號分隔）匯入。系統依參考區間自動判讀異常值並以顏色標示（異常紅字加 H/L 前綴、正常藍字），支援複雜參考區間格式（如 150-400、Male: 4.20-6.20、<200、≥13 等），非數值結果自動跳過判讀，並可插入群組標題分類項目。透過瀏覽器列印功能匯出 A4 PDF 報告。強調純前端設計，資料完全在本機處理、不上傳外傳，兼顧隱私與便利。採用純 Vanilla JavaScript + HTML5 + CSS3 開發，零外部依賴，部署於 GitHub Pages。',
@@ -1096,6 +1100,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project36Title: 'TempoKid Rhythm Trainer for Kids',
+    project36Description:
+      "🥁 A beat-stability training game designed for children, helping kids build a sense of musical rhythm through interactive practice. The gameplay is simple: pick a tempo (starting around 80 BPM is recommended), listen to a 4-beat intro, then tap along to the beat while the system gives real-time accuracy feedback — hit 80%+ accuracy and you can try a faster tempo. The name combines \"Tempo\" and \"Kid,\" pointing to its role as a rhythm-training tool for children. Built with pure front-end HTML + JavaScript, using the Web Audio API to generate beats and measure tap accuracy — no framework, no build step, a single HTML file that runs on mobile and tablet browsers, deployed on GitHub Pages.",
+
     project35Title: 'Lab Report Generator',
     project35Description:
       "🧪 A lightweight medical lab report generator — an internal tool built for a company's clinical testing department. Users can manually enter subject information and test data, or import directly by copy-pasting from Excel or a LIS system (tab/comma separated). The system automatically flags out-of-range values against reference intervals with color coding (abnormal in red with H/L prefixes, normal in blue), supports complex reference-interval formats (e.g., 150-400, Male: 4.20-6.20, <200, ≥13), skips interpretation for non-numeric results, and allows group headers to categorize items. A4 PDF reports are exported via the browser's print function. It emphasizes a pure front-end design — all data is processed locally, never uploaded or transmitted — balancing privacy and convenience. Built with pure Vanilla JavaScript + HTML5 + CSS3, zero external dependencies, deployed on GitHub Pages.",
