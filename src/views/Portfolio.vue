@@ -308,6 +308,7 @@ const projects = ref([
     demo: 'https://joechiboo.github.io/yeshi-pinball/',
     github: 'https://github.com/joechiboo/yeshi-pinball',
     category: 'fun',
+    hidden: true,
     year: '2026',
     createdAt: '2026-07-27T00:00:00Z',
   },
