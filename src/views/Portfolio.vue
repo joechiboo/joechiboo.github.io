@@ -301,6 +301,17 @@ const sortedProjects = computed(() =>
 // 想暫時下架某個作品時，在該筆加上 hidden: true 即可（不刪資料，之後移除該旗標就會重新顯示）
 const projects = ref([
   {
+    id: 37,
+    titleKey: 'project37Title',
+    descriptionKey: 'project37Description',
+    technologies: ['Phaser 3', 'Matter.js', 'HTML5', 'JavaScript', 'GitHub Pages'],
+    demo: 'https://joechiboo.github.io/yeshi-pinball/',
+    github: 'https://github.com/joechiboo/yeshi-pinball',
+    category: 'fun',
+    year: '2026',
+    createdAt: '2026-07-27T00:00:00Z',
+  },
+  {
     id: 36,
     titleKey: 'project36Title',
     descriptionKey: 'project36Description',

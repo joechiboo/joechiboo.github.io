@@ -420,6 +420,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project37Title: '夜市彈珠 Yeshi Pinball',
+    project37Description:
+      '🎯 一款台灣夜市風格的彈珠台網頁遊戲。玩家按住滑鼠或空白鍵蓄積能量，彈珠沿右側發射道上升、經頂部圓弧軌道進入釘子區——力量不足會滑回發射道，力道拿捏正是趣味所在。每局 10 顆球，落入底部不同格子得分。採用 Phaser 3 遊戲框架搭配 Matter 物理引擎處理碰撞與動力學，所有邏輯集中在單一 HTML 檔，可自由調整發射力道、彈性、釘子密度、球數與得分配置。無需編譯打包，直接開啟即玩，部署於 GitHub Pages。',
+
     project36Title: 'TempoKid 兒童節拍訓練',
     project36Description:
       '🥁 一款專為兒童設計的節拍穩定度訓練遊戲，幫助小朋友透過互動練習培養音樂節奏感。玩法簡單：先選擇節拍速度（建議從 80 BPM 開始），聽完 4 拍導入段落後跟著節拍點擊按鈕，系統即時回饋準確度——準確率達 80% 以上就可以挑戰更快的速度。名稱結合 Tempo（節拍）與 Kid（小孩），直指其為兒童節奏訓練工具的定位。採用純前端 HTML + JavaScript 開發，以 Web Audio API 產生節拍音並偵測點擊準確度，無框架、無 build 流程、單一 HTML 檔即可執行，適配手機與平板瀏覽器，部署於 GitHub Pages。',
@@ -1100,6 +1104,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project37Title: 'Yeshi Pinball',
+    project37Description:
+      "🎯 A Taiwan night-market-style pinball web game. Players hold the mouse or spacebar to charge power, launching a ball up the right-side rail and through a curved top track into the pin field — too little power and it slides back down, so nailing the launch strength is the fun. Each round has 10 balls, scoring by which bottom slot they land in. Built with the Phaser 3 game framework and the Matter physics engine for collision and dynamics, with all logic in a single HTML file — launch power, bounciness, pin density, ball count, and score layout are all tunable. No build step, just open and play, deployed on GitHub Pages.",
+
     project36Title: 'TempoKid Rhythm Trainer for Kids',
     project36Description:
       "🥁 A beat-stability training game designed for children, helping kids build a sense of musical rhythm through interactive practice. The gameplay is simple: pick a tempo (starting around 80 BPM is recommended), listen to a 4-beat intro, then tap along to the beat while the system gives real-time accuracy feedback — hit 80%+ accuracy and you can try a faster tempo. The name combines \"Tempo\" and \"Kid,\" pointing to its role as a rhythm-training tool for children. Built with pure front-end HTML + JavaScript, using the Web Audio API to generate beats and measure tap accuracy — no framework, no build step, a single HTML file that runs on mobile and tablet browsers, deployed on GitHub Pages.",
