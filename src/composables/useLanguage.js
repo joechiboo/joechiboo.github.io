@@ -420,6 +420,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project38Title: 'Bard Comics 莎士比亞漫畫',
+    project38Description:
+      '🎨 將經典莎士比亞文學轉化為漫畫的創意專案，理念是「小說大家不愛看，但故事本身不該被埋沒」，首部作品改編《馬克白》。核心是一條自動化生圖管線：以 JSON 撰寫分鏡，透過 OpenAI gpt-image-1 生成畫格，再用 Pillow 排版對白、合成完整漫畫頁面。內建基於 prompt 雜湊的智能快取——修改對白時無需重新生圖，節省成本；並透過 prompt 中固定的角色特徵 token（如女巫甲的獨眼）維持角色一致性。採用 Python 開發。',
+
     project37Title: '夜市彈珠 Yeshi Pinball',
     project37Description:
       '🎯 一款台灣夜市風格的彈珠台網頁遊戲。玩家按住滑鼠或空白鍵蓄積能量，彈珠沿右側發射道上升、經頂部圓弧軌道進入釘子區——力量不足會滑回發射道，力道拿捏正是趣味所在。每局 10 顆球，落入底部不同格子得分。採用 Phaser 3 遊戲框架搭配 Matter 物理引擎處理碰撞與動力學，所有邏輯集中在單一 HTML 檔，可自由調整發射力道、彈性、釘子密度、球數與得分配置。無需編譯打包，直接開啟即玩，部署於 GitHub Pages。',
@@ -1104,6 +1108,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project38Title: 'Bard Comics',
+    project38Description:
+      "🎨 A creative project turning classic Shakespeare literature into comics — on the belief that \"novel readership is declining, but the stories themselves deserve to be preserved\" — with its first work adapting Macbeth. At its core is an automated image-generation pipeline: storyboards are written in JSON, frames are generated via OpenAI's gpt-image-1, then Pillow lays out dialogue and composites full comic pages. It includes a prompt-hash-based smart cache — editing dialogue doesn't require regenerating images, saving cost — and maintains character consistency through fixed character-trait tokens in the prompts (such as the first witch's single eye). Built with Python.",
+
     project37Title: 'Yeshi Pinball',
     project37Description:
       "🎯 A Taiwan night-market-style pinball web game. Players hold the mouse or spacebar to charge power, launching a ball up the right-side rail and through a curved top track into the pin field — too little power and it slides back down, so nailing the launch strength is the fun. Each round has 10 balls, scoring by which bottom slot they land in. Built with the Phaser 3 game framework and the Matter physics engine for collision and dynamics, with all logic in a single HTML file — launch power, bounciness, pin density, ball count, and score layout are all tunable. No build step, just open and play, deployed on GitHub Pages.",

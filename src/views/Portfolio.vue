@@ -301,6 +301,17 @@ const sortedProjects = computed(() =>
 // 想暫時下架某個作品時，在該筆加上 hidden: true 即可（不刪資料，之後移除該旗標就會重新顯示）
 const projects = ref([
   {
+    id: 38,
+    titleKey: 'project38Title',
+    descriptionKey: 'project38Description',
+    technologies: ['Python', 'OpenAI API', 'gpt-image-1', 'Pillow', 'JSON'],
+    demo: null,
+    github: 'https://github.com/joechiboo/bard-comics',
+    category: 'creative',
+    year: '2026',
+    createdAt: '2026-07-30T00:00:00Z',
+  },
+  {
     id: 37,
     titleKey: 'project37Title',
     descriptionKey: 'project37Description',
