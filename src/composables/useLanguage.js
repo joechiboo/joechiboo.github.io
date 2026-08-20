@@ -48,6 +48,8 @@ const translations = {
     resultCountUnit: '個作品',
     showArchived: '顯示封存作品',
     archivedBadge: '封存',
+    newSiteAfter: '新站 After',
+    oldSiteBefore: '舊站 Before',
     updatedAt: '{time}更新',
 
     // 語音介紹
@@ -420,6 +422,11 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project39Title: '汎達國際物流官網改版',
+    project39Description:
+      '🚢 承接汎達國際物流（Founder Air & Sea Cargo，1968 年創立）的官網改版外包案。以既有舊站為 input 重新梳理資訊架構與視覺設計，呈現空運、海運、進口、物流、專案貨五大服務與台灣＋中國辦公室網絡、歐美日核心航線等公司資訊，並新增線上報價流程，讓潛在客戶能直接在網站發起詢價。新站以 Vue 3 + Vite 打造，採響應式設計適配手機與桌面，搭配 Noto Sans TC 與 Inter 字體優化中英文閱讀體驗。卡片上提供新舊站連結，可直接對照改版前後（Before / After）的差異。原始碼為私有專案。',
+    project39Client: '汎達國際物流',
+
     project38Title: 'Bard Comics 莎士比亞漫畫',
     project38Description:
       '🎨 將經典莎士比亞文學轉化為漫畫的創意專案，理念是「小說大家不愛看，但故事本身不該被埋沒」，首部作品改編《馬克白》。核心是一條自動化生圖管線：以 JSON 撰寫分鏡，透過 OpenAI gpt-image-1 生成畫格，再用 Pillow 排版對白、合成完整漫畫頁面。內建基於 prompt 雜湊的智能快取——修改對白時無需重新生圖，節省成本；並透過 prompt 中固定的角色特徵 token（如女巫甲的獨眼）維持角色一致性。採用 Python 開發。',
@@ -703,6 +710,8 @@ const translations = {
     resultCountUnit: 'projects',
     showArchived: 'Show archived',
     archivedBadge: 'Archived',
+    newSiteAfter: 'After',
+    oldSiteBefore: 'Before',
     updatedAt: 'Updated {time}',
 
     // 語音介紹
@@ -1108,6 +1117,11 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project39Title: 'Founder Cargo Website Revamp',
+    project39Description:
+      '🚢 A freelance website revamp for Founder Air & Sea Cargo (est. 1968), an international logistics company. Using the legacy site as input, the information architecture and visual design were rebuilt from the ground up — presenting the five core services (air freight, sea freight, import, logistics, and project cargo), the Taiwan + China office network, and key Europe/US/Japan trade lanes — plus a new online quotation flow so prospective customers can request quotes directly on the site. The new site is built with Vue 3 + Vite, responsive across mobile and desktop, with Noto Sans TC and Inter fonts for refined bilingual typography. The card links to both the old and new sites for a direct Before / After comparison. Source code is private.',
+    project39Client: 'Founder Cargo',
+
     project38Title: 'Bard Comics',
     project38Description:
       "🎨 A creative project turning classic Shakespeare literature into comics — on the belief that \"novel readership is declining, but the stories themselves deserve to be preserved\" — with its first work adapting Macbeth. At its core is an automated image-generation pipeline: storyboards are written in JSON, frames are generated via OpenAI's gpt-image-1, then Pillow lays out dialogue and composites full comic pages. It includes a prompt-hash-based smart cache — editing dialogue doesn't require regenerating images, saving cost — and maintains character consistency through fixed character-trait tokens in the prompts (such as the first witch's single eye). Built with Python.",
