@@ -716,7 +716,7 @@ const translations = {
 
     // 語音介紹內容
     introText:
-      'I am Ji, Po-Chiao, a software engineer with fifteen years of .NET development experience. I currently work as IT Director at Ta-An Medical Laboratory and hold a part-time master's degree in Information Science from Taipei University of Education. I worked in Shanghai for many years, accumulating over 20,000 hours of professional development experience, specializing in web technology integration and applications. This website showcases my professional background and creative content. Please feel free to contact me if you have any questions!',
+      'I am Ji, Po-Chiao, a software engineer with fifteen years of .NET development experience. I currently work as IT Director at Ta-An Medical Laboratory and hold a part-time Master of Information Science degree from Taipei University of Education. I worked in Shanghai for many years, accumulating over 20,000 hours of professional development experience, specializing in web technology integration and applications. This website showcases my professional background and creative content. Please feel free to contact me if you have any questions!',
 
     // 導覽說明
     jumpToExperience: 'Jump to Experience',
