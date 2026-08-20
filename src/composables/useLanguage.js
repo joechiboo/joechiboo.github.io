@@ -424,7 +424,7 @@ const translations = {
     // 作品集專案內容
     project39Title: '汎達國際物流官網改版',
     project39Description:
-      '🚢 承接汎達國際物流（Founder Air & Sea Cargo，1968 年創立）的官網改版外包案。以既有舊站為 input 重新梳理資訊架構與視覺設計，呈現空運、海運、進口、物流、專案貨五大服務與台灣＋中國辦公室網絡、歐美日核心航線等公司資訊，並新增線上報價流程，讓潛在客戶能直接在網站發起詢價。新站以 Vue 3 + Vite 打造，採響應式設計適配手機與桌面，搭配 Noto Sans TC 與 Inter 字體優化中英文閱讀體驗。卡片上提供新舊站連結，可直接對照改版前後（Before / After）的差異。原始碼為私有專案。',
+      '🚢 為汎達國際物流（Founder Air & Sea Cargo，1968 年創立）打造的官網重建 Demo 雛型，是一次接外包的嘗試。以舊站完整盤點為 input 重新梳理資訊架構與視覺設計，涵蓋首頁、關於、空運／海運／進口／物流／專案貨五大服務頁、全球網絡（台灣＋中國辦公室地圖、歐美日核心航線）、合作夥伴（Emons、Heppner、TKK）、最新消息（運價／市場／海關／ICS2）與聯絡詢價表單。以 Vue 3 + Vite + Vue Router 打造，vue-i18n 支援繁中／英文／簡中三語，響應式設計適配手機與桌面。卡片提供新舊站連結，可直接對照重建前後（Before / After）的差異。原始碼為私有專案。',
     project39Client: '汎達國際物流',
 
     project38Title: 'Bard Comics 莎士比亞漫畫',
@@ -1119,7 +1119,7 @@ const translations = {
     // Portfolio Project Content
     project39Title: 'Founder Cargo Website Revamp',
     project39Description:
-      '🚢 A freelance website revamp for Founder Air & Sea Cargo (est. 1968), an international logistics company. Using the legacy site as input, the information architecture and visual design were rebuilt from the ground up — presenting the five core services (air freight, sea freight, import, logistics, and project cargo), the Taiwan + China office network, and key Europe/US/Japan trade lanes — plus a new online quotation flow so prospective customers can request quotes directly on the site. The new site is built with Vue 3 + Vite, responsive across mobile and desktop, with Noto Sans TC and Inter fonts for refined bilingual typography. The card links to both the old and new sites for a direct Before / After comparison. Source code is private.',
+      "🚢 A website-rebuild demo prototype for Founder Air & Sea Cargo (est. 1968), an international logistics company — a venture into freelance work. Using a full audit of the legacy site as input, the information architecture and visual design were rebuilt from the ground up, covering Home, About, five service pages (air freight, sea freight, import, logistics, project cargo), a global network section (Taiwan + China office map, key Europe/US/Japan trade lanes), partners (Emons, Heppner, TKK), news (freight rates / market / customs / ICS2), and a contact inquiry form. Built with Vue 3 + Vite + Vue Router, with vue-i18n supporting Traditional Chinese, English, and Simplified Chinese, responsive across mobile and desktop. The card links to both the old and new sites for a direct Before / After comparison. Source code is private.",
     project39Client: 'Founder Cargo',
 
     project38Title: 'Bard Comics',
