@@ -246,7 +246,7 @@ const translations = {
     edu1School: '國立臺北教育大學',
     edu1Period: '2024年 - 2026年',
     edu1Description:
-      '主修軟體工程、人工智慧等核心課程，論文方向：用少量的檢驗項目預測其他項目的檢驗值',
+      '主修軟體工程、人工智慧等核心課程，論文題目：《血液檢查之三高疾病風險預測：一個經驗性比較研究》',
 
     edu2Degree: '資訊工程學士',
     edu2School: '國立臺北科技大學',
@@ -931,7 +931,7 @@ const translations = {
     edu1School: 'National Taipei University of Education',
     edu1Period: '2024 - 2026',
     edu1Description:
-      'Major in Software Engineering, Artificial Intelligence and other core courses. Thesis direction: Predicting other test values using a small number of test items',
+      'Major in Software Engineering, Artificial Intelligence and other core courses. Thesis: "Risk Prediction of the Three Highs (Hypertension, Hyperglycemia, Hyperlipidemia) from Blood Tests: An Empirical Comparative Study"',
 
     edu2Degree: 'Bachelor of Information Engineering',
     edu2School: 'National Taipei University of Technology',
