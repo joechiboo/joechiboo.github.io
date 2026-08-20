@@ -6,10 +6,10 @@ export function useSEO(meta = {}) {
     description: 'Joe Chi-Boo 個人履歷網站 - 軟體工程師 & 資訊室主任。擁有15年.NET開發經驗，專精於全端開發與團隊管理。',
     keywords: 'Joe Chi-Boo, 軟體工程師, .NET, 全端開發, 資訊室主任, 履歷',
     ogTitle: 'Joe Chi-Boo - 軟體工程師 & 資訊室主任',
-    ogDescription: '擁有15年.NET開發經驗，專精於全端開發與團隊管理。目前擔任資訊室主任，持續進修資訊科學碩士學位。',
+    ogDescription: '擁有15年.NET開發經驗，專精於全端開發與團隊管理。目前擔任資訊室主任，並取得資訊科學碩士學位。',
     ogImage: 'https://joechiboo.github.io/img/joechiboo.png',
     twitterTitle: 'Joe Chi-Boo - 軟體工程師 & 資訊室主任',
-    twitterDescription: '擁有15年.NET開發經驗，專精於全端開發與團隊管理。目前擔任資訊室主任，持續進修資訊科學碩士學位。'
+    twitterDescription: '擁有15年.NET開發經驗，專精於全端開發與團隊管理。目前擔任資訊室主任，並取得資訊科學碩士學位。'
   }
 
   const finalMeta = { ...defaultMeta, ...meta }
