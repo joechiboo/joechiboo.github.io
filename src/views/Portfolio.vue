@@ -101,7 +101,16 @@
                 target="_blank"
                 @click.stop="openDemo(project)"
               >
-                {{ project.id === 5 ? t('thisWebsite') : t('demo') }}
+                {{ project.id === 5 ? t('thisWebsite') : project.oldSite ? t('newSiteAfter') : t('demo') }}
+              </a>
+              <a
+                v-if="project.oldSite"
+                :href="project.oldSite"
+                class="btn btn-outline"
+                target="_blank"
+                @click.stop
+              >
+                {{ t('oldSiteBefore') }}
               </a>
               <a
                 v-if="project.github"
@@ -273,6 +282,13 @@ const getGithubPushedAt = (project) => {
   return repoPushedAt.value[repoName] ?? null
 }
 
+// 排序用時間：優先 GitHub 最後 push 時間；沒有 GitHub 的專案（如私有外包案）退回 createdAt
+const getSortTimestamp = (project) => {
+  const ts = getGithubPushedAt(project)
+  if (ts !== null) return ts
+  return project.createdAt ? new Date(project.createdAt).getTime() : null
+}
+
 // GitHub 更新時間的相對顯示（例如「3 天前更新」/ "Updated 3 days ago"）
 const getUpdatedDisplay = (project) => {
   const ts = getGithubPushedAt(project)
@@ -289,8 +305,8 @@ const getUpdatedDisplay = (project) => {
 
 const sortedProjects = computed(() =>
   [...visibleProjects.value].sort((a, b) => {
-    const ta = getGithubPushedAt(a)
-    const tb = getGithubPushedAt(b)
+    const ta = getSortTimestamp(a)
+    const tb = getSortTimestamp(b)
     if (ta !== null && tb !== null) return tb - ta
     if (ta !== null) return -1
     if (tb !== null) return 1
@@ -300,6 +316,19 @@ const sortedProjects = computed(() =>
 
 // 想暫時下架某個作品時，在該筆加上 hidden: true 即可（不刪資料，之後移除該旗標就會重新顯示）
 const projects = ref([
+  {
+    id: 39,
+    titleKey: 'project39Title',
+    descriptionKey: 'project39Description',
+    technologies: ['Vue 3', 'Vite', 'JavaScript', 'CSS3', 'RWD', 'Google Fonts'],
+    demo: 'https://www.foundercargo.taipeigolf.org.tw/',
+    oldSite: 'http://www.foundercargo.com.tw/index.php?lang=tw',
+    github: null,
+    category: 'freelance',
+    clientKey: 'project39Client',
+    year: '2026',
+    createdAt: '2026-08-20T00:00:00Z',
+  },
   {
     id: 38,
     titleKey: 'project38Title',
