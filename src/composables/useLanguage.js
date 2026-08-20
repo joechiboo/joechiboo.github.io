@@ -61,19 +61,19 @@ const translations = {
 
     // 語音介紹內容
     introText:
-      '我是紀伯喬，一位擁有十五年dot NET開發經驗的軟體工程師。目前任職於大安聯合醫事檢驗所，擔任資訊室主任，並於臺北教育大學資訊科學系在職專班進修中。我曾在上海工作多年，累積超過兩萬小時的專業開發實戰經驗，擅長網頁技術整合與應用。這個網站整理了我的專業背景與創作內容，如果有任何問題，歡迎隨時聯繫我！',
+      '我是紀伯喬，一位擁有十五年dot NET開發經驗的軟體工程師。目前任職於大安聯合醫事檢驗所，擔任資訊室主任，並取得臺北教育大學資訊科學系在職專班碩士學位。我曾在上海工作多年，累積超過兩萬小時的專業開發實戰經驗，擅長網頁技術整合與應用。這個網站整理了我的專業背景與創作內容，如果有任何問題，歡迎隨時聯繫我！',
 
     // 導覽說明
     jumpToExperience: '跳轉工作經歷',
     currentPosition: '目前職務介紹',
-    continuingEducation: '在職專班進修中',
+    continuingEducation: '資訊科學碩士',
     shanghaExperience: '上海TutorABC經歷',
     jumpToContact: '跳轉聯絡頁面',
     scrollToTop: '滑動到頂部',
 
     // 首頁內容
     name: 'Joe, Chi-Boo',
-    jobTitle: '軟體工程師 & 在職專班就讀中 & 執行者',
+    jobTitle: '軟體工程師 & 資訊科學碩士 & 執行者',
     dailyEquation: '工程腦 × 商業魂 × 生活流',
     lifeQuote: '「人生像寫程式 — 複雜的事，讓自己簡單做；重要的事，寫進 daily commit。」',
     downloadResume: '下載履歷',
@@ -242,7 +242,7 @@ const translations = {
     edu1Degree: '資訊科學碩士(在職專班)',
     edu1DegreeWithBreak: '資訊科學碩士<br>(在職專班)',
     edu1School: '國立臺北教育大學',
-    edu1Period: '2024 - 就讀中',
+    edu1Period: '2024年 - 2026年',
     edu1Description:
       '主修軟體工程、人工智慧等核心課程，論文方向：用少量的檢驗項目預測其他項目的檢驗值',
 
@@ -716,19 +716,19 @@ const translations = {
 
     // 語音介紹內容
     introText:
-      'I am Ji, Po-Chiao, a software engineer with fifteen years of .NET development experience. I currently work as IT Director at Ta-An Medical Laboratory and am pursuing a part-time degree in Information Science at Taipei University of Education. I worked in Shanghai for many years, accumulating over 20,000 hours of professional development experience, specializing in web technology integration and applications. This website showcases my professional background and creative content. Please feel free to contact me if you have any questions!',
+      'I am Ji, Po-Chiao, a software engineer with fifteen years of .NET development experience. I currently work as IT Director at Ta-An Medical Laboratory and hold a part-time Master of Information Science degree from Taipei University of Education. I worked in Shanghai for many years, accumulating over 20,000 hours of professional development experience, specializing in web technology integration and applications. This website showcases my professional background and creative content. Please feel free to contact me if you have any questions!',
 
     // 導覽說明
     jumpToExperience: 'Jump to Experience',
     currentPosition: 'Current Position',
-    continuingEducation: 'Continuing Education',
+    continuingEducation: "Master's Degree",
     shanghaExperience: 'Shanghai TutorABC Experience',
     jumpToContact: 'Jump to Contact',
     scrollToTop: 'Scroll to Top',
 
     // 首頁內容
     name: 'Joe, Chi-Boo',
-    jobTitle: 'Software Engineer & Graduate Student & Executor',
+    jobTitle: 'Software Engineer & M.S. in Information Science & Executor',
     dailyEquation: 'Engineering Mind × Business Soul × Life Flow',
     lifeQuote:
       '"Life is like programming — Keep complex things simple; Write important things in daily commits."',
@@ -920,7 +920,7 @@ const translations = {
     edu1Degree: 'Master of Information Science (Part-time Program)',
     edu1DegreeWithBreak: 'Master of Information Science<br>(Part-time Program)',
     edu1School: 'National Taipei University of Education',
-    edu1Period: '2024 - Current',
+    edu1Period: '2024 - 2026',
     edu1Description:
       'Major in Software Engineering, Artificial Intelligence and other core courses. Thesis direction: Predicting other test values using a small number of test items',
 
