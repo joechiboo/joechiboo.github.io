@@ -320,7 +320,7 @@ const projects = ref([
     id: 39,
     titleKey: 'project39Title',
     descriptionKey: 'project39Description',
-    technologies: ['Vue 3', 'Vite', 'JavaScript', 'CSS3', 'RWD', 'Google Fonts'],
+    technologies: ['Vue 3', 'Vite', 'Vue Router', 'vue-i18n', 'CSS3', 'RWD'],
     demo: 'https://www.foundercargo.taipeigolf.org.tw/',
     oldSite: 'http://www.foundercargo.com.tw/index.php?lang=tw',
     github: null,
