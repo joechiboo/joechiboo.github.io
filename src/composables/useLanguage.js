@@ -931,7 +931,7 @@ const translations = {
     edu1School: 'National Taipei University of Education',
     edu1Period: '2024 - 2026',
     edu1Description:
-      'Major in Software Engineering, Artificial Intelligence and other core courses. Thesis: "Risk Prediction of the Three Highs (Hypertension, Hyperglycemia, Hyperlipidemia) from Blood Tests: An Empirical Comparative Study"',
+      'Major in Software Engineering, Artificial Intelligence and other core courses. Thesis: "An Empirical Study on Blood Test-Based Risk Prediction of Hypertension, Hyperglycemia, and Dyslipidemia"',
 
     edu2Degree: 'Bachelor of Information Engineering',
     edu2School: 'National Taipei University of Technology',
