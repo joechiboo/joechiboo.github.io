@@ -208,7 +208,6 @@
               <h3>{{ t('sportsChallenge') }}</h3>
               <div class="challenge-list">
                 <p class="challenge-item">{{ t('divingLicense') }}</p>
-                <p class="challenge-item">{{ t('sunMoonLakeSwim') }}</p>
                 <p class="challenge-item">{{ t('keeluneSwim') }}</p>
                 <p class="challenge-item">{{ t('marathonRun') }}</p>
               </div>

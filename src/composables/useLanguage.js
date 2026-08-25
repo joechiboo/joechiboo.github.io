@@ -416,8 +416,7 @@ const translations = {
     musicProduction: '音樂製作',
 
     divingLicense: '考潛水執照',
-    sunMoonLakeSwim: '❌ 日月潭泳渡',
-    keeluneSwim: '❌ 基隆外木山長泳',
+    keeluneSwim: '✅ 基隆外木山長泳',
     marathonRun: '✅ 寶礦力路跑 4k',
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
@@ -1111,8 +1110,7 @@ const translations = {
     musicProduction: 'Music Production',
 
     divingLicense: 'Get diving license',
-    sunMoonLakeSwim: '❌ Sun Moon Lake Swimming',
-    keeluneSwim: '❌ Keelung Waimushan Long Distance Swimming',
+    keeluneSwim: '✅ Keelung Waimushan Long Distance Swimming',
     marathonRun: '✅ Pocari Run 4k',
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
