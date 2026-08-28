@@ -421,6 +421,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project40Title: 'Boo Camp 萬聖節團露網站',
+    project40Description:
+      '🎃 為 2026 萬聖節團體露營打造的活動資訊站，名稱雙關萬聖節的「Boo!」。把散落在群組裡的活動資訊集中一頁看懂：開營倒數計時、行程時間軸、兩夜餐食、討糖活動、報名與繳費進度、營位分佈圖與營位表、互動式打包清單和常見問題。設計上把九成內容集中在單一 data.js 資料檔驅動，改內容不用動 HTML；並以隱私優先——設 robots 不被搜尋引擎索引、不放金融帳號（改由 LINE 群組處理）、營位圖不含年齡性別資訊。純靜態零建置流程，推上 main 分支約一分鐘內自動部署至 GitHub Pages。',
+
     project39Title: '汎達國際物流官網改版',
     project39Description:
       '🚢 為汎達國際物流（Founder Air & Sea Cargo，1968 年創立）打造的官網重建 Demo 雛型，是一次接外包的嘗試。以舊站完整盤點為 input 重新梳理資訊架構與視覺設計，涵蓋首頁、關於、空運／海運／進口／物流／專案貨五大服務頁、全球網絡（台灣＋中國辦公室地圖、歐美日核心航線）、合作夥伴（Emons、Heppner、TKK）、最新消息（運價／市場／海關／ICS2）與聯絡詢價表單。以 Vue 3 + Vite + Vue Router 打造，vue-i18n 支援繁中／英文／簡中三語，響應式設計適配手機與桌面。卡片提供新舊站連結，可直接對照重建前後（Before / After）的差異。原始碼為私有專案。',
@@ -1115,6 +1119,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project40Title: 'Boo Camp Halloween Group Camping',
+    project40Description:
+      "🎃 An event-info site for a 2026 Halloween group camping trip — the name puns on Halloween's \"Boo!\". It gathers everything usually scattered across group chats into one page: a countdown to camp opening, a schedule timeline, two nights of meals, the trick-or-treat activity, registration and payment status, a campsite distribution map and roster, an interactive packing checklist, and FAQs. Nine-tenths of the content is driven by a single data.js file, so updates never touch the HTML; privacy comes first — a robots meta tag keeps it out of search engines, no bank account numbers appear on the site (handled via the LINE group), and the campsite map omits age/gender info. A pure static site with zero build process: pushes to main auto-deploy to GitHub Pages within about a minute.",
+
     project39Title: 'Founder Cargo Website Revamp',
     project39Description:
       "🚢 A website-rebuild demo prototype for Founder Air & Sea Cargo (est. 1968), an international logistics company — a venture into freelance work. Using a full audit of the legacy site as input, the information architecture and visual design were rebuilt from the ground up, covering Home, About, five service pages (air freight, sea freight, import, logistics, project cargo), a global network section (Taiwan + China office map, key Europe/US/Japan trade lanes), partners (Emons, Heppner, TKK), news (freight rates / market / customs / ICS2), and a contact inquiry form. Built with Vue 3 + Vite + Vue Router, with vue-i18n supporting Traditional Chinese, English, and Simplified Chinese, responsive across mobile and desktop. The card links to both the old and new sites for a direct Before / After comparison. Source code is private.",

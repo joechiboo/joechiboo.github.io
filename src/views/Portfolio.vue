@@ -317,6 +317,17 @@ const sortedProjects = computed(() =>
 // 想暫時下架某個作品時，在該筆加上 hidden: true 即可（不刪資料，之後移除該旗標就會重新顯示）
 const projects = ref([
   {
+    id: 40,
+    titleKey: 'project40Title',
+    descriptionKey: 'project40Description',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Static Data', 'Google Maps', 'GitHub Pages'],
+    demo: 'https://joechiboo.github.io/boo-camp/',
+    github: 'https://github.com/joechiboo/boo-camp',
+    category: 'family',
+    year: '2026',
+    createdAt: '2026-08-28T00:00:00Z',
+  },
+  {
     id: 39,
     titleKey: 'project39Title',
     descriptionKey: 'project39Description',
