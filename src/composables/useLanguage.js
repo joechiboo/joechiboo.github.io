@@ -426,7 +426,7 @@ const translations = {
     // 作品集專案內容
     project42Title: '道德經原文與解析 laozi-reader',
     project42Description:
-      '📖 一份可查可讀的《道德經》文本工具，只做兩件事：原文與白話逐句並列、關鍵詞跨章跳轉。底本採公版王弼本，白話與註解全部自撰，古注（王弼、河上公）與帛書異文可引且標明出處，現行譯註本一字不引。資料層一章一筆 JSON，斷句是原文與白話的對位單位，句 id（如 1.3）同時是跨章互見、關鍵詞落點與網址錨點；關鍵詞掛在句上而非章上，點「道」能直接跳到該句而不是章首。附一支檢查器，除了 JSON Schema 還查 schema 表達不了的事——原文與斷句串接是否一致、互見與關鍵詞是否都指得到句、關鍵詞標的那一句原文裡是否真的有這個詞。純靜態零框架，Python 只做生成與檢查。目前完成 schema 定稿與第一章，MVP 先做五章評估單章工時。',
+      '📖 一份可查可讀的《道德經》文本工具，只做兩件事：原文與白話逐句並列、關鍵詞跨章跳轉。底本採公版王弼本，白話與註解全部自撰，古注（王弼、河上公）與帛書異文可引且標明出處，現行譯註本一字不引。資料層一章一筆 JSON，斷句是原文與白話的對位單位，句 id（如 1.3）同時是跨章互見、關鍵詞落點與網址錨點；關鍵詞掛在句上而非章上，點「道」能直接跳到該句而不是章首。附一支檢查器，除了 JSON Schema 還查 schema 表達不了的事——原文與斷句串接是否一致、互見與關鍵詞是否都指得到句、關鍵詞標的那一句原文裡是否真的有這個詞。純靜態零框架，Python 只做生成與檢查。81 章全數起草完成（355 句、436 註、30 個跨章關鍵詞），選章不照章次而是跟著互見走，讓關鍵詞與互見連成一張網；另附「只看原文與通讀」精簡閱讀模式。',
 
     project41Title: 'soundstage 錄音上片自動化 CLI',
     project41Description:
@@ -1135,7 +1135,7 @@ const translations = {
     // Portfolio Project Content
     project42Title: 'laozi-reader',
     project42Description:
-      "📖 A reader for the Tao Te Ching that does exactly two things: pair each line of the original with a plain-language reading, and let keywords jump across chapters. The source text is the public-domain Wang Bi recension; every gloss and note is written from scratch — classical commentaries (Wang Bi, Heshang Gong) and Mawangdui silk-text variants are quoted with attribution, modern translations not at all. Each chapter is one JSON file; the line is the alignment unit between original and gloss, and a line id (e.g. 1.3) doubles as the cross-chapter anchor, the keyword target, and the URL hash — keywords are attached to lines rather than chapters, so clicking 道 lands on the line instead of the chapter head. A validator covers what JSON Schema cannot express: whether the full text matches its own segmentation, whether every cross-reference resolves, and whether a keyword tagged to a line actually appears in that line. Static, framework-free; Python only builds indexes and checks data. Schema and chapter 1 are done; the MVP covers five chapters to measure the real per-chapter effort.",
+      "📖 A reader for the Tao Te Ching that does exactly two things: pair each line of the original with a plain-language reading, and let keywords jump across chapters. The source text is the public-domain Wang Bi recension; every gloss and note is written from scratch — classical commentaries (Wang Bi, Heshang Gong) and Mawangdui silk-text variants are quoted with attribution, modern translations not at all. Each chapter is one JSON file; the line is the alignment unit between original and gloss, and a line id (e.g. 1.3) doubles as the cross-chapter anchor, the keyword target, and the URL hash — keywords are attached to lines rather than chapters, so clicking 道 lands on the line instead of the chapter head. A validator covers what JSON Schema cannot express: whether the full text matches its own segmentation, whether every cross-reference resolves, and whether a keyword tagged to a line actually appears in that line. Static, framework-free; Python only builds indexes and checks data. All 81 chapters are drafted (355 lines, 436 notes, 30 cross-chapter keywords); chapters were added by following cross-references rather than in numerical order, so keywords and cross-references form a connected web. A lean reading mode shows only the original text and the chapter paraphrase.",
 
     project41Title: 'soundstage',
     project41Description:
