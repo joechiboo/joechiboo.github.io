@@ -529,8 +529,8 @@ const galleryGroups = ref([
       },
       {
         id: 9,
-        get title() { return t('pianoSolo2026') },
-        get description() { return t('pianoSolo2026Desc') },
+        get title() { return t('hisaishiSummer') },
+        get description() { return t('hisaishiSummerDesc') },
         youtube: 'bbVbvxobK-s',
         date: '2026',
       },

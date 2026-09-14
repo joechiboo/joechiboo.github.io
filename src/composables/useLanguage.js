@@ -386,8 +386,8 @@ const translations = {
     chopinNocturne: '蕭邦 - 夜曲 op.9 No.2',
     chopinNocturneDesc: '蕭邦最經典的夜曲之一，優美的旋律如夜晚的低語，展現鋼琴獨奏的細膩與浪漫',
 
-    pianoSolo2026: '鋼琴獨奏 - 新曲目',
-    pianoSolo2026Desc: '近期練習的鋼琴獨奏曲目，完整演奏影片紀錄',
+    hisaishiSummer: '久石讓 - Summer（菊次郎的夏天）',
+    hisaishiSummerDesc: '電影《菊次郎的夏天》主題曲，輕快跳躍的旋律帶點混合拍的恢意，是久石讓最廣為人知的鋼琴小品',
 
     // 空狀態
     emptyCategory: '🚧 此類別的作品即將更新，敬請期待！',
@@ -1089,8 +1089,8 @@ const translations = {
     chopinNocturne: 'Chopin - Nocturne op.9 No.2',
     chopinNocturneDesc: 'One of Chopin\'s most iconic nocturnes, with a beautiful melody that whispers like the night, showcasing the delicacy and romance of piano solo performance',
 
-    pianoSolo2026: 'Piano Solo - New Piece',
-    pianoSolo2026Desc: 'A recently practiced piano solo piece, recorded as a full performance video',
+    hisaishiSummer: 'Joe Hisaishi - Summer (Kikujiro)',
+    hisaishiSummerDesc: "The theme from the film Kikujiro — a light, skipping melody with a laid-back swing feel, and Joe Hisaishi's best-known piano miniature",
 
     // Empty States
     emptyCategory: '🚧 Works in this category are coming soon, stay tuned!',
