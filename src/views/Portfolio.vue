@@ -325,6 +325,7 @@ const projects = ref([
     titleKey: 'project42Title',
     descriptionKey: 'project42Description',
     technologies: ['HTML/CSS/JS', 'JSON Schema', 'Python', 'GitHub Pages'],
+    demo: 'https://joechiboo.github.io/laozi-reader/',
     github: 'https://github.com/joechiboo/laozi-reader',
     category: 'learning',
     year: '2026',
