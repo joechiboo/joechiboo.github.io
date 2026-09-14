@@ -424,6 +424,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project42Title: '道德經原文與解析 laozi-reader',
+    project42Description:
+      '📖 一份可查可讀的《道德經》文本工具，只做兩件事：原文與白話逐句並列、關鍵詞跨章跳轉。底本採公版王弼本，白話與註解全部自撰，古注（王弼、河上公）與帛書異文可引且標明出處，現行譯註本一字不引。資料層一章一筆 JSON，斷句是原文與白話的對位單位，句 id（如 1.3）同時是跨章互見、關鍵詞落點與網址錨點；關鍵詞掛在句上而非章上，點「道」能直接跳到該句而不是章首。附一支檢查器，除了 JSON Schema 還查 schema 表達不了的事——原文與斷句串接是否一致、互見與關鍵詞是否都指得到句、關鍵詞標的那一句原文裡是否真的有這個詞。純靜態零框架，Python 只做生成與檢查。目前完成 schema 定稿與第一章，MVP 先做五章評估單章工時。',
+
     project41Title: 'soundstage 錄音上片自動化 CLI',
     project41Description:
       '🎵 把鋼琴練習錄音變成 YouTube 影片的命令列工具，起因是每支影片都要重複「開剪輯軟體、貼封面、輸出、填表單、上傳」這串一模一樣的手工步驟。一行 publish 指令做完合成影片、讀 metadata、OAuth、上傳、套縮圖；視覺化支援静態封面與波形樣式（整首波形圖加上隨音樂移動的播放頭），metadata 用 yaml 管理並在本機先驗證長度限制，上傳走 resumable upload、斷線自動退避重試。Python 3.11 + Typer 開發，ffmpeg 指令組裝抽成不執行 subprocess 的純函式，因此包裝 ffmpeg 最棘手的那類「退出碼 0 但輸出是錯的」bug（封面被忽略、尾巴多 2 秒、畫面變洋紅、播放頭不出現）有一半能用毫秒級的純函式測試釘死。',
@@ -1129,6 +1133,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project42Title: 'laozi-reader',
+    project42Description:
+      "📖 A reader for the Tao Te Ching that does exactly two things: pair each line of the original with a plain-language reading, and let keywords jump across chapters. The source text is the public-domain Wang Bi recension; every gloss and note is written from scratch — classical commentaries (Wang Bi, Heshang Gong) and Mawangdui silk-text variants are quoted with attribution, modern translations not at all. Each chapter is one JSON file; the line is the alignment unit between original and gloss, and a line id (e.g. 1.3) doubles as the cross-chapter anchor, the keyword target, and the URL hash — keywords are attached to lines rather than chapters, so clicking 道 lands on the line instead of the chapter head. A validator covers what JSON Schema cannot express: whether the full text matches its own segmentation, whether every cross-reference resolves, and whether a keyword tagged to a line actually appears in that line. Static, framework-free; Python only builds indexes and checks data. Schema and chapter 1 are done; the MVP covers five chapters to measure the real per-chapter effort.",
+
     project41Title: 'soundstage',
     project41Description:
       '🎵 A CLI tool that turns piano practice recordings into YouTube videos, born from repeating the same manual chore for every clip: open an editor, drop in cover art, export, fill out a form, upload. A single publish command renders the video, reads the metadata, handles OAuth, uploads, and applies the thumbnail. Visual styles include a static cover and a waveform mode (a full-track waveform with a playhead that tracks the music); metadata lives in YAML and is validated against API length limits locally; uploads are resumable with automatic backoff retries on dropped connections. Built with Python 3.11 + Typer, with ffmpeg command assembly factored into pure functions that spawn no subprocess — so half of the nastiest class of ffmpeg bugs (exit code 0, clean stderr, wrong output: ignored cover art, two extra seconds of silence, magenta frames, a missing playhead) is pinned down by millisecond-fast unit tests.',

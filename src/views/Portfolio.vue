@@ -305,6 +305,10 @@ const getUpdatedDisplay = (project) => {
 
 const sortedProjects = computed(() =>
   [...visibleProjects.value].sort((a, b) => {
+    // 置頂作品固定排在最前（在該筆加 pinned: true），其餘才依更新時間排
+    const pa = a.pinned ? 1 : 0
+    const pb = b.pinned ? 1 : 0
+    if (pa !== pb) return pb - pa
     const ta = getSortTimestamp(a)
     const tb = getSortTimestamp(b)
     if (ta !== null && tb !== null) return tb - ta
@@ -316,6 +320,17 @@ const sortedProjects = computed(() =>
 
 // 想暫時下架某個作品時，在該筆加上 hidden: true 即可（不刪資料，之後移除該旗標就會重新顯示）
 const projects = ref([
+  {
+    id: 42,
+    titleKey: 'project42Title',
+    descriptionKey: 'project42Description',
+    technologies: ['HTML/CSS/JS', 'JSON Schema', 'Python', 'GitHub Pages'],
+    github: 'https://github.com/joechiboo/laozi-reader',
+    category: 'learning',
+    year: '2026',
+    createdAt: '2026-09-14T00:00:00Z',
+    pinned: true,
+  },
   {
     id: 41,
     titleKey: 'project41Title',
