@@ -386,6 +386,9 @@ const translations = {
     chopinNocturne: '蕭邦 - 夜曲 op.9 No.2',
     chopinNocturneDesc: '蕭邦最經典的夜曲之一，優美的旋律如夜晚的低語，展現鋼琴獨奏的細膩與浪漫',
 
+    pianoSolo2026: '鋼琴獨奏 - 新曲目',
+    pianoSolo2026Desc: '近期練習的鋼琴獨奏曲目，完整演奏影片紀錄',
+
     // 空狀態
     emptyCategory: '🚧 此類別的作品即將更新，敬請期待！',
     comingSoon: '待續...',
@@ -421,6 +424,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project41Title: 'soundstage 錄音上片自動化 CLI',
+    project41Description:
+      '🎵 把鋼琴練習錄音變成 YouTube 影片的命令列工具，起因是每支影片都要重複「開剪輯軟體、貼封面、輸出、填表單、上傳」這串一模一樣的手工步驟。一行 publish 指令做完合成影片、讀 metadata、OAuth、上傳、套縮圖；視覺化支援静態封面與波形樣式（整首波形圖加上隨音樂移動的播放頭），metadata 用 yaml 管理並在本機先驗證長度限制，上傳走 resumable upload、斷線自動退避重試。Python 3.11 + Typer 開發，ffmpeg 指令組裝抽成不執行 subprocess 的純函式，因此包裝 ffmpeg 最棘手的那類「退出碼 0 但輸出是錯的」bug（封面被忽略、尾巴多 2 秒、畫面變洋紅、播放頭不出現）有一半能用毫秒級的純函式測試釘死。',
+
     project40Title: 'Boo Camp 萬聖節團露網站',
     project40Description:
       '🎃 為 2026 萬聖節團體露營打造的活動資訊站，名稱雙關萬聖節的「Boo!」。把散落在群組裡的活動資訊集中一頁看懂：開營倒數計時、行程時間軸、兩夜餐食、討糖活動、報名與繳費進度、營位分佈圖與營位表、互動式打包清單和常見問題。設計上把九成內容集中在單一 data.js 資料檔驅動，改內容不用動 HTML；並以隱私優先——設 robots 不被搜尋引擎索引、不放金融帳號（改由 LINE 群組處理）、營位圖不含年齡性別資訊。純靜態零建置流程，推上 main 分支約一分鐘內自動部署至 GitHub Pages。',
@@ -1082,6 +1089,9 @@ const translations = {
     chopinNocturne: 'Chopin - Nocturne op.9 No.2',
     chopinNocturneDesc: 'One of Chopin\'s most iconic nocturnes, with a beautiful melody that whispers like the night, showcasing the delicacy and romance of piano solo performance',
 
+    pianoSolo2026: 'Piano Solo - New Piece',
+    pianoSolo2026Desc: 'A recently practiced piano solo piece, recorded as a full performance video',
+
     // Empty States
     emptyCategory: '🚧 Works in this category are coming soon, stay tuned!',
     comingSoon: 'Coming soon...',
@@ -1119,6 +1129,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project41Title: 'soundstage',
+    project41Description:
+      '🎵 A CLI tool that turns piano practice recordings into YouTube videos, born from repeating the same manual chore for every clip: open an editor, drop in cover art, export, fill out a form, upload. A single publish command renders the video, reads the metadata, handles OAuth, uploads, and applies the thumbnail. Visual styles include a static cover and a waveform mode (a full-track waveform with a playhead that tracks the music); metadata lives in YAML and is validated against API length limits locally; uploads are resumable with automatic backoff retries on dropped connections. Built with Python 3.11 + Typer, with ffmpeg command assembly factored into pure functions that spawn no subprocess — so half of the nastiest class of ffmpeg bugs (exit code 0, clean stderr, wrong output: ignored cover art, two extra seconds of silence, magenta frames, a missing playhead) is pinned down by millisecond-fast unit tests.',
+
     project40Title: 'Boo Camp Halloween Group Camping',
     project40Description:
       "🎃 An event-info site for a 2026 Halloween group camping trip — the name puns on Halloween's \"Boo!\". It gathers everything usually scattered across group chats into one page: a countdown to camp opening, a schedule timeline, two nights of meals, the trick-or-treat activity, registration and payment status, a campsite distribution map and roster, an interactive packing checklist, and FAQs. Nine-tenths of the content is driven by a single data.js file, so updates never touch the HTML; privacy comes first — a robots meta tag keeps it out of search engines, no bank account numbers appear on the site (handled via the LINE group), and the campsite map omits age/gender info. A pure static site with zero build process: pushes to main auto-deploy to GitHub Pages within about a minute.",

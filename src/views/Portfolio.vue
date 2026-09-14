@@ -317,6 +317,16 @@ const sortedProjects = computed(() =>
 // 想暫時下架某個作品時，在該筆加上 hidden: true 即可（不刪資料，之後移除該旗標就會重新顯示）
 const projects = ref([
   {
+    id: 41,
+    titleKey: 'project41Title',
+    descriptionKey: 'project41Description',
+    technologies: ['Python 3.11', 'Typer', 'ffmpeg', 'YouTube Data API v3', 'OAuth 2.0', 'uv', 'pytest'],
+    github: 'https://github.com/joechiboo/soundstage',
+    category: 'tool',
+    year: '2026',
+    createdAt: '2026-09-14T00:00:00Z',
+  },
+  {
     id: 40,
     titleKey: 'project40Title',
     descriptionKey: 'project40Description',
@@ -326,6 +336,7 @@ const projects = ref([
     category: 'family',
     year: '2026',
     createdAt: '2026-08-28T00:00:00Z',
+    hidden: true,
   },
   {
     id: 39,

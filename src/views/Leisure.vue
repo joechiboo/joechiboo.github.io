@@ -527,6 +527,13 @@ const galleryGroups = ref([
         audio: '/img/music/voice_260877.aac',
         date: '2026',
       },
+      {
+        id: 9,
+        get title() { return t('pianoSolo2026') },
+        get description() { return t('pianoSolo2026Desc') },
+        youtube: 'bbVbvxobK-s',
+        date: '2026',
+      },
     ],
   },
 ])
