@@ -321,6 +321,17 @@ const sortedProjects = computed(() =>
 // 想暫時下架某個作品時，在該筆加上 hidden: true 即可（不刪資料，之後移除該旗標就會重新顯示）
 const projects = ref([
   {
+    id: 43,
+    titleKey: 'project43Title',
+    descriptionKey: 'project43Description',
+    technologies: ['Vue 3', 'Vite', 'Chart.js', 'Supabase', 'PostgreSQL', 'localStorage', 'GitHub Pages'],
+    demo: 'https://joechiboo.github.io/health-tracker/',
+    github: 'https://github.com/joechiboo/health-tracker',
+    category: 'health',
+    year: '2026',
+    createdAt: '2026-09-16T00:00:00Z',
+  },
+  {
     id: 42,
     titleKey: 'project42Title',
     descriptionKey: 'project42Description',

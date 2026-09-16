@@ -424,6 +424,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project43Title: 'Health Tracker 體重與晦跑追蹤',
+    project43Description:
+      '❤️ 每天量一次體重、記一次晦跑，畫成折線圖，順便看兩者到底有沒有相關。體重日線配 7 日平均、每日跑量長條，兩張圖上下排列共用同一條時間軸（而不是塑雙 Y 軸），可匯出 PNG；兩張表都能匯出帶 BOM 的 CSV，Excel 開不會亂碼。相關性區算「近 7 日跑量 ↔ 體重」與「近 7 日跑量 ↔ 之後 7 天體重變化」兩組 Pearson 係數，後者才是方向較接近因果的那個。Vue 3 + Vite + Chart.js 開發，資料存 Supabase 並放在自建的 health schema（不佔 public，才能跟其他 App 共用同一個免費專案）；沒設 .env 時自動退回 localStorage 離線模式，可以先試用再接雲端。',
+
     project42Title: '道德經原文與解析 laozi-reader',
     project42Description:
       '📖 一份可查可讀的《道德經》文本工具，只做兩件事：原文與白話逐句並列、關鍵詞跨章跳轉。底本採公版王弼本，白話與註解全部自撰，古注（王弼、河上公）與帛書異文可引且標明出處，現行譯註本一字不引。資料層一章一筆 JSON，斷句是原文與白話的對位單位，句 id（如 1.3）同時是跨章互見、關鍵詞落點與網址錨點；關鍵詞掛在句上而非章上，點「道」能直接跳到該句而不是章首。附一支檢查器，除了 JSON Schema 還查 schema 表達不了的事——原文與斷句串接是否一致、互見與關鍵詞是否都指得到句、關鍵詞標的那一句原文裡是否真的有這個詞。純靜態零框架，Python 只做生成與檢查。81 章全數起草完成（355 句、436 註、30 個跨章關鍵詞），選章不照章次而是跟著互見走，讓關鍵詞與互見連成一張網；另附「只看原文與通讀」精簡閱讀模式。',
@@ -1118,6 +1122,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project43Title: 'Health Tracker',
+    project43Description:
+      "❤️ Weigh in once a day, log the morning run, chart both, and see whether the two are actually related. A daily weight line with a 7-day average sits above a bar chart of daily mileage, sharing one time axis rather than being forced onto a dual Y-axis, and exports to PNG; both tables export to CSV with a BOM so Excel opens them without mojibake. The correlation panel computes Pearson coefficients for 'last 7 days of mileage vs. weight' and for 'last 7 days of mileage vs. the following 7 days of weight change' — the latter being the one whose direction comes closer to causation. Built with Vue 3 + Vite + Chart.js, with data in Supabase under its own health schema (staying out of public so it can share one free-tier project with other apps); with no .env configured it falls back to localStorage offline mode, so it works before any cloud setup.",
+
     project42Title: 'laozi-reader',
     project42Description:
       "📖 A reader for the Tao Te Ching that does exactly two things: pair each line of the original with a plain-language reading, and let keywords jump across chapters. The source text is the public-domain Wang Bi recension; every gloss and note is written from scratch — classical commentaries (Wang Bi, Heshang Gong) and Mawangdui silk-text variants are quoted with attribution, modern translations not at all. Each chapter is one JSON file; the line is the alignment unit between original and gloss, and a line id (e.g. 1.3) doubles as the cross-chapter anchor, the keyword target, and the URL hash — keywords are attached to lines rather than chapters, so clicking 道 lands on the line instead of the chapter head. A validator covers what JSON Schema cannot express: whether the full text matches its own segmentation, whether every cross-reference resolves, and whether a keyword tagged to a line actually appears in that line. Static, framework-free; Python only builds indexes and checks data. All 81 chapters are drafted (355 lines, 436 notes, 30 cross-chapter keywords); chapters were added by following cross-references rather than in numerical order, so keywords and cross-references form a connected web. A lean reading mode shows only the original text and the chapter paraphrase.",
