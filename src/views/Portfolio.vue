@@ -341,7 +341,6 @@ const projects = ref([
     category: 'learning',
     year: '2026',
     createdAt: '2026-09-14T00:00:00Z',
-    pinned: true,
   },
   {
     id: 41,
