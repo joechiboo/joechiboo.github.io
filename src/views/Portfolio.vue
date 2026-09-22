@@ -321,6 +321,16 @@ const sortedProjects = computed(() =>
 // 想暫時下架某個作品時，在該筆加上 hidden: true 即可（不刪資料，之後移除該旗標就會重新顯示）
 const projects = ref([
   {
+    id: 44,
+    titleKey: 'project44Title',
+    descriptionKey: 'project44Description',
+    technologies: ['Flutter 3.19', 'Dart', 'Rive', 'speech_to_text', 'permission_handler', 'JSON Config', 'Android'],
+    github: 'https://github.com/joechiboo/honey-mishears',
+    category: 'fun',
+    year: '2026',
+    createdAt: '2026-09-22T00:00:00Z',
+  },
+  {
     id: 43,
     titleKey: 'project43Title',
     descriptionKey: 'project43Description',

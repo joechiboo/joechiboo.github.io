@@ -424,6 +424,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project44Title: 'AI 老婆 honey-mishears',
+    project44Description:
+      '🎤 一個永遠聽錯話的 2D 語音互動角色 App：你說「親一個」，她聽成「清一個」，捲起袖子開始打掃；你說「抱一個」，她聽成「報一個」，戴上墨鏡開始報明牌。笑點在於她錯得一本正經，而不在於她多聪明——所以整套回應邏輯刻意不接任何語言模型，語音轉文字之後就是純關鍵字比對，比對前去掉標點與空白，依設定檔順序先命中者優先。諧音梃全部外置在 mishear_rules.json，新增一個梃只要加一筆 JSON（關鍵詞、聽成什麼、動畫 trigger、特效、三句台詞池），不必動任何程式碼；台詞每次隨機挑一句，避免重複感。角色動畫走 Rive 狀態機，素材未到位前有一隻純 Flutter 繪製的佔位角色頂著，狀態機規格另寫成文件交給美術。Flutter 3.19 + speech_to_text，按住說話，麥克風權限交給 permission_handler；比對引擎與明牌產生器都有單元測試。明牌畫面內建「僅供娛樂、不具預測性」聲明，是 Play 上架內容分級要的那一段。',
+
     project43Title: 'Health Tracker 體重與晦跑追蹤',
     project43Description:
       '❤️ 每天量一次體重、記一次晦跑，畫成折線圖，順便看兩者到底有沒有相關。體重日線配 7 日平均、每日跑量長條，兩張圖上下排列共用同一條時間軸（而不是塑雙 Y 軸），可匯出 PNG；兩張表都能匯出帶 BOM 的 CSV，Excel 開不會亂碼。相關性區算「近 7 日跑量 ↔ 體重」與「近 7 日跑量 ↔ 之後 7 天體重變化」兩組 Pearson 係數，後者才是方向較接近因果的那個。Vue 3 + Vite + Chart.js 開發，資料存 Supabase 並放在自建的 health schema（不佔 public，才能跟其他 App 共用同一個免費專案）；沒設 .env 時自動退回 localStorage 離線模式，可以先試用再接雲端。',
@@ -1122,6 +1126,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project44Title: 'honey-mishears',
+    project44Description:
+      "🎤 A voice-driven 2D companion app built on one joke: she always mishears you. Ask for a kiss (親一個) and she hears 清一個 — rolls up her sleeves and starts cleaning; ask for a hug (抱一個) and she hears 報一個 — puts on sunglasses and starts calling lottery numbers. The humour comes from how earnestly she gets it wrong, not from how clever she is, so the response logic deliberately uses no language model at all: once speech is transcribed it is plain keyword matching, with punctuation and whitespace stripped first and rules matched in file order, first hit wins. Every pun lives in mishear_rules.json, so adding one means adding a JSON entry (keywords, what she hears instead, animation trigger, effect, a pool of three lines) with no code change; a line is picked at random each time so it never feels canned. Character animation runs on a Rive state machine, with a hand-drawn Flutter placeholder standing in until the art lands and the state machine spec written up separately for the artist. Flutter 3.19 + speech_to_text, push-to-talk, microphone permission via permission_handler; the matching engine and the number generator are both unit-tested. The lottery screen carries a built-in 'for entertainment only, not predictive' notice — the line Play's content rating requires.",
+
     project43Title: 'Health Tracker',
     project43Description:
       "❤️ Weigh in once a day, log the morning run, chart both, and see whether the two are actually related. A daily weight line with a 7-day average sits above a bar chart of daily mileage, sharing one time axis rather than being forced onto a dual Y-axis, and exports to PNG; both tables export to CSV with a BOM so Excel opens them without mojibake. The correlation panel computes Pearson coefficients for 'last 7 days of mileage vs. weight' and for 'last 7 days of mileage vs. the following 7 days of weight change' — the latter being the one whose direction comes closer to causation. Built with Vue 3 + Vite + Chart.js, with data in Supabase under its own health schema (staying out of public so it can share one free-tier project with other apps); with no .env configured it falls back to localStorage offline mode, so it works before any cloud setup.",
