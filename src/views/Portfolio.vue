@@ -1321,7 +1321,8 @@ const projects = ref([
 
 .project-links {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
   margin-top: auto;
 }
 
