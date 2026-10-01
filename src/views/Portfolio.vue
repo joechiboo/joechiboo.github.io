@@ -368,6 +368,7 @@ const projects = ref([
   },
   {
     id: 42,
+    hidden: true, // 2026-10-01 封存下架
     titleKey: 'project42Title',
     descriptionKey: 'project42Description',
     technologies: ['HTML/CSS/JS', 'JSON Schema', 'Python', 'GitHub Pages'],
@@ -437,6 +438,7 @@ const projects = ref([
   },
   {
     id: 36,
+    hidden: true, // 2026-10-01 封存下架
     titleKey: 'project36Title',
     descriptionKey: 'project36Description',
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Web Audio API', 'GitHub Pages'],
@@ -448,6 +450,7 @@ const projects = ref([
   },
   {
     id: 35,
+    hidden: true, // 2026-10-01 封存下架
     titleKey: 'project35Title',
     descriptionKey: 'project35Description',
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'PDF Export', 'LIS/Excel Import', 'GitHub Pages'],
