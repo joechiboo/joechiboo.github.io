@@ -335,6 +335,7 @@ const projects = ref([
     titleKey: 'project45Title',
     descriptionKey: 'project45Description',
     technologies: ['Flutter', 'Dart', 'Android', 'Vector Math', 'Number Theory'],
+    demo: 'https://joechiboo.github.io/centrifuge-balance/',
     github: 'https://github.com/joechiboo/centrifuge-balance',
     // 指向 latest release 頁，之後出新版不用改這裡
     download: 'https://github.com/joechiboo/centrifuge-balance/releases/latest',
