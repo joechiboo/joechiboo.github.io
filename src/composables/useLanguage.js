@@ -424,13 +424,17 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project45Title: '離心機配平 Centrifuge Balance',
+    project45Description:
+      '⚗️ 把試管擺進離心機，重量平衡了才能啟動——規則一句話，答案常常出人意料的數學解謎遊戲。點孔位放入或取出試管，按「啟動」後平衡則轉盤加速到 4,000 rpm，不平衡則震動停機並用紅色箭頭指出偏重方向；十個關卡含固定試管與故障孔，另有 2–30 孔的自由模式與會畫出解答的提示。背後的數學是向量和為零：每支試管是從圓心指向孔位的向量，而 n 孔離心機能配平 k 支試管的充要條件，是 k 與 n−k 都能寫成 n 的質因數之和——12 孔時 5（=2+3）可以，1 與 11 不行。單一 HTML 檔、無需建置；目前是網頁版 demo，後續規劃以 Flutter 做成手機 App。',
+
     project44Title: 'AI 老婆 honey-mishears',
     project44Description:
       '🎤 一個永遠聽錯話的 2D 語音互動角色 App：你說「親一個」，她聽成「清一個」，捲起袖子開始打掃；你說「抱一個」，她聽成「報一個」，戴上墨鏡開始報明牌。笑點在於她錯得一本正經，而不在於她多聪明——所以整套回應邏輯刻意不接任何語言模型，語音轉文字之後就是純關鍵字比對，比對前去掉標點與空白，依設定檔順序先命中者優先。諧音梃全部外置在 mishear_rules.json，新增一個梃只要加一筆 JSON（關鍵詞、聽成什麼、動畫 trigger、特效、三句台詞池），不必動任何程式碼；台詞每次隨機挑一句，避免重複感。角色動畫走 Rive 狀態機，素材未到位前有一隻純 Flutter 繪製的佔位角色頂著，狀態機規格另寫成文件交給美術。Flutter 3.19 + speech_to_text，按住說話，麥克風權限交給 permission_handler；比對引擎與明牌產生器都有單元測試。明牌畫面內建「僅供娛樂、不具預測性」聲明，是 Play 上架內容分級要的那一段。',
 
-    project43Title: 'Health Tracker 體重與晦跑追蹤',
+    project43Title: 'Health Tracker 體重與晨跑追蹤',
     project43Description:
-      '❤️ 每天量一次體重、記一次晦跑，畫成折線圖，順便看兩者到底有沒有相關。體重日線配 7 日平均、每日跑量長條，兩張圖上下排列共用同一條時間軸（而不是塑雙 Y 軸），可匯出 PNG；兩張表都能匯出帶 BOM 的 CSV，Excel 開不會亂碼。相關性區算「近 7 日跑量 ↔ 體重」與「近 7 日跑量 ↔ 之後 7 天體重變化」兩組 Pearson 係數，後者才是方向較接近因果的那個。Vue 3 + Vite + Chart.js 開發，資料存 Supabase 並放在自建的 health schema（不佔 public，才能跟其他 App 共用同一個免費專案）；沒設 .env 時自動退回 localStorage 離線模式，可以先試用再接雲端。',
+      '❤️ 每天量一次體重、記一次晨跑，畫成折線圖，順便看兩者到底有沒有相關。體重日線配 7 日平均、每日跑量長條，兩張圖上下排列共用同一條時間軸（而不是塑雙 Y 軸），可匯出 PNG；兩張表都能匯出帶 BOM 的 CSV，Excel 開不會亂碼。相關性區算「近 7 日跑量 ↔ 體重」與「近 7 日跑量 ↔ 之後 7 天體重變化」兩組 Pearson 係數，後者才是方向較接近因果的那個。Vue 3 + Vite + Chart.js 開發，資料存 Supabase 並放在自建的 health schema（不佔 public，才能跟其他 App 共用同一個免費專案）；沒設 .env 時自動退回 localStorage 離線模式，可以先試用再接雲端。',
 
     project42Title: '道德經原文與解析 laozi-reader',
     project42Description:
@@ -1126,6 +1130,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project45Title: 'Centrifuge Balance',
+    project45Description:
+      "⚗️ Load test tubes into a centrifuge — it only spins up once the load is balanced. One sentence of rules, and answers that are often counterintuitive. Click a hole to add or remove a tube, then hit start: balanced, and the rotor accelerates to 4,000 rpm; unbalanced, and it shudders to a halt with a red arrow pointing at the heavy side. Ten levels featuring fixed tubes and broken holes, plus a free mode for 2–30 holes and a hint button that will draw out a valid arrangement. The math underneath is vectors summing to zero: each tube is a vector from the center to its hole, and an n-hole rotor can balance k tubes exactly when both k and n−k can be written as sums of the prime factors of n — so on 12 holes, 5 (= 2 + 3) works while 1 and 11 do not. A single HTML file with no build step; currently a web demo, with a Flutter mobile app planned next.",
+
     project44Title: 'honey-mishears',
     project44Description:
       "🎤 A voice-driven 2D companion app built on one joke: she always mishears you. Ask for a kiss (親一個) and she hears 清一個 — rolls up her sleeves and starts cleaning; ask for a hug (抱一個) and she hears 報一個 — puts on sunglasses and starts calling lottery numbers. The humour comes from how earnestly she gets it wrong, not from how clever she is, so the response logic deliberately uses no language model at all: once speech is transcribed it is plain keyword matching, with punctuation and whitespace stripped first and rules matched in file order, first hit wins. Every pun lives in mishear_rules.json, so adding one means adding a JSON entry (keywords, what she hears instead, animation trigger, effect, a pool of three lines) with no code change; a line is picked at random each time so it never feels canned. Character animation runs on a Rive state machine, with a hand-drawn Flutter placeholder standing in until the art lands and the state machine spec written up separately for the artist. Flutter 3.19 + speech_to_text, push-to-talk, microphone permission via permission_handler; the matching engine and the number generator are both unit-tested. The lottery screen carries a built-in 'for entertainment only, not predictive' notice — the line Play's content rating requires.",

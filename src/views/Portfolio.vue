@@ -321,6 +321,16 @@ const sortedProjects = computed(() =>
 // 想暫時下架某個作品時，在該筆加上 hidden: true 即可（不刪資料，之後移除該旗標就會重新顯示）
 const projects = ref([
   {
+    id: 45,
+    titleKey: 'project45Title',
+    descriptionKey: 'project45Description',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'SVG', 'Vector Math', 'Number Theory'],
+    github: 'https://github.com/joechiboo/centrifuge-balance',
+    category: 'fun',
+    year: '2026',
+    createdAt: '2026-10-01T00:00:00Z',
+  },
+  {
     id: 44,
     titleKey: 'project44Title',
     descriptionKey: 'project44Description',
