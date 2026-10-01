@@ -356,6 +356,7 @@ const projects = ref([
   },
   {
     id: 43,
+    hidden: true, // 2026-10-01 封存下架
     titleKey: 'project43Title',
     descriptionKey: 'project43Description',
     technologies: ['Vue 3', 'Vite', 'Chart.js', 'Supabase', 'PostgreSQL', 'localStorage', 'GitHub Pages'],
