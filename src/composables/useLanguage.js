@@ -16,6 +16,7 @@ const translations = {
     // 通用
     demo: '線上展示',
     github: 'GitHub',
+    downloadApp: '下載 App',
     thisWebsite: '本網站',
 
     // 主題
@@ -426,7 +427,7 @@ const translations = {
     // 作品集專案內容
     project45Title: '離心機配平 Centrifuge Balance',
     project45Description:
-      '⚗️ 把試管擺進離心機，重量平衡了才能啟動——規則一句話，答案常常出人意料的數學解謎遊戲。點孔位放入或取出試管，按「啟動」後平衡則轉盤加速到 4,000 rpm，不平衡則震動停機並用紅色箭頭指出偏重方向；十個關卡含固定試管與故障孔，另有 2–30 孔的自由模式與會畫出解答的提示。背後的數學是向量和為零：每支試管是從圓心指向孔位的向量，而 n 孔離心機能配平 k 支試管的充要條件，是 k 與 n−k 都能寫成 n 的質因數之和——12 孔時 5（=2+3）可以，1 與 11 不行。單一 HTML 檔、無需建置；目前是網頁版 demo，後續規劃以 Flutter 做成手機 App。',
+      '⚗️ 把試管擺進離心機，重量平衡了才能啟動——規則一句話，答案常常出人意料的數學解謎遊戲。點孔位放入或取出試管，按「啟動」後平衡則轉盤加速到 4,000 rpm，不平衡則震動停機並用紅色箭頭指出偏重方向；十個關卡含固定試管與故障孔，另有 2–30 孔的自由模式與會畫出解答的提示。背後的數學是向量和為零：每支試管是從圓心指向孔位的向量，而 n 孔離心機能配平 k 支試管的充要條件，是 k 與 n−k 都能寫成 n 的質因數之和——12 孔時 5（=2+3）可以，1 與 11 不行。原型是單一 HTML 檔的網頁版，之後以 Flutter 重做成 Android App，加入震動回饋與過關動畫，APK 直接在 GitHub Release 下載安裝。',
 
     project44Title: 'AI 老婆 honey-mishears',
     project44Description:
@@ -689,6 +690,7 @@ const translations = {
     // 通用
     demo: 'Demo',
     github: 'GitHub',
+    downloadApp: 'Download App',
     thisWebsite: 'This Site',
 
     // 主題
@@ -1132,7 +1134,7 @@ const translations = {
     // Portfolio Project Content
     project45Title: 'Centrifuge Balance',
     project45Description:
-      "⚗️ Load test tubes into a centrifuge — it only spins up once the load is balanced. One sentence of rules, and answers that are often counterintuitive. Click a hole to add or remove a tube, then hit start: balanced, and the rotor accelerates to 4,000 rpm; unbalanced, and it shudders to a halt with a red arrow pointing at the heavy side. Ten levels featuring fixed tubes and broken holes, plus a free mode for 2–30 holes and a hint button that will draw out a valid arrangement. The math underneath is vectors summing to zero: each tube is a vector from the center to its hole, and an n-hole rotor can balance k tubes exactly when both k and n−k can be written as sums of the prime factors of n — so on 12 holes, 5 (= 2 + 3) works while 1 and 11 do not. A single HTML file with no build step; currently a web demo, with a Flutter mobile app planned next.",
+      "⚗️ Load test tubes into a centrifuge — it only spins up once the load is balanced. One sentence of rules, and answers that are often counterintuitive. Click a hole to add or remove a tube, then hit start: balanced, and the rotor accelerates to 4,000 rpm; unbalanced, and it shudders to a halt with a red arrow pointing at the heavy side. Ten levels featuring fixed tubes and broken holes, plus a free mode for 2–30 holes and a hint button that will draw out a valid arrangement. The math underneath is vectors summing to zero: each tube is a vector from the center to its hole, and an n-hole rotor can balance k tubes exactly when both k and n−k can be written as sums of the prime factors of n — so on 12 holes, 5 (= 2 + 3) works while 1 and 11 do not. Started as a single-file web prototype, then rebuilt with Flutter as an Android app with haptic feedback and level-clear animations; the APK is available straight from GitHub Releases.",
 
     project44Title: 'honey-mishears',
     project44Description:

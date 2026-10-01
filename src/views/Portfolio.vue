@@ -104,6 +104,16 @@
                 {{ project.id === 5 ? t('thisWebsite') : project.oldSite ? t('newSiteAfter') : t('demo') }}
               </a>
               <a
+                v-if="project.download"
+                :href="project.download"
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener"
+                @click.stop
+              >
+                {{ t('downloadApp') }}
+              </a>
+              <a
                 v-if="project.oldSite"
                 :href="project.oldSite"
                 class="btn btn-outline"
@@ -324,8 +334,10 @@ const projects = ref([
     id: 45,
     titleKey: 'project45Title',
     descriptionKey: 'project45Description',
-    technologies: ['HTML5', 'CSS3', 'JavaScript', 'SVG', 'Vector Math', 'Number Theory'],
+    technologies: ['Flutter', 'Dart', 'Android', 'Vector Math', 'Number Theory'],
     github: 'https://github.com/joechiboo/centrifuge-balance',
+    // 指向 latest release 頁，之後出新版不用改這裡
+    download: 'https://github.com/joechiboo/centrifuge-balance/releases/latest',
     category: 'fun',
     year: '2026',
     createdAt: '2026-10-01T00:00:00Z',
