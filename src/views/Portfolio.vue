@@ -518,6 +518,7 @@ const projects = ref([
   },
   {
     id: 29,
+    hidden: true, // 2026-10-01 封存下架
     titleKey: 'project29Title',
     descriptionKey: 'project29Description',
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'Path Planning', 'Simulation', 'GitHub Pages', 'GitHub Actions'],
