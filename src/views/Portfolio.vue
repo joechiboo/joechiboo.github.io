@@ -345,6 +345,7 @@ const projects = ref([
   },
   {
     id: 44,
+    hidden: true, // 2026-10-01 封存下架
     titleKey: 'project44Title',
     descriptionKey: 'project44Description',
     technologies: ['Flutter 3.19', 'Dart', 'Rive', 'speech_to_text', 'permission_handler', 'JSON Config', 'Android'],
