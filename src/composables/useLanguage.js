@@ -425,6 +425,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project46Title: 'Overtime Tracker 加班時數追蹤',
+    project46Description:
+      '⏱ 個人加班時數追蹤工具，把法規與公司上限變成一眼看懂的數字。以每月 21 日至次月 20 日為一期，同時對照單期 54 小時與近三期合計 138 小時兩道上限，本期可加班時數取兩者較小值。支援「預計 vs 實際」雙欄：已填實際時數的日子用實際值，未填的用預計值推估；平日實際超過 4 小時紅字警示，單日工時上限 12 小時。填了實際時數的週次自動收合成加總列，點擊展開明細；實際時數只能填今天以前，避免未卜先知。免登入開啟即為唯讀模式，Ctrl+Shift 點標題切換編輯。前端為單一 HTML 頁面，資料存 Supabase（anon key 存取），部署於 GitHub Pages。',
+
     project45Title: '離心機配平 Centrifuge Balance',
     project45Description:
       '⚗️ 把試管擺進離心機，重量平衡了才能啟動——規則一句話，答案常常出人意料的數學解謎遊戲。點孔位放入或取出試管，按「啟動」後平衡則轉盤加速到 4,000 rpm，不平衡則震動停機並用紅色箭頭指出偏重方向；十個關卡含固定試管與故障孔，另有 2–30 孔的自由模式與會畫出解答的提示。背後的數學是向量和為零：每支試管是從圓心指向孔位的向量，而 n 孔離心機能配平 k 支試管的充要條件，是 k 與 n−k 都能寫成 n 的質因數之和——12 孔時 5（=2+3）可以，1 與 11 不行。原型是單一 HTML 檔的網頁版，之後以 Flutter 重做成 Android App，加入震動回饋與過關動畫，APK 直接在 GitHub Release 下載安裝。',
@@ -1132,6 +1136,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project46Title: 'Overtime Tracker',
+    project46Description:
+      "⏱ A personal overtime tracker that turns legal and company limits into numbers you can read at a glance. Each cycle runs from the 21st to the 20th of the next month, checked against two caps at once — 54 hours per cycle and 138 hours across the latest three cycles — with the allowed remaining overtime taken as the smaller of the two. It supports planned-vs-actual tracking: days with actual hours use real values, the rest fall back to estimates; weekday overtime beyond 4 hours is flagged in red, with a 12-hour daily cap. Weeks with actual hours recorded collapse into a single total row that expands on click, and actual hours can only be entered for today or earlier. No login needed — the page opens read-only, and Ctrl+Shift-clicking the title toggles edit mode. A single HTML page on the front end, data stored in Supabase (anon-key access), deployed on GitHub Pages.",
+
     project45Title: 'Centrifuge Balance',
     project45Description:
       "⚗️ Load test tubes into a centrifuge — it only spins up once the load is balanced. One sentence of rules, and answers that are often counterintuitive. Click a hole to add or remove a tube, then hit start: balanced, and the rotor accelerates to 4,000 rpm; unbalanced, and it shudders to a halt with a red arrow pointing at the heavy side. Ten levels featuring fixed tubes and broken holes, plus a free mode for 2–30 holes and a hint button that will draw out a valid arrangement. The math underneath is vectors summing to zero: each tube is a vector from the center to its hole, and an n-hole rotor can balance k tubes exactly when both k and n−k can be written as sums of the prime factors of n — so on 12 holes, 5 (= 2 + 3) works while 1 and 11 do not. Started as a single-file web prototype, then rebuilt with Flutter as an Android app with haptic feedback and level-clear animations; the APK is available straight from GitHub Releases.",
