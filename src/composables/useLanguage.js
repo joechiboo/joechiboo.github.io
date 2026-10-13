@@ -425,6 +425,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project47Title: '海克斯選卡手冊 ARAM Mayhem',
+    project47Description:
+      '🃏 英雄聯盟「隨機單中：海克斯大亂鬥」的選卡參考手冊。三選一選增幅時常常猶豫？它收錄現行 3.0 版全部 211 個增幅，依實戰勝率排序，可按定位、稀有度、梯隊篩選；選定英雄後會把該英雄收益最高的 12 個增幅排到最前並顯示專屬勝率，也能直接比較三個候選增幅、給出建議順序。另整理由資料歸納的七條選卡心法、冷門高勝率與熱門低勝率清單、四個選卡階段的白銀／黃金／稜鏡出現機率，以及 4.0 版前瞻。單一 HTML 檔、資料內嵌、離線可用、零建置流程，並誠實標注資料限制（樣本數、未確認稀有度等），部署於 GitHub Pages。',
+
     project46Title: 'Overtime Tracker 加班時數追蹤',
     project46Description:
       '⏱ 個人加班時數追蹤工具，把法規與公司上限變成一眼看懂的數字。以每月 21 日至次月 20 日為一期，同時對照單期 54 小時與近三期合計 138 小時兩道上限，本期可加班時數取兩者較小值。支援「預計 vs 實際」雙欄：已填實際時數的日子用實際值，未填的用預計值推估；平日實際超過 4 小時紅字警示，單日工時上限 12 小時。填了實際時數的週次自動收合成加總列，點擊展開明細；實際時數只能填今天以前，避免未卜先知。免登入開啟即為唯讀模式，Ctrl+Shift 點標題切換編輯。前端為單一 HTML 頁面，資料存 Supabase（anon key 存取），部署於 GitHub Pages。',
@@ -1136,6 +1140,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project47Title: 'ARAM Mayhem Pick Handbook',
+    project47Description:
+      "🃏 A pick-guide handbook for League of Legends' \"ARAM Mayhem\" mode. Stuck on the three-augment choice? It catalogs all 211 augments of the current 3.0 patch, sorted by real-match win rate and filterable by role, rarity, and tier; pick your champion and its 12 highest-value augments rise to the top with champion-specific win rates, or compare the three offered augments directly for a suggested pick order. It also distills seven data-driven pick principles, lists of underrated high-win-rate and overrated low-win-rate augments, silver/gold/prismatic odds for each of the four pick stages, and a patch 4.0 preview. A single HTML file with embedded data — works offline, zero build step — and honestly documents its data limitations (sample sizes, unconfirmed rarities), deployed on GitHub Pages.",
+
     project46Title: 'Overtime Tracker',
     project46Description:
       "⏱ A personal overtime tracker that turns legal and company limits into numbers you can read at a glance. Each cycle runs from the 21st to the 20th of the next month, checked against two caps at once — 54 hours per cycle and 138 hours across the latest three cycles — with the allowed remaining overtime taken as the smaller of the two. It supports planned-vs-actual tracking: days with actual hours use real values, the rest fall back to estimates; weekday overtime beyond 4 hours is flagged in red, with a 12-hour daily cap. Weeks with actual hours recorded collapse into a single total row that expands on click, and actual hours can only be entered for today or earlier. No login needed — the page opens read-only, and Ctrl+Shift-clicking the title toggles edit mode. A single HTML page on the front end, data stored in Supabase (anon-key access), deployed on GitHub Pages.",
