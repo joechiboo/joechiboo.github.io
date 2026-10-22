@@ -425,6 +425,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project48Title: 'Scoreboard 籃球即時計分板',
+    project48Description:
+      '🏀 多裝置即時同步的籃球計分板：手機、平板、電視打開同一個網址就看到同一場比賽，任一台加減分其他裝置即時更新，支援撤銷與開新局。進階玩法是搭配 Android App——手機架腳架對準籃框、框選一次籃框位置，以 YOLO 模型辨識進球自動加分，並用三道檢查降低誤判（球的軌跡、球與籃框的大小比例、進球後籃網晃動），支援雙籃框與換場對調、離線重送不重複計分。計分以事件為單位，可追溯、撤銷是標記而非刪除。判定邏輯附 pytest 單元測試與影片離線評估腳本；推送即由 GitHub Actions 自動部署網頁、跑測試、編譯 APK。網頁端 Vite + Supabase（PostgreSQL／Realtime／RLS），App 端 Flutter，ML 端 Python + YOLO + TensorFlow Lite。自動偵測的實拍驗證進行中。',
+
     project47Title: '海克斯選卡手冊 ARAM Mayhem',
     project47Description:
       '🃏 英雄聯盟「隨機單中：海克斯大亂鬥」的選卡參考手冊。三選一選增幅時常常猶豫？它收錄現行 3.0 版全部 211 個增幅，依實戰勝率排序，可按定位、稀有度、梯隊篩選；選定英雄後會把該英雄收益最高的 12 個增幅排到最前並顯示專屬勝率，也能直接比較三個候選增幅、給出建議順序。另整理由資料歸納的七條選卡心法、冷門高勝率與熱門低勝率清單、四個選卡階段的白銀／黃金／稜鏡出現機率，以及 4.0 版前瞻。單一 HTML 檔、資料內嵌、離線可用、零建置流程，並誠實標注資料限制（樣本數、未確認稀有度等），部署於 GitHub Pages。',
@@ -1140,6 +1144,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project48Title: 'Scoreboard Basketball Live Scoring',
+    project48Description:
+      "🏀 A real-time multi-device basketball scoreboard: phones, tablets, and TVs open the same URL to watch the same game, any device can add or subtract points with instant sync to the rest, plus undo and new-game support. The advanced mode pairs it with an Android app — mount a phone on a tripod aimed at the hoop, frame the rim once, and a YOLO model detects made baskets to score automatically, with three checks to reduce false positives (ball trajectory, ball-to-rim size ratio, net motion after the make), dual-hoop support with side switching, and offline retry without duplicate scoring. Scoring is event-sourced: every point is a traceable event and undo is a marker, not a delete. The detection logic ships with pytest unit tests and an offline video evaluation script; every push triggers GitHub Actions to deploy the web app, run tests, and build the APK. Web: Vite + Supabase (PostgreSQL / Realtime / RLS); app: Flutter; ML: Python + YOLO + TensorFlow Lite. Real-footage validation of auto-detection is in progress.",
+
     project47Title: 'ARAM Mayhem Pick Handbook',
     project47Description:
       "🃏 A pick-guide handbook for League of Legends' \"ARAM Mayhem\" mode. Stuck on the three-augment choice? It catalogs all 211 augments of the current 3.0 patch, sorted by real-match win rate and filterable by role, rarity, and tier; pick your champion and its 12 highest-value augments rise to the top with champion-specific win rates, or compare the three offered augments directly for a suggested pick order. It also distills seven data-driven pick principles, lists of underrated high-win-rate and overrated low-win-rate augments, silver/gold/prismatic odds for each of the four pick stages, and a patch 4.0 preview. A single HTML file with embedded data — works offline, zero build step — and honestly documents its data limitations (sample sizes, unconfirmed rarities), deployed on GitHub Pages.",
