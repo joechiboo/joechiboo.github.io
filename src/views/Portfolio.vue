@@ -331,6 +331,17 @@ const sortedProjects = computed(() =>
 // 想暫時下架某個作品時，在該筆加上 hidden: true 即可（不刪資料，之後移除該旗標就會重新顯示）
 const projects = ref([
   {
+    id: 49,
+    titleKey: 'project49Title',
+    descriptionKey: 'project49Description',
+    technologies: ['Hermes Agent', 'LINE Messaging API', 'Cron', 'Git Hooks', 'macOS'],
+    demo: null,
+    github: 'https://github.com/joechiboo/juju',
+    category: 'tool',
+    year: '2026',
+    createdAt: '2026-10-27T00:00:00Z',
+  },
+  {
     id: 48,
     titleKey: 'project48Title',
     descriptionKey: 'project48Description',
