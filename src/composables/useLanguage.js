@@ -425,6 +425,10 @@ const translations = {
     musicPerformance: '與大兒子一同四手聯彈，上台表演',
 
     // 作品集專案內容
+    project49Title: '小鳥啾啾 juju LINE 個人助理',
+    project49Description:
+      '🐦 透過 LINE 互動的個人 agent，引擎採用 Hermes Agent，本體跑在家裡的 Mac 上，這個 repo 收納它的設定、技能（skills）與排程。定位是「守門員」而不是「前鋒」：只接重複、低風險、需要有人盯著的事，需要判斷的工作（寫核心程式、代替本人回覆別人）不交給它。規劃中的任務依序為：每日 API Token 用量回報、每週額度 reset 前提醒、GitHub side project 巡檢、加班時數接近上限提醒、App 審核狀態推播，並遵守「一次只加一個任務，跑穩一週再加下一個」的原則。因為是公開 repo，安全上特別講究：所有秘密只存在本機 .env，GitHub Push protection 常開，另寫 pre-commit hook 攔截 GitHub 掃描認不得的 LINE secret 與 ID 格式。專案剛起步，正在接通 LINE 推播。',
+
     project48Title: 'Scoreboard 籃球即時計分板',
     project48Description:
       '🏀 多裝置即時同步的籃球計分板：手機、平板、電視打開同一個網址就看到同一場比賽，任一台加減分其他裝置即時更新，支援撤銷與開新局。進階玩法是搭配 Android App——手機架腳架對準籃框、框選一次籃框位置，以 YOLO 模型辨識進球自動加分，並用三道檢查降低誤判（球的軌跡、球與籃框的大小比例、進球後籃網晃動），支援雙籃框與換場對調、離線重送不重複計分。計分以事件為單位，可追溯、撤銷是標記而非刪除。判定邏輯附 pytest 單元測試與影片離線評估腳本；推送即由 GitHub Actions 自動部署網頁、跑測試、編譯 APK。網頁端 Vite + Supabase（PostgreSQL／Realtime／RLS），App 端 Flutter，ML 端 Python + YOLO + TensorFlow Lite。自動偵測的實拍驗證進行中。',
@@ -1144,6 +1148,10 @@ const translations = {
     musicPerformance: 'Four-hand piano duet performance with eldest son on stage',
 
     // Portfolio Project Content
+    project49Title: 'juju LINE Personal Agent',
+    project49Description:
+      "🐦 A personal agent you talk to through LINE, powered by Hermes Agent and running on a Mac at home; this repo holds its configuration, skills, and schedules. It plays goalkeeper, not striker: it only takes on repetitive, low-risk tasks that need someone watching, and never work that needs judgment, such as writing core code or replying to people on the owner's behalf. Planned tasks, in priority order: a daily API token usage report, a weekly reminder before the usage quota resets, a GitHub side-project health check, an alert when overtime hours near the limit, and push notifications when app review status changes. The rule is to add one task at a time and let it run stably for a week before adding the next. Because the repo is public, security gets special care: all secrets live only in a local .env file, GitHub push protection stays on, and a custom pre-commit hook blocks LINE secrets and IDs that GitHub's scanning does not recognize. The project has just started and is currently wiring up LINE push messages.",
+
     project48Title: 'Scoreboard Basketball Live Scoring',
     project48Description:
       "🏀 A real-time multi-device basketball scoreboard: phones, tablets, and TVs open the same URL to watch the same game, any device can add or subtract points with instant sync to the rest, plus undo and new-game support. The advanced mode pairs it with an Android app — mount a phone on a tripod aimed at the hoop, frame the rim once, and a YOLO model detects made baskets to score automatically, with three checks to reduce false positives (ball trajectory, ball-to-rim size ratio, net motion after the make), dual-hoop support with side switching, and offline retry without duplicate scoring. Scoring is event-sourced: every point is a traceable event and undo is a marker, not a delete. The detection logic ships with pytest unit tests and an offline video evaluation script; every push triggers GitHub Actions to deploy the web app, run tests, and build the APK. Web: Vite + Supabase (PostgreSQL / Realtime / RLS); app: Flutter; ML: Python + YOLO + TensorFlow Lite. Real-footage validation of auto-detection is in progress.",
