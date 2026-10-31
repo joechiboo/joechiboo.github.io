@@ -334,7 +334,7 @@ const projects = ref([
     id: 49,
     titleKey: 'project49Title',
     descriptionKey: 'project49Description',
-    technologies: ['Hermes Agent', 'LINE Messaging API', 'Cron', 'Git Hooks', 'macOS'],
+    technologies: ['Hermes Agent', 'LINE Messaging API', 'Python', 'launchd', 'Cloudflare Tunnel', 'Git Hooks', 'macOS'],
     demo: null,
     github: 'https://github.com/joechiboo/juju',
     category: 'tool',
