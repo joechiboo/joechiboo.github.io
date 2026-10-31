@@ -427,11 +427,11 @@ const translations = {
     // 作品集專案內容
     project49Title: '小鳥啾啾 juju LINE 個人助理',
     project49Description:
-      '🐦 透過 LINE 互動的個人 agent，引擎採用 Hermes Agent，本體跑在家裡的 Mac 上，這個 repo 收納它的設定、技能（skills）與排程。定位是「守門員」而不是「前鋒」：只接重複、低風險、需要有人盯著的事，需要判斷的工作（寫核心程式、代替本人回覆別人）不交給它，並遵守「一次只加一個任務，跑穩再加下一個」的原則。目前已上線：每週一自動巡檢 GitHub repo，列出有 open issue 或正在冷掉的 side project 推到 LINE；Mac 用電池時電量降到 20%、10% 主動提醒，免得小鳥跟著沒電睡著；家庭群組裡只有被 @、或訊息開頭叫「小鳥」「啾啾」才回應（新版 LINE 電腦版不能 @ 官方帳號，所以補上叫名字也算）。沒有固定網域，LINE 靠 Cloudflare 臨時 tunnel 連進來，另寫常駐程式顧著：網址一換就自動更新 LINE webhook，還會偵測 Mac 睡醒立刻重連，實測睡醒後約 37 秒恢復。安全上，危險指令一律停下等本人核准（繁中提示，回「好」或 👍 即同意），另有 43 條硬性禁止規則，連核准也放不行，例如 force push、讓小鳥自己改安全設定或重啟 gateway；因為是公開 repo，秘密只存本機 .env，並以 pre-commit hook 攔截 GitHub 掃描認不得的 LINE secret 與 ID。技能只用 Python 標準庫，由 launchd 排程。',
+      '🐦 透過 LINE 互動的個人 agent，引擎採用 Hermes Agent，本體跑在家裡的 Mac 上。定位是「守門員」而非「前鋒」：只接重複、低風險、需要有人盯著的事，一次只加一個任務，跑穩再加下一個。已上線每週 GitHub repo 巡檢與 Mac 低電量提醒，群組裡要被 @ 或開頭叫「小鳥」才會回應。沒有固定網域，靠 Cloudflare 臨時 tunnel 連進來，常駐程式會在網址變動時自動更新 LINE webhook，Mac 睡醒後約 37 秒就能重連。安全上，危險指令一律等本人核准，另有 43 條連核准都放不行的硬性禁止規則，公開 repo 的秘密也只存在本機。',
 
     project48Title: 'Scoreboard 籃球即時計分板',
     project48Description:
-      '🏀 多裝置即時同步的籃球計分板：手機、平板、電視打開同一個網址就看到同一場比賽，任一台加減分其他裝置即時更新，支援撤銷與開新局。進階玩法是搭配 Android App——手機架腳架對準籃框、框選一次籃框位置，以 YOLO 模型辨識進球自動加分，並用三道檢查降低誤判（球的軌跡、球與籃框的大小比例、進球後籃網晃動），支援雙籃框與換場對調、離線重送不重複計分。計分以事件為單位，可追溯、撤銷是標記而非刪除。判定邏輯附 pytest 單元測試與影片離線評估腳本；推送即由 GitHub Actions 自動部署網頁、跑測試、編譯 APK。網頁端 Vite + Supabase（PostgreSQL／Realtime／RLS），App 端 Flutter，ML 端 Python + YOLO + TensorFlow Lite。自動偵測的實拍驗證進行中。',
+      '🏀 多裝置即時同步的籃球計分板：手機、平板、電視打開同一個網址就看到同一場比賽，任一台加減分，其他裝置立刻更新，可撤銷、可開新局。進階玩法是搭配 Android App：手機架在腳架上對準籃框，以 YOLO 模型辨識進球自動加分，並用球的軌跡、球與籃框的大小比例、籃網晃動三道檢查降低誤判；斷線時會先存起來，連線後補送且不重複計分。網頁端用 Vite + Supabase Realtime，App 端用 Flutter，模型以 TensorFlow Lite 部署；判定邏輯有單元測試，推送後由 GitHub Actions 自動部署、測試並編譯 APK。實拍驗證進行中。',
 
     project47Title: '海克斯選卡手冊 ARAM Mayhem',
     project47Description:
@@ -443,7 +443,7 @@ const translations = {
 
     project45Title: '離心機配平 Centrifuge Balance',
     project45Description:
-      '⚗️ 把試管擺進離心機，重量平衡了才能啟動——規則一句話，答案常常出人意料的數學解謎遊戲。點孔位放入或取出試管，按「啟動」後平衡則轉盤加速到 4,000 rpm，不平衡則震動停機並用紅色箭頭指出偏重方向；十個關卡含固定試管與故障孔，另有 2–30 孔的自由模式與會畫出解答的提示。背後的數學是向量和為零：每支試管是從圓心指向孔位的向量，而 n 孔離心機能配平 k 支試管的充要條件，是 k 與 n−k 都能寫成 n 的質因數之和——12 孔時 5（=2+3）可以，1 與 11 不行。原型是單一 HTML 檔的網頁版，之後以 Flutter 重做成 Android App，加入震動回饋與過關動畫，APK 直接在 GitHub Release 下載安裝。',
+      '⚗️ 把試管擺進離心機，重量平衡了才能啟動：規則一句話，答案常出人意料的數學解謎遊戲。點孔位放入或取出試管，平衡就加速到 4,000 rpm，不平衡則震動停機，並用紅色箭頭指出偏重方向；十個關卡含固定試管與故障孔，另有 2–30 孔的自由模式與提示。背後的數學是向量和為零：n 孔能配平 k 支試管，當且僅當 k 與 n−k 都能寫成 n 的質因數之和，例如 12 孔時 5 支可以、1 支不行。先以單一 HTML 做出網頁版，再用 Flutter 重做成 Android App，APK 可在 GitHub Release 下載。',
 
     project44Title: 'AI 老婆 honey-mishears',
     project44Description:
@@ -451,7 +451,7 @@ const translations = {
 
     project43Title: 'Health Tracker 體重與晨跑追蹤',
     project43Description:
-      '❤️ 每天量一次體重、記一次晨跑，畫成折線圖，順便看兩者到底有沒有相關。體重日線配 7 日平均、每日跑量長條，兩張圖上下排列共用同一條時間軸（而不是塑雙 Y 軸），可匯出 PNG；兩張表都能匯出帶 BOM 的 CSV，Excel 開不會亂碼。相關性區算「近 7 日跑量 ↔ 體重」與「近 7 日跑量 ↔ 之後 7 天體重變化」兩組 Pearson 係數，後者才是方向較接近因果的那個。Vue 3 + Vite + Chart.js 開發，資料存 Supabase 並放在自建的 health schema（不佔 public，才能跟其他 App 共用同一個免費專案）；沒設 .env 時自動退回 localStorage 離線模式，可以先試用再接雲端。',
+      '❤️ 每天量一次體重、記一次晨跑，畫成圖表，順便看兩者到底有沒有關係。體重日線搭配 7 日平均、每日跑量用長條圖，兩張圖上下對齊、共用時間軸，比雙 Y 軸好讀；圖可匯出 PNG，資料可匯出用 Excel 開也不亂碼的 CSV。相關性區計算兩組 Pearson 係數：近 7 日跑量對體重，以及近 7 日跑量對之後 7 天的體重變化，後者更接近因果方向。以 Vue 3 + Vite + Chart.js 開發，資料存在 Supabase 的獨立 schema，可與其他 App 共用同一個免費專案；沒設定雲端時自動改用瀏覽器本機儲存，可以先試用再接雲端。',
 
     project42Title: '道德經原文與解析 laozi-reader',
     project42Description:
@@ -459,7 +459,7 @@ const translations = {
 
     project41Title: 'soundstage 錄音上片自動化 CLI',
     project41Description:
-      '🎵 把鋼琴練習錄音變成 YouTube 影片的命令列工具，起因是每支影片都要重複「開剪輯軟體、貼封面、輸出、填表單、上傳」這串一模一樣的手工步驟。一行 publish 指令做完合成影片、讀 metadata、OAuth、上傳、套縮圖；視覺化支援静態封面與波形樣式（整首波形圖加上隨音樂移動的播放頭），metadata 用 yaml 管理並在本機先驗證長度限制，上傳走 resumable upload、斷線自動退避重試。Python 3.11 + Typer 開發，ffmpeg 指令組裝抽成不執行 subprocess 的純函式，因此包裝 ffmpeg 最棘手的那類「退出碼 0 但輸出是錯的」bug（封面被忽略、尾巴多 2 秒、畫面變洋紅、播放頭不出現）有一半能用毫秒級的純函式測試釘死。',
+      '🎵 把鋼琴練習錄音變成 YouTube 影片的命令列工具。起因是每支影片都要重複「開剪輯軟體、貼封面、輸出、填表單、上傳」這串手工步驟，現在一行 publish 指令就做完：合成影片、讀取 metadata、登入授權、上傳並套用縮圖。畫面可選靜態封面，或整首波形圖加上隨音樂移動的播放頭；標題與說明用 yaml 管理，上傳前先在本機檢查長度，斷線會自動重試。以 Python 3.11 + Typer 開發，把 ffmpeg 指令的組裝寫成不實際執行的純函式，許多「程式沒報錯、影片卻做錯」的 bug 因此能用毫秒級的單元測試抓到。',
 
     project40Title: 'Boo Camp 萬聖節團露網站',
     project40Description:
@@ -467,7 +467,7 @@ const translations = {
 
     project39Title: '汎達國際物流官網改版',
     project39Description:
-      '🚢 為汎達國際物流（Founder Air & Sea Cargo，1968 年創立）打造的官網重建 Demo 雛型，是一次接外包的嘗試。以舊站完整盤點為 input 重新梳理資訊架構與視覺設計，涵蓋首頁、關於、空運／海運／進口／物流／專案貨五大服務頁、全球網絡（台灣＋中國辦公室地圖、歐美日核心航線）、合作夥伴（Emons、Heppner、TKK）、最新消息（運價／市場／海關／ICS2）與聯絡詢價表單。以 Vue 3 + Vite + Vue Router 打造，vue-i18n 支援繁中／英文／簡中三語，響應式設計適配手機與桌面。卡片提供新舊站連結，可直接對照重建前後（Before / After）的差異。原始碼為私有專案。',
+      '🚢 為汎達國際物流（Founder Air & Sea Cargo，1968 年創立）打造的官網重建 Demo 雛型，是一次接外包的嘗試。以舊站完整盤點為基礎，重新整理資訊架構與視覺設計，涵蓋空運、海運、進口、物流、專案貨五大服務頁，以及台灣與中國辦公室網絡、歐美日核心航線、合作夥伴、最新消息與聯絡詢價表單。以 Vue 3 + Vite + Vue Router 開發，vue-i18n 支援繁中、英文、簡中三語，響應式設計適配手機與桌面。卡片提供新舊站連結，可直接對照重建前後的差異；原始碼為私有專案。',
     project39Client: '汎達國際物流',
 
     project38Title: 'Bard Comics 莎士比亞漫畫',
@@ -492,7 +492,7 @@ const translations = {
 
     project33Title: '紅蓮劍姬 - 地城試煉',
     project33Description:
-      '⚔️ 一款單一 HTML 檔的 2D 俯視角動作遊戲，操控劍士探索地下城。核心強調「打擊感」——命中凍幀（hitstop）、螢幕震動、角色擊退、暴擊數字與劍氣視效，Android 裝置還支援震動回饋。戰鬥採自動索敵三連斬、含無敵幀的衝刺，以及奧義「光之太刀」的時停快斬。成長為 roguelite 設計：擊敗敵人掉落經驗珠升級，死亡不失等級；精英與頭目掉落裝備（劍提升攻擊與範圍、甲提升減傷與血量）。每 5 層出現「地城守衛」、每 10 層出現「深淵稜鏡」，各具獨特攻擊模式。支援觸控搖桿與 WASD/鍵盤雙輸入，畫面依裝置比例響應式縮放。全程 Canvas 程序繪製、零外部依賴，圖形皆為原創（非官方素材，為同人創作），部署於 GitHub Pages。',
+      '⚔️ 單一 HTML 檔的 2D 俯視角動作遊戲，操控劍士闖蕩地下城。核心是「打擊感」：命中凍幀、螢幕震動、擊退、暴擊數字與劍氣特效，Android 手機還有震動回饋。戰鬥包含自動索敵三連斬、帶無敵時間的衝刺，以及時停快斬的奧義「光之太刀」。成長採 roguelite 設計，死亡不失等級，精英與頭目會掉落劍與甲；每 5 層、每 10 層各有攻擊模式不同的頭目。支援觸控搖桿與鍵盤操作，畫面依裝置比例縮放。全部以 Canvas 程式繪製、零外部依賴，圖形皆為原創的同人創作，部署於 GitHub Pages。',
 
     project32Title: 'Pickup Board 家庭接送看板',
     project32Description:
@@ -504,7 +504,7 @@ const translations = {
 
     project30Title: 'ParkFee 社區機車車位管理',
     project30Description:
-      '🅿️ 一套把社區機車車位管理變成「可重現、可稽核」年度作業的工具，源自樂菲莊園地下停車場管理辦法的真實需求。完整跑通「登記 → 抽籤 → 車位分配 → 繳費 → e-Tag 名單匯出」的最小閉環：分階段配位保障每戶一位、超額公開抽籤＋候補，抽籤採固定亂數種子讓結果可重現、供權責委員監察。內建純前端車牌辨識（Tesseract.js），登記時掃描帶入車號、巡邏拍照比對名冊標記停錯位／佔用／未登記，照片全程在裝置端處理、不上傳。隱私優先設計：v1 只處理戶號＋車號、不存個資。採用 Vue 3 + Vite + Tailwind 開發，無後端、名冊以 CSV 匯入匯出，部署於 GitHub Pages。',
+      '🅿️ 把社區機車車位管理變成「可重現、可稽核」年度作業的工具，源自樂菲莊園地下停車場管理辦法的真實需求。完整走過「登記 → 抽籤 → 分配車位 → 繳費 → 匯出 e-Tag 名單」流程：分階段配位保障每戶一位，超額時公開抽籤並排候補，抽籤使用固定亂數種子，結果可重現、可供委員監察。內建在瀏覽器執行的車牌辨識，登記時掃描帶入車號，巡邏時拍照比對名冊，照片不離開裝置。v1 只處理戶號與車號，不存個資。以 Vue 3 + Vite + Tailwind 開發，無後端，名冊以 CSV 匯入匯出，部署於 GitHub Pages。',
 
     project29Title: 'GreenKeeper 除草機模擬器',
     project29Description:
@@ -1150,11 +1150,11 @@ const translations = {
     // Portfolio Project Content
     project49Title: 'juju LINE Personal Agent',
     project49Description:
-      "🐦 A personal agent you talk to through LINE, powered by Hermes Agent and running on a Mac at home; this repo holds its configuration, skills, and schedules. It plays goalkeeper, not striker: it only takes on repetitive, low-risk tasks that need someone watching, never work that needs judgment such as writing core code or replying to people on the owner's behalf, and new tasks are added one at a time, only after the last one runs stably. Live today: a weekly Monday GitHub patrol that pushes repos with open issues or cooling-off side projects to LINE; low-battery alerts at 20% and 10% when the Mac is unplugged, so the bird doesn't fall asleep with it; and in family group chats it only answers when @-mentioned or called by name (\"小鳥\" or \"啾啾\") at the start of a message, since the new LINE desktop app can't @-mention official accounts. With no fixed domain, LINE reaches it through a temporary Cloudflare tunnel watched by a resident script that updates the LINE webhook whenever the URL changes and reconnects right after the Mac wakes, recovering in about 37 seconds in testing. For safety, every dangerous command pauses for the owner's approval (prompts in Traditional Chinese; reply \"好\" or 👍 to approve), and 43 hard deny rules block things even approval can't unlock, such as force pushes or letting the bird change its own security settings or restart its gateway. Because the repo is public, secrets live only in a local .env file and a pre-commit hook catches LINE secrets and IDs that GitHub's scanning doesn't recognize. Skills use only the Python standard library and are scheduled with launchd.",
+      "🐦 A personal agent you talk to through LINE, powered by Hermes Agent and running on a Mac at home. It plays goalkeeper, not striker: it only takes on repetitive, low-risk tasks that need watching, adding one task at a time once the last one runs stably. Live today: a weekly GitHub repo patrol and low-battery alerts for the Mac; in family group chats it answers only when @-mentioned or called by name. With no fixed domain, LINE reaches it through a temporary Cloudflare tunnel, and a resident script updates the LINE webhook whenever the URL changes, reconnecting about 37 seconds after the Mac wakes. Dangerous commands wait for the owner's approval, 43 hard deny rules block what even approval can't unlock, and in this public repo secrets stay local, guarded by a pre-commit hook.",
 
     project48Title: 'Scoreboard Basketball Live Scoring',
     project48Description:
-      "🏀 A real-time multi-device basketball scoreboard: phones, tablets, and TVs open the same URL to watch the same game, any device can add or subtract points with instant sync to the rest, plus undo and new-game support. The advanced mode pairs it with an Android app — mount a phone on a tripod aimed at the hoop, frame the rim once, and a YOLO model detects made baskets to score automatically, with three checks to reduce false positives (ball trajectory, ball-to-rim size ratio, net motion after the make), dual-hoop support with side switching, and offline retry without duplicate scoring. Scoring is event-sourced: every point is a traceable event and undo is a marker, not a delete. The detection logic ships with pytest unit tests and an offline video evaluation script; every push triggers GitHub Actions to deploy the web app, run tests, and build the APK. Web: Vite + Supabase (PostgreSQL / Realtime / RLS); app: Flutter; ML: Python + YOLO + TensorFlow Lite. Real-footage validation of auto-detection is in progress.",
+      '🏀 A real-time multi-device basketball scoreboard: phones, tablets, and TVs open the same URL to follow the same game, and points added on any device show up everywhere instantly, with undo and new-game support. The advanced mode adds an Android app: a phone on a tripod aimed at the hoop uses a YOLO model to detect made baskets and score automatically, checking ball trajectory, ball-to-rim size ratio, and net motion to cut false positives, and it queues scores while offline without double-counting. The web app uses Vite and Supabase Realtime, the app is built in Flutter, and the model runs on TensorFlow Lite; the detection logic is unit-tested, and GitHub Actions deploys, tests, and builds the APK on every push. Real-footage validation is in progress.',
 
     project47Title: 'ARAM Mayhem Pick Handbook',
     project47Description:
@@ -1166,7 +1166,7 @@ const translations = {
 
     project45Title: 'Centrifuge Balance',
     project45Description:
-      "⚗️ Load test tubes into a centrifuge — it only spins up once the load is balanced. One sentence of rules, and answers that are often counterintuitive. Click a hole to add or remove a tube, then hit start: balanced, and the rotor accelerates to 4,000 rpm; unbalanced, and it shudders to a halt with a red arrow pointing at the heavy side. Ten levels featuring fixed tubes and broken holes, plus a free mode for 2–30 holes and a hint button that will draw out a valid arrangement. The math underneath is vectors summing to zero: each tube is a vector from the center to its hole, and an n-hole rotor can balance k tubes exactly when both k and n−k can be written as sums of the prime factors of n — so on 12 holes, 5 (= 2 + 3) works while 1 and 11 do not. Started as a single-file web prototype, then rebuilt with Flutter as an Android app with haptic feedback and level-clear animations; the APK is available straight from GitHub Releases.",
+      "⚗️ Load test tubes into a centrifuge and it only spins when balanced: a one-line rule with surprising answers. Tap slots to add or remove tubes; balanced setups spin up to 4,000 rpm, while unbalanced ones shake to a stop with a red arrow showing the heavy side. Ten levels add fixed tubes and broken slots, plus a free mode from 2 to 30 slots and hints. The math is a zero vector sum: an n-slot centrifuge can balance k tubes exactly when both k and n−k can be written as sums of n's prime factors, so a 12-slot rotor takes 5 tubes but not 1. It began as a single-HTML web game and was rebuilt in Flutter as an Android app, with the APK on GitHub Releases.",
 
     project44Title: 'honey-mishears',
     project44Description:
@@ -1174,7 +1174,7 @@ const translations = {
 
     project43Title: 'Health Tracker',
     project43Description:
-      "❤️ Weigh in once a day, log the morning run, chart both, and see whether the two are actually related. A daily weight line with a 7-day average sits above a bar chart of daily mileage, sharing one time axis rather than being forced onto a dual Y-axis, and exports to PNG; both tables export to CSV with a BOM so Excel opens them without mojibake. The correlation panel computes Pearson coefficients for 'last 7 days of mileage vs. weight' and for 'last 7 days of mileage vs. the following 7 days of weight change' — the latter being the one whose direction comes closer to causation. Built with Vue 3 + Vite + Chart.js, with data in Supabase under its own health schema (staying out of public so it can share one free-tier project with other apps); with no .env configured it falls back to localStorage offline mode, so it works before any cloud setup.",
+      '❤️ Log your weight and morning run once a day, chart them, and see whether the two are actually related. Daily weight with a 7-day average sits above a bar chart of daily distance, sharing one timeline instead of a confusing dual Y axis; charts export as PNG and data as Excel-friendly CSV. A correlation panel computes two Pearson coefficients: 7-day distance against weight, and against the weight change over the following week, the one closer to cause and effect. Built with Vue 3, Vite, and Chart.js, it stores data in its own Supabase schema so several apps can share one free project, and falls back to browser storage when no cloud is configured.',
 
     project42Title: 'laozi-reader',
     project42Description:
@@ -1182,7 +1182,7 @@ const translations = {
 
     project41Title: 'soundstage',
     project41Description:
-      '🎵 A CLI tool that turns piano practice recordings into YouTube videos, born from repeating the same manual chore for every clip: open an editor, drop in cover art, export, fill out a form, upload. A single publish command renders the video, reads the metadata, handles OAuth, uploads, and applies the thumbnail. Visual styles include a static cover and a waveform mode (a full-track waveform with a playhead that tracks the music); metadata lives in YAML and is validated against API length limits locally; uploads are resumable with automatic backoff retries on dropped connections. Built with Python 3.11 + Typer, with ffmpeg command assembly factored into pure functions that spawn no subprocess — so half of the nastiest class of ffmpeg bugs (exit code 0, clean stderr, wrong output: ignored cover art, two extra seconds of silence, magenta frames, a missing playhead) is pinned down by millisecond-fast unit tests.',
+      "🎵 A command-line tool that turns piano practice recordings into YouTube videos. Every upload used to mean the same manual routine of editing software, cover art, export, forms, and upload; now one publish command renders the video, reads metadata, signs in, uploads, and sets the thumbnail. Visuals can be a static cover or a full-song waveform with a playhead that moves with the music; titles and descriptions live in YAML and are length-checked locally, and uploads retry automatically on network drops. Built with Python 3.11 and Typer, it builds ffmpeg commands in pure functions that don't run anything, so many bugs where ffmpeg succeeds but the video comes out wrong can be caught by millisecond-fast unit tests.",
 
     project40Title: 'Boo Camp Halloween Group Camping',
     project40Description:
@@ -1190,7 +1190,7 @@ const translations = {
 
     project39Title: 'Founder Cargo Website Revamp',
     project39Description:
-      "🚢 A website-rebuild demo prototype for Founder Air & Sea Cargo (est. 1968), an international logistics company — a venture into freelance work. Using a full audit of the legacy site as input, the information architecture and visual design were rebuilt from the ground up, covering Home, About, five service pages (air freight, sea freight, import, logistics, project cargo), a global network section (Taiwan + China office map, key Europe/US/Japan trade lanes), partners (Emons, Heppner, TKK), news (freight rates / market / customs / ICS2), and a contact inquiry form. Built with Vue 3 + Vite + Vue Router, with vue-i18n supporting Traditional Chinese, English, and Simplified Chinese, responsive across mobile and desktop. The card links to both the old and new sites for a direct Before / After comparison. Source code is private.",
+      '🚢 A website-rebuild demo prototype for Founder Air & Sea Cargo (est. 1968), an international logistics company, and a first venture into freelance work. Starting from a full audit of the old site, it rebuilds the information architecture and visual design across five service pages (air freight, sea freight, import, logistics, project cargo), the Taiwan and China office network, key Europe, US, and Japan trade lanes, partners, news, and a contact inquiry form. Built with Vue 3, Vite, and Vue Router, with vue-i18n for Traditional Chinese, English, and Simplified Chinese, and responsive on mobile and desktop. The card links to both the old and new sites for a direct before-and-after comparison; source code is private.',
     project39Client: 'Founder Cargo',
 
     project38Title: 'Bard Comics',
@@ -1215,7 +1215,7 @@ const translations = {
 
     project33Title: 'Guren Kenki - Dungeon Trials',
     project33Description:
-      "⚔️ A single-HTML-file 2D top-down action game where you control a swordfighter exploring dungeons. The core focus is on impact feedback — hitstop freeze frames, screen shake, knockback, crit numbers, sword-aura effects, and haptic vibration on Android devices. Combat features auto-targeting three-hit combos, a dash with invincibility frames, and a special ability, \"Blade of Light,\" with time-stop rapid strikes. Progression is roguelite: defeated enemies drop experience orbs for leveling up, and your level is preserved on death; elites and bosses drop gear (swords boost attack and range, armor boosts damage reduction and max HP). A \"Dungeon Guardian\" appears every 5 floors and an \"Abyss Prism\" every 10, each with unique attack patterns. Supports both touch joystick and WASD/keyboard input, with a canvas that scales responsively to device dimensions. Entirely Canvas procedural rendering with zero external dependencies; all graphics are original (an unofficial fan creation, no official assets), deployed on GitHub Pages.",
+      '⚔️ A 2D top-down action game in a single HTML file: guide a swordfighter through a dungeon. The focus is impact: hitstop freeze frames, screen shake, knockback, crit numbers, and sword effects, plus haptic feedback on Android. Combat features an auto-targeting three-hit combo, a dash with invincibility frames, and a time-stopping special called Blade of Light. Progression is roguelite: you keep your level on death, elites and bosses drop swords and armor, and bosses with distinct attack patterns appear every 5 and 10 floors. It supports a touch joystick and keyboard and scales to any screen. Everything is drawn in Canvas code with zero dependencies, all original fan-made art, deployed on GitHub Pages.',
 
     project32Title: 'Pickup Board',
     project32Description:
@@ -1227,7 +1227,7 @@ const translations = {
 
     project30Title: 'ParkFee Community Parking Manager',
     project30Description:
-      '🅿️ A tool that turns community motorcycle parking management into a reproducible, auditable annual workflow, born from the real needs of a residential underground parking lot. It runs the full minimal loop — registration → lottery → space assignment → payment → e-Tag whitelist export. Phased allocation guarantees one space per household, with public lottery and waitlists for overflow; the lottery uses a fixed random seed so results are reproducible and verifiable by oversight committee members. Includes pure front-end license plate recognition (Tesseract.js): scan plates during registration, and during patrols photograph and match against the roster to flag wrong-spot / occupied / unregistered vehicles — all photos processed on-device, never uploaded. Privacy-first by design: v1 handles only household number + plate number, storing no personal data. Built with Vue 3 + Vite + Tailwind, backend-free with CSV import/export, deployed on GitHub Pages.',
+      "🅿️ A tool that turns a community's annual scooter-parking allocation into a reproducible, auditable process, born from the real rules of a residential underground parking lot. It covers the full loop of registration, lottery, space assignment, payment, and e-Tag list export: phased allocation guarantees one space per household, oversubscription goes to a public lottery with a waitlist, and a fixed random seed makes every draw reproducible for committee oversight. In-browser license plate recognition fills in plates at registration and checks patrol photos against the roster, and photos never leave the device. Version 1 stores only unit and plate numbers, no personal data. Built with Vue 3, Vite, and Tailwind, with no backend and CSV import and export, deployed on GitHub Pages.",
 
     project29Title: 'GreenKeeper Lawn Mower Simulator',
     project29Description:
