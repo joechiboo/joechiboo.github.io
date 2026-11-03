@@ -549,7 +549,7 @@ const translations = {
 
     project19Title: 'ReadTrack 閱讀追蹤系統',
     project19Description:
-      '將閱讀轉化為lasting見解的知識管理工具。幫助使用者記錄閱讀進度、捕捉思考筆記、建立專屬知識庫。透過系統化的追蹤機制，讓每天一點時間的閱讀累積成一生的智慧。專案目前處於開發初期，採用 Spec-Driven Development 方法論進行規劃。適合喜愛閱讀、希望將閱讀內容內化為個人知識體系的使用者。未來計畫整合筆記功能、知識圖譜視覺化等進階特色。',
+      '📚 記錄讀書心得、追蹤閱讀成長的個人網站，目標是透過持續閱讀與反思帶來實際的改變。每本書寫成一篇 Markdown 心得，首頁以卡片呈現摘要，可依書名、標籤與內容搜尋，也能依評分篩選、依日期或評分排序，點進去由 marked.js 即時轉成排版好的文章。目前已累積《富爸爸，窮爸爸》《清晨五點俱樂部》《一週工作 4 小時》等 12 篇心得，並從書中延伸出「20/20/20 晨間練習」與「資訊室 Scrum 導入指南」兩個實用頁面。刻意不用框架，純 HTML、CSS、JavaScript 打造，推送後由 GitHub Actions 自動部署到 GitHub Pages。',
 
     project18Title: 'HeartHero 心跳英雄',
     project18Description:
@@ -570,7 +570,7 @@ const translations = {
 
     project14Title: '工作進度自動化排程',
     project14Description:
-      '自動化工作進度管理系統，每日透過排程自動將昨天的工作進度上傳至系統。系統區分「工作專案」與「個人 Side Project」兩大類別，讓工作內容與個人創作專案清楚分類。透過自動化排程減少手動記錄負擔，提升進度追蹤效率與透明度。',
+      '📊 把每天的 Git commit 自動變成工作日報的系統。每天早上 7:05 由 Windows 工作排程器執行 Python 腳本，掃描公司 GitLab 與個人專案資料夾裡自己的 commit，產生前一天的 Markdown 與 JSON 日報，再自動推上 GitHub 更新網頁。網頁以 Vue 3 + Chart.js 呈現儀表板，可依時間區間篩選，並把 commit 自動分類成功能開發、錯誤修正、重構等類型統計；專案分為「工作專案」與「個人 Side Project」，公開網頁只顯示工作專案。日報從 2025 年 5 月累積至今，寫週報、月報或做績效回顧時可以直接引用。',
 
     project13Title: '冰箱管理大師',
     project13Description:
@@ -591,13 +591,13 @@ const translations = {
 
     project7Title: '聯合檢驗雲重構',
     project7Description:
-      '醫事檢驗所核心業務系統的現代化重構專案，採用Vue.js + TypeScript架構提升系統效能與用戶體驗。整合檢驗報告查詢、醫事機構管理、資料統計分析等核心功能，為醫療檢驗產業提供更穩定高效的數位化解決方案。',
+      '🧪 在大安聯合醫事檢驗所任職期間，為「聯合檢驗雲」重新設計的前端原型，示範民眾端服務可以長什麼樣子。首頁可依關鍵字、地區與檢驗項目搜尋附近的醫事檢驗所，結果列出地址、電話、營業時間與可做的檢驗項目，點進去能看詳細介紹。「健康小幫手」讓使用者輸入血壓、心率、血糖、三酸甘油脂、身高體重與腰圍，產生 BMI、血壓、血糖等分項的健康分析報告。會員中心則規劃了民眾與檢驗所兩種註冊身分。以 Vue 3 + TypeScript + Vite 開發，搭配 Vue Router 與 Pinia，部署於 GitHub Pages。',
     project7Company: '大安聯合',
     project7Year: '企業專案',
 
     project6Title: '家一 創意專案',
     project6Description:
-      '與七歲大兒子共同構思的創意專案，結合孩子的天真想像力與技術實現。專案體現親子合作的美好，將童心與創意轉化為實際的網站應用，展現家庭生活與技術創作的完美結合。',
+      '🎮 和大兒子家一一起做的小遊戲合集：點子和玩法由他發想，程式由爸爸實作，是持續累積中的親子共創專案。目前收錄 2248 數字連線、可以穿牆的貪食蛇、2048、井字遊戲、Flappy 火龍，以及兩款比較完整的作品。「旋風對決」是雙人戰鬥陀螺，有屬性與類型兩層克制，用發射小遊戲決定轉速，還能建房間、靠 4 位數代碼讓兩支手機連線對戰；「柴柴早餐店」是節奏天國風格的節奏遊戲，跟著拍子翻蛋餅、搖大冰奶，再用營收升級店面、收集常客。前端是純 HTML、CSS、JavaScript，連線對戰用 Node.js + Socket.IO。',
 
     project5Title: '個人履歷',
     project5Description:
@@ -605,17 +605,17 @@ const translations = {
 
     project4Title: '波爾多社區網站',
     project4Description:
-      '使用 Vue.js 開發的現代化社區門戶網站，提供社區資訊展示、互動功能和用戶參與平台。專案採用響應式設計，確保在各種設備上的最佳體驗。',
+      '🏠 為「波爾多樂菲莊園」社區打造的社區管理平台，核心是一套電子投票系統，讓住戶不必到場也能參與社區決策。投票分為即將開始、進行中、已結束三種狀態，採匿名投票並在資料庫層防止重複投票，結果即時更新，並以長條圖、圓餅圖、熱力圖與樓層分布呈現投票傾向。另整合管委會成員介紹、住戶登入後才能查看的會議紀錄、社區規章與《公寓大廈管理條例》等法規查閱、公共設施介紹與社區大事記。以 Vue 3 + Vue Router + Vuex + Bootstrap 5 開發，後端採 Supabase（PostgreSQL、Realtime、Auth、RLS），部署於 GitHub Pages。',
 
     project3Title: '測驗服務專區',
     project3Description:
-      '專業的英語檢定考試報名平台，支援TOEIC、TOEFL等多種測驗註冊。整合考試行事曆、線上報名、用戶管理和多語言介面，提供完整的考試服務生態系統。',
+      '📝 在忠欣股份有限公司擔任程式設計師期間（2012–2015）開發與維護的測驗報名網站。考生可以申請帳號、查詢近期考試場次並線上報名，支援多益聽力與閱讀、口說與寫作、TOEIC Bridge，以及 TOEFL ITP、TOEFL Junior 等測驗，熱門場次另有追加報名。網站同時整合商店街，販售學習教材與限定優惠方案，報名和購物共用同一個待結帳清單一次付款；考完試還能在網站上申請成績單與證書。從報名、繳費到成績服務都在同一個平台完成，這套系統至今仍在線上服務考生。',
     project3Company: 'Chun Shin Limited',
     project3Year: '前公司專案',
 
     project2Title: '台北市高爾夫球協會',
     project2Description:
-      '台北市高爾夫球協會官方網站，提供會員管理、賽事資訊、活動報名等功能。整合會員系統與線上報名機制，支援協會各項業務運作與會員服務。響應式設計確保各裝置良好體驗。',
+      '⛳ 為台北市高爾夫球協會製作的官方網站，是早期承接的外包專案。網站以協會的賽事業務為核心，分為首頁、關於協會、最新消息、賽事資訊、活動相簿與聯絡我們六大區塊。賽事頁集中刊登歷屆比賽，例如臺北市中正盃、青年盃錦標賽與全運會代表隊選拔賽，每場附上競賽章程、已報名選手名單與成績表，賽事因天候延期這類臨時公告也在同一處更新；首頁另整理外部高爾夫新聞，讓會員一站掌握協會動態。網站至今仍持續運作，協會每年都用它發布新的賽事。',
     project2Client: '台北市高爾夫球協會',
     project2Year: '外包專案',
 
@@ -1272,7 +1272,7 @@ const translations = {
 
     project19Title: 'ReadTrack Reading Tracker',
     project19Description:
-      'A knowledge management tool that transforms reading into lasting insights. Helps users track reading progress, capture thoughtful notes, and build a personal knowledge base. Through systematic tracking mechanisms, daily reading accumulates into lifelong wisdom. Currently in early development using Spec-Driven Development methodology. Ideal for avid readers who want to internalize reading content into their personal knowledge system. Future plans include note integration, knowledge graph visualization, and other advanced features.',
+      '📚 A personal site for reading notes and tracking growth, aiming for real change through steady reading and reflection. Each book gets a Markdown write-up; the home page shows summary cards searchable by title, tag, and content, filterable by rating and sortable by date or rating, and each note is rendered on the fly with marked.js. It now holds 12 notes on books such as Rich Dad Poor Dad, The 5AM Club, and The 4-Hour Workweek, and two practical pages grew out of them: a 20/20/20 morning routine and an IT-team Scrum adoption guide. Deliberately framework-free, it is plain HTML, CSS, and JavaScript, deployed to GitHub Pages by GitHub Actions on every push.',
 
     project18Title: 'HeartHero',
     project18Description:
@@ -1293,7 +1293,7 @@ const translations = {
 
     project14Title: 'Automated Work Progress Scheduler',
     project14Description:
-      'An automated work progress management system that uploads yesterday\'s work progress to the system daily via scheduled tasks. The system categorizes content into "Work Projects" and "Personal Side Projects", providing clear separation between work tasks and personal creative endeavors. Through automation, it reduces manual logging burden and enhances progress tracking efficiency and transparency.',
+      "📊 A system that turns each day's Git commits into a work log automatically. Every morning at 7:05, Windows Task Scheduler runs a Python script that scans my own commits across company GitLab and personal project folders, writes the previous day's report in Markdown and JSON, merges it into the dataset, and commits and pushes to GitHub, which redeploys the site. The Vue 3 and Chart.js dashboard filters by date range and sorts commits into features, bug fixes, refactors, and more; projects are split into work and personal side projects, and the public page shows work projects only. Daily logs date back to May 2025 and feed straight into weekly reports, monthly reports, and performance reviews.",
 
     project13Title: 'FridgeMaster',
     project13Description:
@@ -1314,13 +1314,13 @@ const translations = {
 
     project7Title: 'UCL Cloud System Refactoring',
     project7Description:
-      'Modern refactoring project for the core business system of medical laboratory services, using Vue.js + TypeScript architecture to enhance system performance and user experience. Integrates core functions including laboratory report queries, medical institution management, and data statistical analysis, providing stable and efficient digital solutions for the medical testing industry.',
+      '🧪 A redesigned front-end prototype for UCL Cloud, built while working at Ta-An Medical Laboratory to show what a public-facing service could look like. Visitors can search nearby clinical laboratories by keyword, region, and test type, with results listing address, phone, opening hours, and available tests, plus a detail page for each lab. A Health Assistant takes blood pressure, heart rate, blood sugar, triglycerides, height, weight, and waist size and produces a health report covering BMI, blood pressure, blood sugar, and more. The member center plans separate sign-ups for the public and for laboratories. Built with Vue 3, TypeScript, and Vite, with Vue Router and Pinia, deployed on GitHub Pages.',
     project7Company: 'Ta-An United',
     project7Year: 'Enterprise Project',
 
     project6Title: 'Jiayi Creative Project',
     project6Description:
-      'Creative project co-conceived with my seven-year-old eldest son, combining childlike imagination with technical implementation. The project embodies the beauty of parent-child collaboration, transforming innocent creativity into actual web applications, showcasing the perfect blend of family life and technical creation.',
+      '🎮 A collection of small games made with my eldest son Jiayi: he comes up with the ideas and gameplay, and Dad writes the code, in an ongoing parent-child project. It includes 2248 number linking, a wrap-around Snake, 2048, tic-tac-toe, and Flappy Dragon, plus two fuller titles. Whirlwind Duel is a two-player spinning-top battler with element and type counters and a launch mini-game that sets your spin speed, and two phones can battle online by sharing a 4-digit room code. Shiba Breakfast Shop is a Rhythm Heaven-style game where you flip egg crepes and shake iced milk tea on the beat, then spend earnings to upgrade the shop and attract regulars. The front end is plain HTML, CSS, and JavaScript; online play runs on Node.js and Socket.IO.',
 
     project5Title: 'Personal Portfolio',
     project5Description:
@@ -1328,17 +1328,17 @@ const translations = {
 
     project4Title: 'Bordeaux Community Website',
     project4Description:
-      'Modern community portal website developed using Vue.js, providing community information display, interactive features, and user engagement platform. The project adopts responsive design to ensure optimal experience on various devices.',
+      '🏠 A community management platform for the Bordeaux Le Fei Manor residential community, centered on an e-voting system that lets residents take part in decisions without attending in person. Votes move through upcoming, open, and closed states; ballots are anonymous, duplicate votes are blocked at the database level, and results update in real time as bar charts, pie charts, heat maps, and a by-floor breakdown. It also brings together committee member profiles, meeting minutes visible only to logged-in residents, community rules with a viewer for the Condominium Management Act, shared facilities, and a community timeline. Built with Vue 3, Vue Router, Vuex, and Bootstrap 5 on Supabase (PostgreSQL, Realtime, Auth, RLS), deployed on GitHub Pages.',
 
     project3Title: 'Exam Service Center',
     project3Description:
-      'Professional English proficiency test registration platform supporting various tests including TOEIC, TOEFL registration. Integrates exam calendar, online registration, user management, and multilingual interface, providing complete exam service ecosystem.',
+      '📝 An exam registration website built and maintained while working as a programmer at Chun Shin Limited (2012–2015). Test takers can create an account, browse upcoming sessions, and register online for the TOEIC Listening & Reading, Speaking & Writing, and Bridge tests, as well as TOEFL ITP and TOEFL Junior, with extra registration rounds for popular sessions. The site also integrates an online store for study materials and limited-time offers, sharing one checkout cart with exam registration, and after the test candidates can request score reports and certificates. Registration, payment, and score services all live on one platform, which still serves test takers today.',
     project3Company: 'Chun Shin Limited',
     project3Year: 'Previous Company Project',
 
     project2Title: 'Taipei Golf Association',
     project2Description:
-      'Official website for Taipei Golf Association, featuring membership management, event information, and activity registration. Integrates member system with online registration mechanism, supporting association operations and member services. Responsive design ensures great experience across all devices.',
+      "⛳ The official website of the Taipei Golf Association, an early freelance project. Built around the association's tournament work, it has six sections: home, about, news, matches, photo album, and contact. The matches section gathers each tournament, such as the Taipei Zhongzheng Cup and Youth Cup championships and the city's national games team qualifiers, with rules, registered player lists, and results for each event, and last-minute notices like weather postponements are posted in the same place. The home page also curates outside golf news so members can follow the association in one place. The site is still live, and the association publishes new tournaments on it every year.",
     project2Client: 'Taipei Golf Association',
     project2Year: 'Freelance Project',
 
