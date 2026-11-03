@@ -423,6 +423,7 @@ const projects = ref([
   },
   {
     id: 41,
+    hidden: true, // 2026-11-03 封存下架
     titleKey: 'project41Title',
     descriptionKey: 'project41Description',
     technologies: ['Python 3.11', 'Typer', 'ffmpeg', 'YouTube Data API v3', 'OAuth 2.0', 'uv', 'pytest'],
@@ -458,6 +459,7 @@ const projects = ref([
   },
   {
     id: 38,
+    hidden: true, // 2026-11-03 封存下架
     titleKey: 'project38Title',
     descriptionKey: 'project38Description',
     technologies: ['Python', 'OpenAI API', 'gpt-image-1', 'Pillow', 'JSON', 'GitHub Pages'],
@@ -584,6 +586,7 @@ const projects = ref([
   },
   {
     id: 27,
+    hidden: true, // 2026-11-03 封存下架
     titleKey: 'project27Title',
     descriptionKey: 'project27Description',
     technologies: ['HTML5', 'CSS3', 'JavaScript', 'GitHub Pages', 'GitHub Actions'],
