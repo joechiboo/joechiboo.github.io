@@ -22,10 +22,12 @@
         <div class="search-box">
           <span class="search-icon">🔍</span>
           <input
+            ref="searchInputRef"
             v-model="searchQuery"
             type="text"
             class="search-input"
             :placeholder="t('searchPlaceholder')"
+            @keydown="onSearchKeydown"
           />
           <button
             v-if="searchQuery"
@@ -61,8 +63,17 @@
         </label>
       </div>
 
-      <div v-if="filteredProjects.length" class="portfolio-grid" :class="gridClass">
-        <div class="project-card" :class="{ compact: isCompact }" v-for="project in filteredProjects" :key="project.id" @click="handleCardClick(project)">
+      <div v-if="filteredProjects.length" ref="gridRef" class="portfolio-grid" :class="gridClass">
+        <div
+          v-for="(project, index) in filteredProjects"
+          :key="project.id"
+          class="project-card"
+          :class="{ compact: isCompact }"
+          tabindex="0"
+          :aria-label="t(project.titleKey)"
+          @click="handleCardClick(project)"
+          @keydown="onCardKeydown($event, index)"
+        >
           <div class="project-image" :class="{ 'compact-image': isCompact }">
             <div class="project-icon">
               <span>{{ getCategoryMeta(project.category).icon }}</span>
@@ -266,6 +277,88 @@ const handleCardClick = (project) => {
 
 const openDemo = (project) => {
   window.open(project.demo, '_blank')
+}
+
+// 鍵盤操作：搜尋框按 ↓ 進入卡片，方向鍵移動、Enter 開啟、Esc 回搜尋框
+const searchInputRef = ref(null)
+const gridRef = ref(null)
+
+const getCards = () => (gridRef.value ? [...gridRef.value.querySelectorAll('.project-card')] : [])
+
+// 欄數會被 RWD 斷點改寫，所以從畫面上第一列實際的卡片數來算
+const getRowLength = (cards) => {
+  if (!cards.length) return 1
+  const firstRowTop = cards[0].offsetTop
+  const nextRowStart = cards.findIndex((card) => card.offsetTop !== firstRowTop)
+  return nextRowStart === -1 ? cards.length : nextRowStart
+}
+
+const focusCard = (index) => {
+  const card = getCards()[index]
+  if (!card) return
+  card.focus({ preventScroll: true })
+  card.scrollIntoView({ block: 'nearest', behavior: 'smooth' })
+}
+
+const openProject = (project) => {
+  const url = project.demo || project.download || project.github
+  if (url) window.open(url, '_blank', 'noopener')
+}
+
+const onSearchKeydown = (event) => {
+  // 中文輸入法選字時的 Enter 與方向鍵是在選字，不能攔
+  if (event.isComposing || event.keyCode === 229) return
+  const results = filteredProjects.value
+  if (event.key === 'ArrowDown' && results.length) {
+    event.preventDefault()
+    focusCard(0)
+  } else if (event.key === 'Enter' && results.length) {
+    event.preventDefault()
+    if (results.length === 1) openProject(results[0])
+    else focusCard(0)
+  } else if (event.key === 'Escape') {
+    searchQuery.value = ''
+  }
+}
+
+const onCardKeydown = (event, index) => {
+  // 卡片內的按鈕（Demo、GitHub）自己處理 Enter
+  if (event.target !== event.currentTarget) return
+  const cards = getCards()
+  const rowLength = getRowLength(cards)
+  const lastIndex = cards.length - 1
+  let next
+  switch (event.key) {
+    case 'ArrowRight':
+      next = Math.min(index + 1, lastIndex)
+      break
+    case 'ArrowLeft':
+      next = Math.max(index - 1, 0)
+      break
+    case 'ArrowDown':
+      next = Math.min(index + rowLength, lastIndex)
+      break
+    case 'ArrowUp':
+      if (index < rowLength) {
+        event.preventDefault()
+        searchInputRef.value?.focus()
+        return
+      }
+      next = index - rowLength
+      break
+    case 'Enter':
+      event.preventDefault()
+      openProject(filteredProjects.value[index])
+      return
+    case 'Escape':
+      event.preventDefault()
+      searchInputRef.value?.focus()
+      return
+    default:
+      return
+  }
+  event.preventDefault()
+  focusCard(next)
 }
 
 // 依 GitHub repo 最後 push 時間排序，沒有 GitHub 的專案排最後
@@ -1217,6 +1310,20 @@ const projects = ref([
 
 .project-card:hover {
   transform: translateY(-5px);
+}
+
+.project-card:focus {
+  outline: none;
+}
+
+.project-card:focus-visible {
+  transform: translateY(-5px);
+  outline: 3px solid #007bff;
+  outline-offset: 3px;
+}
+
+[data-theme='dark'] .project-card:focus-visible {
+  outline-color: #60a5fa;
 }
 
 .project-image {
