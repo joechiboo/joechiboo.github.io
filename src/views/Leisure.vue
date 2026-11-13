@@ -118,7 +118,7 @@
               </div>
               <div class="highlight-info">
                 <strong>{{ clip.title }}</strong>
-                <span>{{ clip.date }}</span>
+                <span v-if="clip.date">{{ clip.date }}</span>
               </div>
             </div>
           </div>
@@ -326,8 +326,11 @@ const achievements = [
 ]
 const stripDoneMark = (text) => text.replace(/^✅\s*/, '')
 
-// 籃球精華：剪好上傳 YouTube 後，在這裡加一筆 { youtube: '影片ID', title: '標題', date: '2026-11' }
-const sportsHighlights = []
+// 籃球精華：剪好上傳 YouTube 後在這裡加一筆，date 可省略
+const sportsHighlights = [
+  { youtube: 'bjTS8C2Cxjc', get title() { return t('highlightMidRange') } },
+  { youtube: 'Nw-r5c-kjto', get title() { return t('highlightLayup') } },
+]
 
 const musicTracks = [
   { id: 4, youtube: 'KkspuugpnmM', date: '2025', get title() { return t('duetPiece1') }, get description() { return t('duetPiece1Desc') } },
