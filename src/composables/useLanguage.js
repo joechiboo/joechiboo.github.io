@@ -326,6 +326,15 @@ const translations = {
     // 互動提示
     clickToView: '點擊查看作品',
     whyLike: '為什麼喜歡：',
+    sportsAchievements: '挑戰成就',
+    sportsHighlights: '籃球精華',
+    highlightsComingSoonTitle: '精華剪輯中',
+    highlightsComingSoonDesc: '每週五打球時用 Scoreboard 記分並錄影，剪好的精華影片會放在這裡。',
+    nowPlaying: '正在播放',
+    trackList: '曲目',
+    musicPhotos: '演出側拍',
+    recordingLabel: '錄音',
+    videoLabel: '影片',
 
     // 作品展示
     galleryTitle: '創作展示',
@@ -1044,6 +1053,15 @@ const translations = {
     // Interactive Hints
     clickToView: 'Click to view works',
     whyLike: 'Why I like it:',
+    sportsAchievements: 'Challenges Completed',
+    sportsHighlights: 'Basketball Highlights',
+    highlightsComingSoonTitle: 'Highlights in the works',
+    highlightsComingSoonDesc: 'Our Friday games are scored with Scoreboard and recorded; edited highlight reels will appear here.',
+    nowPlaying: 'Now Playing',
+    trackList: 'Tracklist',
+    musicPhotos: 'On Stage',
+    recordingLabel: 'Recording',
+    videoLabel: 'Video',
 
     // Gallery
     galleryTitle: 'Creative Showcase',
