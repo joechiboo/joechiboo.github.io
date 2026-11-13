@@ -335,6 +335,8 @@ const translations = {
     musicPhotos: '演出側拍',
     recordingLabel: '錄音',
     videoLabel: '影片',
+    highlightMidRange: '中距離',
+    highlightLayup: '上籃',
 
     // 作品展示
     galleryTitle: '創作展示',
@@ -1062,6 +1064,8 @@ const translations = {
     musicPhotos: 'On Stage',
     recordingLabel: 'Recording',
     videoLabel: 'Video',
+    highlightMidRange: 'Mid-Range Jumper',
+    highlightLayup: 'Layup',
 
     // Gallery
     galleryTitle: 'Creative Showcase',
