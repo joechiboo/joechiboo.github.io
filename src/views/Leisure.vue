@@ -72,6 +72,26 @@
               <p>{{ t('creationReason') }}</p>
             </div>
             <div class="doodles" aria-hidden="true">✏️ 💡 ✂️</div>
+
+            <article v-for="project in creationProjects" :key="project.id" class="project">
+              <h3 class="project-title">
+                <span aria-hidden="true">{{ project.icon }}</span>
+                {{ t(project.titleKey) }}
+              </h3>
+              <p class="project-desc">{{ t(project.descKey) }}</p>
+              <div class="polaroids">
+                <button
+                  v-for="(photo, index) in project.photos"
+                  :key="photo.image"
+                  type="button"
+                  class="polaroid"
+                  @click="openLightbox(project.photos, index)"
+                >
+                  <img :src="photo.image" :alt="photo.title" loading="lazy" />
+                  <span>{{ photo.title }}</span>
+                </button>
+              </div>
+            </article>
           </div>
         </div>
       </div>
@@ -317,6 +337,45 @@ const drawings = [
   { id: 6, image: '/img/drawsomething/partice-3.png', get title() { return t('practiceDrawing3') }, get description() { return t('practiceDrawing3Desc') } },
   { id: 7, image: '/img/drawsomething/chicken-family.jpg', get title() { return t('chickenFamily') }, get description() { return t('chickenFamilyDesc') } },
   { id: 8, image: '/img/drawsomething/pig.jpg', get title() { return t('pigSketch') }, get description() { return t('pigSketchDesc') } },
+]
+
+// 創作：照片來自舊站 joechiboo.azurewebsites.net 的 Creating 輪播（2022 年 Wayback Machine 存檔）
+const photo = (image, key) => ({
+  image,
+  get title() { return t(key) },
+  get description() { return t(`${key}Desc`) },
+})
+
+const creationProjects = [
+  {
+    id: 'nfc',
+    icon: '📇',
+    titleKey: 'nfcCardProject',
+    descKey: 'nfcCardProjectDesc',
+    photos: [
+      photo('/img/creating/nfc-design.jpg', 'nfcDesign'),
+      photo('/img/creating/nfc-card.jpg', 'nfcCard'),
+      photo('/img/creating/nfc-tap.jpg', 'nfcTap'),
+      photo('/img/creating/nfc-contact.jpg', 'nfcContact'),
+    ],
+  },
+  {
+    id: 'arduino',
+    icon: '🔌',
+    titleKey: 'arduinoProject',
+    descKey: 'arduinoProjectDesc',
+    photos: [
+      photo('/img/creating/arduino-hello.jpg', 'arduinoHello'),
+      photo('/img/creating/arduino-button.jpg', 'arduinoButton'),
+    ],
+  },
+  {
+    id: 'social-circle',
+    icon: '👥',
+    titleKey: 'socialCircleProject',
+    descKey: 'socialCircleProjectDesc',
+    photos: [photo('/img/creating/social-circle.png', 'socialCircle')],
+  },
 ]
 
 // 運動挑戰沿用原本「未來目標」裡已完成的項目，文字裡的 ✅ 改由徽章呈現
@@ -730,11 +789,79 @@ onUnmounted(() => {
 .doodles {
   position: absolute;
   right: 2rem;
-  bottom: 1.5rem;
+  top: 2rem;
   font-size: 1.6rem;
   letter-spacing: 0.6rem;
   opacity: 0.6;
   transform: rotate(-6deg);
+}
+
+.project {
+  margin-top: 2.75rem;
+}
+
+.project-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  font-size: 1.3rem;
+  line-height: 32px;
+  color: #1f2a3c;
+}
+
+.project-desc {
+  margin: 0;
+  max-width: 560px;
+  line-height: 32px;
+  color: #3b4a63;
+}
+
+.polaroids {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.polaroid {
+  width: 150px;
+  padding: 8px 8px 0;
+  background: #fff;
+  border: none;
+  box-shadow: 0 8px 16px -8px rgba(30, 40, 60, 0.45);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  font: inherit;
+}
+
+.polaroid:nth-child(odd) {
+  transform: rotate(-2deg);
+}
+
+.polaroid:nth-child(even) {
+  transform: rotate(1.5deg);
+}
+
+.polaroid:hover,
+.polaroid:focus-visible {
+  transform: rotate(0) scale(1.05);
+}
+
+.polaroid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: #eee;
+}
+
+.polaroid span {
+  display: block;
+  padding: 0.45rem 0 0.6rem;
+  font-size: 0.82rem;
+  color: #3d3a35;
+  text-align: center;
 }
 
 /* ───── 運動：訓練日誌儀表板 ───── */
@@ -1344,6 +1471,18 @@ onUnmounted(() => {
   color: #8fb3ec;
 }
 
+[data-theme='dark'] .project-title {
+  color: #f1f5fb;
+}
+
+[data-theme='dark'] .project-desc {
+  color: #b8c4d6;
+}
+
+[data-theme='dark'] .polaroid {
+  background: #e9e4da;
+}
+
 [data-theme='dark'] .section-chip {
   border-color: #333;
 }
@@ -1419,6 +1558,20 @@ onUnmounted(() => {
     background:
       linear-gradient(90deg, transparent 38px, rgba(230, 110, 110, 0.35) 38px, rgba(230, 110, 110, 0.35) 40px, transparent 40px),
       repeating-linear-gradient(#202734, #202734 31px, #2c3646 31px, #2c3646 32px);
+  }
+
+  .doodles {
+    display: none;
+  }
+
+  .polaroids {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .polaroid {
+    width: auto;
   }
 
   .sports-grid {
