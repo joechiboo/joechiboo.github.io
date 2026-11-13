@@ -387,6 +387,8 @@ const stripDoneMark = (text) => text.replace(/^✅\s*/, '')
 
 // 籃球精華：剪好上傳 YouTube 後在這裡加一筆，date 可省略
 const sportsHighlights = [
+  { youtube: 'dxQ3wH747Yo', date: '2026-11-06', get title() { return t('highlightHalfCourt') } },
+  { youtube: 'Kyy48k6lOR0', date: '2026-10-30', get title() { return t('highlightHalfCourt') } },
   { youtube: 'bjTS8C2Cxjc', get title() { return t('highlightMidRange') } },
   { youtube: 'Nw-r5c-kjto', get title() { return t('highlightLayup') } },
 ]

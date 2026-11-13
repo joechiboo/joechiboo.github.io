@@ -357,6 +357,7 @@ const translations = {
     videoLabel: '影片',
     highlightMidRange: '中距離',
     highlightLayup: '上籃',
+    highlightHalfCourt: '半場個人精華',
 
     // 作品展示
     galleryTitle: '創作展示',
@@ -1106,6 +1107,7 @@ const translations = {
     videoLabel: 'Video',
     highlightMidRange: 'Mid-Range Jumper',
     highlightLayup: 'Layup',
+    highlightHalfCourt: 'Half-Court Highlights',
 
     // Gallery
     galleryTitle: 'Creative Showcase',
